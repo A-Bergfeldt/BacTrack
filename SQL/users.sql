@@ -4,3 +4,8 @@ CREATE TABLE Users (
     salt CHAR(3),
     hashed_password VARCHAR(255)
 );
+
+CREATE TABLE User_roles (
+    role_id INT PRIMARY KEY,
+    role_name VARCHAR(64)
+);
