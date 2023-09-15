@@ -9,3 +9,9 @@ CREATE TABLE User_roles (
     role_id INT PRIMARY KEY,
     role_name VARCHAR(64)
 );
+
+LOAD DATA INFILE 'user_data_test.txt'
+INTO TABLE Users
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+(user_id, role, salt, hashed_password);
