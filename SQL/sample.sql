@@ -32,20 +32,6 @@ CREATE TABLE Roles (
     role_name VARCHAR(64)
 );
 
--- Create sample table
-CREATE TABLE Sample (
-    sample_id INT PRIMARY KEY AUTO_INCREMENT,
-    date_taken DATE NOT NULL,
-    prescription INT,
-    status_id INT NOT NULL CHECK (0<4), 
-    strain INT,
-    hospital INT NOT NULL,
-    FOREIGN KEY (prescription) REFERENCES Antibiotics(antibiotic_id),
-    FOREIGN KEY (status_id) REFERENCES Tracking(status_id),
-    FOREIGN KEY (strain) REFERENCES Strain(strain_id),
-    FOREIGN KEY (hospital) REFERENCES Hospital(hospital_id)
-);
-
 -- Create user table
 CREATE TABLE Users (
     user_id VARCHAR(50) PRIMARY KEY,
@@ -55,11 +41,49 @@ CREATE TABLE Users (
     FOREIGN KEY (role_id) REFERENCES Roles(role_id)
 );
 
+-- Create synergy table
+CREATE TABLE Synergy (
+    synergy_id INT PRIMARY KEY AUTO_INCREMENT,
+    synergy_name VARCHAR(64)
+);
+
+-- Create sample table
+CREATE TABLE Sample (
+    sample_id INT PRIMARY KEY AUTO_INCREMENT,
+    date_taken DATE NOT NULL,
+    prescription_id INT,
+    status_id INT NOT NULL CHECK (0<4), 
+    strain_id INT,
+    hospital_id INT NOT NULL,
+    FOREIGN KEY (prescription_id) REFERENCES Antibiotics(antibiotic_id),
+    FOREIGN KEY (status_id) REFERENCES Tracking(status_id),
+    FOREIGN KEY (strain_id) REFERENCES Strain(strain_id),
+    FOREIGN KEY (hospital_id) REFERENCES Hospital(hospital_id)
+);
+
+-- Create results table
+CREATE TABLE Results (
+    sample_id INT NOT NULL,
+    antibiotic_id1 INT NOT NULL CHECK (0<4),
+    antibiotic_id2 INT NOT NULL CHECK (0<4),
+    antibiotic_id3 INT NOT NULL CHECK (0<4),
+    synergy_result INT NOT NULL CHECK (0<4),
+    PRIMARY KEY (sample_id, antibiotic_id1, antibiotic_id2, antibiotic_id3),
+    FOREIGN KEY (sample_id) REFERENCES Sample(sample_id),
+    FOREIGN KEY (antibiotic_id1) REFERENCES Antibiotics(antibiotic_id),
+    FOREIGN KEY (antibiotic_id2) REFERENCES Antibiotics(antibiotic_id),
+    FOREIGN KEY (antibiotic_id3) REFERENCES Antibiotics(antibiotic_id),
+    FOREIGN KEY (synergy_result) REFERENCES Synergy(synergy_id)
+);
+
 -- Populate tables
 
 -- Populate antibiotics table
 INSERT INTO Antibiotics(antibiotic_name)
 VALUES 
+(
+    "No antibiotic"
+),
 (
     "Ampicillin"
 ),
@@ -130,11 +154,34 @@ VALUES
 );
 
 -- Populate sample table
-INSERT INTO Sample(date_taken, prescription, status_id, strain, hospital)
+INSERT INTO Sample(date_taken, prescription_id, status_id, strain_id, hospital_id)
 VALUES 
 (
     "2023-01-01","1","1","1","1"
 ),
 (
     "2022-06-20","2","2","2","2"
+);
+
+-- Populate synergy table
+INSERT INTO Synergy(synergy_name)
+VALUES 
+(
+    "Additive"
+),
+(
+    "Synergy"
+),
+(
+    "Antagonistic"
+);
+
+-- Populate Results table
+INSERT INTO Results(sample_id, antibiotic_id1, antibiotic_id2, antibiotic_id3, synergy_result)
+VALUES 
+(
+    "1", "2", "3", "1", "1"
+),
+(
+    "2", "3", "4", "1", "3"
 );
