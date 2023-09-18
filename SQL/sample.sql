@@ -11,7 +11,7 @@ CREATE TABLE Sample (
     FOREIGN KEY (prescription) REFERENCES antibiotics(antibiotic_id),
     FOREIGN KEY (status_id) REFERENCES tracking(status_id),
     FOREIGN KEY (strain) REFERENCES strain(strain_id),
-    FOREIGN KEY (hospital_location) REFERENCES hospitals(hospital_id)
+    FOREIGN KEY (hospital_location) REFERENCES hospital(hospital_id)
 );
 -- Create antibiotic table
 CREATE TABLE Antibiotics (
