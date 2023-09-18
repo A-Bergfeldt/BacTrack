@@ -4,13 +4,15 @@
 CREATE TABLE Sample (
     sample_id INT PRIMARY KEY AUTO_INCREMENT,
     date_taken DATE NOT NULL,
-    prescription INT FOREIGN KEY REFERENCES(Antibiotics(antibiotic_id)),
-    status_id INT FOREIGN KEY REFERENCES(Tracking(status_id)) NOT NULL, 
-    strain INT FOREIGN KEY REFERENCES(Strain(strain_id)),
-    hospital_location INT FOREIGN KEY REFERENCES(Hospitals(hospital_id)) NOT NULL,
-    -- user_id INT FOREIGN KEY (user_id) REFERENCES(Users(user_id)) NOT NULL
+    prescription INT ,
+    status_id INT NOT NULL, 
+    strain INT ,
+    hospital_location INT  NOT NULL,
+    FOREIGN KEY (prescription) REFERENCES antibiotics(antibiotic_id),
+    FOREIGN KEY (status_id) REFERENCES tracking(status_id),
+    FOREIGN KEY (strain) REFERENCES strain(strain_id),
+    FOREIGN KEY (hospital_location) REFERENCES hospitals(hospital_id)
 );
-
 -- Create antibiotic table
 CREATE TABLE Antibiotics (
     antibiotic_id INT PRIMARY KEY AUTO_INCREMENT,
