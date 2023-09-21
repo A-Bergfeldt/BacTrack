@@ -22,7 +22,7 @@ if(isset($_POST["submit"])) {
     $link = mysqli_connect($servername, $username, $password, $dbname); 
 
     $input_username = $_POST["username"];
-    $user_database_password_query = "SELECT `hashed_password` FROM `users` WHERE `user_id`=$input_username;";
+    $user_database_password_query = "SELECT hashed_password FROM users WHERE user_id LIKE '%$input_username%';";
     $input_password = $_POST["password"];
     $user_database_password = $link->query($user_database_password_query);
 
