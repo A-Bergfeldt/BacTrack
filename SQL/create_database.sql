@@ -53,7 +53,7 @@ CREATE TABLE Sample (
     prescription_id INT,
     status_id INT NOT NULL CHECK (0<4), 
     hospital_id INT NOT NULL,
-    strain_id INT NOT NULL,
+    strain_id INT,
     doctor_id VARCHAR(32),
     lab_technician_id VARCHAR(32),
     FOREIGN KEY (prescription_id) REFERENCES Antibiotics(antibiotic_id),
