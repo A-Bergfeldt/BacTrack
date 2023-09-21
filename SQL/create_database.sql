@@ -53,9 +53,15 @@ CREATE TABLE Sample (
     prescription_id INT,
     status_id INT NOT NULL CHECK (0<4), 
     hospital_id INT NOT NULL,
+    strain_id INT NOT NULL,
+    doctor_id VARCHAR(32),
+    lab_technician_id VARCHAR(32)
     FOREIGN KEY (prescription_id) REFERENCES Antibiotics(antibiotic_id),
     FOREIGN KEY (status_id) REFERENCES Tracking(status_id),
-    FOREIGN KEY (hospital_id) REFERENCES Hospital(hospital_id)
+    FOREIGN KEY (hospital_id) REFERENCES Hospital(hospital_id),
+    FOREIGN KEY (strain_id) REFERENCES Strain(strain_id)
+    FOREIGN KEY (doctor_id) REFERENCES Users(user_id),
+    FOREIGN KEY (lab_technician_id) REFERENCES Users(user_id)
 );
 
 -- Create results table
@@ -65,14 +71,12 @@ CREATE TABLE Results (
     antibiotic_id2 INT NOT NULL CHECK (0<4),
     antibiotic_id3 INT NOT NULL CHECK (0<4),
     synergy_result INT NOT NULL CHECK (0<4),
-    strain_id INT NOT NULL,
     PRIMARY KEY (sample_id, antibiotic_id1, antibiotic_id2, antibiotic_id3),
     FOREIGN KEY (sample_id) REFERENCES Sample(sample_id),
     FOREIGN KEY (antibiotic_id1) REFERENCES Antibiotics(antibiotic_id),
     FOREIGN KEY (antibiotic_id2) REFERENCES Antibiotics(antibiotic_id),
     FOREIGN KEY (antibiotic_id3) REFERENCES Antibiotics(antibiotic_id),
     FOREIGN KEY (synergy_result) REFERENCES Synergy(synergy_id),
-    FOREIGN KEY (strain_id) REFERENCES Strain(strain_id)
 );
 
 -- Populate tables
