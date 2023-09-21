@@ -1,7 +1,3 @@
--- Remove and recreate detabase
-DROP DATABASE bactrack
-CREATE DATABASE bactrack
-
 -- Create Tables
 
 -- Create antibiotic table
@@ -76,7 +72,7 @@ CREATE TABLE Results (
     FOREIGN KEY (antibiotic_id2) REFERENCES Antibiotics(antibiotic_id),
     FOREIGN KEY (antibiotic_id3) REFERENCES Antibiotics(antibiotic_id),
     FOREIGN KEY (synergy_result) REFERENCES Synergy(synergy_id),
-    FOREIGN KEY (strain_id) REFERENCES Strain(strain_id),
+    FOREIGN KEY (strain_id) REFERENCES Strain(strain_id)
 );
 
 -- Populate tables
@@ -147,7 +143,7 @@ VALUES
 );
 
 -- Populate user table
-INSERT INTO Users(user_id, role_id, salt, hashed_password)
+INSERT INTO Users(user_id, role_id, hashed_password)
 VALUES 
 (
     "Simon_Oscarson","1","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi"
