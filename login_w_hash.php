@@ -13,14 +13,15 @@
 
 <?php
 if(isset($_POST["submit"])) {
-    $input = $_POST["password"];
-    $hashedPwdInDb = password_hash("test123", PASSWORD_DEFAULT);
+    $input_username = $_POST["username"];
+    $user_database_password = "SELECT `hashed_password` FROM `users` WHERE `user_id`=$input_username;";
+    $input_password = $_POST["password"];
 
-    if (password_verify($input, $hashedPwdInDb)) {
+    if (password_verify($input_password, $user_database_password)) {
         echo "Password is correct. You're in!";
         echo $hashedPwdInDb;
     } else {
-        echo "Password is incorrect. Try again.";
+        echo "Login is incorrect. Try again.";
     }
 }
 ?>
