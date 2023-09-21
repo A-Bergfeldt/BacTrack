@@ -55,11 +55,11 @@ CREATE TABLE Sample (
     hospital_id INT NOT NULL,
     strain_id INT NOT NULL,
     doctor_id VARCHAR(32),
-    lab_technician_id VARCHAR(32)
+    lab_technician_id VARCHAR(32),
     FOREIGN KEY (prescription_id) REFERENCES Antibiotics(antibiotic_id),
     FOREIGN KEY (status_id) REFERENCES Tracking(status_id),
     FOREIGN KEY (hospital_id) REFERENCES Hospital(hospital_id),
-    FOREIGN KEY (strain_id) REFERENCES Strain(strain_id)
+    FOREIGN KEY (strain_id) REFERENCES Strain(strain_id),
     FOREIGN KEY (doctor_id) REFERENCES Users(user_id),
     FOREIGN KEY (lab_technician_id) REFERENCES Users(user_id)
 );
