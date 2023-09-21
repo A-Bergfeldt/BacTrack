@@ -10,6 +10,7 @@
     <input type="submit" name="submit" value="Submit" />
 </form>
 
+
 <?php
 if(isset($_POST["submit"])) {
     $input = $_POST["password"];
@@ -17,7 +18,7 @@ if(isset($_POST["submit"])) {
 
     if (password_verify($input, $hashedPwdInDb)) {
         echo "Password is correct. You're in!";
-        echo $hashedPwdInDb
+        echo $hashedPwdInDb;
     } else {
         echo "Password is incorrect. Try again.";
     }
