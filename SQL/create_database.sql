@@ -76,7 +76,7 @@ CREATE TABLE Results (
     FOREIGN KEY (antibiotic_id1) REFERENCES Antibiotics(antibiotic_id),
     FOREIGN KEY (antibiotic_id2) REFERENCES Antibiotics(antibiotic_id),
     FOREIGN KEY (antibiotic_id3) REFERENCES Antibiotics(antibiotic_id),
-    FOREIGN KEY (synergy_result) REFERENCES Synergy(synergy_id),
+    FOREIGN KEY (synergy_result) REFERENCES Synergy(synergy_id)
 );
 
 -- Populate tables
