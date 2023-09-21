@@ -1,3 +1,7 @@
+-- Remove and recreate detabase
+DROP DATABASE bactrack
+CREATE DATABASE bactrack
+
 -- Create Tables
 
 -- Create antibiotic table
