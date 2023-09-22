@@ -51,13 +51,11 @@ CREATE TABLE Synergy (
 CREATE TABLE Sample (
     sample_id INT PRIMARY KEY AUTO_INCREMENT,
     date_taken DATE NOT NULL,
-    prescription_id INT,
     status_id INT NOT NULL CHECK (0<4), 
     hospital_id INT NOT NULL,
     strain_id INT,
     doctor_id VARCHAR(32),
     lab_technician_id VARCHAR(32),
-    FOREIGN KEY (prescription_id) REFERENCES Antibiotics(antibiotic_id),
     FOREIGN KEY (status_id) REFERENCES Tracking(status_id),
     FOREIGN KEY (hospital_id) REFERENCES Hospital(hospital_id),
     FOREIGN KEY (strain_id) REFERENCES Strain(strain_id),
@@ -72,6 +70,7 @@ CREATE TABLE Results (
     antibiotic_id2 INT NOT NULL CHECK (0<4),
     antibiotic_id3 INT NOT NULL CHECK (0<4),
     synergy_result INT NOT NULL CHECK (0<4),
+    prescribed BOOL DEFAULT FALSE,
     PRIMARY KEY (sample_id, antibiotic_id1, antibiotic_id2, antibiotic_id3),
     FOREIGN KEY (sample_id) REFERENCES Sample(sample_id),
     FOREIGN KEY (antibiotic_id1) REFERENCES Antibiotics(antibiotic_id),
@@ -158,16 +157,16 @@ VALUES
 );
 
 -- Populate sample table
-INSERT INTO Sample(date_taken, prescription_id, status_id, strain_id, hospital_id)
+INSERT INTO Sample(date_taken, status_id, strain_id, hospital_id)
 VALUES 
 (
-    "2023-01-01","1","1",NULL,"1"
+    "2023-01-01","1",NULL,"1"
 ),
 (
-    "2022-06-20","2","2","2","2"
+    "2022-06-20","2","2","2"
 ),
 (
-    "2022-02-15","3","3","3","3"
+    "2022-02-15","3","3","3"
 );
 
 -- Populate synergy table
