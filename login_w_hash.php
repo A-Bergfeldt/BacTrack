@@ -30,6 +30,9 @@ if(isset($_POST["submit"])) {
 
     if (password_verify($input_password, $user_database_password_hashed['hashed_password'])) { // IMPORTANT: Index array //
         echo "Password is correct. You're in!";
+        sleep(1);
+        header("Location: README.txt");
+        exit();
     } 
     else {
         echo "Login is incorrect. Try again.";
