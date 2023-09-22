@@ -6,7 +6,7 @@
 <body>
 
 <form method="post">
-    <input type='username' name="username" placeholder="Enter username" />
+    <input type='text' name="username" placeholder="Enter username" />
     <input type='password' name="password" placeholder="Enter password" />
     <input type="submit" name="submit" value="Submit" />
 </form>
