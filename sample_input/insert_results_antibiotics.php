@@ -20,16 +20,6 @@ $antibiotic2 = (int) $_POST['antibiotic2'];
 $antibiotic3 = (int) $_POST['antibiotic3'];
 $synergy_results = (int) $_POST['synergy_results'];
 
-// Update tracking id
-if (isset($_POST['finished']) && $_POST['finished'] === 'on') {
-  // The checkbox is checked
-  $status_id = 3;
-  $sql = "UPDATE sample SET status_id = ? WHERE sample_id = ?";
-  $stmt = $link->prepare($sql);
-  $stmt->bind_param("ii", $status_id, $sample_id);
-  $result = $stmt->execute();
-}
-
 try {
     // Prepare and bind parameters to SQL query, then execute
     $sql = "INSERT INTO results (sample_id, antibiotic_id1, antibiotic_id2, antibiotic_id3, synergy_result) VALUES (?, ?, ?, ?, ?)";
