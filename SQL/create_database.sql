@@ -54,7 +54,7 @@ CREATE TABLE Sample (
     status_id INT NOT NULL CHECK (0<4), 
     hospital_id INT NOT NULL,
     strain_id INT,
-    doctor_id VARCHAR(32),
+    doctor_id VARCHAR(32) NOT NULL,
     lab_technician_id VARCHAR(32),
     FOREIGN KEY (status_id) REFERENCES Tracking(status_id),
     FOREIGN KEY (hospital_id) REFERENCES Hospital(hospital_id),
