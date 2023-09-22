@@ -184,11 +184,12 @@ VALUES
 );
 
 -- Populate Results table
+-- antibiotics must come in sortred order from smallest to largest ID
 INSERT INTO Results(sample_id, antibiotic_id1, antibiotic_id2, antibiotic_id3, synergy_result)
 VALUES 
 (
-    "2", "2", "3", "1", "1"
+    "2", "1", "2", "3", "1"
 ),
 (
-    "3", "3", "4", "1", "3"
+    "3", "1", "3", "4", "3"
 );
