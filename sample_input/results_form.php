@@ -50,8 +50,8 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
 <!-- Include Select2 JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
-<!-- Import enabling of fields -->
-<script src="enable_fields.js"></script>
+<!-- Import function to disable options -->
+<script src="disable_options.js"></script>
 
 <p>Please enter your identification results here:</p>
 
@@ -86,21 +86,21 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
     <?php endforeach ?>
   </select><br>
   Antibiotic 1:
-  <select name="antibiotic1" id="antibiotic1" required onchange=enable_field()>
+  <select name="antibiotic1" id="antibiotic1" class="antibiotic-dropdown" required onchange=disable_options(this)>
     <option disabled selected value> --- </option>
     <?php foreach ($antibioticArray as $antibiotic_id => $antibiotic_name): ?>
       <option value=<?php echo $antibiotic_id; ?>><?php echo $antibiotic_name; ?></option>
     <?php endforeach ?>
   </select><br>
   Antibiotic 2:
-  <select name="antibiotic2" id="antibiotic2" disabled required onchange=enable_field()>
+  <select name="antibiotic2" id="antibiotic2" class="antibiotic-dropdown" required onchange=disable_options(this)>
     <option disabled selected value> --- </option>
     <?php foreach ($antibioticArray as $antibiotic_id => $antibiotic_name): ?>
       <option value=<?php echo $antibiotic_id; ?>><?php echo $antibiotic_name; ?></option>
     <?php endforeach ?>
   </select><br>
   Antibiotic 3:
-  <select name="antibiotic3" id="antibiotic3" disabled required>
+  <select name="antibiotic3" id="antibiotic3" required class="antibiotic-dropdown" onchange=disable_options(this)>
     <option disabled selected value> --- </option>
     <?php foreach ($antibioticArray as $antibiotic_id => $antibiotic_name): ?>
       <option value=<?php echo $antibiotic_id; ?>><?php echo $antibiotic_name; ?></option>
