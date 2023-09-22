@@ -26,16 +26,16 @@ while ($row = $result_antibiotics->fetch_assoc())
     $antibioticArray[$row['antibiotic_id']] = $row['antibiotic_name'];
 $hospitalArray = array();
 while ($row = $result_hospital->fetch_assoc())
-  $hospitalArray[$row['hospital_id']] = $row['hospital_name'];
+    $hospitalArray[$row['hospital_id']] = $row['hospital_name'];
 ?>
 
 
 <p>Please enter your sample information here:</p>
 
-<form action="" method="POST">
+<form action="insert_sample_data.php" method="POST">
     Date:<input name="date" type="date" required><br>
     Doctor ID:<input name="user_id"><br> <!-- This should be stored automatically -->
-    Prescription: 
+    Prescription:
     <select name="prescription" required>
         <option disabled selected value> -- Select an antibiotic -- </option>
         <?php foreach ($antibioticArray as $antibiotic_id => $antibiotic_name): ?>
