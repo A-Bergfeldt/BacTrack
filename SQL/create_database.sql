@@ -157,16 +157,16 @@ VALUES
 );
 
 -- Populate sample table
-INSERT INTO Sample(date_taken, status_id, strain_id, hospital_id)
+INSERT INTO Sample(date_taken, status_id, strain_id, hospital_id, doctor_id)
 VALUES 
 (
-    "2023-01-01","1",NULL,"1"
+    "2023-01-01","1",NULL,"1", "Simon_Oscarson"
 ),
 (
-    "2022-06-20","2","2","2"
+    "2022-06-20","2","2","2", "Simon_Oscarson"
 ),
 (
-    "2022-02-15","3","3","3"
+    "2022-02-15","3","3","3", "Andreas_Bergfeldt"
 );
 
 -- Populate synergy table
@@ -183,7 +183,7 @@ VALUES
 );
 
 -- Populate Results table
--- antibiotics must come in sortred order from smallest to largest ID
+-- antibiotics must come in sorted order from smallest to largest ID
 INSERT INTO Results(sample_id, antibiotic_id1, antibiotic_id2, antibiotic_id3, synergy_result)
 VALUES 
 (
