@@ -20,8 +20,10 @@ $sql_synergy = "SELECT * FROM Synergy";
 $result_synergy = $link->query($sql_synergy);
 $sql_strain = "SELECT * FROM Strain";
 $result_strain = $link->query($sql_strain);
-$sql_sample = "SELECT sample_id FROM Sample WHERE status_id = 1";
-$result_sample = $link->query($sql_sample);
+$sql_sample_strain = "SELECT sample_id FROM Sample WHERE status_id = 1";
+$result_sample_strain = $link->query($sql_sample_strain);
+$sql_sample_antibiotics = "SELECT sample_id FROM Sample WHERE status_id = 2";
+$result_sample_antibiotics = $link->query($sql_sample_antibiotics);
 
 $link->close();
 
@@ -35,7 +37,8 @@ while ($row = $result_synergy->fetch_assoc())
 $strainArray = array();
 while ($row = $result_strain->fetch_assoc())
   $strainArray[$row['strain_id']] = $row['strain_name'];
-$samples = $result_sample->fetch_all(MYSQLI_ASSOC);
+$sample_strain = $result_sample_strain->fetch_all(MYSQLI_ASSOC);
+$sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
 ?>
 
 <!-- Include jQuery -->
@@ -55,7 +58,7 @@ $samples = $result_sample->fetch_all(MYSQLI_ASSOC);
   Sample ID:
   <select name="sample_id" id="sample_id_strain" required>
     <option disabled selected value> --- </option>
-    <?php foreach ($samples as $sample): ?>
+    <?php foreach ($sample_strain as $sample): ?>
       <option value=<?php echo $sample['sample_id']; ?>><?php echo $sample['sample_id']; ?></option>
     <?php endforeach ?>
   </select><br>
@@ -76,7 +79,7 @@ $samples = $result_sample->fetch_all(MYSQLI_ASSOC);
   Sample ID:
   <select name="sample_id" id="sample_id_antibiotic" required>
     <option disabled selected value> --- </option>
-    <?php foreach ($samples as $sample): ?>
+    <?php foreach ($sample_antibiotics as $sample): ?>
       <option value=<?php echo $sample['sample_id']; ?>><?php echo $sample['sample_id']; ?></option>
     <?php endforeach ?>
   </select><br>
@@ -108,6 +111,8 @@ $samples = $result_sample->fetch_all(MYSQLI_ASSOC);
       <option value=<?php echo $synergy_id; ?>><?php echo $synergy_name; ?></option>
     <?php endforeach ?>
   </select><br>
+  <label for="finished">Last entry</label>
+  <input type="checkbox" name="finished" id="finished"/><br>
   <input type="submit" value="Add">
 </form>
 
