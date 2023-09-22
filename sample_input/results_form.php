@@ -120,7 +120,7 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
 
 <form action="finished_sample.php" method="POST">
   Sample ID:
-  <select name="sample_id" id="sample_id_antibiotic" required>
+  <select name="sample_id" id="sample_id_finished" required>
     <option disabled selected value> --- </option>
     <?php foreach ($sample_antibiotics as $sample): ?>
       <option value=<?php echo $sample['sample_id']; ?>><?php echo $sample['sample_id']; ?></option>
@@ -140,5 +140,6 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
     $('#antibiotic2').select2();
     $('#antibiotic3').select2();
     $('#synergy_results').select2();
+    $('#sample_id_finished').select2();
   });
 </script>
