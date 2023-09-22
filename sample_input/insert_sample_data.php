@@ -15,24 +15,25 @@ if (mysqli_connect_error()) {
 
 // Fetch data from POST request
 $date = $_POST['date'];
-$prescription_id = $_POST['prescription'];
+$prescription_id = (int) $_POST['prescription'];
 $status_id = 1;
 $doctor_id = $_POST['user_id'];
-$hospital_id = $_POST['hospital'];
+$hospital_id = (int) $_POST['hospital'];
+try {
+    // Prepare and bind parameters to SQL query, then execute
+    $sql = "INSERT INTO sample (date_taken, prescription_id, status_id, hospital_id, doctor_id) VALUES (?, ?, ?, ?, ?)";
+    $stmt = $link->prepare($sql);
+    $stmt->bind_param("siiis", $date, $prescription_id, $status_id, $hospital_id, $doctor_id);
+    $result = $stmt->execute();
 
-// Prepare and bind parameters to SQL query, then execute
-$sql = "INSERT INTO Sample (date_taken, prescription_id, status_id, hospital_id, doctor_id) VALUES (?, ?, ?, ?, ?)";
-$stmt = $link->prepare($sql);
-$stmt->bind_param("siiii", $date, $prescription_id, $status_id, $hospital_id, $doctor_id);
-$result = $stmt->execute();
-
-// Show success or error
-if ($result) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $stmt->error;
+    if ($result) {
+        echo "Data inserted successfully!";
+    } else {
+        echo "Error: " . $stmt->error;
+    }
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
 }
-
-// Close the database connection
 $link->close();
+
 ?>
