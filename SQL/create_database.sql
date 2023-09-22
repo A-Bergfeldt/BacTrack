@@ -161,10 +161,13 @@ VALUES
 INSERT INTO Sample(date_taken, prescription_id, status_id, strain_id, hospital_id)
 VALUES 
 (
-    "2023-01-01","1","1","1","1"
+    "2023-01-01","1","1",NULL,"1"
 ),
 (
     "2022-06-20","2","2","2","2"
+),
+(
+    "2022-02-15","3","3","3","3"
 );
 
 -- Populate synergy table
@@ -184,8 +187,8 @@ VALUES
 INSERT INTO Results(sample_id, antibiotic_id1, antibiotic_id2, antibiotic_id3, synergy_result)
 VALUES 
 (
-    "1", "2", "3", "1", "1"
+    "2", "2", "3", "1", "1"
 ),
 (
-    "2", "3", "4", "1", "3"
+    "3", "3", "4", "1", "3"
 );
