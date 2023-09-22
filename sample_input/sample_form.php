@@ -44,13 +44,6 @@ while ($row = $result_hospital->fetch_assoc())
 <form action="insert_sample_data.php" method="POST">
     Date:<input name="date" type="date" required><br>
     Doctor ID:<input name="user_id"><br> <!-- This should be stored automatically -->
-    Prescription:
-    <select name="prescription" id="prescription" required>
-        <option disabled selected value>---</option>
-        <?php foreach ($antibioticArray as $antibiotic_id => $antibiotic_name): ?>
-            <option value=<?php echo $antibiotic_id; ?>><?php echo $antibiotic_name; ?></option>
-        <?php endforeach ?>
-    </select><br>
     Hospital:
     <select name="hospital" id="hospital" required>
         <option disabled selected value>---</option>
@@ -64,8 +57,6 @@ while ($row = $result_hospital->fetch_assoc())
 <!-- JavaScript to initialize Select2 -->
 <script>
     $(document).ready(function () {
-        // Initialize Select2 on the prescription and hospital select elements
-        $('#prescription').select2();
         $('#hospital').select2();
     });
 </script>
