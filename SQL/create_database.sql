@@ -34,9 +34,8 @@ CREATE TABLE Roles (
 
 -- Create user table
 CREATE TABLE Users (
-    user_id VARCHAR(50) PRIMARY KEY,
+    user_id VARCHAR(32) PRIMARY KEY,
     role_id INT NOT NULL CHECK (0<3),
-    salt CHAR(3),
     hashed_password VARCHAR(255),
     FOREIGN KEY (role_id) REFERENCES Roles(role_id)
 );
@@ -53,12 +52,16 @@ CREATE TABLE Sample (
     date_taken DATE NOT NULL,
     prescription_id INT,
     status_id INT NOT NULL CHECK (0<4), 
-    strain_id INT,
     hospital_id INT NOT NULL,
+    strain_id INT,
+    doctor_id VARCHAR(32),
+    lab_technician_id VARCHAR(32),
     FOREIGN KEY (prescription_id) REFERENCES Antibiotics(antibiotic_id),
     FOREIGN KEY (status_id) REFERENCES Tracking(status_id),
+    FOREIGN KEY (hospital_id) REFERENCES Hospital(hospital_id),
     FOREIGN KEY (strain_id) REFERENCES Strain(strain_id),
-    FOREIGN KEY (hospital_id) REFERENCES Hospital(hospital_id)
+    FOREIGN KEY (doctor_id) REFERENCES Users(user_id),
+    FOREIGN KEY (lab_technician_id) REFERENCES Users(user_id)
 );
 
 -- Create results table
@@ -144,13 +147,13 @@ VALUES
 );
 
 -- Populate user table
-INSERT INTO Users(user_id, role_id, salt, hashed_password)
+INSERT INTO Users(user_id, role_id, hashed_password)
 VALUES 
 (
-    "Simon_Oscarson","1","123","123"
+    "Simon_Oscarson","1","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi"
 ),
 (
-    "Andreas_Bergfeldt","2","456","456"
+    "Andreas_Bergfeldt","2","$2a$12$.AMjUxzi00/rC.86gf8L/OrwEyjNxPzW.FTCMil4EQD6PNL2wbY3q"
 );
 
 -- Populate sample table
