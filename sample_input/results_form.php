@@ -50,7 +50,7 @@ $samples = $result_sample->fetch_all(MYSQLI_ASSOC);
 
 <p>Please enter your identification results here:</p>
 
-<form action="" method="POST">
+<form action="insert_results_strain.php" method="POST">
   Lab technician ID: <input name="lab_technician_id"><br> <!-- This should be stored automatically -->
   Sample ID:
   <select name="sample_id" id="sample_id_strain" required>
@@ -113,14 +113,14 @@ $samples = $result_sample->fetch_all(MYSQLI_ASSOC);
 
 <!-- JavaScript to initialize Select2 -->
 <script>
-    $(document).ready(function () {
-        // Initialize Select2 on the prescription and hospital select elements
-        $('#sample_id_strain').select2();
-        $('#strain').select2();
-        $('#sample_id_antibiotic').select2();
-        $('#antibiotic1').select2();
-        $('#antibiotic2').select2();
-        $('#antibiotic3').select2();
-        $('#synergy_results').select2();
-    });
+  $(document).ready(function () {
+    // Initialize Select2 on the prescription and hospital select elements
+    $('#sample_id_strain').select2();
+    $('#strain').select2();
+    $('#sample_id_antibiotic').select2();
+    $('#antibiotic1').select2();
+    $('#antibiotic2').select2();
+    $('#antibiotic3').select2();
+    $('#synergy_results').select2();
+  });
 </script>
