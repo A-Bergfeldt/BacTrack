@@ -113,9 +113,20 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
       <option value=<?php echo $synergy_id; ?>><?php echo $synergy_name; ?></option>
     <?php endforeach ?>
   </select><br>
-  <label for="finished">Last entry</label>
-  <input type="checkbox" name="finished" id="finished"/><br>
   <input type="submit" value="Add">
+</form>
+
+<p>Are you done working with a sample?:</p>
+
+<form action="finished_sample.php" method="POST">
+  Sample ID:
+  <select name="sample_id" id="sample_id_finished" required>
+    <option disabled selected value> --- </option>
+    <?php foreach ($sample_antibiotics as $sample): ?>
+      <option value=<?php echo $sample['sample_id']; ?>><?php echo $sample['sample_id']; ?></option>
+    <?php endforeach ?>
+  </select><br>
+  <input type="submit" value="Analytics finished">
 </form>
 
 <!-- JavaScript to initialize Select2 -->
@@ -129,5 +140,6 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
     $('#antibiotic2').select2();
     $('#antibiotic3').select2();
     $('#synergy_results').select2();
+    $('#sample_id_finished').select2();
   });
 </script>
