@@ -48,13 +48,9 @@
         <h2 style="font-family: Arial, sans-serif;">Sign In</h2> <!-- Removed the unnecessary <label> tags -->
         
         <form method="post">
-            <input type="text" name="username" id="username" placeholder="Enter your username" required><br><br>
-
-            <!-- <label for="password">Password:</label> -->
-            <input type="password" name="password" id="password" placeholder="Enter your password" required><br><br>
-
-            <input type="submit" name="submit" value="Submit">
-            <!-- Form elements... -->
+            <input type='text' name="username" placeholder="Enter username"/><br><br>
+            <input type='password' name="password" placeholder="Enter password"/><br><br>
+            <input type="submit" name="submit" value="Submit"/>
         </form>
 
         <?php
@@ -75,8 +71,6 @@
                     
                     // Added a simple redirect to the README.txt file just to test //
                     
-                    echo "Password is correct. You're in!";
-                    sleep(1);
                     header("Location: README.txt");
                     exit();
                 } 
@@ -85,7 +79,7 @@
                 }
 
             }
-            ?>
+        ?>
     </div>
 </body>
 </html>
