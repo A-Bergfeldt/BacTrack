@@ -12,22 +12,21 @@ $link = mysqli_connect($servername, $username, $password, $dbname);
 if (mysqli_connect_error()) {
     die("Connection failed: " . mysqli_connect_error());
 }
-/*
+
 // Fetch data from POST request
-$lab_technician_id = (int) $_POST['lab_technician_id'];
+$lab_technician_id = $_POST['lab_technician_id'];
 $sample_id = (int) $_POST['sample_id'];
-$strain = (int) $_POST['strain'];
-$doctor_id = $_POST['user_id'];
-$hospital_id = (int) $_POST['hospital'];
+$strain_id = (int) $_POST['strain'];
+$status_id = 2;
 try {
     // Prepare and bind parameters to SQL query, then execute
-    $sql = "INSERT INTO sample (date_taken, prescription_id, status_id, hospital_id, doctor_id) VALUES (?, ?, ?, ?, ?)";
+    $sql = "UPDATE sample SET strain_id = ?, lab_technician_id = ?, status_id = ? WHERE sample_id = ?";
     $stmt = $link->prepare($sql);
-    $stmt->bind_param("siiis", $date, $prescription_id, $status_id, $hospital_id, $doctor_id);
+    $stmt->bind_param("isii", $strain_id, $lab_technician_id, $status_id, $sample_id);
     $result = $stmt->execute();
 
     if ($result) {
-        echo "Data inserted successfully!";
+        echo "Values inserted successfully for sample_id: $sample_id";
     } else {
         echo "Error: " . $stmt->error;
     }
@@ -35,5 +34,5 @@ try {
     echo "Error: " . $e->getMessage();
 }
 $link->close();
-*/
+
 ?>
