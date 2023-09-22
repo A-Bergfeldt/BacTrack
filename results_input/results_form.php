@@ -100,7 +100,7 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
     <?php endforeach ?>
   </select><br>
   Antibiotic 3:
-  <select name="antibiotic3" id="antibiotic3" required class="antibiotic-dropdown" onchange=disable_options(this)>
+  <select name="antibiotic3" id="antibiotic3" class="antibiotic-dropdown" required onchange=disable_options(this)>
     <option disabled selected value> --- </option>
     <?php foreach ($antibioticArray as $antibiotic_id => $antibiotic_name): ?>
       <option value=<?php echo $antibiotic_id; ?>><?php echo $antibiotic_name; ?></option>
