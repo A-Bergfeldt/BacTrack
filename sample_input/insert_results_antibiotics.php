@@ -38,7 +38,7 @@ try {
     $result = $stmt->execute();
 
     if ($result) {
-        echo "Data inserted successfully!";
+        echo "Values inserted successfully for sample_id: $sample_id";
     } else {
         echo "Error: " . $stmt->error;
     }
