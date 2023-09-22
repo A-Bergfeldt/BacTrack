@@ -72,7 +72,7 @@ $samples = $result_sample->fetch_all(MYSQLI_ASSOC);
 
 <p>Please enter your resistance results here:</p>
 
-<form action="" method="POST">
+<form action="insert_results_antibiotics.php" method="POST">
   Sample ID:
   <select name="sample_id" id="sample_id_antibiotic" required>
     <option disabled selected value> --- </option>
