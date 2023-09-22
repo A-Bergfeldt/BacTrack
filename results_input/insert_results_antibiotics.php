@@ -27,9 +27,6 @@ $antibiotic1 = $sorted_antibiotics[0];
 $antibiotic2 = $sorted_antibiotics[1];
 $antibiotic3 = $sorted_antibiotics[2];
 
-
-
-
 // Update tracking id
 if (isset($_POST['finished']) && $_POST['finished'] === 'on') {
     // The checkbox is checked
@@ -40,9 +37,9 @@ if (isset($_POST['finished']) && $_POST['finished'] === 'on') {
     $result = $stmt->execute();
 }
 
-$sql = "SELECT * FROM results WHERE antibiotic_id1 = ? AND antibiotic_id2 = ? AND antibiotic_id3 = ?";
+$sql = "SELECT * FROM results WHERE sample_id = ? AND antibiotic_id1 = ? AND antibiotic_id2 = ? AND antibiotic_id3 = ?";
 $stmt = $link->prepare($sql);
-$stmt->bind_param("iii", $antibiotic1, $antibiotic2, $antibiotic3);
+$stmt->bind_param("iiii", $sample_id, $antibiotic1, $antibiotic2, $antibiotic3);
 $stmt->execute();
 $result = $stmt->get_result();
 
