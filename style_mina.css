@@ -1,0 +1,78 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background: rgb(52,21,54);
+    background: linear-gradient(180deg, rgba(52,21,54,1) 0%, rgba(74,21,90,1) 35%, rgba(21,98,105,1) 100%);
+    background-size: cover;
+    background-position: center;
+
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 80px;
+    padding: 10px 90x;
+    box-sizing: border-box;
+    background: rgba(0,0,0,0);
+}
+
+nav .logo{
+    padding: 26px 50px;
+    height: 80px;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+nav ul{
+    list-style: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li a{
+    line-height: 80px;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover{
+    background: rgba(0,0,0,0.4);
+    border-radius: 6px;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+}
+
+.slides{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    color: #fff;
+    background: rgb(52,21,54);
+    background: linear-gradient(180deg, rgba(52,21,54,1) 0%, rgba(74,21,90,1) 35%, rgba(21,98,105,1) 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
