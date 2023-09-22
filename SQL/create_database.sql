@@ -37,7 +37,8 @@ CREATE TABLE Users (
     user_id VARCHAR(32) PRIMARY KEY,
     role_id INT NOT NULL CHECK (0<3),
     hashed_password VARCHAR(255),
-    FOREIGN KEY (role_id) REFERENCES Roles(role_id)
+    FOREIGN KEY (role_id) REFERENCES Roles(role_id),
+    email VARCHAR(255)
 );
 
 -- Create synergy table
@@ -147,13 +148,13 @@ VALUES
 );
 
 -- Populate user table
-INSERT INTO Users(user_id, role_id, hashed_password)
+INSERT INTO Users(user_id, role_id, hashed_password, email)
 VALUES 
 (
-    "Simon_Oscarson","1","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi"
+    "Simon_Oscarson","1","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi","simon.oscarson.2633@student.uu.se"
 ),
 (
-    "Andreas_Bergfeldt","2","$2a$12$.AMjUxzi00/rC.86gf8L/OrwEyjNxPzW.FTCMil4EQD6PNL2wbY3q"
+    "Andreas_Bergfeldt","2","$2a$12$.AMjUxzi00/rC.86gf8L/OrwEyjNxPzW.FTCMil4EQD6PNL2wbY3q","andreas.bergfeldt.0189@student.uu.se"
 );
 
 -- Populate sample table
