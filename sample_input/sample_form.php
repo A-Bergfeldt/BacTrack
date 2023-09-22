@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "root";
-$dbname = "BacTrack";
+$dbname = "bactrack";
 
 // Create connection
 $link = mysqli_connect($servername, $username, $password, $dbname);
