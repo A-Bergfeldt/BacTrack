@@ -19,6 +19,7 @@ $prescription_id = (int) $_POST['prescription'];
 $status_id = 1;
 $doctor_id = $_POST['user_id'];
 $hospital_id = (int) $_POST['hospital'];
+
 try {
     // Prepare and bind parameters to SQL query, then execute
     $sql = "INSERT INTO sample (date_taken, prescription_id, status_id, hospital_id, doctor_id) VALUES (?, ?, ?, ?, ?)";
@@ -27,7 +28,9 @@ try {
     $result = $stmt->execute();
 
     if ($result) {
-        echo "Data inserted successfully!";
+        // Retrieve the last inserted ID
+        $lastInsertedID = mysqli_insert_id($link);
+        echo "Data inserted successfully! </br>Your sample id is: " . $lastInsertedID;
     } else {
         echo "Error: " . $stmt->error;
     }
