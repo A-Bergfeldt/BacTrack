@@ -26,8 +26,17 @@ while ($row = $result_antibiotics->fetch_assoc())
     $antibioticArray[$row['antibiotic_id']] = $row['antibiotic_name'];
 $hospitalArray = array();
 while ($row = $result_hospital->fetch_assoc())
-  $hospitalArray[$row['hospital_id']] = $row['hospital_name'];
+    $hospitalArray[$row['hospital_id']] = $row['hospital_name'];
 ?>
+
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include Select2 CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+<!-- Include Select2 JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
 
 <p>Please enter your sample information here:</p>
@@ -35,19 +44,28 @@ while ($row = $result_hospital->fetch_assoc())
 <form action="" method="POST">
     Date:<input name="date" type="date" required><br>
     Doctor ID:<input name="user_id"><br> <!-- This should be stored automatically -->
-    Prescription: 
-    <select name="prescription" required>
-        <option disabled selected value> -- Select an antibiotic -- </option>
+    Prescription:
+    <select name="prescription" id="prescription" required>
+        <option disabled selected value>---</option>
         <?php foreach ($antibioticArray as $antibiotic_id => $antibiotic_name): ?>
             <option value=<?php echo $antibiotic_id; ?>><?php echo $antibiotic_name; ?></option>
         <?php endforeach ?>
     </select><br>
     Hospital:
-    <select name="hospital" required>
-        <option disabled selected value> -- Select a hosptal -- </option>
+    <select name="hospital" id="hospital" required>
+        <option disabled selected value>---</option>
         <?php foreach ($hospitalArray as $hospital_id => $hospital_name): ?>
             <option value=<?php echo $hospital_id; ?>><?php echo $hospital_name; ?></option>
         <?php endforeach ?>
     </select><br>
     <input type="submit" value="Add">
 </form>
+
+<!-- JavaScript to initialize Select2 -->
+<script>
+    $(document).ready(function () {
+        // Initialize Select2 on the prescription and hospital select elements
+        $('#prescription').select2();
+        $('#hospital').select2();
+    });
+</script>
