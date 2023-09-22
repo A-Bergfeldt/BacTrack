@@ -20,7 +20,7 @@ $sql_synergy = "SELECT * FROM Synergy";
 $result_synergy = $link->query($sql_synergy);
 $sql_strain = "SELECT * FROM Strain";
 $result_strain = $link->query($sql_strain);
-$sql_sample = "SELECT sample_id FROM Sample WHERE status_id != 1";
+$sql_sample = "SELECT sample_id FROM Sample WHERE status_id = 1";
 $result_sample = $link->query($sql_sample);
 
 $link->close();
