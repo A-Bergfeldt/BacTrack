@@ -54,30 +54,43 @@
         </form>
 
         <?php
+
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
+
             $servername = "localhost";
             $db_username = "root";
             $db_password = "root";
             $db_name = "bactrack";
             $link = mysqli_connect($servername, $db_username, $db_password, $db_name); 
 
+            if (mysqli_connect_error()) {
+                die("Connection failed: " . mysqli_connect_error());
+            }
+            
             if(isset($_POST["submit"])) {
-                
+                // Use prepared statements with parameterized queries
                 $input_username = $_POST["username"];
                 $input_password = $_POST["password"];
-                $user_database_password = $link->execute_query("SELECT hashed_password FROM users WHERE user_id = ?", [$input_username]);
-                $user_database_password_hashed = mysqli_fetch_array($user_database_password); // IMPORTANT: Convert sqli results to array //
-
-                if (password_verify($input_password, $user_database_password_hashed['hashed_password'])) { // IMPORTANT: Index array //
-                    
-                    // Added a simple redirect to the README.txt file just to test //
-                    
+            
+                $stmt = $link->prepare("SELECT hashed_password FROM users WHERE user_id = ?");
+                $stmt->bind_param("s", $input_username);
+                $stmt->execute();
+                $result = $stmt->get_result();
+                $user_database_password_hashed = $result->fetch_assoc();
+            
+                if ($user_database_password_hashed !== null && password_verify($input_password, $user_database_password_hashed['hashed_password'])) {
+                    // Redirect before sending any content
                     header("Location: README.txt");
                     exit();
                 } 
                 else {
-                    echo "Login is incorrect. Try again.";
+                    // Output error message after the header call
+                    echo "Login failed. Try again.";
+                    exit();
                 }
-
             }
         ?>
     </div>
