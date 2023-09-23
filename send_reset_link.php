@@ -10,6 +10,8 @@ require 'PHPMailer/src/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
+date_default_timezone_set('Europe/Stockholm');
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["recipient"];
@@ -36,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $stmt_check->reset(); // Reset the statement for later use
 
             // Store the token and expiration timestamp in the database
+            
             $expiration_timestamp = date('Y-m-d H:i:s', strtotime('+1 hour')); // Set the expiration time (e.g., 1 hour from now)
 
             // Prepare the SQL statement to insert the reset token

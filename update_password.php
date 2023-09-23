@@ -1,38 +1,69 @@
 <?php
-session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 require_once('db_connection.php'); // Include your database connection script
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+
+date_default_timezone_set('Europe/Stockholm');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $new_password = $_POST["new_password"];
     $confirm_password = $_POST["confirm_password"];
+    $token = $_POST["token"];
 
     // Check if new password and confirm password match
     if ($new_password != $confirm_password) {
         echo "New password and confirm password do not match.";
     } else {
-        // Update the password without checking the old password
-        $user_id = $_SESSION['user_id']; // You might use session or another method to identify the user
-        $hashed_new_password = password_hash($new_password, PASSWORD_BCRYPT);
+        // Check if the token is valid and get the user_id associated with it
+        $check_query = "SELECT user_id, expiration_timestamp FROM password_reset_tokens WHERE token = ?";
+        $stmt_check = $db_connection->prepare($check_query);
 
-        // Use a prepared statement with placeholders
-        $update_query = "UPDATE users SET hashed_password = ? WHERE user_id = ?";
-        $stmt = $db_connection->prepare($update_query);
+        if ($stmt_check) {
+            $stmt_check->bind_param("s", $token);
+            $stmt_check->execute();
+            $stmt_check->store_result();
 
-        if ($stmt) {
-            $stmt->bind_param("si", $hashed_new_password, $user_id);
+            if ($stmt_check->num_rows > 0) {
+                $stmt_check->bind_result($user_id, $expiration_timestamp);
+                $stmt_check->fetch();
 
-            if ($stmt->execute()) {
-                echo "Password updated successfully!";
-                echo '<form method="post" action="login.php">
-                <input type="submit" name="submit" value="Go to login"/>
-                </form>';
+                // Check if the token has expired
+                $current_timestamp = date('Y-m-d H:i:s');
+                if ($current_timestamp > $expiration_timestamp) {
+                    echo "Token has expired. Please request a new password reset link.";
+                } else {
+                    // Token is valid, update the user's password
+                    $hashed_new_password = password_hash($new_password, PASSWORD_BCRYPT);
+                    $update_query = "UPDATE users SET hashed_password = ? WHERE user_id = ?";
+                    $stmt_update = $db_connection->prepare($update_query);
+
+                    if ($stmt_update) {
+                        $stmt_update->bind_param("ss", $hashed_new_password, $user_id);
+                        if ($stmt_update->execute()) {
+                            echo "Password updated successfully!";
+                            // You may want to delete the used token from the password_reset_tokens table here
+                        } else {
+                            echo "Error updating password: " . mysqli_error($db_connection);
+                        }
+                    } else {
+                        echo "Error preparing update statement: " . $db_connection->error;
+                    }
+                }
             } else {
-                echo "Error updating password: " . $stmt->error;
+                echo "Invalid token.";
             }
 
-            $stmt->close();
+            $stmt_check->close(); // Close the check statement
         } else {
-            echo "Error preparing update statement: " . $db_connection->error;
+            echo "Error preparing check statement: " . $db_connection->error;
         }
     }
 } else {
