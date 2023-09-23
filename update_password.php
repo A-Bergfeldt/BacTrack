@@ -49,7 +49,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $stmt_update->bind_param("ss", $hashed_new_password, $user_id);
                         if ($stmt_update->execute()) {
                             echo "Password updated successfully!";
-                            // You may want to delete the used token from the password_reset_tokens table here
+                            $delete_query = "DELETE FROM password_reset_tokens WHERE user_id = ?";
+                            $stmt_delete = $db_connection->prepare($delete_query);
+
+                            if ($stmt_delete) {
+                                $stmt_delete->bind_param("s", $user_id);
+                                if ($stmt_delete->execute()) {
+                                    // Tokens related to the user have been deleted successfully
+                                } else {
+                                    echo "Error deleting tokens: " . $stmt_delete->error;
+                                }
+                            } else {
+                                echo "Error preparing delete statement: " . $db_connection->error;
+                            }
+                            echo '<form method="post" action="login.php">
+                            <input type="submit" name="submit" value="Go to login"/>
+                            </form>';
                         } else {
                             echo "Error updating password: " . mysqli_error($db_connection);
                         }
