@@ -13,13 +13,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Update the password without checking the old password
         $user_id = $_SESSION['user_id']; // You might use session or another method to identify the user
         $hashed_new_password = password_hash($new_password, PASSWORD_BCRYPT);
-        $update_query = "UPDATE users SET hashed_password = '$hashed_new_password' WHERE id = $user_id";
-        
-        if (mysqli_query($db_connection, $update_query)) {
-            echo "Password updated successfully!";
-            
+
+        // Use a prepared statement with placeholders
+        $update_query = "UPDATE users SET hashed_password = ? WHERE user_id = ?";
+        $stmt = $db_connection->prepare($update_query);
+
+        if ($stmt) {
+            $stmt->bind_param("si", $hashed_new_password, $user_id);
+
+            if ($stmt->execute()) {
+                echo "Password updated successfully!";
+                echo '<form method="post" action="login.php">
+                <input type="submit" name="submit" value="Go to login"/>
+                </form>';
+            } else {
+                echo "Error updating password: " . $stmt->error;
+            }
+
+            $stmt->close();
         } else {
-            echo "Error updating password: " . mysqli_error($db_connection);
+            echo "Error preparing update statement: " . $db_connection->error;
         }
     }
 } else {
