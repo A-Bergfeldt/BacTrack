@@ -1,6 +1,5 @@
-<?php
 
-echo "Hello";
+<?php
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -34,11 +33,11 @@ $mail->Port       = 465;
 $mail->SMTPSecure = "ssl";                                   //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
 $mail->setFrom('bactrack2023@gmail.com', 'Bac');          
-$mail->addAddress('corinne.olivero@gmail.com');
+$mail->addAddress('simonos@telia.com');
 
 //Content
 $mail->isHTML(true);                                  //Set email format to HTML
-$mail->Subject = 'Confirm Your Åquamän Account';
+$mail->Subject = 'Confirm Your BacTrack Account';
 $mail->Body    = '
 <html>
 <head>
