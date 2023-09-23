@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $domain = "localhost"; // Replace with your domain
                     $reset_link = $domain . "/change_password.php?token=" . urlencode($encoded_token);
                     $subject = "Password Reset";
-                    $message = "To reset your password, click on the following link: <a href='$reset_link'>$reset_link</a>";
+                    $message = "To reset your password, click on the following link: ";
                     
 
                     // Create an instance of PHPMailer
@@ -73,9 +73,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $mail->addAddress($user_email);
 
                     // Set email subject and message
+                    $mail->isHTML(true);  
                     $mail->Subject = $subject;
-                    $mail->Body = $message;
-
+                    $mail->Body = '
+                    <html>
+                    <head>
+                        <title>Password reset</title>
+                    </head>
+                    <body>
+                        <p>' . $message . '</p>
+                        <a href="' . $reset_link . '">' . $reset_link . '</a>
+                    </body>
+                    </html>';
                     try {
                         $mail->send();
                         // Display success message
