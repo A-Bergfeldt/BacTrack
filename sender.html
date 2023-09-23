@@ -1,27 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-.button {
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
-
-.button1 {background-color: #4CAF50;} /* Green */
-.button2 {background-color: #008CBA;} /* Blue */
-</style>
+    
 </head>
 <body>
 
-    <form method="post" action="test_mail.php">
-        <input type="submit" name="submit" value="Submit"/>
+    <form method="post" action="mail_template.php">
+        <label for="recipient">Recipient Email:</label>
+        <input type="email" id="recipient" name="recipient" required/><br/><br/>
+
+        <label for="subject">Email Subject:</label>
+        <input type="text" id="subject" name="subject" required/><br/><br/>
+
+        <label for="message">Email Message:</label><br/>
+        <textarea id="message" name="message" rows="5" cols="40" required></textarea><br/><br/>
+
+        <input type="submit" name="submit" value="Send Email"/>
     </form>
 
 </body>
