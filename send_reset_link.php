@@ -3,129 +3,107 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-
-require_once('db_connection.php'); 
+require_once('db_connection.php');
 require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["recipent"];
-
-    // Check if the email exists in your database
-    $query = "SELECT email FROM users WHERE email = '$email'";
-    $result = mysqli_query($db_connection, $query);
-
-    if ($result) {
-        $row = mysqli_fetch_assoc($result);
-        if ($row) {
-            // Generate a unique token for password reset
-            $reset_token = bin2hex(random_bytes(32)); // Generate a 64-character token (128 bytes)
-
-            // Store the token and expiration timestamp in the database
-            $expiration_timestamp = date('Y-m-d H:i:s', strtotime('+1 hour')); // Set the expiration time (e.g., 1 hour from now)
-
-            $insert_query = "INSERT INTO password_reset_tokens (user_email, token, expiration_timestamp) VALUES ('$email', '$reset_token', '$expiration_timestamp')";
-            if (mysqli_query($db_connection, $insert_query)) {
-                // Send the reset password link to the user's email using PHPMailer
-                $reset_link = "https://example.com/reset_password.php?token=" . $reset_token; // Replace with your domain
-                $subject = "Password Reset";
-                $message = "To reset your password, click on the following link: $reset_link";
-
-                // Initialize PHPMailer
-                $mail = new PHPMailer\PHPMailer\PHPMailer();
-                // Configure PHPMailer as before (SMTP settings, sender, recipient, subject, body, etc.)
-
-                // Send the email
-                if ($mail->send()) {
-                    echo "A password reset link has been sent to your email address.";
-                } else {
-                    echo "Error sending email: " . $mail->ErrorInfo;
-                }
-            } else {
-                echo "Error storing reset token: " . mysqli_error($db_connection);
-            }
-        } else {
-            echo "Email address not found in our records.";
-        }
-    } else {
-        echo "Error querying the database: " . mysqli_error($db_connection);
-    }
-} else {
-    echo "Invalid request.";
-}
-
-
-
-
-
-
-
-
-
-
-
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["recipient"];
 
-    // Check if the email exists in your database
-    $query = "SELECT id FROM users WHERE email = '$email'";
-    $result = mysqli_query($db_connection, $query);
+    // Prepare the SQL statement to check if the email exists and retrieve user information
+    $check_query = "SELECT user_id, email FROM users WHERE email = ?";
+    $stmt_check = $db_connection->prepare($check_query);
 
-    if ($result) {
-        $row = mysqli_fetch_assoc($result);
-        if ($row) {
-            // Generate a unique token for password reset
+    if ($stmt_check) {
+        $stmt_check->bind_param("s", $email);
+        $stmt_check->execute();
+        $stmt_check->store_result();
+
+        if ($stmt_check->num_rows > 0) {
+            // Email exists, generate a unique token for password reset
             $reset_token = bin2hex(random_bytes(32)); // Generate a 64-character token (128 bytes)
+            
+            // Encode the token for better user-friendliness in the URL
+            $encoded_token = base64_encode($reset_token);
+
+            // Bind the result columns to variables
+            $stmt_check->bind_result($user_id, $user_email);
+            $stmt_check->fetch();
+            $stmt_check->reset(); // Reset the statement for later use
 
             // Store the token and expiration timestamp in the database
-            $user_id = $row['id'];
             $expiration_timestamp = date('Y-m-d H:i:s', strtotime('+1 hour')); // Set the expiration time (e.g., 1 hour from now)
 
-            $insert_query = "INSERT INTO password_reset_tokens (user_id, token, expiration_timestamp) VALUES ($user_id, '$reset_token', '$expiration_timestamp')";
-        if (mysqli_query($db_connection, $insert_query)) {
-            // Send the reset password link to the user's email using PHPMailer
-            $reset_link = "localhost/reset_password.php?token=" . $reset_token; 
-            $subject = "Password Reset";
-            $message = "To reset your password, click on the following link: $reset_link";
+            // Prepare the SQL statement to insert the reset token
+            $insert_query = "INSERT INTO password_reset_tokens (user_id, token, expiration_timestamp) VALUES (?, ?, ?)";
+            $stmt_insert = $db_connection->prepare($insert_query);
 
-            // Initialize PHPMailer
-            $mail = new PHPMailer\PHPMailer\PHPMailer();
-            $mail->isSMTP();
-            $mail->Host = 'smtp.example.com'; // Replace with your SMTP server
-            $mail->SMTPAuth = true;
-            $mail->Username = 'bactrack2023@gmail.com';
-            $mail->Password = 'amky jgok axgt hqun';
-            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-            $mail->Port = 465;
-            $mail->SMTPSecure = "ssl";
+            if ($stmt_insert) {
+                $stmt_insert->bind_param("sss", $user_id, $encoded_token, $expiration_timestamp);
+                if ($stmt_insert->execute()) {
+                    // Send the reset password link to the user's email using PHPMailer
 
-            // Set sender and recipient information
-            $mail->setFrom('bactrack2023@gmail.com', 'BacTrack password reset');
-            $mail->addAddress($email);
+                    $domain = "localhost"; // Replace with your domain
+                    $reset_link = $domain . "/change_password.php?token=" . urlencode($encoded_token);
+                    $subject = "Password Reset";
+                    $message = "To reset your password, click on the following link: <a href='$reset_link'>$reset_link</a>";
+                    
 
-            // Set email subject and message
-            $mail->Subject = $subject;
-            $mail->Body = $message;
+                    // Create an instance of PHPMailer
+                    $mail = new PHPMailer(true);
 
-            // Send the email
-            if ($mail->send()) {
-                echo "A password reset link has been sent to your email address.";
+                    // Server settings
+                    $mail->SMTPDebug = SMTP::DEBUG_OFF;
+                    $mail->isSMTP();
+                    $mail->Host = 'smtp.gmail.com';
+                    $mail->SMTPAuth = true;
+                    $mail->Username = 'bactrack2023@gmail.com';
+                    $mail->Password = 'amky jgok axgt hqun';
+                    $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                    $mail->Port = 465;
+
+                    $mail->setFrom('bactrack2023@gmail.com', 'BacTrack');
+                    $mail->addAddress($user_email);
+
+                    // Set email subject and message
+                    $mail->Subject = $subject;
+                    $mail->Body = $message;
+
+                    try {
+                        $mail->send();
+                        // Display success message
+                        echo "Message sent successfully<br><br>";
+                
+                        // Provide an option to send a new email
+                        echo '<form method="post" action="login.php">
+                            <input type="submit" name="submit" value="Homepage"/>
+                            </form>';
+                
+                        // Redirect back to the sender.html page
+                        exit(); // Ensure that no other code is executed after the redirect
+                    } catch (Exception $e) {
+                        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+                    }
+                } else {
+                    echo "Error storing reset token: " . $stmt_insert->error;
+                }
             } else {
-                echo "Error sending email: " . $mail->ErrorInfo;
+                echo "Error preparing insert statement: " . $db_connection->error;
             }
         } else {
-            echo "Error storing reset token: " . mysqli_error($db_connection);
+            echo "Email address not found in our records.";
         }
+
+        $stmt_check->close(); // Close the check statement
     } else {
-        echo "Email address not found in our records.";
-        echo '<form method="post" action="forgot_passwrd.php">
-        <input type="submit" name="submit" value="Go back"/>
-        </form>';
+        echo "Error preparing check statement: " . $db_connection->error;
     }
 } else {
     echo "Invalid request.";
 }
+
 ?>
