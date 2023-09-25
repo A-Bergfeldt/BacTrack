@@ -22,12 +22,13 @@ how much you want
 <html>
 <head>
     <title>Mina testing home page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="style_mina.css">
     </head>
 
 <body>
     <nav>
-        <div class="logo">Web Bignner</div>
+        <div class="logo">Logo here</div>
         <ul>
             <li><a href ="#">Home</a></li>
             <li><a href ="#">About</a></li>
@@ -39,18 +40,13 @@ how much you want
 
     <div class="container">
         <div class="slides">
-        <p>
-        <font size="10">
-        BacTrack
-        </font>
-        </p>
-
+            <h1 style="font-size: 100px">BacTrack</h1>
         </div>
         <div class="slides">
-            <h1>About BacTrack</h1>
+            <h1 style="font-size: 50px">About BacTrack</h1>
         </div>
         <div class="slides">
-            <h1>About CombiANT</h1>
+            <h1 style="font-size: 50px">About CombiANT</h1>
         </div>
     </div>
     
