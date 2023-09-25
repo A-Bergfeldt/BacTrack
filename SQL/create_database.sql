@@ -78,6 +78,13 @@ CREATE TABLE Results (
     FOREIGN KEY (antibiotic_id3) REFERENCES Antibiotics(antibiotic_id),
     FOREIGN KEY (synergy_result) REFERENCES Synergy(synergy_id)
 );
+-- Create passwor reset tokens table
+CREATE TABLE password_reset_tokens (
+    user_id VARCHAR(32) NOT NULL,
+    token VARCHAR(255) NOT NULL,
+    expiration_timestamp DATETIME NOT NULL,
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+);
 
 -- Populate tables
 
