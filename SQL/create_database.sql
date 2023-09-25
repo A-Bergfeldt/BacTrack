@@ -161,6 +161,27 @@ VALUES
 ),
 (
     "Andreas_Bergfeldt","2","$2a$12$.AMjUxzi00/rC.86gf8L/OrwEyjNxPzW.FTCMil4EQD6PNL2wbY3q","andreas.bergfeldt.0189@student.uu.se"
+),
+(
+    "Corinne_Olivero","1","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi","corinne.olivero@gmail.com"
+),
+(
+    "Hanna_Malmvall","2","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi","hanna.malmvall@gmail.com"
+),
+(
+    "Matilda_Styfberg","1","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi","matilda.styfberg.4481@student.uu.se"
+),
+(
+    "Sethuraman","2","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi","sethuraman2001.ind@gmail.com"
+),
+(
+    "Minna","1","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi","minna.sayehban.1224@student.uu.se"
+),
+(
+    "Praissy_Zefi","2","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi","praissy.zefi@gmail.com"
+),
+(
+    "Victor","1","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi","victor.ju.hin.wong@gmail.com"
 );
 
 -- Populate sample table
