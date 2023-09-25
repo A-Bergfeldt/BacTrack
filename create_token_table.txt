@@ -1,6 +1,5 @@
 In here I only put the code to create a table we might want to use if we get the reset pasword to work.
 CREATE TABLE password_reset_tokens (
-    token_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id VARCHAR(32) NOT NULL,
     token VARCHAR(255) NOT NULL,
     expiration_timestamp DATETIME NOT NULL,
