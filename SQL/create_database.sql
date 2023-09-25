@@ -163,25 +163,25 @@ VALUES
     "Andreas_Bergfeldt","2","$2a$12$.AMjUxzi00/rC.86gf8L/OrwEyjNxPzW.FTCMil4EQD6PNL2wbY3q","andreas.bergfeldt.0189@student.uu.se"
 ),
 (
-    "Corinne_Olivero","1","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi","corinne.olivero@gmail.com"
+    "Corinne_Olivero","1","$2a$12$41lnFsvpAL1VVIh2c1ioUeWZON6PHrxx5sZSc6UJWCrFH43pZVfdi","corinne.olivero@gmail.com"
 ),
 (
-    "Hanna_Malmvall","2","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi","hanna.malmvall@gmail.com"
+    "Hanna_Malmvall","2","$2a$12$tljP0iz3xMZwFEsS0sgScuwWyjS9wK9ifBEzAOE4zGTQsvdZidx6i","hanna.malmvall@gmail.com"
 ),
 (
-    "Matilda_Styfberg","1","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi","matilda.styfberg.4481@student.uu.se"
+    "Matilda_Styfberg","1","$2a$12$6iKzUrJE9eYOuNJWfPqzBeV.RQ1Ly75ZQ23/2wzKWbd7QWobqrWY.","matilda.styfberg.4481@student.uu.se"
 ),
 (
-    "Sethuraman","2","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi","sethuraman2001.ind@gmail.com"
+    "Sethuraman","2","$2a$12$LxVr0Xofc4tVFy/yrk2Kb.RwzzKUKx0K.Ml2GqaioWOKSF.BTrsWG","sethuraman2001.ind@gmail.com"
 ),
 (
-    "Minna","1","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi","minna.sayehban.1224@student.uu.se"
+    "Minna","1","$2a$12$lYOD/8qOI9MUHtzC.wSVqefR/0QuIwa5/S7ipf99VeFg0ko8hg6se","minna.sayehban.1224@student.uu.se"
 ),
 (
-    "Praissy_Zefi","2","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi","praissy.zefi@gmail.com"
+    "Praissy_Zefi","2","$2a$12$OaDZf7rj74QNBWNcMp428e3qq/U32HD55p1yyaehJDNu1eQLCrYrq","praissy.zefi@gmail.com"
 ),
 (
-    "Victor","1","$2a$12$v4cdgG7VM8g4GOJYbzbuuO/d7ApdJJiY8NK30P5he8uQpbwb77Dfi","victor.ju.hin.wong@gmail.com"
+    "Victor","1","$2a$12$2eqzljxLYNlI5y.DZ6f/g.VYvaA2kSsicMpmYeIZHMLYtm5f0NHB.","victor.ju.hin.wong@gmail.com"
 );
 
 -- Populate sample table
