@@ -9,7 +9,7 @@
             
         }
         #section1 {
-            background: url('background_ex2.jpg') right bottom no-repeat;
+            background: url('background_ex1.jpg') right bottom no-repeat;
             background-size: cover, auto;
             display: flex;
             flex-direction: column;
