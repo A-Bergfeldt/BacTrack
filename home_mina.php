@@ -30,11 +30,11 @@ how much you want
     <nav>
         <div class="logo">Logo here</div>
         <ul>
-            <li><a href ="#">Home</a></li>
-            <li><a href ="#">About</a></li>
-            <li><a href ="#">Contact</a></li>
-            <li><a href ="#">Statistics</a></li>
-            <li><a href ="#">Login</a></li>
+            <li><a href ="home_mina.php">Home</a></li>
+            <li><a href ="about_mina.php">About</a></li>
+            <li><a href ="contact_mina.php">Contact</a></li>
+            <li><a href ="statistics_mina.php">Statistics</a></li>
+            <li><a href ="login.php">Login</a></li>
         </ul>
     </nav>
 

@@ -30,17 +30,17 @@ how much you want
     <nav>
         <div class="logo">Logo here</div>
         <ul>
-            <li><a href ="#">Home</a></li>
-            <li><a href ="#">About</a></li>
-            <li><a href ="#">Contact</a></li>
-            <li><a href ="#">Statistics</a></li>
-            <li><a href ="#">Login</a></li>
+        <li><a href ="home_mina.php">Home</a></li>
+            <li><a href ="about_mina.php">About</a></li>
+            <li><a href ="contact_mina.php">Contact</a></li>
+            <li><a href ="statistics_mina.php">Statistics</a></li>
+            <li><a href ="login.php">Login</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <div class="slides slide1">
-            <h1 style="font-size: 100px">BacTrack</h1>
+            <h1 style="font-size: 100px">About page</h1>
         </div>
         <div class="slides slide2">
             <h1 style="font-size: 50px">About BacTrack</h1>
