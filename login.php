@@ -51,7 +51,6 @@
             <input type='text' name="username" placeholder="Enter username"/><br><br>
             <input type='password' name="password" placeholder="Enter password"/><br><br>
             <input type="submit" name="submit" value="Submit"/><br><br>
-
             <p> <a href="forgot_password.php">Forgot your password?</a></p>
         </form>
 
