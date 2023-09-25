@@ -42,11 +42,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $expiration_timestamp = date('Y-m-d H:i:s', strtotime('+1 hour')); // Set the expiration time (e.g., 1 hour from now)
 
             // Prepare the SQL statement to insert the reset token
+
+            $delete_query = "DELETE FROM password_reset_tokens WHERE user_id = ?";
+            $stmt_delete = $db_connection->prepare($delete_query);
+            $stmt_delete->bind_param("s", $user_id);
+            $stmt_delete->execute();
+
             $insert_query = "INSERT INTO password_reset_tokens (user_id, token, expiration_timestamp) VALUES (?, ?, ?)";
             $stmt_insert = $db_connection->prepare($insert_query);
 
             if ($stmt_insert) {
                 $stmt_insert->bind_param("sss", $user_id, $encoded_token, $expiration_timestamp);
+                  
                 if ($stmt_insert->execute()) {
                     // Send the reset password link to the user's email using PHPMailer
 
@@ -87,16 +94,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </html>';
                     try {
                         $mail->send();
-                        // Display success message
-                        echo "Message sent successfully<br><br>";
-                
-                        // Provide an option to send a new email
-                        echo '<form method="post" action="login.php">
-                            <input type="submit" name="submit" value="Homepage"/>
-                            </form>';
-                
-                        // Redirect back to the sender.html page
-                        exit(); // Ensure that no other code is executed after the redirect
+                        header("Location: password_sent.html");
+                        exit();
                     } catch (Exception $e) {
                         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
                     }

@@ -48,7 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     if ($stmt_update) {
                         $stmt_update->bind_param("ss", $hashed_new_password, $user_id);
                         if ($stmt_update->execute()) {
-                            echo "Password updated successfully!";
                             $delete_query = "DELETE FROM password_reset_tokens WHERE user_id = ?";
                             $stmt_delete = $db_connection->prepare($delete_query);
 
@@ -62,9 +61,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             } else {
                                 echo "Error preparing delete statement: " . $db_connection->error;
                             }
-                            echo '<form method="post" action="login.php">
-                            <input type="submit" name="submit" value="Go to login"/>
-                            </form>';
+                            header("Location: password_changed.html");
+                            exit();
                         } else {
                             echo "Error updating password: " . mysqli_error($db_connection);
                         }
