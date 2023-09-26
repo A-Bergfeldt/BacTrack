@@ -39,14 +39,8 @@ how much you want
     </nav>
 
     <div class="container">
-        <div class="slides slide1">
-            <h1 style="font-size: 100px">About page</h1>
-        </div>
         <div class="slides slide2">
-            <h1 style="font-size: 50px">About BacTrack</h1>
-        </div>
-        <div class="slides slide3">
-            <h1 style="font-size: 50px">About CombiANT</h1>
+            <h1 style="font-size: 100px">About page</h1>
         </div>
     </div>
     
