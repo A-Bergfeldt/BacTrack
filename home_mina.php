@@ -40,15 +40,15 @@ how much you want
 
     <div class="container">
         <div class="slides slide1">
-            <h1 style="font-size: 100px">Bactrack</h1>
+            <h1 style="font-size: 100px; color: #fff">Bactrack</h1>
         </div>
         <div class="slides slide2">
             <h1 style="font-size: 50px">About BacTrack</h1>
         </div>
-        <div class="slides slide3">
+        <div class="slides slide2">
             <h1 style="font-size: 50px">About CombiANT</h1>
         </div>
     </div>
     
-    </body>
-    </html>
+</body>
+</html>

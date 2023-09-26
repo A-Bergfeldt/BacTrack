@@ -39,8 +39,8 @@ how much you want
     </nav>
 
     <div class="container">
-        <div class="slides slide2">
-            <h1 style="font-size: 100px">Statistics page</h1>
+        <div class="slides slide1">
+            <h1 style="font-size: 100px; color: #fff">Statistics page</h1>
         </div>
     </div>
     

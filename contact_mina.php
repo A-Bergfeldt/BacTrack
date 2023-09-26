@@ -36,13 +36,11 @@ how much you want
             <li><a href ="statistics_mina.php">Statistics</a></li>
             <li><a href ="login.php">Login</a></li>
         </ul>
-    </nav>
-
+    </nav>  
     <div class="container">
-        <div class="slides slide2">
-            <h1 style="font-size: 100px">Contact page</h1>
+        <div class="slides slide1">
+            <h1 style="font-size: 100px; color: #fff">Contact page</h1>
         </div>
     </div>
-    
-    </body>
-    </html>
+</body>
+</html>
