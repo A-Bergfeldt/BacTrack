@@ -13,17 +13,12 @@ if (mysqli_connect_error()) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// Select all antibiotics and hospitals then close database connection
-$sql_antibiotics = "SELECT * FROM Antibiotics";
-$result_antibiotics = $link->query($sql_antibiotics);
+// Select all hospitals then close database connection
 $sql_hospital = "SELECT * FROM Hospital";
 $result_hospital = $link->query($sql_hospital);
 $link->close();
 
-// Store the antibiotics and hospitals in associative arrays
-$antibioticArray = array();
-while ($row = $result_antibiotics->fetch_assoc())
-    $antibioticArray[$row['antibiotic_id']] = $row['antibiotic_name'];
+// Store the hospitals in an associative array
 $hospitalArray = array();
 while ($row = $result_hospital->fetch_assoc())
   $hospitalArray[$row['hospital_id']] = $row['hospital_name'];
