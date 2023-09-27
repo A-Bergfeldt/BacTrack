@@ -23,12 +23,13 @@ how much you want
 <head>
     <title>Mina testing home page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
-    <link rel="stylesheet" href="style_sheet.css">
+    <link rel="stylesheet" href="style_sheet_praissy.css">
     </head>
 
 <body>
     <nav>
-        <div class="logo">Logo here</div>
+        <!--<div class="logo">Logo here</div>-->
+        <img src="img11.png" alt="">
         <ul>
         <li><a href ="home_page.php">Home</a></li>
             <li><a href ="about_page.php">About</a></li>
