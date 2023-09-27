@@ -6,11 +6,33 @@
     <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
 </head>
 <body>
-    <div class="container">
-        <h2 class="text-center mt-4">Pie Chart with Data from SQL Database</h2>
-        <div id="tester" style="width:600px;height:250px;"></div>
-        </div>
+<div class="container">
+    <h2 class="text-center mt-4">Pie Chart with Data from SQL Database</h2>
+    <div id="year-selector">
+        <form method="get" action="statistics_test.php">
+            <label for="year">Select a Year:</label>
+            <select id="year" name="year">
+                <?php
+                // Define the range of years (2000-2023)
+                $startYear = 2000;
+                $endYear = 2023;
+
+                // Get the currently selected year (or default to 2023)
+                $selectedYear = isset($_GET['year']) ? $_GET['year'] : 2023;
+
+                // Generate the options for the dropdown
+                for ($year = $startYear; $year <= $endYear; $year++) {
+                    $selected = ($year == $selectedYear) ? 'selected' : '';
+                    echo "<option value='$year' $selected>$year</option>";
+                }
+                ?>
+            </select>
+            <button id="update-button" type="submit">Update Chart</button>
+        </form>
     </div>
+    <div id="tester" style="width:600px;height:250px;"></div>
+</div>
+
 
     <?php
 
@@ -20,7 +42,7 @@
 
     require_once 'db_connection.php';
 
-    $date = '2022';
+    $date = isset($_GET['year']) ? $_GET['year'] : 2023;;
 
     $query = 
             "SELECT
