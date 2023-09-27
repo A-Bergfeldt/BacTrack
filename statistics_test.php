@@ -27,23 +27,32 @@
             SUM(COUNTS) AS count 
         FROM 
             (
-                SELECT results.antibiotic_id1 AS ID, COUNT(*) AS COUNTS FROM results WHERE results.prescribed = 1 GROUP BY results.antibiotic_id1
+                SELECT results.antibiotic_id1 
+                    AS ID, COUNT(*) AS COUNTS 
+                    FROM results WHERE results.prescribed = 1 
+                    GROUP BY results.antibiotic_id1
                 UNION ALL
-                SELECT results.antibiotic_id2 AS ID, COUNT(*) AS COUNTS FROM results WHERE results.prescribed = 1 GROUP BY results.antibiotic_id2
+                SELECT results.antibiotic_id2 
+                    AS ID, COUNT(*) AS COUNTS 
+                    FROM results WHERE results.prescribed = 1 
+                    GROUP BY results.antibiotic_id2
                 UNION ALL
-                SELECT results.antibiotic_id3 AS ID, COUNT(*) AS COUNTS FROM results WHERE results.prescribed = 1 GROUP BY results.antibiotic_id3
+                SELECT results.antibiotic_id3 
+                    AS ID, COUNT(*) AS COUNTS 
+                    FROM results WHERE results.prescribed = 1 
+                    GROUP BY results.antibiotic_id3
             ) AS subquery
         INNER JOIN 
             antibiotics ON antibiotics.antibiotic_id = subquery.ID
         GROUP BY
             subquery.ID,
             antibiotics.antibiotic_name";
-    $result_1 = $db_connection->query($query1);
+    $result = $db_connection->query($query);
 
     $labels  = [];
     $data = [];
 
-    foreach ($result_1 as $row) {
+    foreach ($result as $row) {
             $labels[] = $row["antibiotic_name"];
             $data[] = $row["count"];}
 
