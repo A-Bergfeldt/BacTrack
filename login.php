@@ -87,7 +87,14 @@
                     $user_role = $result->fetch_assoc();
                     $_SESSION["role_id"] = $user_role;
                     $_SESSION["user_id"] = $input_username;
-                    header("Location: sample_input/sample_form.php");
+                    
+                    if ($user_role['role_id'] === 1) {
+                        header("Location: sample_input/sample_form.php");
+                    }
+                    if ($user_role['role_id'] === 2) {
+                        header("Location: results_input/results_form.php");
+                    }
+                    
                     exit();
                 } 
                 else {
