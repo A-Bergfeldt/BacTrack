@@ -23,6 +23,16 @@ if ($resultStatus->num_rows > 0) {
     $status_id = $row['status_id'];
 }
 
+$sqlDoctor = "SELECT doctor_id FROM sample WHERE sample.sample_id = $sample_id;";
+$resultDoctor = $db_connection->query($sqlDoctor);
+if ($resultDoctor->num_rows > 0) {
+    // Fetch the row from the result set
+    $row = $resultDoctor->fetch_assoc();
+
+    // Access the 'status_id' value from the row
+    $doctor_id = $row['doctor_id'];
+}
+
 // Start the table with some basic styling
 echo '
     <p>Results for Sample ID: ' . $sample_id . ' </p>
@@ -34,7 +44,7 @@ echo '
         <th style="border: 1px solid #000; padding: 8px;">Antibiotic 3</th>
         <th style="border: 1px solid #000; padding: 8px;">Result</th>
         ';
-if ($status_id == 3) {
+if ($status_id == 3 and $doctor_id == 'Simon_Oscarson') { //TODO: Add check for user_id. 
     echo '<th style="border: 1px solid #000; padding: 8px;">Prescribe</th>';
 
 }
@@ -60,7 +70,7 @@ if ($result->num_rows > 0) {
         <td style='border: 1px solid #000; padding: 8px;'>" . $row["Antibiotic 3"] . "</td>
         <td style='border: 1px solid #000; padding: 8px;'>" . $row["synergy_name"] . "</td>
         ";
-        if ($status_id == 3) {
+        if ($status_id == 3 and $doctor_id == 'Simon_Oscarson') {
             echo "<td style='border: 1px solid #000; padding: 8px;'>
                     <a href='update_prescription.php?sample_id=" . $row["sample_id"] . "&antibiotic1=" . $row["Antibiotic 1"] . "&antibiotic2=" . $row["Antibiotic 2"] . "&antibiotic3=" . $row["Antibiotic 3"] . "'>
                         <button>Prescribe this combination</button>
