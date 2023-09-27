@@ -50,10 +50,12 @@
         <form method="post">
             <input type='text' name="username" placeholder="Enter username"/><br><br>
             <input type='password' name="password" placeholder="Enter password"/><br><br>
-            <input type="submit" name="submit" value="Submit"/>
+            <input type="submit" name="submit" value="Submit"/><br><br>
+            <p> <a href="forgot_password.php">Forgot your password?</a></p>
         </form>
 
         <?php
+            session_start();
 
             $servername = "localhost";
             $db_username = "root";
@@ -78,6 +80,13 @@
             
                 if ($user_database_password_hashed !== null && password_verify($input_password, $user_database_password_hashed['hashed_password'])) {
                     // Redirect before sending any content
+                    $stmt = $link->prepare("SELECT role_id FROM users WHERE user_id = ?");
+                    $stmt->bind_param("s", $input_username);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    $user_role = $result->fetch_assoc();
+                    $_SESSION["role_id"] = $user_role;
+                    $_SESSION["user_id"] = $input_username;
                     header("Location: README.txt");
                     exit();
                 } 
