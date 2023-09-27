@@ -20,24 +20,34 @@
 
     require_once 'db_connection.php';
 
-    $query = "SELECT
+    $query1 = 
+            "SELECT
                 results.antibiotic_id1,
-                results.antibiotic_id2,
-                results.antibiotic_id3
+                results.prescribed,
+                antibiotics.antibiotic_name,
                 COUNT(*) AS count 
             FROM results INNER JOIN 
-                strain ON antibiotics.antibiotic_id= sample.strain_id GROUP BY result.antibiotic_id1, result.antibiotic_id2, result.antibiotic_id3, strain.strain_name;" ; // Aggregate data by strain_id
-    $result = $db_connection->query($query);
+                antibiotics ON antibiotics.antibiotic_id = results.antibiotic_id1
+            WHERE 
+                results.prescribed=1
+            GROUP BY 
+                results.antibiotic_id1, 
+                antibiotics.antibiotic_name"; // Aggregate data by strain_id
+            
+    $result_1 = $db_connection->query($query1);
 
     $labels  = [];
     $data = [];
 
-    foreach ($result as $row) {
-            $labels[] = $row["strain_name"];
+    foreach ($result_1 as $row) {
+            $labels[] = $row["antibiotic_name"];
             $data[] = $row["count"];}
 
     $labels = json_encode($labels);
     $data = json_encode($data);
+
+    echo $labels;
+    echo $data;
     ?>
 
     <script>
