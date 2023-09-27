@@ -87,7 +87,7 @@
                     $user_role = $result->fetch_assoc();
                     $_SESSION["role_id"] = $user_role;
                     $_SESSION["user_id"] = $input_username;
-                    header("Location: README.txt");
+                    header("Location: sample_input/sample_form.php");
                     exit();
                 } 
                 else {
