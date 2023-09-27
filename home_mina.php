@@ -23,7 +23,7 @@ how much you want
 <head>
     <title>Mina testing home page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
-    <link rel="stylesheet" href="style_mina.css">
+    <link rel="stylesheet" href="corinne_style.css">
     </head>
 
 <body>
