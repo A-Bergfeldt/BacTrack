@@ -1,19 +1,5 @@
 <?php
-// Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "BacTrack";
-
-$sample_id = $_GET["sample_id"];
-
-// Create connection
-$link = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check if connection is established
-if (mysqli_connect_error()) {
-    die("Connection failed: " . mysqli_connect_error());
-}
+include '../db_connection.php';
 
 // SQL queries
 $sql = "SELECT sample_id, a1.antibiotic_name AS 'Antibiotic 1', a2.antibiotic_name AS 'Antibiotic 2', a3.antibiotic_name AS 'Antibiotic 3',synergy_name, prescribed FROM 
@@ -24,10 +10,10 @@ INNER JOIN antibiotics AS a3 ON results.antibiotic_id3 = a3.antibiotic_id)
 INNER JOIN synergy ON results.synergy_result = synergy.synergy_id)
 WHERE sample_id = $sample_id;";
 
-$result = $link->query($sql);
+$result = $db_connection->query($sql);
 
 $sqlStatus = "SELECT status_id FROM sample WHERE sample.sample_id = $sample_id;";
-$resultStatus = $link->query($sqlStatus);
+$resultStatus = $db_connection->query($sqlStatus);
 if ($resultStatus->num_rows > 0) {
     // Fetch the row from the result set
     $row = $resultStatus->fetch_assoc();
@@ -78,7 +64,7 @@ if ($result->num_rows > 0) {
                     <a href='update_prescription.php?sample_id=" . $row["sample_id"] . "&antibiotic1=" . $row["Antibiotic 1"] . "&antibiotic2=" . $row["Antibiotic 2"] . "&antibiotic3=" . $row["Antibiotic 3"] . "'>
                         <button>Prescribe this combination</button>
                     </a>
-                  </td>";
+                </td>";
         }
         echo "
         </tr>";
@@ -92,5 +78,5 @@ if ($result->num_rows > 0) {
 echo '</table>';
 
 // Close the database connection
-$link->close();
+$db_connection->close();
 ?>
