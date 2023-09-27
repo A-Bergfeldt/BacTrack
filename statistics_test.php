@@ -20,27 +20,57 @@
 
     require_once 'db_connection.php';
 
-    $query1 = 
+    $date = '2022';
+
+    $query = 
             "SELECT
             ID,
             antibiotics.antibiotic_name,
             SUM(COUNTS) AS count 
         FROM 
             (
-                SELECT results.antibiotic_id1 
-                    AS ID, COUNT(*) AS COUNTS 
-                    FROM results WHERE results.prescribed = 1 
-                    GROUP BY results.antibiotic_id1
+                SELECT
+                    r1.antibiotic_id1 AS ID,
+                    COUNT(*) AS COUNTS 
+                FROM
+                    results AS r1
+                INNER JOIN
+                    sample ON r1.sample_id = sample.sample_id
+                WHERE
+                    r1.prescribed = 1
+                    AND sample.date_taken LIKE '$date%'
+                GROUP BY
+                    r1.antibiotic_id1
+        
                 UNION ALL
-                SELECT results.antibiotic_id2 
-                    AS ID, COUNT(*) AS COUNTS 
-                    FROM results WHERE results.prescribed = 1 
-                    GROUP BY results.antibiotic_id2
+        
+                SELECT
+                    r2.antibiotic_id2 AS ID,
+                    COUNT(*) AS COUNTS 
+                FROM
+                    results AS r2
+                INNER JOIN
+                    sample ON r2.sample_id = sample.sample_id
+                WHERE
+                    r2.prescribed = 1
+                    AND sample.date_taken LIKE '$date%'
+                GROUP BY
+                    r2.antibiotic_id2
+        
                 UNION ALL
-                SELECT results.antibiotic_id3 
-                    AS ID, COUNT(*) AS COUNTS 
-                    FROM results WHERE results.prescribed = 1 
-                    GROUP BY results.antibiotic_id3
+        
+                SELECT
+                    r3.antibiotic_id3 AS ID,
+                    COUNT(*) AS COUNTS 
+                FROM
+                    results AS r3
+                INNER JOIN
+                    sample ON r3.sample_id = sample.sample_id
+                WHERE
+                    r3.prescribed = 1
+                    AND sample.date_taken LIKE '$date%'
+                GROUP BY
+                    r3.antibiotic_id3
             ) AS subquery
         INNER JOIN 
             antibiotics ON antibiotics.antibiotic_id = subquery.ID
