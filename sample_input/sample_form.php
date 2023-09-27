@@ -35,11 +35,10 @@ while ($row = $result_hospital->fetch_assoc())
 <!-- Include Select2 JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
-
 <p>Please enter your sample information here:</p>
 
 <form action="insert_sample_data.php" method="POST">
-    Date:<input name="date" type="date" required><br>
+    Date:<input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" required><br>
     Hospital:
     <select name="hospital" id="hospital" required>
         <option disabled selected value>---</option>
