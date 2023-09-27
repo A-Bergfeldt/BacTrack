@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Database connection parameters
 $servername = "localhost";
 $username = "root";
@@ -38,7 +40,6 @@ while ($row = $result_hospital->fetch_assoc())
 
 <form action="insert_sample_data.php" method="POST">
     Date:<input name="date" type="date" required><br>
-    Doctor ID:<input name="user_id"><br> <!-- This should be stored automatically -->
     Hospital:
     <select name="hospital" id="hospital" required>
         <option disabled selected value>---</option>
