@@ -35,19 +35,6 @@ if ($resultStatus->num_rows > 0) {
     // Access the 'status_id' value from the row
     $status_id = $row['status_id'];
 }
-echo $status_id;
-
-
-// Check if a prescribtion has been made for this sample
-// $showButtons = true;
-// if ($result->num_rows > 0) {
-//     while ($row = $result->fetch_assoc()) {
-//         if ($row["prescribed"] == 1) {
-//             $showButtons = false;
-//         }
-//     }
-// }
-
 
 // Start the table with some basic styling
 echo '
@@ -59,6 +46,12 @@ echo '
         <th style="border: 1px solid #000; padding: 8px;">Antibiotic 2</th>
         <th style="border: 1px solid #000; padding: 8px;">Antibiotic 3</th>
         <th style="border: 1px solid #000; padding: 8px;">Result</th>
+        ';
+if ($status_id == 3) {
+    echo '<th style="border: 1px solid #000; padding: 8px;">Prescribe</th>';
+
+}
+echo '
     </tr>
     </thead>
     ';
@@ -79,6 +72,15 @@ if ($result->num_rows > 0) {
         <td style='border: 1px solid #000; padding: 8px;'>" . $row["Antibiotic 2"] . "</td>
         <td style='border: 1px solid #000; padding: 8px;'>" . $row["Antibiotic 3"] . "</td>
         <td style='border: 1px solid #000; padding: 8px;'>" . $row["synergy_name"] . "</td>
+        ";
+        if ($status_id == 3) {
+            echo "<td style='border: 1px solid #000; padding: 8px;'>
+                    <a href='update_prescription.php?sample_id=" . $row["sample_id"] . "&antibiotic1=" . $row["Antibiotic 1"] . "&antibiotic2=" . $row["Antibiotic 2"] . "&antibiotic3=" . $row["Antibiotic 3"] . "'>
+                        <button>Prescribe this combination</button>
+                    </a>
+                  </td>";
+        }
+        echo "
         </tr>";
     }
     echo "</tbody>";
