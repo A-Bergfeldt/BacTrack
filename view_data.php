@@ -39,18 +39,21 @@ $result = $link->query($sql);
 
 // Fill table
 if ($result->num_rows > 0) {
+    echo "<tbody>";
     while ($row = $result->fetch_assoc()) {
-        echo "<tbody>
-                <tr>
-                <td style='border: 1px solid #000; padding: 8px;'>" . $row["sample_id"] . "</td>
+        //TODO: Check why .. is needed in the link to sample_results (Ask Paul?) 
+        echo "<tr>
+                <td style='border: 1px solid #000; padding: 8px;'>
+                    <a href='../sample_results.php?sample_id=" . $row["sample_id"] . "'>" . $row["sample_id"] . "</a>  
+                </td>
                 <td style='border: 1px solid #000; padding: 8px;'>" . $row["date_taken"] . "</td>
                 <td style='border: 1px solid #000; padding: 8px;'>" . $row["status_name"] . "</td>
                 <td style='border: 1px solid #000; padding: 8px;'>" . $row["hospital_name"] . "</td>
                 <td style='border: 1px solid #000; padding: 8px;'>" . $row["strain_name"] . "</td>
                 <td style='border: 1px solid #000; padding: 8px;'>" . $row["lab_technician_id"] . "</td>
-            </tr>
-            </tbody>";
+            </tr>";
     }
+    echo "</tbody>";
 } else {
     echo "<tr><td colspan='5'>0 results</td></tr>";
 }
