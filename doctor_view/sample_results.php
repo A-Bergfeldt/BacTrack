@@ -1,6 +1,7 @@
 <?php
 include '../db_connection.php';
 
+$sample_id = $_GET["sample_id"];
 // SQL queries
 $sql = "SELECT sample_id, a1.antibiotic_name AS 'Antibiotic 1', a2.antibiotic_name AS 'Antibiotic 2', a3.antibiotic_name AS 'Antibiotic 3',synergy_name, prescribed FROM 
 ((((results 
