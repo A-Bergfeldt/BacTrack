@@ -20,7 +20,13 @@
 
     require_once 'db_connection.php';
 
-    $query = "SELECT strain.strain_id, strain.strain_name, COUNT(*) AS count FROM sample INNER JOIN strain ON strain.strain_id = sample.strain_id GROUP BY sample.strain_id, strain.strain_name;" ; // Aggregate data by strain_id
+    $query = "SELECT
+                results.antibiotic_id1,
+                results.antibiotic_id2,
+                results.antibiotic_id3
+                COUNT(*) AS count 
+            FROM results INNER JOIN 
+                strain ON antibiotics.antibiotic_id= sample.strain_id GROUP BY result.antibiotic_id1, result.antibiotic_id2, result.antibiotic_id3, strain.strain_name;" ; // Aggregate data by strain_id
     $result = $db_connection->query($query);
 
     $labels  = [];
