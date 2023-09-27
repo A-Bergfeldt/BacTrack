@@ -56,7 +56,6 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
 <p>Please enter your identification results here:</p>
 
 <form action="insert_results_strain.php" method="POST">
-  Lab technician ID: <input name="lab_technician_id"><br> <!-- This should be stored automatically -->
   Sample ID:
   <select name="sample_id" id="sample_id_strain" required>
     <option disabled selected value> --- </option>
