@@ -9,7 +9,7 @@ LEFT JOIN strain ON sample.strain_id = strain.strain_id)
 WHERE doctor_id = 'Simon_Oscarson' AND sample.status_id = 4;"; // TODO: Remove hard-coding of doctor_id
 $result = $db_connection->query($sql);
 
-include 'fill_sample_table.php';
+include 'fill_personal_table.php';
 
 // Close the database connection
 $db_connection->close();
