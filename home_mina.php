@@ -39,16 +39,16 @@ how much you want
     </nav>
 
     <div class="container">
-        <div class="slides">
-            <h1 style="font-size: 100px">BacTrack</h1>
+        <div class="slides slide1">
+            <h1 style="font-size: 100px; color: #fff">Bactrack</h1>
         </div>
-        <div class="slides">
+        <div class="slides slide2">
             <h1 style="font-size: 50px">About BacTrack</h1>
         </div>
-        <div class="slides">
+        <div class="slides slide2">
             <h1 style="font-size: 50px">About CombiANT</h1>
         </div>
     </div>
     
-    </body>
-    </html>
+</body>
+</html>
