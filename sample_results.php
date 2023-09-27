@@ -6,6 +6,7 @@ $password = "root";
 $dbname = "BacTrack";
 
 $sample_id = $_GET["sample_id"];
+
 // Create connection
 $link = mysqli_connect($servername, $username, $password, $dbname);
 
@@ -13,20 +14,6 @@ $link = mysqli_connect($servername, $username, $password, $dbname);
 if (mysqli_connect_error()) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
-// Start the table with some basic styling
-echo '<table style="width: 100%; border-collapse: collapse;">
-    <thead>
-    <tr>
-        <th style="border: 1px solid #000; padding: 8px;">Sample ID</th>
-        <th style="border: 1px solid #000; padding: 8px;">Antibiotic 1</th>
-        <th style="border: 1px solid #000; padding: 8px;">Antibiotic 2</th>
-        <th style="border: 1px solid #000; padding: 8px;">Antibiotic 3</th>
-        <th style="border: 1px solid #000; padding: 8px;">Result</th>
-    </tr>
-    </thead>
-    '
-;
 
 // SQL queries
 $sql = "SELECT sample_id, a1.antibiotic_name AS 'Antibiotic 1', a2.antibiotic_name AS 'Antibiotic 2', a3.antibiotic_name AS 'Antibiotic 3',synergy_name, prescribed FROM 
@@ -36,7 +23,46 @@ INNER JOIN antibiotics AS a2 ON results.antibiotic_id2 = a2.antibiotic_id)
 INNER JOIN antibiotics AS a3 ON results.antibiotic_id3 = a3.antibiotic_id)
 INNER JOIN synergy ON results.synergy_result = synergy.synergy_id)
 WHERE sample_id = $sample_id;";
+
 $result = $link->query($sql);
+
+$sqlStatus = "SELECT status_id FROM sample WHERE sample.sample_id = $sample_id;";
+$resultStatus = $link->query($sqlStatus);
+if ($resultStatus->num_rows > 0) {
+    // Fetch the row from the result set
+    $row = $resultStatus->fetch_assoc();
+
+    // Access the 'status_id' value from the row
+    $status_id = $row['status_id'];
+}
+echo $status_id;
+
+
+// Check if a prescribtion has been made for this sample
+// $showButtons = true;
+// if ($result->num_rows > 0) {
+//     while ($row = $result->fetch_assoc()) {
+//         if ($row["prescribed"] == 1) {
+//             $showButtons = false;
+//         }
+//     }
+// }
+
+
+// Start the table with some basic styling
+echo '
+    <p>Results for Sample ID: ' . $sample_id . ' </p>
+    <table style="width: 100%; border-collapse: collapse;">
+    <thead>
+    <tr>
+        <th style="border: 1px solid #000; padding: 8px;">Antibiotic 1</th>
+        <th style="border: 1px solid #000; padding: 8px;">Antibiotic 2</th>
+        <th style="border: 1px solid #000; padding: 8px;">Antibiotic 3</th>
+        <th style="border: 1px solid #000; padding: 8px;">Result</th>
+    </tr>
+    </thead>
+    ';
+
 
 // Fill table
 if ($result->num_rows > 0) {
@@ -49,7 +75,6 @@ if ($result->num_rows > 0) {
             echo "<tr>";
         }
         echo "
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["sample_id"] . "</td>
         <td style='border: 1px solid #000; padding: 8px;'>" . $row["Antibiotic 1"] . "</td>
         <td style='border: 1px solid #000; padding: 8px;'>" . $row["Antibiotic 2"] . "</td>
         <td style='border: 1px solid #000; padding: 8px;'>" . $row["Antibiotic 3"] . "</td>
