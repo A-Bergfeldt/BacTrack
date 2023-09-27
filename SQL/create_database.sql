@@ -114,6 +114,9 @@ VALUES
     "Laboratory"
 ),
 (
+    "Analyzed"
+),
+(
     "Finished"
 );
 
