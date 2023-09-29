@@ -1,7 +1,96 @@
 <!-- Create search form -->
+<script src="multiselect-dropdown.js"></script>
+
+<?php
+include '../db_connection.php';
+
+$sqlDoctors = "SELECT user_id FROM users;";
+$resultDoctors = $db_connection->query($sqlDoctors);
+$doctors = $resultDoctors->fetch_all(MYSQLI_ASSOC);
+
+$sqlLabTechnicians = "SELECT user_id FROM users WHERE users.role_id = 2;";
+$resultLabTechnicians = $db_connection->query($sqlLabTechnicians);
+$labTechnicians = $resultLabTechnicians->fetch_all(MYSQLI_ASSOC);
+
+$sqlSample = "SELECT sample_id from sample;";
+$resultSample = $db_connection->query($sqlSample);
+$sample = $resultSample->fetch_all(MYSQLI_ASSOC);
+
+$sqlStatus = "SELECT status_name from tracking;";
+$resultStatus = $db_connection->query($sqlStatus);
+$status = $resultStatus->fetch_all(MYSQLI_ASSOC);
+
+$sqlHospital = "SELECT hospital_name from hospital;";
+$resultHospital = $db_connection->query($sqlHospital);
+$hospital = $resultHospital->fetch_all(MYSQLI_ASSOC);
+
+$sqlStrain = "SELECT strain_name from strain;";
+$resultStrain = $db_connection->query($sqlStrain);
+$strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
+?>
+
+<p>Enter your search</p>
 <form method="GET" action="search_all_samples.php">
-  <label for="search">Search for samples: </label>
-  <input type="text" id="search" name="search">
+
+  <label for="search">Sample ID: </label>
+  <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
+    multiselect-max-items="1" style="width: 100px;">
+    <?php foreach ($sample as $row): ?>
+      <option value=<?php echo $row['sample_id']; ?>><?php echo $row['sample_id']; ?></option>
+    <?php endforeach ?>
+  </select>
+  <br>
+
+  <label for="search">Date: </label>
+  <input type="date">
+  <br>
+
+  <label for="search">Status: </label>
+  <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
+    multiselect-max-items="1" style="width: 100px;">
+    <?php foreach ($status as $row): ?>
+      <option value=<?php echo $row['status_name']; ?>><?php echo $row['status_name']; ?></option>
+    <?php endforeach ?>
+  </select>
+  <br>
+
+  <label for="search">Hospital: </label>
+  <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
+    multiselect-max-items="1" style="width: 150px;">
+    <?php foreach ($hospital as $row): ?>
+      <option value=<?php echo $row['hospital_name']; ?>><?php echo $row['hospital_name']; ?></option>
+    <?php endforeach ?>
+  </select>
+
+  <br>
+
+  <label for="search">Strain: </label>
+  <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
+    multiselect-max-items="1" style="width: 100px;">
+    <?php foreach ($strain as $row): ?>
+      <option value=<?php echo $row['strain_name']; ?>><?php echo $row['strain_name']; ?></option>
+    <?php endforeach ?>
+  </select>
+  <br>
+
+  <label for="search">Doctor: </label>
+  <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
+    multiselect-max-items="1" style="width: 200px;">
+    <?php foreach ($doctors as $row): ?>
+      <option value=<?php echo $row['user_id']; ?>><?php echo $row['user_id']; ?></option>
+    <?php endforeach ?>
+  </select>
+  <br>
+
+  <label for="search">Lab Technician: </label>
+  <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
+    multiselect-max-items="1" style="width: 200px;">
+    <?php foreach ($labTechnicians as $row): ?>
+      <option value=<?php echo $row['user_id']; ?>><?php echo $row['user_id']; ?></option>
+    <?php endforeach ?>
+  </select>
+
+  <br>
   <input type="submit" value="Search">
 </form>
 
