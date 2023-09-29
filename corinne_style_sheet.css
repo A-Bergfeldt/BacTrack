@@ -1,0 +1,146 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 10px 90px;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+nav .logo{
+    padding: 13px 50px;
+    height: 80px;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000000;
+}
+
+nav ul{
+    list-style: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li a{
+    line-height: 65px;
+    color: #000000;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover{
+    background: rgba(160, 64, 173, 0.4);
+    border-radius: 6px;
+}
+
+h1 {
+    font-size: 125px;
+    color: white;
+    text-shadow: -2px -2px 2px black;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+h2 {
+    font-size: 50px;
+    color: white;
+    text-shadow: -2px -2px 2px black;
+    text-align: center;
+    margin-top: 0;
+}
+
+
+#section1 {
+    background: url('background_page_ex1.jpg') right bottom no-repeat;
+    background-size: cover, auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#section2 {
+
+    background-color: white;
+    color: black;
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
+    font-family: Garamond, Courier, monospace;
+    height: 100vh;
+
+}
+.button-container {
+    margin-top: 20px;
+
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px; /* Increase padding for a larger button */
+    background-color: #5072A7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-left: 250px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+
+#section3 {
+    background: url('background_sec3.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: 20px;
+}
+
+
+
+/*background: linear-gradient(180deg, rgba(52,21,54,1) 0%, rgba(74,21,90,1) 35%, rgba(21,98,105,1) 100%);
+*/
+
+
+.slide_about{
+
+    background: white;
+
+}
+
+.slide1{
+
+    background: linear-gradient(180deg, rgba(21,98,105,1) 0%, rgba(255,255,255,1) 100%);
+
+}
+
+
+
+
