@@ -90,10 +90,10 @@
                     $_SESSION["user_id"] = $input_username;
                     
                     if ($user_role['role_id'] == 1) {
-                        header("Location: sample_input/sample_form.php");
+                        header("Location: doctor_page.php");
                     }
                     if ($user_role['role_id'] == 2) {
-                        header("Location: results_input/results_form.php");
+                        header("Location: labtech_page.php");
                     }
                     if ($user_role['role_id'] == 3) {
                         header("Location: home_page.php");
