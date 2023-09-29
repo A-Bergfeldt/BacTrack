@@ -23,7 +23,7 @@ how much you want
 <head>
     <title>Mina testing home page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
-    <link rel="stylesheet" href="style_sheet_praissy.css">
+    <link rel="stylesheet" href="corinne_style_sheet.css">
     </head>
 
 <body>
@@ -31,7 +31,7 @@ how much you want
         <!--<div class="logo">Logo here</div>-->
         <img src="img11.png" alt="">
         <ul>
-            <li><a href ="home_page.php">Home</a></li>
+            <li><a href ="corinne_home_page.php">Home</a></li>
             <li><a href ="about_page.php">About</a></li>
             <li><a href ="contact_page.php">Contact</a></li>
             <li><a href ="statistics_page.php">Statistics</a></li>
