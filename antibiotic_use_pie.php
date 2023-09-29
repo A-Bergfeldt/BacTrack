@@ -99,6 +99,7 @@
         GROUP BY
             subquery.ID,
             antibiotics.antibiotic_name";
+
     $result = $db_connection->query($query);
 
     $labels  = [];
@@ -108,30 +109,38 @@
             $labels[] = $row["antibiotic_name"];
             $data[] = $row["count"];}
 
-    $labels = json_encode($labels);
-    $data = json_encode($data);
+    $dictionary = array_combine($labels, $data);
+    unset($dictionary['No antibiotic']);
+    ksort($dictionary);
+
+    $labels = array_keys($dictionary);
+    $data = array_values($dictionary);
     ?>
 
     <script>
 	TESTER = document.getElementById('tester');
     var data = [{
-        values: <?php echo $data; ?>,
-        labels: <?php echo $labels; ?>,
+        values: <?php echo json_encode($data); ?>,
+        labels: <?php echo json_encode($labels); ?>,
         textinfo: "label+percent",
         textposition: "outside",
         automargin: true,
         hole: .35,
-        type: 'pie'
+        type: 'pie',
+        sort: false
     }];
 
 var layout = {
     height: 400,
     width: 500,
     showlegend: false,
+    font: {
+        family: 'Poppins, sans seriff'},
     annotations: [
     {
       font: {
-        size: 20
+        size: 22,
+        family: 'Poppins, sans seriff',
       },
       showarrow: false,
       text: <?php echo $date ?>,
