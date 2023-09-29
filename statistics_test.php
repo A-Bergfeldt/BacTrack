@@ -110,9 +110,6 @@
 
     $labels = json_encode($labels);
     $data = json_encode($data);
-
-    echo $labels;
-    echo $data;
     ?>
 
     <script>
@@ -120,12 +117,17 @@
     var data = [{
         values: <?php echo $data; ?>,
         labels: <?php echo $labels; ?>,
+        textinfo: "label+percent",
+        textposition: "outside",
+        automargin: true,
+        hole: .35,
         type: 'pie'
     }];
 
 var layout = {
   height: 400,
-  width: 500
+  width: 500,
+  showlegend: false
 };
 Plotly.newPlot('tester', data, layout);
 </script>
