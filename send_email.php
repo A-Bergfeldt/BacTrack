@@ -23,15 +23,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail->Port = 465;
 
     $mail->setFrom('bactrack2023@gmail.com', 'BacTrack');
-    $mail->addAddress($email);
+    $mail->addAddress('bactrack2023@gmail.com');
 
     $mail->isHTML(true);  
     $mail->Subject = "Contact Form Submission";
-    $mail->Body = $description;
+    $mail->Body = "Name: $name\nEmail: $email\n\nDescription:\n$description"; 
 
     try {
         $mail->send();
-        header("Location: password_sent.html");
+        header("Location: Thanksyouforcontacting.html");
         exit();
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
@@ -39,12 +39,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Thank You!</title>
-</head>
-<body>
-    <p>Thank you for contacting us. We will get back to you as soon as possible.</p>
-</body>
-</html>
+
