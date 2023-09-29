@@ -52,6 +52,7 @@
             <input type='password' name="password" placeholder="Enter password"/><br><br>
             <input type="submit" name="submit" value="Submit"/><br><br>
             <p> <a href="forgot_password.php">Forgot your password?</a></p>
+
         </form>
 
         <?php
@@ -87,7 +88,17 @@
                     $user_role = $result->fetch_assoc();
                     $_SESSION["role_id"] = $user_role;
                     $_SESSION["user_id"] = $input_username;
-                    header("Location: README.txt");
+                    
+                    if ($user_role['role_id'] == 1) {
+                        header("Location: sample_input/sample_form.php");
+                    }
+                    if ($user_role['role_id'] == 2) {
+                        header("Location: results_input/results_form.php");
+                    }
+                    if ($user_role['role_id'] == 3) {
+                        header("Location: home_page.php");
+                    }
+                    
                     exit();
                 } 
                 else {
