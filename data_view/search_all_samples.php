@@ -58,7 +58,8 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
   <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
     multiselect-max-items="1" style="width: 150px;">
     <?php foreach ($hospital as $row): ?>
-      <option value=<?php echo $row['hospital_name']; ?>><?php echo $row['hospital_name']; ?></option>
+      <option value=<?php echo str_replace(" ", "_", $row['hospital_name']); ?>><?php echo $row['hospital_name']; ?>
+      </option>
     <?php endforeach ?>
   </select>
 
@@ -68,7 +69,7 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
   <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
     multiselect-max-items="1" style="width: 100px;">
     <?php foreach ($strain as $row): ?>
-      <option value=<?php echo $row['strain_name']; ?>><?php echo $row['strain_name']; ?></option>
+      <option value=<?php echo str_replace(" ", "_", $row['strain_name']); ?>><?php echo $row['strain_name']; ?></option>
     <?php endforeach ?>
   </select>
   <br>
@@ -77,7 +78,7 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
   <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
     multiselect-max-items="1" style="width: 200px;">
     <?php foreach ($doctors as $row): ?>
-      <option value=<?php echo $row['user_id']; ?>><?php echo $row['user_id']; ?></option>
+      <option value=<?php echo str_replace(" ", "_", $row['user_id']); ?>><?php echo $row['user_id']; ?></option>
     <?php endforeach ?>
   </select>
   <br>
@@ -86,7 +87,7 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
   <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
     multiselect-max-items="1" style="width: 200px;">
     <?php foreach ($labTechnicians as $row): ?>
-      <option value=<?php echo $row['user_id']; ?>><?php echo $row['user_id']; ?></option>
+      <option value=<?php echo str_replace(" ", "_", $row['user_id']); ?>><?php echo $row['user_id']; ?></option>
     <?php endforeach ?>
   </select>
 
