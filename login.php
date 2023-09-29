@@ -57,7 +57,6 @@
 
         <?php
             session_start();
-            include "db_connection.php";
 
             $servername = "localhost";
             $db_username = "root";
