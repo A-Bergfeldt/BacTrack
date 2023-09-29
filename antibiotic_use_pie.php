@@ -125,9 +125,19 @@
     }];
 
 var layout = {
-  height: 400,
-  width: 500,
-  showlegend: false
+    height: 400,
+    width: 500,
+    showlegend: false,
+    annotations: [
+    {
+      font: {
+        size: 20
+      },
+      showarrow: false,
+      text: <?php echo $date ?>,
+      x: 0.5,
+      y: 0.5
+    }]
 };
 Plotly.newPlot('tester', data, layout);
 </script>
