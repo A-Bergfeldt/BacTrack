@@ -42,7 +42,7 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
   <br>
 
   <label for="search_date">Date: </label>
-  <input type="date">
+  <input type="date" name="search_date">
   <br>
 
   <label for="search">Status: </label>
@@ -99,40 +99,44 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
 // SQL query
 // print_r($_GET);
 $dropdownNames = array(
-  "search_sample",
-  "search_status",
-  "search_hospital",
-  "search_strain",
-  "search_doctor",
-  "search_lab_technician"
+  "search_sample" => "sample_id",
+  "search_status" => "status_name",
+  "search_hospital" => "hospital_name",
+  "search_strain" => "strain_name",
+  "search_doctor" => "doctor_id",
+  "search_lab_technician" => "lab_technician_id"
 );
-$selectedOptions = array();
 
-foreach ($dropdownNames as $name) {
-  $selectedOptions[$name] = array();
-  foreach ($_GET[$name] as $dropdown => $value) {
-    array_push($selectedOptions[$name], $value);
-    // print_r($selectedOptions[$name]);
-    // echo "<br>";
+$whereStatements = "WHERE ";
+foreach ($dropdownNames as $searchName => $sqlName) {
+  if (isset($_GET[$searchName])) {
+    if ($whereStatements != "WHERE ") {
+      $whereStatements .= " and ";
+    }
+    $whereStatements .= $sqlName . " IN ('" . implode("', '", $_GET[$searchName]) . "')";
   }
-
 }
-// print_r(($_GET));
-// echo "<br>";
 
-// print_r(($selectedOptions));
+if (count($_GET)  != 0 and $_GET['search_date'] != '') {
+  if ($whereStatements != "WHERE ") {
+    $whereStatements .= " and ";
+  }
+  $whereStatements .= "date_taken = '" . $_GET['search_date'] . "'";
+}
 
+if ($whereStatements == "WHERE ") {
+  $whereStatements = "";
+}
 
 $statusSearch = implode("', '", array('Hospital', 'Analyzed')); // Enclose each status name in single quotes
 
-if (count($_GET) != 0) {
+if (count($_GET) > 1 or $_GET['search_date'] != '') {
   $sql = "SELECT sample_id, date_taken, status_name, hospital_name, strain_name, doctor_id,lab_technician_id FROM (((sample 
   INNER JOIN tracking ON sample.status_id = tracking.status_id) 
   INNER JOIN hospital ON sample.hospital_id = hospital.hospital_id)
-  LEFT JOIN strain ON sample.strain_id = strain.strain_id)
-  WHERE status_name IN ('$statusSearch')
-  ORDER BY sample_id ASC;";
-  echo $sql;
+  LEFT JOIN strain ON sample.strain_id = strain.strain_id) "
+    . $whereStatements .
+    " ORDER BY sample_id ASC;";
   $result = $db_connection->query($sql);
 }
 
@@ -151,7 +155,7 @@ echo '<table style="width: 100%; border-collapse: collapse;">
     </thead>
     ';
 // Fill table
-if (count($_GET) != 0 && $result->num_rows > 0) {
+if (count($_GET) > 1 or $_GET['search_date'] != '' && $result->num_rows > 0) {
   echo "<tbody>";
   while ($row = $result->fetch_assoc()) {
     echo "<tr>
