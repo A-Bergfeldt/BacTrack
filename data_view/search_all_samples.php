@@ -92,8 +92,7 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
 </form>
 
 <?php
-// SQL query
-// print_r($_GET);
+
 $dropdownNames = array(
   "search_sample" => "sample_id",
   "search_status" => "status_name",
@@ -123,6 +122,7 @@ if ($whereStatements == "WHERE ") {
 
 $statusSearch = implode("', '", array('Hospital', 'Analyzed')); // Enclose each status name in single quotes
 
+// SQL query
 if (count($_GET) != 0) {
   $sql = "SELECT sample_id, date_taken, status_name, hospital_name, strain_name, doctor_id,lab_technician_id FROM (((sample 
   INNER JOIN tracking ON sample.status_id = tracking.status_id) 
@@ -130,7 +130,6 @@ if (count($_GET) != 0) {
   LEFT JOIN strain ON sample.strain_id = strain.strain_id) "
     . $whereStatements .
     " ORDER BY sample_id ASC;";
-  echo $sql;
   $result = $db_connection->query($sql);
 }
 
