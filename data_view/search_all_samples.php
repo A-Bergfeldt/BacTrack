@@ -33,7 +33,7 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
 <form method="GET" action="search_all_samples.php">
 
   <label for="search">Sample ID: </label>
-  <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
+  <select name="search_sample[]" multiple multiselect-search="true" multiselect-select-all="true"
     multiselect-max-items="1" style="width: 100px;">
     <?php foreach ($sample as $row): ?>
       <option value=<?php echo $row['sample_id']; ?>><?php echo $row['sample_id']; ?></option>
@@ -41,12 +41,12 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
   </select>
   <br>
 
-  <label for="search">Date: </label>
+  <label for="search_date">Date: </label>
   <input type="date">
   <br>
 
   <label for="search">Status: </label>
-  <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
+  <select name="search_status[]" multiple multiselect-search="true" multiselect-select-all="true"
     multiselect-max-items="1" style="width: 100px;">
     <?php foreach ($status as $row): ?>
       <option value=<?php echo $row['status_name']; ?>><?php echo $row['status_name']; ?></option>
@@ -55,7 +55,7 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
   <br>
 
   <label for="search">Hospital: </label>
-  <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
+  <select name="search_hospital[]" multiple multiselect-search="true" multiselect-select-all="true"
     multiselect-max-items="1" style="width: 150px;">
     <?php foreach ($hospital as $row): ?>
       <option value=<?php echo str_replace(" ", "_", $row['hospital_name']); ?>><?php echo $row['hospital_name']; ?>
@@ -66,7 +66,7 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
   <br>
 
   <label for="search">Strain: </label>
-  <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
+  <select name="search_strain[]" multiple multiselect-search="true" multiselect-select-all="true"
     multiselect-max-items="1" style="width: 100px;">
     <?php foreach ($strain as $row): ?>
       <option value=<?php echo str_replace(" ", "_", $row['strain_name']); ?>><?php echo $row['strain_name']; ?></option>
@@ -75,7 +75,7 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
   <br>
 
   <label for="search">Doctor: </label>
-  <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
+  <select name="search_doctor[]" multiple multiselect-search="true" multiselect-select-all="true"
     multiselect-max-items="1" style="width: 200px;">
     <?php foreach ($doctors as $row): ?>
       <option value=<?php echo str_replace(" ", "_", $row['user_id']); ?>><?php echo $row['user_id']; ?></option>
@@ -84,7 +84,7 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
   <br>
 
   <label for="search">Lab Technician: </label>
-  <select name="search_sample" multiple multiselect-search="true" multiselect-select-all="true"
+  <select name="search_lab_technician[]" multiple multiselect-search="true" multiselect-select-all="true"
     multiselect-max-items="1" style="width: 200px;">
     <?php foreach ($labTechnicians as $row): ?>
       <option value=<?php echo str_replace(" ", "_", $row['user_id']); ?>><?php echo $row['user_id']; ?></option>
@@ -100,7 +100,9 @@ include '../db_connection.php';
 
 // SQL query
 $search = null;
+echo count($_GET);
 if (count($_GET) != 0) {
+  print_r($_GET);
   $search = $_GET['search'];
   $sql = "SELECT sample_id, date_taken, status_name, hospital_name, strain_name, doctor_id,lab_technician_id FROM (((sample 
   INNER JOIN tracking ON sample.status_id = tracking.status_id) 
