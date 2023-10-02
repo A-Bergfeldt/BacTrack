@@ -96,20 +96,43 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
 </form>
 
 <?php
-include '../db_connection.php';
-
 // SQL query
-$search = null;
-echo count($_GET);
+// print_r($_GET);
+$dropdownNames = array(
+  "search_sample",
+  "search_status",
+  "search_hospital",
+  "search_strain",
+  "search_doctor",
+  "search_lab_technician"
+);
+$selectedOptions = array();
+
+foreach ($dropdownNames as $name) {
+  $selectedOptions[$name] = array();
+  foreach ($_GET[$name] as $dropdown => $value) {
+    array_push($selectedOptions[$name], $value);
+    // print_r($selectedOptions[$name]);
+    // echo "<br>";
+  }
+
+}
+// print_r(($_GET));
+// echo "<br>";
+
+// print_r(($selectedOptions));
+
+
+$statusSearch = implode("', '", array('Hospital', 'Analyzed')); // Enclose each status name in single quotes
+
 if (count($_GET) != 0) {
-  print_r($_GET);
-  $search = $_GET['search'];
   $sql = "SELECT sample_id, date_taken, status_name, hospital_name, strain_name, doctor_id,lab_technician_id FROM (((sample 
   INNER JOIN tracking ON sample.status_id = tracking.status_id) 
   INNER JOIN hospital ON sample.hospital_id = hospital.hospital_id)
   LEFT JOIN strain ON sample.strain_id = strain.strain_id)
-  WHERE sample_id LIKE '%$search%' or date_taken LIKE '%$search%' or status_name LIKE '%$search%' or hospital_name LIKE '%$search%' or strain_name LIKE '%$search%' or doctor_id LIKE '%$search%' or lab_technician_id LIKE '%$search%'
+  WHERE status_name IN ('$statusSearch')
   ORDER BY sample_id ASC;";
+  echo $sql;
   $result = $db_connection->query($sql);
 }
 
@@ -128,7 +151,7 @@ echo '<table style="width: 100%; border-collapse: collapse;">
     </thead>
     ';
 // Fill table
-if ($search && $result->num_rows > 0) {
+if (count($_GET) != 0 && $result->num_rows > 0) {
   echo "<tbody>";
   while ($row = $result->fetch_assoc()) {
     echo "<tr>
