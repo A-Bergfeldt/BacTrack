@@ -41,10 +41,6 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
   </select>
   <br>
 
-  <label for="search_date">Date: </label>
-  <input type="date" name="search_date">
-  <br>
-
   <label for="search">Status: </label>
   <select name="search_status[]" multiple multiselect-search="true" multiselect-select-all="true"
     multiselect-max-items="1" style="width: 100px;">
@@ -113,30 +109,28 @@ foreach ($dropdownNames as $searchName => $sqlName) {
     if ($whereStatements != "WHERE ") {
       $whereStatements .= " and ";
     }
+    if ($searchName == "search_strain") {
+    $_GET[$searchName] = str_replace("_", " ", $_GET[$searchName]);
+    }
     $whereStatements .= $sqlName . " IN ('" . implode("', '", $_GET[$searchName]) . "')";
   }
-}
-
-if (count($_GET)  != 0 and $_GET['search_date'] != '') {
-  if ($whereStatements != "WHERE ") {
-    $whereStatements .= " and ";
-  }
-  $whereStatements .= "date_taken = '" . $_GET['search_date'] . "'";
 }
 
 if ($whereStatements == "WHERE ") {
   $whereStatements = "";
 }
 
+
 $statusSearch = implode("', '", array('Hospital', 'Analyzed')); // Enclose each status name in single quotes
 
-if (count($_GET) > 1 or $_GET['search_date'] != '') {
+if (count($_GET) != 0) {
   $sql = "SELECT sample_id, date_taken, status_name, hospital_name, strain_name, doctor_id,lab_technician_id FROM (((sample 
   INNER JOIN tracking ON sample.status_id = tracking.status_id) 
   INNER JOIN hospital ON sample.hospital_id = hospital.hospital_id)
   LEFT JOIN strain ON sample.strain_id = strain.strain_id) "
     . $whereStatements .
     " ORDER BY sample_id ASC;";
+  echo $sql;
   $result = $db_connection->query($sql);
 }
 
@@ -155,7 +149,7 @@ echo '<table style="width: 100%; border-collapse: collapse;">
     </thead>
     ';
 // Fill table
-if (count($_GET) > 1 or $_GET['search_date'] != '' && $result->num_rows > 0) {
+if (count($_GET) != 0 && $result->num_rows > 0) {
   echo "<tbody>";
   while ($row = $result->fetch_assoc()) {
     echo "<tr>
