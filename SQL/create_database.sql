@@ -154,6 +154,9 @@ VALUES
 ),
 (
     "Lab worker"
+),
+(
+    "Administrator"
 );
 
 -- Populate user table
@@ -185,6 +188,9 @@ VALUES
 ),
 (
     "Victor","1","$2a$12$2eqzljxLYNlI5y.DZ6f/g.VYvaA2kSsicMpmYeIZHMLYtm5f0NHB.","victor.ju.hin.wong@gmail.com"
+),
+(
+    "Admin", "3", "$2y$10$o5bf3GmTZ2nWDLHD09Q9HOswpy5LlVQhKZyahZgDaTA29LFFsxrGy", "bactrack2023@gmail.com"
 );
 
 -- Populate sample table
