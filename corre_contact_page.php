@@ -17,12 +17,26 @@ if (mysqli_connect_error()) {
 <html lang="en">
 
 <head>
+    <title>Mina testing home page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="corinne_style_sheet.css">
+    </head>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="contactus.css">
-    <title>Contact Information - BacTrack</title>
-</head>
+<body>
+    <nav>
+        <!--<div class="logo">Logo here</div>-->
+        <a href="corre_home_page.php">
+        <img src="logo_main.png" alt="Logo" width="95" height="65">
+        </a>
+        <ul>
+        <li><a href ="corre_home_page.php">Home</a></li>
+            <li><a href ="about_page.php">About</a></li>
+            <li><a href ="contact_page.php">Contact</a></li>
+            <li><a href ="corre_statistics_page.php">Statistics</a></li>
+            <li><a href ="login.php">Login</a></li>
+        </ul>
+    </nav>
+
 
 <body>
     <h1>Connect With Us</h1>

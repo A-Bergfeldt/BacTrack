@@ -29,20 +29,19 @@ how much you want
 <body>
     <nav>
         <!--<div class="logo">Logo here</div>-->
-        <img src="img11.png" alt="">
+        <a href="corre_home_page.php">
+        <img src="logo_main.png" alt="Logo" width="95" height="65">
+        </a>
         <ul>
-            <li><a href ="corinne_home_page.php">Home</a></li>
+        <li><a href ="corre_home_page.php">Home</a></li>
             <li><a href ="about_page.php">About</a></li>
-            <li><a href ="contact_page.php">Contact</a></li>
-            <li><a href ="statistics_page.php">Statistics</a></li>
+            <li><a href ="corre_contact_page.php">Contact</a></li>
+            <li><a href ="corre_statistics_page.php">Statistics</a></li>
             <li><a href ="login.php">Login</a></li>
         </ul>
     </nav>
-
-    <div class="container">
-        <div class="slides slide1">
-            <h1 style="font-size: 100px; color: #fff">Statistics page</h1>
-        </div>
+    <div id="section1" class="section">
+        <h1 style ='color: white'>About BacTrack</h1>
     </div>
     
     </body>
