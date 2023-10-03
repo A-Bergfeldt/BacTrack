@@ -108,8 +108,8 @@ foreach ($dropdownNames as $searchName => $sqlName) {
     if ($whereStatements != "WHERE ") {
       $whereStatements .= " and ";
     }
-    if ($searchName == "search_strain") {
-    $_GET[$searchName] = str_replace("_", " ", $_GET[$searchName]);
+    if ($searchName == "search_strain" or $searchName == "search_hospital") {
+      $_GET[$searchName] = str_replace("_", " ", $_GET[$searchName]);
     }
     $whereStatements .= $sqlName . " IN ('" . implode("', '", $_GET[$searchName]) . "')";
   }
