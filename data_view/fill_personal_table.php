@@ -1,40 +1,45 @@
 <!-- This PHP file is used to fill the table for a doctor viewing samples they are responsible for -->
+<link rel="stylesheet" href="table_styles.css">
+
 <?php
 // Start the table with some basic styling
-echo '<table style="width: 100%; border-collapse: collapse;">
+echo '
+    <div class="scrollable">
+    <table>
     <thead>
     <tr>
-        <th style="border: 1px solid #000; padding: 8px;">Sample ID</th>
-        <th style="border: 1px solid #000; padding: 8px;">Date</th>
-        <th style="border: 1px solid #000; padding: 8px;">Status</th>
-        <th style="border: 1px solid #000; padding: 8px;">Hospital</th>
-        <th style="border: 1px solid #000; padding: 8px;">Strain</th>
-        <th style="border: 1px solid #000; padding: 8px;">Lab Technician</th>
+        <th>Sample ID</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Hospital</th>
+        <th>Strain</th>
+        <th>Lab Technician</th>
     </tr>
-    </thead>
-    ';
+    </thead>';
 // Fill table
 if ($result->num_rows > 0) {
     echo "<tbody>";
     while ($row = $result->fetch_assoc()) {
         echo "<tr>
-        <td style='border: 1px solid #000; padding: 8px;'>
+        <td>
             <a href='sample_results.php?sample_id=" . $row["sample_id"] . "'>" . $row["sample_id"] . "</a>
         </td>
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["date_taken"] . "</td>
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["status_name"] . "</td>
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["hospital_name"] . "</td>
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["strain_name"] . "</td>
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["lab_technician_id"] . "</td>
+        <td>" . $row["date_taken"] . "</td>
+        <td>" . $row["status_name"] . "</td>
+        <td>" . $row["hospital_name"] . "</td>
+        <td>" . $row["strain_name"] . "</td>
+        <td>" . $row["lab_technician_id"] . "</td>
     </tr>";
     }
     echo "</tbody>";
 } else {
-    echo "<tr>
-    <td colspan='5'>0 results</td>
-</tr>";
+    echo "<p>
+    0 results
+</p>";
 }
 
 // Close the table
-echo '</table>';
+echo '
+</table>
+</div>';
 ?>
