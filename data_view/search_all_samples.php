@@ -4,7 +4,7 @@
 <?php
 include '../db_connection.php';
 
-$sqlDoctors = "SELECT user_id FROM users;";
+$sqlDoctors = "SELECT user_id FROM users WHERE users.role_id = 1;";
 $resultDoctors = $db_connection->query($sqlDoctors);
 $doctors = $resultDoctors->fetch_all(MYSQLI_ASSOC);
 
@@ -134,7 +134,8 @@ if (count($_GET) != 0) {
 }
 
 // Start the table with some basic styling
-echo '<table style="width: 100%; border-collapse: collapse;">
+echo '<div style="max-height: 400px; overflow-y: scroll;">
+    <table style="width: 100%; border-collapse: collapse;">
     <thead>
     <tr>
         <th style="border: 1px solid #000; padding: 8px;">Sample ID</th>
@@ -171,6 +172,6 @@ if (count($_GET) != 0 && $result->num_rows > 0) {
 }
 
 // Close the table
-echo '</table>';
+echo '</table></div>';
 $db_connection->close();
 ?>
