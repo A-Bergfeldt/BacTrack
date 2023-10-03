@@ -43,7 +43,7 @@ if ($resultRole->num_rows > 0) {
     $role_id = $row['role_id'];
 }
 
-$show_button = ($status_id == 3 and $doctor_id == 'Simon_Oscarson' and $role_id == 1); //TODO: doctor_id = current user, get form sessions
+$show_button = ($status_id == 3 and $doctor_id == 'Simon_Oscarson' and $role_id == 1); //TODO: doctor_id = current user, get from sessions
 
 // Start the table with some basic styling
 echo '
@@ -83,16 +83,29 @@ if ($result->num_rows > 0) {
         <td style='border: 1px solid #000; padding: 8px;'>" . $row["synergy_name"] . "</td>
         ";
         if ($show_button) {
+            // Pass antibiotic values to the showConfirmation function
             echo "<td style='border: 1px solid #000; padding: 8px;'>
-                    <a href='update_prescription.php?sample_id=" . $row["sample_id"] . "&antibiotic1=" . $row["Antibiotic 1"] . "&antibiotic2=" . $row["Antibiotic 2"] . "&antibiotic3=" . $row["Antibiotic 3"] . "'>
-                        <button>Prescribe this combination</button>
-                    </a>
+                    <button onclick='showConfirmation(" . $row["sample_id"] . ", \"" . $row["Antibiotic 1"] . "\", \"" . $row["Antibiotic 2"] . "\", \"" . $row["Antibiotic 3"] . "\")'>Prescribe this combination</button>
                 </td>";
         }
         echo "
         </tr>";
     }
     echo "</tbody>";
+
+    // Add a JavaScript function to show the confirmation popup
+    echo "
+    <script>
+    function showConfirmation(sampleId, antibiotic1, antibiotic2, antibiotic3) {
+        if (window.confirm('Are you sure you want to prescribe this combination?')) {
+            // If the user confirms, navigate to update_prescription.php with all values
+            window.location.href = 'update_prescription.php?sample_id=' + sampleId + '&antibiotic1=' + encodeURIComponent(antibiotic1) + '&antibiotic2=' + encodeURIComponent(antibiotic2) + '&antibiotic3=' + encodeURIComponent(antibiotic3);
+        } else {
+            // If the user cancels, do nothing or provide feedback as needed
+        }
+    }
+    </script>";
+
 } else {
     echo "<tr><td colspan='5'>0 results</td></tr>";
 }
