@@ -111,22 +111,8 @@ foreach ($uniqueLabels as $label) {
 }
 
 
-
 $labels = json_encode(array_unique($labels));
 ?>
-
-<!DOCTYPE HTML>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>Line-plot with Data from SQL Database</title>
-    <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
-</head>
-<body>
-<div class="container">
-    <h2 class="text-center mt-4">Line diagram with Data from SQL Database</h2>
-    <div id="tester" style="width:600px;height:250px;"></div>
-</div>
 
 <script>
     TESTER = document.getElementById('tester');
