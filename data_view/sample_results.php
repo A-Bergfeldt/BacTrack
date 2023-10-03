@@ -33,17 +33,7 @@ if ($resultDoctor->num_rows > 0) {
     $doctor_id = $row['doctor_id'];
 }
 
-$sqlRole = "SELECT role_id FROM users WHERE user_id = 'Simon_Oscarson';"; //TODO: user_id = current user, get form sessions
-$resultRole = $db_connection->query($sqlRole);
-if ($resultRole->num_rows > 0) {
-    // Fetch the row from the result set
-    $row = $resultRole->fetch_assoc();
-
-    // Access the 'status_id' value from the row
-    $role_id = $row['role_id'];
-}
-
-$show_button = ($status_id == 3 and $doctor_id == 'Simon_Oscarson' and $role_id == 1); //TODO: doctor_id = current user, get from sessions
+$show_button = ($status_id == 3 and $doctor_id == 'Simon_Oscarson' and 1 == 1); //TODO: doctor_id == 'Simon_Oscarson' should be doctor_id == current_user and 1==1 should be current_user_role == 1, get from sessions
 
 // Start the table with some basic styling
 echo '
