@@ -98,6 +98,8 @@
             antibiotics ON antibiotics.antibiotic_id = subquery.ID
         GROUP BY
             subquery.ID,
+            antibiotics.antibiotic_name
+        ORDER BY
             antibiotics.antibiotic_name";
 
     $result = $db_connection->query($query);
@@ -111,7 +113,6 @@
 
     $dictionary = array_combine($labels, $data);
     unset($dictionary['No antibiotic']);
-    ksort($dictionary);
 
     $labels = array_keys($dictionary);
     $data = array_values($dictionary);
