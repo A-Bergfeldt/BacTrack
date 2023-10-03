@@ -20,7 +20,7 @@ require_once 'db_connection.php';
 // Modify your SQL query to retrieve data at a monthly granularity
 $query = 
     "SELECT
-        subquery.sample_date AS date,
+        DATE_FORMAT(subquery.sample_date, '%Y-%m') AS date,
         subquery.ID,
         antibiotics.antibiotic_name,
         COUNT(*) AS count
@@ -66,11 +66,11 @@ $query =
     INNER JOIN 
         antibiotics ON antibiotics.antibiotic_id = subquery.ID
     GROUP BY
-        subquery.sample_date,
+        DATE_FORMAT(subquery.sample_date, '%Y-%m'),
         subquery.ID,
         antibiotics.antibiotic_name
     ORDER BY
-        subquery.sample_date,
+        DATE_FORMAT(subquery.sample_date, '%Y-%m'),
         antibiotics.antibiotic_name";
 
 $result = $db_connection->query($query);
@@ -120,7 +120,7 @@ $labels = json_encode(array_unique($labels));
 
     var layout = {
         height: 400,
-        width: 500,
+        width: 1000,
         showlegend: true,
         xaxis: {
             title: 'Date'
