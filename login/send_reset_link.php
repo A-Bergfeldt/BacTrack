@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Send the reset password link to the user's email using PHPMailer
 
                     $domain = "localhost"; // Replace with your domain
-                    $reset_link = $domain . "/change_password.php?token=" . urlencode($encoded_token);
+                    $reset_link = $domain . "/login/change_password.php?token=" . urlencode($encoded_token);
                     $subject = "Password Reset";
                     $message = "To reset your password, click on the following link: ";
                     

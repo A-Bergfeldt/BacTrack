@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             } else {
                                 echo "Error preparing delete statement: " . $db_connection->error;
                             }
-                            header("Location: password_changed.html");
+                            header("Location: password_changed.php");
                             exit();
                         } else {
                             echo "Error updating password: " . mysqli_error($db_connection);
