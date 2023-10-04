@@ -43,8 +43,8 @@ how much you want
         <li class="dropdown">
         <a href ="contact_page.php" class="dropbtn">Contact</a>
         <div class="dropdown-content">
-                <a href="service1.php">Contact us</a>
-                <a href="service2.php">FAQ</a>
+                <a href="contactus.php">Contact us</a>
+                <a href="contactus.php">FAQ</a>
             </div>
             </li>
         <li><a href="statistics_page_rough.php">Statistics</a></li>
