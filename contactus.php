@@ -127,7 +127,7 @@
     <div id="policy-content-7" class="policy-content">
         <h2>7. Contact Us</h2>
         <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>
-        <p>info@bactrack.com</p>
+        <p><a href="mailto:bactrack2023@gmail.com">bactrack2023@gmail.com</a></p>
     </div>
 
 
@@ -222,7 +222,7 @@
             </button>
             <div class="dropdown-content">
                 <p>
-                    For any support or inquiries, please reach out to our support team at support@bactrack.com.
+                    For any support or inquiries, please reach out to our support team at <a href="mailto:bactrack2023@gmail.com">bactrack2023@gmail.com.</a>.
                 </p>
             </div>
         </div>
@@ -239,7 +239,7 @@
             </div>
         </div>
 
-        <div class="question-answer">
+        <div class="question-answer" class="spacer">
             <button class="dropdown-toggle">
                 <span>10. Can I export my tracked data from BacTrack?</span>
             </button>

@@ -10,6 +10,7 @@ body {
     background-size: cover;
     background-position: center;
     line-height: 1.6;
+    padding-bottom: 70px;
 }
 
 h1, h2, h3 {
@@ -107,6 +108,10 @@ input[type="submit"]:hover {
 .Privacy-policy select {
     height: 40px;
     width: 50%;
+}
+
+.spacer {
+    height: 20px;
 }
 
 /* FAQ Styling */
