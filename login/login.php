@@ -25,7 +25,7 @@
             </div>
             <input type="submit" name="submit" value="Login">
             <div class="contact_link">
-                Do not have an account? <li><a href ="contact_page.php">Contact us</a></li>
+                Do not have an account? <li><a href ="/about_contact/contact_page.php">Contact us</a></li>
             </div>
         </form>
 
@@ -52,14 +52,19 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     $user_role = $result->fetch_assoc();
-                    $_SESSION["role_id"] = $user_role;
+                    $role_id = $user_role['role_id'];
+                    $_SESSION["role_id"] = $role_id;
                     $_SESSION["user_id"] = $input_username;
                 
-                    if ($user_role['role_id'] === 1) {
-                        header("Location: doctor_page.php");
+                    if ($_SESSION['role_id'] == 1) {
+                        header("Location: ../doctor/doctor_page.php");
+                        print_r($_SESSION);
                     }
-                    if ($user_role['role_id'] === 2) {
-                        header("Location: lab_design_input_form.php");
+                    if ($_SESSION['role_id'] == 2) {
+                        header("Location: ../lab/lab_design_input_form.php");
+                    }
+                    if ($_SESSION['role_id'] == 3) {
+                        header("Location: ../home/home_page.php");
                     }
                 
                     exit();
