@@ -1,22 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mina Login Page</title>
+    <title>BacTrack Login Page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
-    <link rel="stylesheet" href="style_sheet.css">
+    <link rel="stylesheet" href="/home/home_style_sheet.css">
 </head>
 
-<body>
-    <nav>
-        <div class="logo">Logo here</div>
-        <ul>
-            <li><a href ="home_page.php">Home</a></li>
-            <li><a href ="about_page.php">About</a></li>
-            <li><a href ="contact_page.php">Contact</a></li>
-            <li><a href ="statistics_page.php">Statistics</a></li>
-            <li><a href ="login.php">Login</a></li>
-        </ul>
-    </nav> 
 
     <div class="loginbox">
         <h1>Login</h1>
@@ -42,18 +31,9 @@
 
         <?php
             session_start();
-            include "db_connection.php";
+            require_once "../nav_bar.php";
+            require_once "../db_connection.php";
 
-            $servername = "localhost";
-            $db_username = "root";
-            $db_password = "root";
-            $db_name = "bactrack";
-            $link = mysqli_connect($servername, $db_username, $db_password, $db_name); 
-
-            if (mysqli_connect_error()) {
-                die("Connection failed: " . mysqli_connect_error());
-            }
-        
             if(isset($_POST["submit"])) {
                 // Use prepared statements with parameterized queries
                 $input_username = $_POST["username"];
