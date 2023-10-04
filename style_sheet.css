@@ -120,6 +120,11 @@ img {
     border-bottom: 1px solid silver;
 }
 
+.loginbox h2{
+    padding: 0 0 20px 0;
+    text-align: center;
+}
+
 .loginbox form{
     padding: 0 40px;
     box-sizing: border-box;
