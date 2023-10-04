@@ -86,17 +86,16 @@
                     $stmt->execute();
                     $result = $stmt->get_result();
                     $user_role = $result->fetch_assoc();
-                    $role_id = $user_role['role_id'];
-                    $_SESSION["role_id"] = $role_id;
+                    $_SESSION["role_id"] = $user_role;
                     $_SESSION["user_id"] = $input_username;
                     
-                    if ($_SESSION['role_id'] == 1) {
+                    if ($user_role['role_id'] == 1) {
                         header("Location: sample_input/sample_form.php");
                     }
-                    if ($_SESSION['role_id'] == 2) {
+                    if ($user_role['role_id'] == 2) {
                         header("Location: results_input/results_form.php");
                     }
-                    if ($_SESSION['role_id'] == 3) {
+                    if ($user_role['role_id'] == 3) {
                         header("Location: home_page.php");
                     }
                     
