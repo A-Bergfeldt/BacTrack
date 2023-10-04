@@ -1,0 +1,14 @@
+git add .\home_praissy.php
+PS C:\Users\Asus\Documents\GitHub\BacTrack> git commit -a -m "Trying to push home page" 
+[home_page_design 7bd06c7] Trying to push home page
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 home_praissy.php
+PS C:\Users\Asus\Documents\GitHub\BacTrack> git pull --autostash origin home_page_design
+From https://github.com/A-Bergfeldt/BacTrack
+ * branch            home_page_design -> FETCH_HEAD
+Already up to date.
+PS C:\Users\Asus\Documents\GitHub\BacTrack> git push origin home_page_design
+
+
+to retrieve stuff 
+ git pull --autostash origin  home_page_design
