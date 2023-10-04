@@ -20,7 +20,7 @@ how much you want -->
 <head>
     <title>Praissy testing statistics page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
-    <link rel="stylesheet" href="style_sheet_praissy.css">
+    <link rel="stylesheet" href="statistics_stylesheet_rough.css">
 </head>
 
 <body>
