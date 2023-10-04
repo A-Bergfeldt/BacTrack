@@ -16,7 +16,7 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require_once 'db_connection.php';
+require_once '../db_connection.php';
 // Modify your SQL query to retrieve data at a monthly granularity
 $query = 
     "SELECT

@@ -1,55 +1,28 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "bactrack";
-
-// Create connection
-$link = mysqli_connect($servername, $username, $password, $dbname);
-
-if (mysqli_connect_error()) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <title>Mina testing home page</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
-    <link rel="stylesheet" href="corinne_style_sheet.css">
-    </head>
 
-<body>
-    <nav>
-        <!--<div class="logo">Logo here</div>-->
-        <a href="corre_home_page.php">
-        <img src="logo_main.png" alt="Logo" width="95" height="65">
-        </a>
-        <ul>
-        <li><a href ="corre_home_page.php">Home</a></li>
-            <li><a href ="about_page.php">About</a></li>
-            <li><a href ="contact_page.php">Contact</a></li>
-            <li><a href ="corre_statistics_page.php">Statistics</a></li>
-            <li><a href ="login.php">Login</a></li>
-        </ul>
-    </nav>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contactus.css">
+    <title>Contact Information - BacTrack</title>
+</head>
 
 <body>
     <h1>Connect With Us</h1>
-    <p>"Contact us at BacTrack for expert guidance on antibiotic combination therapies and improved healthcare outcomes."</p>
-    <form action="submit_form.php" method="POST" target="_blank">
-        <label for="name">Full name:</label>
-        <input type="text" id="name" name="name" required autocomplete="name"><br><br>
+    <p class="centered-paragraph">"Contact us at BacTrack for expert guidance on antibiotic combination therapies and improved healthcare outcomes."</p>
 
-        <label for="address">Address:</label>
-        <input type="text" id="address" name="address" required autocomplete="address"><br><br>
+
+    <form action="send_contact_email.php" method="POST" target="_blank">
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required autocomplete="name"><br><br>
+
+        <label for="email">Email ID</label>
+        <input type="email" id="email" name="email" placeholder="firstname@gmail.com" required autocomplete="email"><br><br>
 
         <label for="description">How may we help you?</label><br>
-        <textarea id="description" name="description" rows="4" cols="50" required autocomplete="description"></textarea><br><br>
+        <textarea id="description" name="description" rows="4" cols="50" placeholder="A detailed description" required autocomplete="description"></textarea><br><br>
 
         <input type="submit" value="Submit">
     </form>
@@ -68,35 +41,35 @@ if (mysqli_connect_error()) {
         </ul>
     </div>
 
-    <div class="contact-info">
+    <div class="email-IDS">
         <h2>Email Addresses</h2>
         <ul>
-            <li>General Contact Email: info@bactrack.com</li>
-            <li>Support Email: support@bactrack.com</li>
-            <li>Sales/Inquiries Email: sales@bactrack.com</li>
-            <li>Technical Support Email: techsupport@bactrack.com</li>
+            <li>General Contact Email: <u>info@bactrack.com</u></li>
+            <li>Support Email: <u>support@bactrack.com</u></li>
+            <li>Sales/Inquiries Email: <u>sales@bactrack.com</u></li>
+            <li>Technical Support Email: <u>techsupport@bactrack.com</u></li>
         </ul>
     </div>
 
-    <div class="contact-info">
+    <div class="fax-number">
         <h2>Fax Number</h2>
         <p>Fax Number: +1 (555) 987-6543</p>
     </div>
 
-    <div class="contact-info">
+    <div class="social-media-links">
         <h2>Social media links</h2>
         <p><a href="https://www.linkedin.com/company/bactrack" target="_blank">LinkedIn</a></p>
         <p><a href="https://twitter.com/bactrack" target="_blank">Twitter</a></p>
         <p><a href="https://www.facebook.com/bactrack" target="_blank">Facebook</a></p>
     </div>
 
-    <div class="contact-info">
+    <div class="Location">
         <h2>Our Location</h2>
-        <p>Physical Address: 123 Medical Drive, Cityville, Stateville, 12345</p>
-        <a href="https://www.google.com/maps?q=123+Medical+Drive,Cityville,Stateville,12345" target="_blank">View on Google Maps</a>
+        <p>Physical Address: 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA</p>
+        <a href="https://www.google.com/maps/place/Google+Building+40,+1600+Amphitheatre+Pkwy,+Mountain+View,+CA+94043,+USA/@37.4223878,-122.0867626,17z/data=!3m1!4b1!4m6!3m5!1s0x808fba027f087f8f:0xd86b06710e8fcc35!8m2!3d37.4223878!4d-122.0841877!16s%2Fg%2F12hmj07kf?entry=ttu" target="_blank">View on Google Maps</a>
     </div>
 
-    <div class="contact-info">
+    <div class="open-hours">
         <h2>Business Hours</h2>
         <p><b>Mon-Fri:</b> 9:00 AM - 6:00 PM</p>
         <p><b>Sat-Sun:</b> Closed</p>

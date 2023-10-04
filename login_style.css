@@ -56,6 +56,7 @@ nav img[src='logo_main.png'] {
 .dropdown {
     position: relative;
     display: inline-block;
+    z-index: 10; 
 }
 
 /* Style for the dropdown button/link */
@@ -75,7 +76,7 @@ nav img[src='logo_main.png'] {
     background-color: #fff;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
+    z-index: 10;
 }
 
 /* Style for the dropdown links */
@@ -124,6 +125,8 @@ img {
     max-width: 100%;
     max-height: 100%;
 }
+
+
 /* LOGIN STUFF */
 .loginbox {
     position: absolute;
