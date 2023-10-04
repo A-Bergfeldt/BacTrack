@@ -24,7 +24,7 @@ how much you want
     <title>Mina testing home page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="style_sheet.css">
-    </head>
+</head>
 
 <body>
     <nav>
@@ -36,13 +36,11 @@ how much you want
             <li><a href ="statistics_page.php">Statistics</a></li>
             <li><a href ="login.php">Login</a></li>
         </ul>
-    </nav>
-
+    </nav>  
     <div class="container">
         <div class="slides slide1">
-            <h1 style="font-size: 100px; color: #fff">Statistics page</h1>
+            <h1 style="font-size: 100px; color: #fff">Doctor's home page</h1>
         </div>
     </div>
-    
-    </body>
-    </html>
+</body>
+</html>

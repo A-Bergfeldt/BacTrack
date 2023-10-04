@@ -1,0 +1,210 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 10px 90px;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+nav .logo {
+    margin-left: auto; /* This pushes the logo to the right */
+    margin-right: 70px; /* Adjust the right margin as needed */
+}
+
+nav ul{
+    list-style: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li a{
+    line-height: 65px;
+    color: #000000;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover{
+    background: rgba(160, 64, 173, 0.4);
+    border-radius: 6px;
+}
+
+/* Adjust the margin-right property for the logo */
+nav img[src='logo_main.png'] {
+    margin-right: 50px; /* Adjust the right margin as needed */
+}
+
+/* Style for the dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style for the dropdown button/link */
+.dropbtn {
+    color: #000000;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Style for the dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Style for the dropdown links */
+.dropdown-content a {
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color on hover for dropdown links */
+.dropdown-content a:hover {
+    background-color: rgba(160, 64, 173, 0.4);
+    border-radius: 6px;
+}
+
+/* Show the dropdown content when hovering over the dropdown button/link */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Adjust the margin-right property for the logo */
+nav img[src='logo_main.png'] {
+    margin-right: 50px; /* Adjust the right margin as needed */
+}
+
+
+/* Cookie Popup Styles */
+.cookie-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.accept-cookies {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+
+h1 {
+    font-size: 125px;
+    color: white;
+    text-shadow: -2px -2px 2px black;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+h2 {
+    font-size: 50px;
+    color: white;
+    text-shadow: -2px -2px 2px black;
+    text-align: center;
+    margin-top: 0;
+}
+
+
+#section1 {
+    background: url('background_page_ex1.jpg') right bottom no-repeat;
+    background-size: cover, auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#section2 {
+
+    background-color: white;
+    color: black;
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+.button-container {
+    margin-top: 20px;
+
+}
+
+
+.button {
+    display: inline-block;
+    padding: 15px 30px; /* Increase padding for a larger button */
+    background-color: #5072A7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+
+#section3 {
+    background: url('background_sec3.jpg') no-repeat center center;
+    background-size: cover;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 20px;
+}
+
+#section4 {
+
+    background-color: white;
+    color: black;
+    margin-top: 0;
+    height: 100vh;
+
+}
+
+
+
+
+
+
+
+
