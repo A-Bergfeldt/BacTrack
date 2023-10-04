@@ -49,33 +49,21 @@
 
 
 <?php
-// Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "BacTrack";
-
-// Create connection
-$link = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check if connection is established
-if (mysqli_connect_error()) {
-  die("Connection failed: " . mysqli_connect_error());
-}
+require_once '../db_connection.php';
 
 // Select all antibiotics, synergy results and strains then close database connection
 $sql_antibiotics = "SELECT * FROM Antibiotics";
-$result_antibiotics = $link->query($sql_antibiotics);
+$result_antibiotics = $db_connection->query($sql_antibiotics);
 $sql_synergy = "SELECT * FROM Synergy";
-$result_synergy = $link->query($sql_synergy);
+$result_synergy = $db_connection->query($sql_synergy);
 $sql_strain = "SELECT * FROM Strain";
-$result_strain = $link->query($sql_strain);
+$result_strain = $db_connection->query($sql_strain);
 $sql_sample_strain = "SELECT sample_id FROM Sample WHERE status_id = 1";
-$result_sample_strain = $link->query($sql_sample_strain);
+$result_sample_strain = $db_connection->query($sql_sample_strain);
 $sql_sample_antibiotics = "SELECT sample_id FROM Sample WHERE status_id = 2";
-$result_sample_antibiotics = $link->query($sql_sample_antibiotics);
+$result_sample_antibiotics = $db_connection->query($sql_sample_antibiotics);
 
-$link->close();
+$db_connection->close();
 
 // Store the antibiotics, synergy results and strains in associative arrays
 $antibioticArray = array();

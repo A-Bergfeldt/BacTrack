@@ -11,6 +11,8 @@ if (mysqli_connect_error()) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+
+
 ?>
 
 <!-- This is how you comment out
@@ -27,30 +29,7 @@ how much you want
     </head>
 
 <body>
-<nav>
-    <a href="home_page.php">
-        <img src="logo_main.png" alt="Logo" width="95" height="65">
-    </a>
-    <ul>
-        <li><a href="home_page.php">Home</a></li>
-        <li class="dropdown">
-            <a href="about_page.php" class="dropbtn">About</a>
-            <div class="dropdown-content">
-                <a href="service1.php">About BacTrack</a>
-                <a href="service2.php">About CombiANT</a>
-                <a href="service3.php">About us</a>
-            </div>
-        <li class="dropdown">
-        <a href ="contact_page.php" class="dropbtn">Contact</a>
-        <div class="dropdown-content">
-                <a href="contactus.php">Contact us</a>
-                <a href="contactus.php">FAQ</a>
-            </div>
-            </li>
-        <li><a href="statistics_page_rough.php">Statistics</a></li>
-        <li><a href="login.php">Login</a></li>
-    </ul>
-</nav>
+<?php require_once "../header.php"; ?>
 
 
     <div id="cookie-popup" class="cookie-popup">
@@ -66,7 +45,7 @@ how much you want
     <section id='section2'>
         <div class="section-content height: auto;" >
             <p style="margin-left: 100px; font-size: 70px; ">About BacTrack</p>
-            <img src="section2.jpg" alt="Desktop Image" width="550" height="500" style="float: right; margin-left: 20px; margin-top: -200px;">
+            <img src="home_sec2.jpg" alt="Desktop Image" width="550" height="500" style="float: right; margin-left: 20px; margin-top: -200px;">
             <p style="margin-left: 100px; font-size: 22px;; ">The growing problem of antibiotic resistance (AMR) poses difficulties when it comes to treating bacterial infections. Identifying the root cause of an illness at an early stage can be crucial when it comes to treating these diseases, and can result in a more effective treatment using a tailored antibiotic therapy to the specific infection.</p>
         <div>
             <div class="button-container" style="text-align: center;">
@@ -89,7 +68,7 @@ how much you want
         <p style="margin-left: 100px; font-size: 70px; color: black; ">Contact us</p>
         <p style="margin-left: 100px; font-size: 22px;color:black; ">Do you want to contact us? Click on the button below</p>
         <p style="margin-left: 100px; font-size: 22px;color:black; ">and we will try to answer as soon as possible</p>
-        <img src="logo_main.png" alt="Logo" width="520" height="400" style="float: right; margin-top: -270px;">
+        <img src="../logo_main.png" alt="Logo" width="520" height="400" style="float: right; margin-top: -270px;">
     </div>
     <div class="button-container" style="text-align: center;">
         <a href="corre_contact_page.php" class="button">Contact us</a>
