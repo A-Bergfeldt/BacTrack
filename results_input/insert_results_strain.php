@@ -1,4 +1,5 @@
 <?php
+session_start();
 // Database connection parameters
 $servername = "localhost";
 $username = "root";
@@ -14,7 +15,7 @@ if (mysqli_connect_error()) {
 }
 
 // Fetch data from POST request
-$lab_technician_id = $_POST['lab_technician_id'];
+$lab_technician_id = $_SESSION['user_id'];
 $sample_id = (int) $_POST['sample_id'];
 $strain_id = (int) $_POST['strain'];
 $status_id = 2;

@@ -79,7 +79,7 @@
                         header("Location: doctor_page.php");
                     }
                     if ($user_role['role_id'] === 2) {
-                        header("Location: labtech_page.php");
+                        header("Location: lab_design_input_form.php");
                     }
                 
                     exit();
