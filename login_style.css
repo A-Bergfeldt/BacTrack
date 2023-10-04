@@ -1,0 +1,245 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background: linear-gradient(180deg, rgba(21,98,105,1) 0%, rgba(255,255,255,1) 100%);
+}
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 10px 90px;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+nav .logo {
+    margin-left: auto; /* This pushes the logo to the right */
+    margin-right: 70px; /* Adjust the right margin as needed */
+}
+
+nav ul{
+    list-style: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li a{
+    line-height: 65px;
+    color: #000000;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav ul li a:hover{
+    background: rgba(160, 64, 173, 0.4);
+    border-radius: 6px;
+}
+
+nav img[src='logo_main.png'] {
+    margin-right: 50px; /* Adjust the right margin as needed */
+}
+
+/* Style for the dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style for the dropdown button/link */
+.dropbtn {
+    color: #000000;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Style for the dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Style for the dropdown links */
+.dropdown-content a {
+    color: #000000;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color on hover for dropdown links */
+.dropdown-content a:hover {
+    background-color: rgba(160, 64, 173, 0.4);
+    border-radius: 6px;
+}
+
+/* Show the dropdown content when hovering over the dropdown button/link */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Adjust the margin-right property for the logo */
+nav img[src='logo_main.png'] {
+    margin-right: 50px; /* Adjust the right margin as needed */
+}
+
+
+.container{
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+
+
+
+
+/*FOR THE LOGO*/
+img { 
+    float:left;
+    position:absolute;
+    top:0;
+    left:20px; 
+    margin-left:auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+/* LOGIN STUFF */
+.loginbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -43%);
+    width: 400px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+}
+
+.loginbox h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid silver;
+}
+
+.loginbox h2{
+    padding: 0 0 20px 0;
+    text-align: center;
+}
+
+.loginbox form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .txt_field{
+    position: relative;
+    border-bottom: 2px solid #adadad;
+    margin: 30px 0;
+}
+
+.txt_field input{
+    width: 100%;
+    padding: 0 5 px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.txt_field label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.txt_field span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: rgba(160, 64, 173);
+    transition: .5s;
+}
+
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+    top: -5px;
+    color: rgba(160, 64, 173);
+}
+
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+    width: 100%;
+}
+
+.pass{
+    margin: -5px 0 20px 5px;
+    color: #a6a6a6;
+    cursor: pointer;
+}
+
+.pass a:hover{
+    color: #2691d9;
+    text-decoration: underline;
+}
+
+input[type="submit"]{
+    margin: 0 0 30px 0;
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: rgba(160, 64, 173);
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="submit"]:hover{
+    border-color: rgba(160, 64, 173);
+    transition: 0.5s;
+}
+
+.contact_link{
+    margin: 0 0 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #adadad;
+}
+
+.contact_link a:hover{
+    color: #2691d9;
+    text-decoration: none;
+    text-decoration: underline;
+}
