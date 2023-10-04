@@ -1,22 +1,16 @@
 <?php
-// Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "bactrack";
+session_start();
+require_once '../db_connection.php';
 
-// Create connection
-$link = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check if connection is established
-if (mysqli_connect_error()) {
-    die("Connection failed: " . mysqli_connect_error());
+if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 3) {
+    header("Location: ../home_page.php");
+    exit();
 }
 
 // Select all hospitals then close database connection
 $sql_hospital = "SELECT * FROM Hospital";
-$result_hospital = $link->query($sql_hospital);
-$link->close();
+$result_hospital = $db_connection->query($sql_hospital);
+$db_connection->close();
 
 // Store the hospitals in an associative array
 $hospitalArray = array();
@@ -33,12 +27,10 @@ while ($row = $result_hospital->fetch_assoc())
 <!-- Include Select2 JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
-
 <p>Please enter your sample information here:</p>
 
 <form action="insert_sample_data.php" method="POST">
-    Date:<input name="date" type="date" required><br>
-    Doctor ID:<input name="user_id"><br> <!-- This should be stored automatically -->
+    Date:<input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" required><br>
     Hospital:
     <select name="hospital" id="hospital" required>
         <option disabled selected value>---</option>
