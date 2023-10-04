@@ -30,10 +30,10 @@
         <li><a href="corre_statistics_page.php">Statistics</a></li>
 
         <li class="dropdown">
-        <a href ="corre_contact_page.php" class="dropbtn">My page</a>
+        <a href ="lab_design_input_form.php" class="dropbtn">My page</a>
         <div class="dropdown-content">
-                <a href="service1.php">Sample input</a>
-                <a href="service2.php">Log Out</a>
+                <a href="lab_design_input_form.php">Sample input</a>
+                <a href="logout.php">Log Out</a>
             </div>
             </li>
     </ul>
