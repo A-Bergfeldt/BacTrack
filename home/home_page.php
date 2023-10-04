@@ -11,6 +11,8 @@ if (mysqli_connect_error()) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+
+
 ?>
 
 <!-- This is how you comment out
@@ -27,30 +29,7 @@ how much you want
     </head>
 
 <body>
-<nav>
-    <a href="home_page.php">
-        <img src="logo_main.png" alt="Logo" width="95" height="65">
-    </a>
-    <ul>
-        <li><a href="home_page.php">Home</a></li>
-        <li class="dropdown">
-            <a href="about_page.php" class="dropbtn">About</a>
-            <div class="dropdown-content">
-                <a href="service1.php">About BacTrack</a>
-                <a href="service2.php">About CombiANT</a>
-                <a href="service3.php">About us</a>
-            </div>
-        <li class="dropdown">
-        <a href ="contact_page.php" class="dropbtn">Contact</a>
-        <div class="dropdown-content">
-                <a href="contactus.php">Contact us</a>
-                <a href="contactus.php">FAQ</a>
-            </div>
-            </li>
-        <li><a href="statisitcspage_rough.php">Statistics</a></li>
-        <li><a href="login.php">Login</a></li>
-    </ul>
-</nav>
+<?php require_once "../header.php"; ?>
 
 
     <div id="cookie-popup" class="cookie-popup">
@@ -89,7 +68,7 @@ how much you want
         <p style="margin-left: 100px; font-size: 70px; color: black; ">Contact us</p>
         <p style="margin-left: 100px; font-size: 22px;color:black; ">Do you want to contact us? Click on the button below</p>
         <p style="margin-left: 100px; font-size: 22px;color:black; ">and we will try to answer as soon as possible</p>
-        <img src="logo_main.png" alt="Logo" width="520" height="400" style="float: right; margin-top: -270px;">
+        <img src="../logo_main.png" alt="Logo" width="520" height="400" style="float: right; margin-top: -270px;">
     </div>
     <div class="button-container" style="text-align: center;">
         <a href="corre_contact_page.php" class="button">Contact us</a>

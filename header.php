@@ -1,6 +1,6 @@
 <nav>
     <a href="home_page.php">
-        <img src="logo_main.png" alt="Logo" width="95" height="65">
+        <img src= "/logo_main.png" alt="Logo" width="95" height="65">
     </a>
     <ul>
         <li><a href="home_page.php">Home</a></li>
