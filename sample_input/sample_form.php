@@ -1,22 +1,16 @@
 <?php
-// Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "bactrack";
+session_start();
+require_once '../db_connection.php';
 
-// Create connection
-$link = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check if connection is established
-if (mysqli_connect_error()) {
-    die("Connection failed: " . mysqli_connect_error());
+if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 3) {
+    header("Location: ../home_page.php");
+    exit();
 }
 
 // Select all hospitals then close database connection
 $sql_hospital = "SELECT * FROM Hospital";
-$result_hospital = $link->query($sql_hospital);
-$link->close();
+$result_hospital = $db_connection->query($sql_hospital);
+$db_connection->close();
 
 // Store the hospitals in an associative array
 $hospitalArray = array();
