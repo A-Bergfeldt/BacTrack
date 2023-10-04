@@ -40,7 +40,15 @@ how much you want
             <li><a href ="login.php">Login</a></li>
         </ul>
     </nav>
-    <div id="about_section" class="section">
+    <div class="container">
+        <div class="slides slide1">
+            <h1 style="font-size: 100px; color: #fff">About page</h1>
+        </div>
+        <div class="slides slide2">
+            <h1 style="font-size: 50px">More stuff</h1>
+        </div>
+
+    <div id="section1" class="section">
         <h1 style ='color: white'>About BacTrack</h1>
     </div>
     
