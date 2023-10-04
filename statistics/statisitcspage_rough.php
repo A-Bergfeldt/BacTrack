@@ -1,20 +1,3 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "bactrack";
-
-// Create connection
-$link = mysqli_connect($servername, $username, $password, $dbname);
-
-if (mysqli_connect_error()) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-?>
-
-<!-- This is how you comment out
-how much you want -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +8,7 @@ how much you want -->
 
 <body>
     <nav>
+        <!--TODO: fix navigation bar -->
         <img src="logo_main.png" alt=""> <!--for the logo -->
         <ul>
             <li><a href ="home_page.php">Home</a></li>
@@ -46,7 +30,6 @@ how much you want -->
             <!--<h2 style="font-size: 30px; color:black">Services we offer</h2>-->
             <section class="course">
                 <h3> Information about visualization provided </h3>
-                <!--<p>blah blah blah</p>-->
                 <div class="row">
 
                     <div class="course-col">
