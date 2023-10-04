@@ -47,7 +47,7 @@ how much you want
                 <a href="contactus.php">FAQ</a>
             </div>
             </li>
-        <li><a href="statistics_page_rough.php">Statistics</a></li>
+        <li><a href="statisitcspage_rough.php">Statistics</a></li>
         <li><a href="login.php">Login</a></li>
     </ul>
 </nav>
