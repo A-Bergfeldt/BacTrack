@@ -148,7 +148,11 @@ VALUES
     "Östersunds sjukhus", "Östersund", "Sweden", "14.63", "63.18"
 ),
 (
+    "Rigshospitalet", "Copenhagen", "Denmark", "12.56", "55.69"
+),
+(
     "Akademiska Sjukhuset", "Uppsala", "Sweden", "17.63", "59.84" 
+
 );
 
 -- Populate roles table
