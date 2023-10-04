@@ -15,13 +15,13 @@
 
 
     <form action="send_email.php" method="POST" target="_blank">
-        <label for="name">Full name:</label>
+        <label for="name"><b>Full name</b></label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required autocomplete="name"><br><br>
 
-        <label for="email">Email ID:</label>
+        <label for="email"><b>Email ID</b></label>
         <input type="email" id="email" name="email" placeholder="firstname@gmail.com" required autocomplete="email"><br><br>
 
-        <label for="description">How may we help you?</label><br>
+        <label for="description"><b>How may we help you?</b></label><br>
         <textarea id="description" name="description" rows="4" cols="50" placeholder="A detailed description" required autocomplete="description"></textarea><br><br>
 
         <input type="submit" value="Submit">
@@ -41,7 +41,7 @@
         </ul>
     </div>
 
-    <div class="contact-info">
+    <div class="email-IDS">
         <h2>Email Addresses</h2>
         <ul>
             <li>General Contact Email: info@bactrack.com</li>
@@ -51,25 +51,25 @@
         </ul>
     </div>
 
-    <div class="contact-info">
+    <div class="fax-number">
         <h2>Fax Number</h2>
         <p>Fax Number: +1 (555) 987-6543</p>
     </div>
 
-    <div class="contact-info">
+    <div class="social-media-links">
         <h2>Social media links</h2>
         <p><a href="https://www.linkedin.com/company/bactrack" target="_blank">LinkedIn</a></p>
         <p><a href="https://twitter.com/bactrack" target="_blank">Twitter</a></p>
         <p><a href="https://www.facebook.com/bactrack" target="_blank">Facebook</a></p>
     </div>
 
-    <div class="contact-info">
+    <div class="Location">
         <h2>Our Location</h2>
         <p>Physical Address: 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA</p>
         <a href="https://www.google.com/maps/place/Google+Building+40,+1600+Amphitheatre+Pkwy,+Mountain+View,+CA+94043,+USA/@37.4223878,-122.0867626,17z/data=!3m1!4b1!4m6!3m5!1s0x808fba027f087f8f:0xd86b06710e8fcc35!8m2!3d37.4223878!4d-122.0841877!16s%2Fg%2F12hmj07kf?entry=ttu" target="_blank">View on Google Maps</a>
     </div>
 
-    <div class="contact-info">
+    <div class="open-hours">
         <h2>Business Hours</h2>
         <p><b>Mon-Fri:</b> 9:00 AM - 6:00 PM</p>
         <p><b>Sat-Sun:</b> Closed</p>
