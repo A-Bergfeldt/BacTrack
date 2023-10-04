@@ -98,10 +98,11 @@ nav ul li a:hover{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -43%);
     width: 400px;
     background: rgb(255, 255, 255);
     border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
 }
 
 .loginbox h1{
@@ -149,14 +150,14 @@ form .txt_field{
     left: 0;
     width: 0%;
     height: 2px;
-    background: #B47EDE;
+    background: rgba(160, 64, 173);
     transition: .5s;
 }
 
 .txt_field input:focus ~ label,
 .txt_field input:valid ~ label{
     top: -5px;
-    color: #B47EDE;
+    color: rgba(160, 64, 173);
 }
 
 .txt_field input:focus ~ span::before,
@@ -170,15 +171,17 @@ form .txt_field{
     cursor: pointer;
 }
 
-.pass:hover{
+.pass a:hover{
+    color: #2691d9;
     text-decoration: underline;
 }
 
 input[type="submit"]{
-    width 100%;
+    margin: 0 0 30px 0;
+    width: 100%;
     height: 50px;
     border: 1px solid;
-    background: #B47EDE;
+    background: rgba(160, 64, 173);
     border-radius: 25px;
     font-size: 18px;
     color: white;
@@ -188,22 +191,19 @@ input[type="submit"]{
 }
 
 input[type="submit"]:hover{
-    border-color: #B47EDE;
+    border-color: rgba(160, 64, 173);
     transition: 0.5s;
 }
 
-.signup_link{
-    margin: 30px 0;
+.contact_link{
+    margin: 0 0 30px 0;
     text-align: center;
     font-size: 16px;
-    color: #666666;
+    color: #adadad;
 }
 
-.signup_link a:hover{
+.contact_link a:hover{
     color: #2691d9;
     text-decoration: none;
-}
-
-.signup_link a:hover{
     text-decoration: underline;
 }
