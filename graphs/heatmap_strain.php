@@ -6,31 +6,34 @@
 </head>
 <body>
   <h1>Plotly Density Map</h1>
-
   <!-- Dropdown menu to select heatmap option -->
-  <label for="heatmapOption">Select Heatmap Option:</label>
-  <select id="heatmapOption">
-    <option value="option1">Heatmap Option 1</option> <!-- change name to correct strain --> 
-    <option value="option2">Heatmap Option 2</option> <!-- change name to correct strain --> 
-    <option value="option3">Heatmap Option 3</option> <!-- change name to correct strain --> 
-  </select>
-  
-  <!-- Button to create the Plotly plot -->
-  <button onclick="createDensityMap()">Create Density Map</button>
+  <form method="get" action="heatmap_strain.php">
+    <label for="heatmapOption">Select Heatmap Option:</label>
+    <select id="heatmapOption" name="strain">
+      <?php
+      require_once "../db_connection.php";
+      $sql = "SELECT strain_name FROM strain";
+      $result = $db_connection->query($sql);
+
+      $strain = isset($_GET['strain']) ? $_GET['strain'] : "Escheria coli";
+
+      while($row = $result->fetch_assoc()) {
+          $selected = ($row['strain_name'] == $strain) ? 'selected' : '';
+          echo "<option value='" . $row['strain_name'] . "' $selected>" . $row['strain_name'] . "</option>";
+          }
+      ?>
+    </select>
+    <button id="update-button" type="submit">Show data for selected strain</button>
+  </form>
   
   <!-- Div element where the plot will be displayed -->
   <div id="myDiv" style="width: 600px; height: 400px;"></div>
-
-
-
 
   <?php
 
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
-
-  require_once "../db_connection.php";
 
     $query = "SELECT
                 hospital.longitude AS lon,
@@ -42,11 +45,15 @@
                 sample
               INNER JOIN
                 hospital ON hospital.hospital_id = sample.hospital_id
+              INNER JOIN
+                strain ON strain.strain_id = sample.strain_id
+              WHERE 
+                strain.strain_name LIKE '$strain%'
               GROUP BY
                 hospital.longitude, hospital.latitude, hospital.hospital_name, sample.strain_id;";
 
 
-  $result = $db_connection->query($query);
+    $result = $db_connection->query($query);
 
     $labels  = [];
     $data = [];
@@ -54,17 +61,16 @@
     $lat = [];
 
     foreach ($result as $row) {
-            $labels[] = $row["hospiatal_name"];
+            $labels[] = $row["hospital_name"];
             $data[] = $row["count"];
             $lon[] = $row["lon"];
             $lat[] = $row["lat"];}
 
-      echo $labels . $data . $lon . $lat;
+    $labels = array_values(array_unique($labels));
+    $lon = array_values(array_unique($lon));
+    $lat = array_values(array_unique($lat));
 
   ?>
-
-
-
 
   <script>
     // Function to create the density map
@@ -72,27 +78,16 @@
       var selectedOption = document.getElementById('heatmapOption').value;
       
       // Define the coordinates
-      var lon = [18.0226667, 11.9549972, 17.640241];
-      var lat = [59.3426667, 57.6833306, 59.849838];
+      var lon = <?php echo json_encode($lon); ?>;
+      var lat = <?php echo json_encode($lat); ?>;
 
-      // Define "z" values based on the selected option
-      var z;
-      if (selectedOption === 'option1') {
-        z = [1, 10, 5]; // Option 1
-      } else if (selectedOption === 'option2') {
-        z = [6, 3, 5]; // Option 2
-      } else if (selectedOption === 'option3') {
-        z = [3, 8, 2]; // Option 3 (New Option)
-      }
 
       var data = [{
         type: 'densitymapbox',
         lon: lon,
         lat: lat,
-        z: z, // Use the selected "z" values
-        zauto: false, // Automatically scale the dot size based on "z" values
-        zmin: 1,
-        zmax: 10,
+        z: <?php echo json_encode($data); ?>, 
+        zauto: true,
         colorscale: 'jet'
       }];
 
