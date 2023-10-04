@@ -23,7 +23,9 @@ CREATE TABLE Hospital (
     hospital_id INT PRIMARY KEY AUTO_INCREMENT,
     hospital_name VARCHAR(50) NOT NULL,
     city VARCHAR(50) NOT NULL,
-    country VARCHAR(50) NOT NULL
+    country VARCHAR(50) NOT NULL,
+    longitude FLOAT (8) NOT NULL,
+    latitude FLOAT (8) NOT NULL
 );
 
 -- Create roles table
@@ -134,16 +136,19 @@ VALUES
 );
 
 -- Populate hospital table
-INSERT INTO Hospital(hospital_name, city, country)
+INSERT INTO Hospital(hospital_name, city, country, longitude, latitude)
 VALUES 
 (
-    "Sahlgrenska sjukhuset", "Göteborg", "Sweden"
+    "Sahlgrenska sjukhuset", "Göteborg", "Sweden", "11.96", "57.68"
 ),
 (
-    "Karolinska sjukhuset", "Stockholm", "Sweden"
+    "Karolinska sjukhuset", "Stockholm", "Sweden", "18.03", "59.35"
 ),
 (
-    "Akademiska Sjukhuset", "Uppsala", "Sweden"
+    "Östersunds sjukhus", "Östersund", "Sweden", "14.63", "63.18"
+),
+(
+    "Akademiska Sjukhuset", "Uppsala", "Sweden", "17.63", "59.84" 
 );
 
 -- Populate roles table
