@@ -47,7 +47,7 @@ how much you want
                 <a href="service2.php">FAQ</a>
             </div>
             </li>
-        <li><a href="statistics_page.php">Statistics</a></li>
+        <li><a href="statistics_page_rough.php">Statistics</a></li>
         <li><a href="login.php">Login</a></li>
     </ul>
 </nav>
