@@ -49,7 +49,7 @@ how much you want
             <p style="margin-left: 100px; font-size: 22px;; ">The growing problem of antibiotic resistance (AMR) poses difficulties when it comes to treating bacterial infections. Identifying the root cause of an illness at an early stage can be crucial when it comes to treating these diseases, and can result in a more effective treatment using a tailored antibiotic therapy to the specific infection.</p>
         <div>
             <div class="button-container" style="text-align: center;">
-            <a href="about_page.php" class="button">Learn More</a>
+            <a href="/about_contact/about_page.php" class="button">Learn More</a>
         <div>
 </section>
 
@@ -59,7 +59,7 @@ how much you want
         <p style="margin-left: 600px; font-size: 22px;color:white; ">Combinations of antimicrobial agents are invariably prescribed for certain infectious diseases, such as tuberculosis, HIV and malaria. Bacterial infections that are not readily treatable, such as those affecting cardiac valves and prostheses, and lung infections in cystic fibrosis, are also usually subjected to a combination of antibiotics.</p>
     </div>
             <div class="button-container" style="margin-left: 800px;">
-            <a href="about_page.php" class="button">Learn More</a>
+            <a href="/about_contact/about_page.php" class="button">Learn More</a>
         <div>
         </section>
 
@@ -71,7 +71,7 @@ how much you want
         <img src="../logo_main.png" alt="Logo" width="520" height="400" style="float: right; margin-top: -270px;">
     </div>
     <div class="button-container" style="text-align: center;">
-        <a href="corre_contact_page.php" class="button">Contact us</a>
+        <a href="/about_contact/corre_contact_page.php" class="button">Contact us</a>
     </div>
 </section>
 
