@@ -21,6 +21,51 @@
   <!-- Div element where the plot will be displayed -->
   <div id="myDiv" style="width: 600px; height: 400px;"></div>
 
+
+
+
+  <?php
+
+  ini_set('display_errors', 1);
+  ini_set('display_startup_errors', 1);
+  error_reporting(E_ALL);
+
+  require_once "../db_connection.php";
+
+    $query = "SELECT
+                hospital.longitude AS lon,
+                hospital.latitude AS lat,
+                hospital.hospital_name,
+                sample.strain_id,
+                COUNT(*) AS count
+              FROM
+                sample
+              INNER JOIN
+                hospital ON hospital.hospital_id = sample.hospital_id
+              GROUP BY
+                hospital.longitude, hospital.latitude, hospital.hospital_name, sample.strain_id;";
+
+
+  $result = $db_connection->query($query);
+
+    $labels  = [];
+    $data = [];
+    $lon = [];
+    $lat = [];
+
+    foreach ($result as $row) {
+            $labels[] = $row["hospiatal_name"];
+            $data[] = $row["count"];
+            $lon[] = $row["lon"];
+            $lat[] = $row["lat"];}
+
+      echo $labels . $data . $lon . $lat;
+
+  ?>
+
+
+
+
   <script>
     // Function to create the density map
     function createDensityMap() {
