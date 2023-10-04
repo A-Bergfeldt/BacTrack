@@ -10,9 +10,9 @@
   <!-- Dropdown menu to select heatmap option -->
   <label for="heatmapOption">Select Heatmap Option:</label>
   <select id="heatmapOption">
-    <option value="option1">Heatmap Option 1</option>
-    <option value="option2">Heatmap Option 2</option>
-    <option value="option3">Heatmap Option 3</option> <!-- New Option -->
+    <option value="option1">Heatmap Option 1</option> <!-- change name to correct strain --> 
+    <option value="option2">Heatmap Option 2</option> <!-- change name to correct strain --> 
+    <option value="option3">Heatmap Option 3</option> <!-- change name to correct strain --> 
   </select>
   
   <!-- Button to create the Plotly plot -->
@@ -48,7 +48,7 @@
         zauto: false, // Automatically scale the dot size based on "z" values
         zmin: 1,
         zmax: 10,
-        colorscale: 'Viridis'
+        colorscale: 'jet'
       }];
 
       var layout = {
@@ -56,7 +56,7 @@
         height: 850,
         mapbox: {
           style: 'open-street-map',
-          center: { lon: 18.0226667, lat: 59.3426667 }, // Set the center coordinates
+          center: { lon: 15.0226667, lat: 59.3426667 }, // Set the center coordinates
           zoom: 5 // Set the initial zoom level
         }
       };
