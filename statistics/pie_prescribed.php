@@ -40,7 +40,7 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
 
-    require_once 'db_connection.php';
+    require_once '../db_connection.php';
 
     $date = isset($_GET['year']) ? $_GET['year'] : 2023;;
 
