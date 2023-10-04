@@ -1,25 +1,3 @@
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "bactrack";
-
-// Create connection
-$link = mysqli_connect($servername, $username, $password, $dbname);
-
-if (mysqli_connect_error()) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-
-
-?>
-
-<!-- This is how you comment out
-how much you want
--->
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,8 +7,9 @@ how much you want
     </head>
 
 <body>
-<?php require_once "../nav_bar.php"; ?>
-
+<?php 
+require_once "../nav_bar.php";
+?>
 
     <div id="cookie-popup" class="cookie-popup">
     <p>This website uses cookies to ensure you get the best experience on our website.</p>
@@ -110,6 +89,5 @@ how much you want
     // Add an event listener to the "Accept" button
     document.getElementById('accept-cookies').addEventListener('click', acceptCookies);
 </script>
-
 </body>
 </html>
