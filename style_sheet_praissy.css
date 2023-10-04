@@ -18,7 +18,7 @@ nav{
     box-sizing: border-box;
     background: #fff;
 }
-
+/*
 nav .logo{
     padding: 13px 50px;
     height: 80px;
@@ -27,7 +27,7 @@ nav .logo{
     font-weight: bold;
     text-transform: uppercase;
     color: #000000;
-}
+}*/
 
 nav ul{
     list-style: none;
@@ -48,7 +48,7 @@ nav ul li a{
 }
 
 nav ul li a:hover{
-    background: rgba(160, 64, 173, 0.4);
+    background: rgba(161, 195, 235, 0.4);
     border-radius: 6px;
 }
 
@@ -79,14 +79,44 @@ nav ul li a:hover{
 /*background: linear-gradient(180deg, rgba(52,21,54,1) 0%, rgba(74,21,90,1) 35%, rgba(21,98,105,1) 100%);
 */
 
+.slide_home{
+    background: url(home_background.jpg) right bottom no-repeat;
+    background-size: cover, auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+    
+
 .slide1{
-    width:100%;
-    height:100vh;
-    background: url(background_ex2.jpg);
-    background-size:cover;
-    background-position:center;
+    background: linear-gradient(180deg, rgba(21,98,105,1) 0%, rgba(255,255,255,1) 100%);
 }
 
 .slide2{
     background: #fff;
 }
+
+/*FOR THE LOGO*/
+img { 
+    float:left;
+    position:absolute;
+    top:0;
+    left:20px; 
+    margin-left:auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+img:hover {
+    background: rgba(161, 195, 235, 0.4); /* Background color on hover */
+    border-radius: 6px; /* Border-radius on hover */
+    /* Add any additional styles you want to apply when the image is hovered */
+}
+
+
+
+
+
+
