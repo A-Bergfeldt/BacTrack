@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </html>';
                     try {
                         $mail->send();
-                        header("Location: password_sent.html");
+                        header("Location: password_sent.php");
                         exit();
                     } catch (Exception $e) {
                         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
