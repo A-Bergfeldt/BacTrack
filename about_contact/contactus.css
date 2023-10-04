@@ -1,0 +1,245 @@
+/* contactus.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #d9d6f3;
+    width: 97%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+}
+
+.centered-paragraph {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fffcfc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+label, input, textarea {
+    display: block;
+    width: 70%;
+    margin-bottom: 30px;
+}
+
+input, textarea {
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #b9b9b9;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.contact-info {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 5px;
+}
+
+.faq {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.question-answer {
+    margin-bottom: 20px;
+}
+
+.dropdown-content {
+    display: none;    
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 18px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.dropdown-toggle:focus {
+    outline: none;
+}
+
+.dropdown-content p {
+    margin: 0;
+}
+
+/* Style for the "Connect With Us" section */
+h1 {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Style for the form */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+label,
+input,
+textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+input,
+textarea {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    height: 150px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Style for contact information sections */
+.contact-info,
+.phone-numbers,
+.email-IDS,
+.fax-number,
+.social-media-links,
+.Location,
+.open-hours,
+.Privacy-policy {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.contact-info h2,
+.phone-numbers h2,
+.email-IDS h2,
+.fax-number h2,
+.social-media-links h2,
+.Location h2,
+.open-hours h2,
+.Privacy-policy h2 {
+    margin-top: 0;
+}
+
+.contact-info p,
+.phone-numbers ul,
+.email-IDS ul,
+.fax-number p,
+.social-media-links p,
+.Location p,
+.open-hours p,
+.Privacy-policy select {
+    margin-bottom: 10px;
+}
+
+/* Style for the FAQ section */
+.faq {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.question-answer {
+    margin-bottom: 20px;
+}
+
+button.dropdown-toggle {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+button.dropdown-toggle:focus {
+    outline: none;
+}
+
+div.dropdown-content {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+}
+
+div.dropdown-content p {
+    margin: 0;
+}
+
+/* Style for the Privacy Policy sections */
+.policy-content {
+    display: none;
+}
+
+#policy-content-1 {
+    display: block;
+}
+
+#policy-dropdown {
+    height: 40px;
+    width: 50%;
+}

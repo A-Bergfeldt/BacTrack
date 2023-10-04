@@ -143,7 +143,7 @@ h2 {
 
 
 #section1 {
-    background: url('background_page_ex1.jpg') right bottom no-repeat;
+    background: url('home_sec1.jpg') right bottom no-repeat;
     background-size: cover, auto;
     display: flex;
     flex-direction: column;
@@ -185,7 +185,7 @@ h2 {
 
 
 #section3 {
-    background: url('background_sec3.jpg') no-repeat center center;
+    background: url('home_sec3.jpg') no-repeat center center;
     background-size: cover;
     flex-direction: column;
     height: 100vh;

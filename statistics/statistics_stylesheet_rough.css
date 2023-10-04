@@ -95,7 +95,6 @@ nav ul li a:hover{
 }
 
 .slide2{
-<<<<<<< HEAD
     background:#fff;
 }
  
@@ -104,8 +103,6 @@ nav ul li a:hover{
 }
 
 .slide4{
-=======
->>>>>>> 72ebc7192a8087aa6c732714ea5d6c041e9ed49e
     background: #fff;
 }
 
@@ -126,7 +123,6 @@ img:hover {
     /* Add any additional styles you want to apply when the image is hovered */
 }
 
-<<<<<<< HEAD
 /*SERVICES/GRAPHS AVAILABLE*/
 
 .course{
@@ -176,63 +172,3 @@ p{
     border-radius: 10px;
 }
 
-/*CAMPUS IMAGE GRAPHS */
-/*
-.campus-container {
-    width: 80%;
-    margin: auto;
-    text-align: center;
-    padding-top: 50px;
-    border: 2px solid black; Add a border around the campus section
-    border-radius: 10px; Add border-radius to create rounded corners 
-}
-
-.campus{
-    width: 80%;
-    margin:auto;
-    text-align: center;
-    padding-top: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-
-.campus-col{
-    flex-basis: 100%;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    position:relative;
-    overflow:hidden;
-}
-
-
-.campus-col img{
-    width:100%;
-    height:auto;
-    border-radius: 20px;
-}
-
-
-.layer{
-    background:rgba(225,0,0,0.7);
-    height: 100%;
-    width:100%;
-    position: absolute;
-    top:0;
-    left:0;
-    transition:2s;
-}
-
-.layer: hover{
-    background: rgba(225,0,0,0.7);
-}
-*/
-=======
-
-
-
-
-
->>>>>>> 72ebc7192a8087aa6c732714ea5d6c041e9ed49e
