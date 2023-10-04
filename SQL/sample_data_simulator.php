@@ -25,7 +25,7 @@ for ($x = 0; $x <= 9; $x++) {
             // Create a sample record
             $date_taken = $year . '-' . $month . '-01'; // Change the date format as needed
             $status_id = rand(1, 3); // Assuming status IDs are in the range 1-3
-            $hospital_id = 1; // Assuming hospital IDs are in the range 1-10
+            $hospital_id = rand(1, 5); // Assuming hospital IDs are in the range 1-10
             $strain_id = rand(1, 3); // Assuming strain IDs are in the range 1-5
             $doctor_id = 'Simon_Oscarson'; // Assuming doctor IDs are in the format 'doctorX'
             $lab_technician_id = 'Andreas_Bergfeldt'; // Assuming lab technician IDs are in the format 'labtechX'
