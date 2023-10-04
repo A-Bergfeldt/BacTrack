@@ -27,7 +27,7 @@
             </div>
             <input type="submit" name="submit" value="Login">
             <div class="contact_link">
-                Do not have an account? <li><a href ="/about_contact/contact_page.php">Contact us</a></li>
+                Do not have an account? <li><a href ="/about_contact/contactus.php">Contact us</a></li>
             </div>
         </form>
 
