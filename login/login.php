@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="/home/home_style_sheet.css">
 </head>
 
+<body>
+    <?php require_once "../nav_bar.php"; ?> 
 
     <div class="loginbox">
         <h1>Login</h1>
