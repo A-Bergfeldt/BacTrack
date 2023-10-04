@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <?php require_once "../nav_bar.php"; ?>
     <h1>Connect With Us</h1>
     <p class="centered-paragraph">"Contact us at BacTrack for expert guidance on antibiotic combination therapies and improved healthcare outcomes."</p>
 
