@@ -3,49 +3,47 @@
 <head>
     <title>My BacTrack Web App</title>
     <!-- Add your CSS styles here -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" type="text/css" href="lab_tech_style.css">
 </head>
 <body>
 <body>
-<nav>
-    <a href="corre_home_page.php">
-        <img src="logo_main.png" alt="Logo" width="95" height="65">
-    </a>
-    <ul>
-        <li><a href="corre_home_page.php">Home</a></li>
-        <li class="dropdown">
-            <a href="corre_about_page.php" class="dropbtn">About</a>
+    <nav>
+        <a href="home_page.php">
+            <img src="logo_main.png" alt="Logo" width="95" height="65">
+        </a>
+        <ul>
+            <li><a href="home_page.php">Home</a></li>
+            <li class="dropdown">
+                <a href="about_page.php" class="dropbtn">About</a>
+                <div class="dropdown-content">
+                    <a href="service1.php">About BacTrack</a>
+                    <a href="service2.php">About CombiANT</a>
+                    <a href="service3.php">About us</a>
+                </div>
+            <li class="dropdown">
+            <a href ="contact_page.php" class="dropbtn">Contact</a>
             <div class="dropdown-content">
-                <a href="service1.php">About BacTrack</a>
-                <a href="service2.php">About CombiANT</a>
-                <a href="service3.php">About us</a>
-            </div>
-        <li class="dropdown">
-        <a href ="corre_contact_page.php" class="dropbtn">Contact</a>
-        <div class="dropdown-content">
-                <a href="service1.php">Contact us</a>
-                <a href="service2.php">FAQ</a>
-            </div>
-            </li>
-        <li><a href="corre_statistics_page.php">Statistics</a></li>
+                    <a href="service1.php">Contact us</a>
+                    <a href="service2.php">FAQ</a>
+                </div>
+                </li>
+            <li><a href="statistics_page.php">Statistics</a></li>
 
-        <li class="dropdown">
-        <a href ="lab_design_input_form.php" class="dropbtn">My page</a>
-        <div class="dropdown-content">
-                <a href="lab_design_input_form.php">Sample input</a>
-                <a href="logout.php">Log Out</a>
-            </div>
-            </li>
-    </ul>
-</nav>
-
-    <!-- Create a header for your page -->
-    <header>
-        <h1>Insert patient sample</h1>
-    </header>
+            <li class="dropdown">
+            <a href ="lab_design_input_form.php" class="dropbtn">My page</a>
+            <div class="dropdown-content">
+                    <a href="lab_design_input_form.php">Sample input</a>
+                    <a href="logout.php">Log Out</a>
+                </div>
+                </li>
+        </ul>
+    </nav>
 
 
-    </body>
+
+
+</body>
 </html>
 
 
@@ -104,8 +102,9 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
 
 <!-- Import function to disable options -->
 <script src="disable_options.js"></script>
-
-
+<br>
+<br>
+<br>
 
 <form action="insert_results_strain.php" method="POST">
 <p class="center-text">Enter your identification results here</p>
@@ -127,7 +126,6 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
   </select><br>
   <input type="submit" value="Add">
 </form>
-
 
 
 <form action="insert_results_antibiotics.php" method="POST">
