@@ -32,7 +32,7 @@
                 <label>Password</label>
             </div>
             <div class="pass">
-                <li><a href="forgot_password_mina.php">Forgot password?</a></li>
+                <li><a href="forgot_password.php">Forgot password?</a></li>
             </div>
             <input type="submit" name="submit" value="Login">
             <div class="contact_link">
