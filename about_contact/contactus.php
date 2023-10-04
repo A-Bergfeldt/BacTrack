@@ -14,7 +14,7 @@
     <p class="centered-paragraph">"Contact us at BacTrack for expert guidance on antibiotic combination therapies and improved healthcare outcomes."</p>
 
 
-    <form action="send_email.php" method="POST" target="_blank">
+    <form action="send_contact_email.php" method="POST" target="_blank">
         <label for="name">Full name</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required autocomplete="name"><br><br>
 
