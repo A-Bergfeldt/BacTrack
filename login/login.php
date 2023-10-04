@@ -7,16 +7,7 @@
 </head>
 
 <body>
-    <nav>
-        <div class="logo">Logo here</div>
-        <ul>
-            <li><a href ="home_page.php">Home</a></li>
-            <li><a href ="about_page.php">About</a></li>
-            <li><a href ="contact_page.php">Contact</a></li>
-            <li><a href ="statistics_page.php">Statistics</a></li>
-            <li><a href ="login.php">Login</a></li>
-        </ul>
-    </nav> 
+    <?php require_once "../nav_bar.php"; ?> 
 
     <div class="loginbox">
         <h1>Login</h1>
@@ -36,19 +27,15 @@
             </div>
             <input type="submit" name="submit" value="Login">
             <div class="contact_link">
-                Do not have an account? <li><a href ="contact_page.php">Contact us</a></li>
+                Do not have an account? <li><a href ="../about_contact/contactus.php">Contact us</a></li>
             </div>
         </form>
 
         <?php
             session_start();
-            include "db_connection.php";
+            require_once "db_connection.php";
 
-            $servername = "localhost";
-            $db_username = "root";
-            $db_password = "root";
-            $db_name = "bactrack";
-            $link = mysqli_connect($servername, $db_username, $db_password, $db_name); 
+            $db_connection = mysqli_connect($servername, $db_username, $db_password, $db_name); 
 
             if (mysqli_connect_error()) {
                 die("Connection failed: " . mysqli_connect_error());
@@ -59,7 +46,7 @@
                 $input_username = $_POST["username"];
                 $input_password = $_POST["password"];
         
-                $stmt = $link->prepare("SELECT hashed_password FROM users WHERE user_id = ?");
+                $stmt = $db_connection->prepare("SELECT hashed_password FROM users WHERE user_id = ?");
                 $stmt->bind_param("s", $input_username);
                 $stmt->execute();
                 $result = $stmt->get_result();
@@ -67,7 +54,7 @@
         
                 if ($user_database_password_hashed !== null && password_verify($input_password, $user_database_password_hashed['hashed_password'])) {
                     // Redirect before sending any content
-                    $stmt = $link->prepare("SELECT role_id FROM users WHERE user_id = ?");
+                    $stmt = $db_connection->prepare("SELECT role_id FROM users WHERE user_id = ?");
                     $stmt->bind_param("s", $input_username);
                     $stmt->execute();
                     $result = $stmt->get_result();
@@ -76,10 +63,10 @@
                     $_SESSION["user_id"] = $input_username;
                 
                     if ($user_role['role_id'] === 1) {
-                        header("Location: doctor_page.php");
+                        header("Location: ../doctor/doctor_page.php");
                     }
                     if ($user_role['role_id'] === 2) {
-                        header("Location: lab_design_input_form.php");
+                        header("Location: ..lab/lab_design_input_form.php");
                     }
                 
                     exit();
