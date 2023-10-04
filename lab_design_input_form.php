@@ -6,6 +6,39 @@
     <link rel="stylesheet" type="text/css" href="lab_tech_style.css">
 </head>
 <body>
+<body>
+<nav>
+    <a href="corre_home_page.php">
+        <img src="logo_main.png" alt="Logo" width="95" height="65">
+    </a>
+    <ul>
+        <li><a href="corre_home_page.php">Home</a></li>
+        <li class="dropdown">
+            <a href="corre_about_page.php" class="dropbtn">About</a>
+            <div class="dropdown-content">
+                <a href="service1.php">About BacTrack</a>
+                <a href="service2.php">About CombiANT</a>
+                <a href="service3.php">About us</a>
+            </div>
+        <li class="dropdown">
+        <a href ="corre_contact_page.php" class="dropbtn">Contact</a>
+        <div class="dropdown-content">
+                <a href="service1.php">Contact us</a>
+                <a href="service2.php">FAQ</a>
+            </div>
+            </li>
+        <li><a href="corre_statistics_page.php">Statistics</a></li>
+
+        <li class="dropdown">
+        <a href ="corre_contact_page.php" class="dropbtn">My page</a>
+        <div class="dropdown-content">
+                <a href="service1.php">Sample input</a>
+                <a href="service2.php">Log Out</a>
+            </div>
+            </li>
+    </ul>
+</nav>
+
     <!-- Create a header for your page -->
     <header>
         <h1>Insert patient sample</h1>
