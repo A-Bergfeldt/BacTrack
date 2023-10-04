@@ -66,7 +66,7 @@ how much you want
     <section id='section2'>
         <div class="section-content height: auto;" >
             <p style="margin-left: 100px; font-size: 70px; ">About BacTrack</p>
-            <img src="section2.jpg" alt="Desktop Image" width="550" height="500" style="float: right; margin-left: 20px; margin-top: -200px;">
+            <img src="home_sec2.jpg" alt="Desktop Image" width="550" height="500" style="float: right; margin-left: 20px; margin-top: -200px;">
             <p style="margin-left: 100px; font-size: 22px;; ">The growing problem of antibiotic resistance (AMR) poses difficulties when it comes to treating bacterial infections. Identifying the root cause of an illness at an early stage can be crucial when it comes to treating these diseases, and can result in a more effective treatment using a tailored antibiotic therapy to the specific infection.</p>
         <div>
             <div class="button-container" style="text-align: center;">
