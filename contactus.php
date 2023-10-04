@@ -15,13 +15,13 @@
 
 
     <form action="send_email.php" method="POST" target="_blank">
-        <label for="name"><b>Full name</b></label>
+        <label for="name">Full name</label>
         <input type="text" id="name" name="name" placeholder="Enter your name" required autocomplete="name"><br><br>
 
-        <label for="email"><b>Email ID</b></label>
+        <label for="email">Email ID</label>
         <input type="email" id="email" name="email" placeholder="firstname@gmail.com" required autocomplete="email"><br><br>
 
-        <label for="description"><b>How may we help you?</b></label><br>
+        <label for="description">How may we help you?</label><br>
         <textarea id="description" name="description" rows="4" cols="50" placeholder="A detailed description" required autocomplete="description"></textarea><br><br>
 
         <input type="submit" value="Submit">
@@ -44,10 +44,10 @@
     <div class="email-IDS">
         <h2>Email Addresses</h2>
         <ul>
-            <li>General Contact Email: info@bactrack.com</li>
-            <li>Support Email: support@bactrack.com</li>
-            <li>Sales/Inquiries Email: sales@bactrack.com</li>
-            <li>Technical Support Email: techsupport@bactrack.com</li>
+            <li>General Contact Email: <u>info@bactrack.com</u></li>
+            <li>Support Email: <u>support@bactrack.com</u></li>
+            <li>Sales/Inquiries Email: <u>sales@bactrack.com</u></li>
+            <li>Technical Support Email: <u>techsupport@bactrack.com</u></li>
         </ul>
     </div>
 
