@@ -95,6 +95,7 @@ nav ul li a:hover{
 }
 
 .slide2{
+<<<<<<< HEAD
     background:#fff;
 }
  
@@ -103,6 +104,8 @@ nav ul li a:hover{
 }
 
 .slide4{
+=======
+>>>>>>> 72ebc7192a8087aa6c732714ea5d6c041e9ed49e
     background: #fff;
 }
 
@@ -123,6 +126,7 @@ img:hover {
     /* Add any additional styles you want to apply when the image is hovered */
 }
 
+<<<<<<< HEAD
 /*SERVICES/GRAPHS AVAILABLE*/
 
 .course{
@@ -225,3 +229,10 @@ p{
     background: rgba(225,0,0,0.7);
 }
 */
+=======
+
+
+
+
+
+>>>>>>> 72ebc7192a8087aa6c732714ea5d6c041e9ed49e
