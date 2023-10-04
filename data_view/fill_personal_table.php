@@ -1,3 +1,4 @@
+<!-- This PHP file is used to fill the table for a doctor viewing samples they are responsible for -->
 <?php
 // Start the table with some basic styling
 echo '<table style="width: 100%; border-collapse: collapse;">

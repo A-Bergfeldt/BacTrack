@@ -30,22 +30,17 @@ how much you want
     <nav>
         <div class="logo">Logo here</div>
         <ul>
-        <li><a href ="home_page.php">Home</a></li>
+            <li><a href ="home_page.php">Home</a></li>
             <li><a href ="about_page.php">About</a></li>
             <li><a href ="contact_page.php">Contact</a></li>
             <li><a href ="statistics_page.php">Statistics</a></li>
             <li><a href ="login.php">Login</a></li>
         </ul>
-    </nav>
-
+    </nav>  
     <div class="container">
         <div class="slides slide1">
-            <h1 style="font-size: 100px; color: #fff">About page</h1>
-        </div>
-        <div class="slides slide2">
-            <h1 style="font-size: 50px">More stuff</h1>
+            <h1 style="font-size: 100px; color: #fff">Lab Tech's home page</h1>
         </div>
     </div>
-    
-    </body>
-    </html>
+</body>
+</html>
