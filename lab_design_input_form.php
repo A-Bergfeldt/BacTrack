@@ -75,7 +75,7 @@ $result_sample_strain = $link->query($sql_sample_strain);
 $sql_sample_antibiotics = "SELECT sample_id FROM Sample WHERE status_id = 2";
 $result_sample_antibiotics = $link->query($sql_sample_antibiotics);
 
-$link->close();
+
 
 // Store the antibiotics, synergy results and strains in associative arrays
 $antibioticArray = array();
@@ -107,11 +107,10 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
 <br>
 
 <form action="insert_results_strain.php" method="POST">
-<p class="center-text">Enter your identification results here</p>
-  Lab technician ID: <input name="lab_technician_id", class="center-text"><br> <!-- This should be stored automatically -->
+<p class="center-text">Enter your identification results here</p> <!-- This should be stored automatically -->
   Sample ID:
   
-  <select name="sample_id" id="sample_id_strain" required>
+  <select name="sample_id" id="sample_id_strain" required class="center-text">
     <option disabled selected value> --- </option>
     <?php foreach ($sample_strain as $sample): ?>
       <option value=<?php echo $sample['sample_id']; ?>><?php echo $sample['sample_id']; ?></option>
@@ -169,9 +168,8 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
 </form>
 
 
-
 <form action="finished_sample.php" method="POST">
-<p class="center-text">Are you done working with a sample?</p>
+<p class="center-text">Are you done working with a sample?:</p>
   Sample ID:
   <select name="sample_id" id="sample_id_finished" required>
     <option disabled selected value> --- </option>
@@ -196,4 +194,3 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
     $('#sample_id_finished').select2();
   });
 </script>
-
