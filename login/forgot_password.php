@@ -7,16 +7,7 @@
 </head>
 
 <body>
-    <nav>
-        <div class="logo">Logo here</div>
-        <ul>
-            <li><a href ="home_page.php">Home</a></li>
-            <li><a href ="about_page.php">About</a></li>
-            <li><a href ="contact_page.php">Contact</a></li>
-            <li><a href ="statistics_page.php">Statistics</a></li>
-            <li><a href ="login.php">Login</a></li>
-        </ul>
-    </nav> 
+    <?php require_once "../nav_bar.php"; ?> 
 
     <div class="loginbox">
         <h1>Forgot password?</h1>

@@ -29,7 +29,7 @@ how much you want
     </head>
 
 <body>
-<?php require_once "../header.php"; ?>
+<?php require_once "../nav_bar.php"; ?>
 
 
     <div id="cookie-popup" class="cookie-popup">
