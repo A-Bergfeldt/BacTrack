@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <h1>Connect With Us</h1>
+    <h1 class="centered-paragraph">Connect With Us</h1>
     <p class="centered-paragraph">"Contact us at BacTrack for expert guidance on antibiotic combination therapies and improved healthcare outcomes."</p>
 
 
@@ -30,30 +30,14 @@
     <div class="contact-info">
         <h2>General Contact Information</h2>
         <p>Company Name: BacTrack</p>
-        <p>Physical Address: 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA</p>
-    </div>
-
-    <div class="contact-info">
-        <h2>Phone Numbers</h2>
-        <ul>
-            <li>Main Phone Number: +1 (555) 123-4567</li>
-            <li>Emergency Contact Number: +1 (555) 789-0123</li>
-        </ul>
+        <p>Physical Address: Lägerhyddsvägen 1, 752 37 Uppsala</p>
     </div>
 
     <div class="email-IDS">
         <h2>Email Addresses</h2>
         <ul>
-            <li>General Contact Email: <u>info@bactrack.com</u></li>
-            <li>Support Email: <u>support@bactrack.com</u></li>
-            <li>Sales/Inquiries Email: <u>sales@bactrack.com</u></li>
-            <li>Technical Support Email: <u>techsupport@bactrack.com</u></li>
+            <li>General Contact Email: <a href="mailto:bactrack2023@gmail.com">bactrack2023@gmail.com</a></li>
         </ul>
-    </div>
-
-    <div class="fax-number">
-        <h2>Fax Number</h2>
-        <p>Fax Number: +1 (555) 987-6543</p>
     </div>
 
     <div class="social-media-links">
@@ -65,8 +49,8 @@
 
     <div class="Location">
         <h2>Our Location</h2>
-        <p>Physical Address: 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA</p>
-        <a href="https://www.google.com/maps/place/Google+Building+40,+1600+Amphitheatre+Pkwy,+Mountain+View,+CA+94043,+USA/@37.4223878,-122.0867626,17z/data=!3m1!4b1!4m6!3m5!1s0x808fba027f087f8f:0xd86b06710e8fcc35!8m2!3d37.4223878!4d-122.0841877!16s%2Fg%2F12hmj07kf?entry=ttu" target="_blank">View on Google Maps</a>
+        <p>Physical Address: Lägerhyddsvägen 1, 752 37 Uppsala</p>
+        <a href="https://maps.app.goo.gl/u6PB1xFwVHq3BgyBA" target="_blank">View on Google Maps</a>
     </div>
 
     <div class="open-hours">
@@ -147,7 +131,7 @@
     </div>
 
 
-    <h1>Frequently Asked Questions</h1>
+    <h1 class="centered-paragraph">Frequently Asked Questions</h1>
 
     <div class="faq">
         <div class="question-answer">
