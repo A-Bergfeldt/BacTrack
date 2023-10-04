@@ -9,7 +9,7 @@
 <div class="container">
     <h2 class="text-center mt-4">Pie Chart with Data from SQL Database</h2>
     <div id="year-selector">
-        <form method="get" action="antibiotic_use_pie.php">
+        <form method="get" action="pie_prescribed.php">
             <label for="year">Select a Year:</label>
             <select id="year" name="year">
                 <?php
