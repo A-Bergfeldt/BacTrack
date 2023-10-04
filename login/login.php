@@ -39,7 +39,7 @@
                 $input_username = $_POST["username"];
                 $input_password = $_POST["password"];
         
-                $stmt = $link->prepare("SELECT hashed_password FROM users WHERE user_id = ?");
+                $stmt = $db_connection->prepare("SELECT hashed_password FROM users WHERE user_id = ?");
                 $stmt->bind_param("s", $input_username);
                 $stmt->execute();
                 $result = $stmt->get_result();
@@ -47,7 +47,7 @@
         
                 if ($user_database_password_hashed !== null && password_verify($input_password, $user_database_password_hashed['hashed_password'])) {
                     // Redirect before sending any content
-                    $stmt = $link->prepare("SELECT role_id FROM users WHERE user_id = ?");
+                    $stmt = $db_connection->prepare("SELECT role_id FROM users WHERE user_id = ?");
                     $stmt->bind_param("s", $input_username);
                     $stmt->execute();
                     $result = $stmt->get_result();
@@ -55,10 +55,9 @@
                     $role_id = $user_role['role_id'];
                     $_SESSION["role_id"] = $role_id;
                     $_SESSION["user_id"] = $input_username;
-                
+
                     if ($_SESSION['role_id'] == 1) {
                         header("Location: ../doctor/doctor_page.php");
-                        print_r($_SESSION);
                     }
                     if ($_SESSION['role_id'] == 2) {
                         header("Location: ../lab/lab_design_input_form.php");
@@ -66,7 +65,6 @@
                     if ($_SESSION['role_id'] == 3) {
                         header("Location: ../home/home_page.php");
                     }
-                
                     exit();
                 } 
                 else {
