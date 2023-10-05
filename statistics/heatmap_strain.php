@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="heatmap_stylesheet.css">
   <!-- Include Plotly.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
   <h1>Plotly Density Map</h1>
+  <div class="container"> <!--grouping the dropdown and search together-->
   <!-- Dropdown menu to select heatmap option -->
   <form method="get" action="heatmap_strain.php">
-    <label for="heatmapOption">Select Heatmap Option:</label>
-    <select id="heatmapOption" name="strain">
+    <label for="heatmapOption">Select Heatmap Option:</label> <!--older existing-->
+    <select id="heatmapOption" name="strain"><!--older existing-->
       <?php
       require_once "../db_connection.php";
       $sql = "SELECT strain_name FROM strain";
@@ -23,11 +25,11 @@
           }
       ?>
     </select>
-    <button id="update-button" type="submit">Show data for selected strain</button>
+    <button id="update-button" type="submit" class="button-primary">Show data for selected strain</button>
   </form>
-  
+  </div>
   <!-- Div element where the plot will be displayed -->
-  <div id="myDiv" style="width: 600px; height: 400px;"></div>
+  <div id="customMapContainer"></div>
 
   <?php
 
@@ -97,12 +99,12 @@
         mapbox: {
           style: 'open-street-map',
           center: { lon: 15.0226667, lat: 59.3426667 }, // Set the center coordinates
-          zoom: 5 // Set the initial zoom level
+          zoom: 8 // Set the initial zoom level
         }
       };
 
       // Create the Plotly plot
-      Plotly.newPlot('myDiv', data, layout);
+      Plotly.newPlot('customMapContainer', data, layout);
     }
     window.onload = createDensityMap;
   </script>
