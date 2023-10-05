@@ -47,11 +47,6 @@ nav ul li a:hover{
     border-radius: 6px;
 }
 
-/* Adjust the margin-right property for the logo */
-nav img[src='logo_main.png'] {
-    margin-right: 50px; /* Adjust the right margin as needed */
-}
-
 /* Style for the dropdown menu */
 .dropdown {
     position: relative;
@@ -95,11 +90,6 @@ nav img[src='logo_main.png'] {
 /* Show the dropdown content when hovering over the dropdown button/link */
 .dropdown:hover .dropdown-content {
     display: block;
-}
-
-/* Adjust the margin-right property for the logo */
-nav img[src='logo_main.png'] {
-    margin-right: 50px; /* Adjust the right margin as needed */
 }
 
 
