@@ -1,17 +1,15 @@
 
 nav{
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 80px;
-    padding: 10px 90px;
+    padding: 10px 0;
     box-sizing: border-box;
     background: #fff;
 }
 
-nav .logo {
-    margin-left: auto; /* This pushes the logo to the right */
+nav .logo { /* This pushes the logo to the right */
     margin-right: 70px; /* Adjust the right margin as needed */
 }
 
