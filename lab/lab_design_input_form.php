@@ -49,21 +49,33 @@
 
 
 <?php
-require_once '../db_connection.php';
+// Database connection parameters
+$servername = "localhost";
+$username = "root";
+$password = "root";
+$dbname = "BacTrack";
+
+// Create connection
+$link = mysqli_connect($servername, $username, $password, $dbname);
+
+// Check if connection is established
+if (mysqli_connect_error()) {
+  die("Connection failed: " . mysqli_connect_error());
+}
 
 // Select all antibiotics, synergy results and strains then close database connection
 $sql_antibiotics = "SELECT * FROM Antibiotics";
-$result_antibiotics = $db_connection->query($sql_antibiotics);
+$result_antibiotics = $link->query($sql_antibiotics);
 $sql_synergy = "SELECT * FROM Synergy";
-$result_synergy = $db_connection->query($sql_synergy);
+$result_synergy = $link->query($sql_synergy);
 $sql_strain = "SELECT * FROM Strain";
-$result_strain = $db_connection->query($sql_strain);
+$result_strain = $link->query($sql_strain);
 $sql_sample_strain = "SELECT sample_id FROM Sample WHERE status_id = 1";
-$result_sample_strain = $db_connection->query($sql_sample_strain);
+$result_sample_strain = $link->query($sql_sample_strain);
 $sql_sample_antibiotics = "SELECT sample_id FROM Sample WHERE status_id = 2";
-$result_sample_antibiotics = $db_connection->query($sql_sample_antibiotics);
+$result_sample_antibiotics = $link->query($sql_sample_antibiotics);
 
-$db_connection->close();
+
 
 // Store the antibiotics, synergy results and strains in associative arrays
 $antibioticArray = array();
@@ -95,11 +107,10 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
 <br>
 
 <form action="insert_results_strain.php" method="POST">
-<p class="center-text">Enter your identification results here</p>
-  Lab technician ID: <input name="lab_technician_id", class="center-text"><br> <!-- This should be stored automatically -->
+<p class="center-text">Enter your identification results here</p> <!-- This should be stored automatically -->
   Sample ID:
   
-  <select name="sample_id" id="sample_id_strain" required>
+  <select name="sample_id" id="sample_id_strain" required class="center-text">
     <option disabled selected value> --- </option>
     <?php foreach ($sample_strain as $sample): ?>
       <option value=<?php echo $sample['sample_id']; ?>><?php echo $sample['sample_id']; ?></option>
@@ -157,9 +168,8 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
 </form>
 
 
-
 <form action="finished_sample.php" method="POST">
-<p class="center-text">Are you done working with a sample?</p>
+<p class="center-text">Are you done working with a sample?:</p>
   Sample ID:
   <select name="sample_id" id="sample_id_finished" required>
     <option disabled selected value> --- </option>

@@ -3,7 +3,7 @@
 <head>
     <title>BacTrack Login Page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
-    <link rel="stylesheet" href="/home/home_style_sheet.css">
+    <link rel="stylesheet" href="style_sheet.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
             </div>
             <input type="submit" name="submit" value="Login">
             <div class="contact_link">
-                Do not have an account? <li><a href ="/about_contact/contact_page.php">Contact us</a></li>
+                Do not have an account? <li><a href ="/about_contact/contactus.php">Contact us</a></li>
             </div>
         </form>
 
