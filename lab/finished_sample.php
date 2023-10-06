@@ -1,4 +1,8 @@
 <?php
+require '../PHPMailer/src/Exception.php';
+require '../PHPMailer/src/PHPMailer.php';
+require '../PHPMailer/src/SMTP.php';
+
 // Database connection parameters
 require_once '../db_connection.php';
 
@@ -26,12 +30,6 @@ try {
     echo "Error: " . $e->getMessage();
     echo "<br><a href='lab_design_input_form.php'>Back to result input form</a>";
 }
-require '../PHPMailer/src/Exception.php';
-require '../PHPMailer/src/PHPMailer.php';
-require '../PHPMailer/src/SMTP.php';
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 
 // Prepare the SQL statement to check if the email exists and retrieve user information
 $check_query = "SELECT u.email as email, s.doctor_id
@@ -43,7 +41,6 @@ $result = $db_connection->query($check_query);
 $row = $result->fetch_assoc();
 $e_mail = $row['email'];
 
-echo $e_mail;
 
 // Send a notification to the doctors email using PHPMailer
 
@@ -51,6 +48,8 @@ $sample = "localhost"; // Replace with your domain
 $subject = "Sample " . $sample_id . " finished processing ";
 $message = "The analysis of your sample with sample id '" . $sample_id . "' is finished and is ready for review.";
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 
 // Create an instance of PHPMailer
 $mail = new PHPMailer(true);
