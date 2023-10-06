@@ -2,6 +2,10 @@
 // Database connection parameters
 require_once '../db_connection.php';
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $sample_id = (int) $_POST['sample_id'];
 try {
     // Prepare and bind parameters to SQL query, then execute
@@ -30,12 +34,16 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
 // Prepare the SQL statement to check if the email exists and retrieve user information
-$check_query = "SELECT users.email
-                    FROM users
-                    INNER JOIN sample ON users.user_id = sample.doctor_id
-                    WHERE sample.sample_id = '%$sample_id'";
+$check_query = "SELECT u.email as email, s.doctor_id
+                FROM users u
+                INNER JOIN sample s ON u.user_id = s.doctor_id
+                WHERE s.sample_id = '$sample_id';";
 
-$e_mail = $db_connection->query($check_query);                
+$result = $db_connection->query($check_query); 
+$row = $result->fetch_assoc();
+$e_mail = $row['email'];
+
+echo $e_mail;
 
 // Send a notification to the doctors email using PHPMailer
 
@@ -74,7 +82,6 @@ $mail->Body = '
 </html>';
 try {
 $mail->send();
-exit();
 } catch (Exception $e) {
 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
