@@ -35,9 +35,11 @@ try {
         echo "<br><a href='sample_form.php'>Enter another sample</a>";
     } else {
         echo "Error: " . $stmt->error;
+        echo "<br><a href='sample_form.php'>Back to sample input form</a>";
     }
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
+    echo "<br><a href='sample_form.php'>Back to sample input form</a>";
 }
 $link->close();
 

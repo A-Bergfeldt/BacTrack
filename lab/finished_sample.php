@@ -24,11 +24,14 @@ try {
 
     if ($result) {
         echo "Status for sample with sample ID $sample_id has been updated to 'finished'";
+        echo "<br><a href='lab_design_input_form.php'>Enter more results</a>";
     } else {
         echo "Error: " . $stmt->error;
+        echo "<br><a href='lab_design_input_form.php'>Back to result input form</a>";
     }
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
+    echo "<br><a href='lab_design_input_form.php'>Back to result input form</a>";
 }
 $link->close();
 
