@@ -1,0 +1,120 @@
+
+@import "/nav_bar_style_sheet.css";
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+/* Cookie Popup Styles */
+.cookie-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+.accept-cookies {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+
+h1 {
+    font-size: 125px;
+    color: white;
+    text-shadow: -2px -2px 2px black;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+h2 {
+    font-size: 50px;
+    color: white;
+    text-shadow: -2px -2px 2px black;
+    text-align: center;
+    margin-top: 0;
+}
+
+
+#section1 {
+    background: url('home_sec1.jpg') right bottom no-repeat;
+    background-size: cover, auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#section2 {
+
+    background-color: white;
+    color: black;
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+.button-container {
+    margin-top: 20px;
+
+}
+
+
+.button {
+    display: inline-block;
+    padding: 15px 30px; /* Increase padding for a larger button */
+    background-color: #5072A7;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+
+#section3 {
+    background: url('home_sec3.jpg') no-repeat center center;
+    background-size: cover;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 20px;
+}
+
+#section4 {
+
+    background-color: white;
+    color: black;
+    margin-top: 0;
+    height: 100vh;
+
+}
+
+
+
+
+
+
+
+
