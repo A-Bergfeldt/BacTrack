@@ -32,11 +32,14 @@ try {
         // Retrieve the last inserted ID
         $lastInsertedID = mysqli_insert_id($link);
         echo "Data inserted successfully! </br>Your sample id is: " . $lastInsertedID;
+        echo "<br><a href='sample_form.php'>Enter another sample</a>";
     } else {
         echo "Error: " . $stmt->error;
+        echo "<br><a href='sample_form.php'>Back to sample input form</a>";
     }
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
+    echo "<br><a href='sample_form.php'>Back to sample input form</a>";
 }
 $link->close();
 

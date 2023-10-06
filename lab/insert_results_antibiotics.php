@@ -57,11 +57,14 @@ if ($result->num_rows > 0) {
 
         if ($result) {
             echo "Values inserted successfully for sample_id: $sample_id";
+            echo "<br><a href='lab_design_input_form.php'>Enter more results</a>";
         } else {
             echo "Error: " . $stmt->error;
+            echo "<br><a href='lab_design_input_form.php'>Back to result input form</a>";
         }
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
+        echo "<br><a href='lab_design_input_form.php'>Back to result input form</a>";
     }
 }
 
