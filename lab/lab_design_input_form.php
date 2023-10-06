@@ -6,74 +6,26 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" type="text/css" href="lab_tech_style.css">
 </head>
-<body>
-<body>
-    <nav>
-        <a href="home_page.php">
-            <img src="logo_main.png" alt="Logo" width="95" height="65">
-        </a>
-        <ul>
-            <li><a href="home_page.php">Home</a></li>
-            <li class="dropdown">
-                <a href="about_page.php" class="dropbtn">About</a>
-                <div class="dropdown-content">
-                    <a href="service1.php">About BacTrack</a>
-                    <a href="service2.php">About CombiANT</a>
-                    <a href="service3.php">About us</a>
-                </div>
-            <li class="dropdown">
-            <a href ="contact_page.php" class="dropbtn">Contact</a>
-            <div class="dropdown-content">
-                    <a href="service1.php">Contact us</a>
-                    <a href="service2.php">FAQ</a>
-                </div>
-                </li>
-            <li><a href="statistics_page.php">Statistics</a></li>
-
-            <li class="dropdown">
-            <a href ="lab_design_input_form.php" class="dropbtn">My page</a>
-            <div class="dropdown-content">
-                    <a href="lab_design_input_form.php">Sample input</a>
-                    <a href="logout.php">Log Out</a>
-                </div>
-                </li>
-        </ul>
-    </nav>
-
-
-
-
-</body>
+  <body>
+    <?php require_once '../nav_bar.php'; ?>
+  </body>
 </html>
 
 
-
 <?php
-// Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "BacTrack";
-
-// Create connection
-$link = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check if connection is established
-if (mysqli_connect_error()) {
-  die("Connection failed: " . mysqli_connect_error());
-}
+require_once "../db_connection.php";
 
 // Select all antibiotics, synergy results and strains then close database connection
 $sql_antibiotics = "SELECT * FROM Antibiotics";
-$result_antibiotics = $link->query($sql_antibiotics);
+$result_antibiotics = $db_connection->query($sql_antibiotics);
 $sql_synergy = "SELECT * FROM Synergy";
-$result_synergy = $link->query($sql_synergy);
+$result_synergy = $db_connection->query($sql_synergy);
 $sql_strain = "SELECT * FROM Strain";
-$result_strain = $link->query($sql_strain);
+$result_strain = $db_connection->query($sql_strain);
 $sql_sample_strain = "SELECT sample_id FROM Sample WHERE status_id = 1";
-$result_sample_strain = $link->query($sql_sample_strain);
+$result_sample_strain = $db_connection->query($sql_sample_strain);
 $sql_sample_antibiotics = "SELECT sample_id FROM Sample WHERE status_id = 2";
-$result_sample_antibiotics = $link->query($sql_sample_antibiotics);
+$result_sample_antibiotics = $db_connection->query($sql_sample_antibiotics);
 
 
 

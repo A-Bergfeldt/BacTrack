@@ -51,6 +51,7 @@
                 strain ON strain.strain_id = sample.strain_id
               WHERE 
                 strain.strain_name LIKE '$strain%'
+                AND sample.date_taken >= DATE_SUB(CURDATE(), INTERVAL 1 YEAR)
               GROUP BY
                 hospital.longitude, hospital.latitude, hospital.hospital_name, sample.strain_id;";
 

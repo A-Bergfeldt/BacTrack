@@ -1,4 +1,3 @@
-<?php require_once "../nav_bar.php"; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +8,6 @@
 
 <body>
     <?php require_once "../nav_bar.php"; ?>
-
 
         <div class="container">
             <div class="slides slide1">

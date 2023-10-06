@@ -26,9 +26,9 @@
 
         if(isset($_SESSION['role_id'])){
             if($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 3){
-            echo '<li><a href="/doctor/doctor_page.php">My Page</a></li>';}
+            echo '<li><a href="/doctor/doctor_page.php">My samples</a></li>';}
             if($_SESSION['role_id'] == 2 || $_SESSION['role_id'] == 3){
-            echo '<li><a href="/lab/results_form.php">My Page</a></li>';}
+            echo '<li><a href="/lab/lab_design_input_form.php">Sample input</a></li>';}
             echo '<li><a href="/login/logout.php">Logout</a></li>';
         } else {
             echo '<li><a href="/login/login.php">Login</a></li>';
