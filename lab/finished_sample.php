@@ -1,6 +1,6 @@
 <?php
 // Database connection parameters
-require_once '$../db_connection.php';
+require_once '../db_connection.php';
 
 $sample_id = (int) $_POST['sample_id'];
 try {
@@ -58,7 +58,7 @@ $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
 $mail->Port = 465;
 
 $mail->setFrom('bactrack2023@gmail.com', 'BacTrack');
-$mail->addAddress($user_email);
+$mail->addAddress($e_mail);
 
 // Set email subject and message
 $mail->isHTML(true);  
