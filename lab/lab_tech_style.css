@@ -1,3 +1,4 @@
+@import "/nav_bar_style_sheet.css";
 /* Reset some default browser styles */
 body{
     margin: 0;
@@ -8,18 +9,6 @@ body{
     background: linear-gradient(180deg, rgba(21,98,105,1) 0%, rgba(255,255,255,1) 100%);
     background-attachment: fixed;
 }
-
-
-body, h1, p {
-    margin: 0;
-    padding: 0;
-}
-
-/* Apply a background color to the body */
-@import "/nav_bar_style_sheet.css";
-
-
-
 
 /* Center-align text */
 .center-text {
