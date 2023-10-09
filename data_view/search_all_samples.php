@@ -1,10 +1,11 @@
 <!-- Create search form -->
 <script src="multiselect-dropdown.js"></script>
+<link rel="stylesheet" href="table_styles.css">
 
 <?php
 include '../db_connection.php';
 
-$sqlDoctors = "SELECT user_id FROM users;";
+$sqlDoctors = "SELECT user_id FROM users WHERE users.role_id = 1;";
 $resultDoctors = $db_connection->query($sqlDoctors);
 $doctors = $resultDoctors->fetch_all(MYSQLI_ASSOC);
 
@@ -108,8 +109,8 @@ foreach ($dropdownNames as $searchName => $sqlName) {
     if ($whereStatements != "WHERE ") {
       $whereStatements .= " and ";
     }
-    if ($searchName == "search_strain") {
-    $_GET[$searchName] = str_replace("_", " ", $_GET[$searchName]);
+    if ($searchName == "search_strain" or $searchName == "search_hospital") {
+      $_GET[$searchName] = str_replace("_", " ", $_GET[$searchName]);
     }
     $whereStatements .= $sqlName . " IN ('" . implode("', '", $_GET[$searchName]) . "')";
   }
@@ -134,16 +135,17 @@ if (count($_GET) != 0) {
 }
 
 // Start the table with some basic styling
-echo '<table style="width: 100%; border-collapse: collapse;">
+echo '<div class="scrollable">
+    <table>
     <thead>
     <tr>
-        <th style="border: 1px solid #000; padding: 8px;">Sample ID</th>
-        <th style="border: 1px solid #000; padding: 8px;">Date</th>
-        <th style="border: 1px solid #000; padding: 8px;">Status</th>
-        <th style="border: 1px solid #000; padding: 8px;">Hospital</th>
-        <th style="border: 1px solid #000; padding: 8px;">Strain</th>
-        <th style="border: 1px solid #000; padding: 8px;">Doctor</th>
-        <th style="border: 1px solid #000; padding: 8px;">Lab Technician</th>
+        <th>Sample ID</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Hospital</th>
+        <th>Strain</th>
+        <th>Doctor</th>
+        <th>Lab Technician</th>
     </tr>
     </thead>
     ';
@@ -152,25 +154,25 @@ if (count($_GET) != 0 && $result->num_rows > 0) {
   echo "<tbody>";
   while ($row = $result->fetch_assoc()) {
     echo "<tr>
-        <td style='border: 1px solid #000; padding: 8px;'>
+        <td>
             <a href='sample_results.php?sample_id=" . $row["sample_id"] . "'>" . $row["sample_id"] . "</a>
         </td>
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["date_taken"] . "</td>
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["status_name"] . "</td>
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["hospital_name"] . "</td>
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["strain_name"] . "</td>
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["doctor_id"] . "</td>
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["lab_technician_id"] . "</td>
+        <td>" . $row["date_taken"] . "</td>
+        <td>" . $row["status_name"] . "</td>
+        <td>" . $row["hospital_name"] . "</td>
+        <td>" . $row["strain_name"] . "</td>
+        <td>" . $row["doctor_id"] . "</td>
+        <td>" . $row["lab_technician_id"] . "</td>
         </tr>";
   }
   echo "</tbody>";
 } else {
-  echo "<tr>
-    <td colspan='5'>0 results</td>
-</tr>";
+  echo "<p>
+    0 results
+</p>";
 }
 
 // Close the table
-echo '</table>';
+echo '</table></div>';
 $db_connection->close();
 ?>
