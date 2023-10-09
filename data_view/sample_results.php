@@ -1,5 +1,7 @@
+<link rel="stylesheet" href="table_styles.css">
 <?php
 include '../db_connection.php';
+
 
 $sample_id = $_GET["sample_id"];
 // SQL queries
@@ -38,16 +40,16 @@ $show_button = ($status_id == 3 and $doctor_id == 'Simon_Oscarson' and 1 == 1); 
 // Start the table with some basic styling
 echo '
     <p>Results for Sample ID: ' . $sample_id . ' </p>
-    <table style="width: 100%; border-collapse: collapse;">
+    <table>
     <thead>
     <tr>
-        <th style="border: 1px solid #000; padding: 8px;">Antibiotic 1</th>
-        <th style="border: 1px solid #000; padding: 8px;">Antibiotic 2</th>
-        <th style="border: 1px solid #000; padding: 8px;">Antibiotic 3</th>
-        <th style="border: 1px solid #000; padding: 8px;">Result</th>
+        <th>Antibiotic 1</th>
+        <th>Antibiotic 2</th>
+        <th>Antibiotic 3</th>
+        <th>Result</th>
         ';
 if ($show_button) {
-    echo '<th style="border: 1px solid #000; padding: 8px;">Prescribe</th>';
+    echo '<th>Prescribe</th>';
 
 }
 echo '
@@ -67,14 +69,14 @@ if ($result->num_rows > 0) {
             echo "<tr>";
         }
         echo "
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["Antibiotic 1"] . "</td>
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["Antibiotic 2"] . "</td>
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["Antibiotic 3"] . "</td>
-        <td style='border: 1px solid #000; padding: 8px;'>" . $row["synergy_name"] . "</td>
+        <td>" . $row["Antibiotic 1"] . "</td>
+        <td>" . $row["Antibiotic 2"] . "</td>
+        <td>" . $row["Antibiotic 3"] . "</td>
+        <td>" . $row["synergy_name"] . "</td>
         ";
         if ($show_button) {
             // Pass antibiotic values to the showConfirmation function
-            echo "<td style='border: 1px solid #000; padding: 8px;'>
+            echo "<td>
                     <button onclick='showConfirmation(" . $row["sample_id"] . ", \"" . $row["Antibiotic 1"] . "\", \"" . $row["Antibiotic 2"] . "\", \"" . $row["Antibiotic 3"] . "\")'>Prescribe this combination</button>
                 </td>";
         }
@@ -97,7 +99,7 @@ if ($result->num_rows > 0) {
     </script>";
 
 } else {
-    echo "<tr><td colspan='5'>0 results</td></tr>";
+    echo "<p>>0 results</p>";
 }
 
 // Close the table
