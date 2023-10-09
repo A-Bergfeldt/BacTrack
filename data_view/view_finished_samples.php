@@ -2,7 +2,7 @@
 session_start();
 
 if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 3) {
-    header("Location: ../login.php");
+    header("Location: ../login/login.php");
     exit();
 }
 
