@@ -20,14 +20,4 @@ function generateGaussianRandom($mean, $min, $max, $inputValue) {
     
     return $gaussianRandom;
 }
-$randomNumbers = [];
-
-while (count($randomNumbers) < 3) {
-    $randomValue = generateGaussianRandom(2, 1, 5, 2023);
-    if (!in_array($randomValue, $randomNumbers)) {
-        $randomNumbers[] = $randomValue;
-    }
-}
-
-print_r($randomNumbers);
 ?>
