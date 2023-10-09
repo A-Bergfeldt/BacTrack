@@ -1,16 +1,12 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "bactrack";
+session_start();
 
-// Create connection
-$link = mysqli_connect($servername, $username, $password, $dbname);
-
-if (mysqli_connect_error()) {
-    die("Connection failed: " . mysqli_connect_error());
+if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 3) {
+    header("Location: ../home_page.php");
+    exit();
 }
 
+$user_name = str_replace("_", " ", $_SESSION['user_id']);
 ?>
 
 <!-- This is how you comment out
@@ -56,7 +52,7 @@ how much you want
     <?php require_once "../nav_bar.php"; ?> 
     <div class="container">
         <div class="slides slide1">
-            <h1 style="font-size: 100px; color: #fff;">Hello Doctor!</h1>
+            <h1 style="font-size: 100px; color: #fff;">Hello <?php echo $user_name; ?>!</h1>
         </div>
     </div>
     <!-- Button container for both buttons -->
