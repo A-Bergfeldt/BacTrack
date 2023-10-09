@@ -3,7 +3,7 @@
 <head>
     <title>BacTrack Login Page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
-    <link rel="stylesheet" href="login_style.css">
+    <link rel="stylesheet" href="style_sheet.css">
 </head>
 
 <body>
