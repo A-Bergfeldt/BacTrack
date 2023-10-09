@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My BacTrack Web App</title>
+    <!-- Add your CSS styles here -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" type="text/css" href="doctor_style.css">
+</head>
+  <body>
+    <?php require_once '../nav_bar.php'; ?>
+  </body>
+</html>
+
+
+
+
+
 <?php
 session_start();
 require_once '../db_connection.php';
@@ -27,10 +44,14 @@ while ($row = $result_hospital->fetch_assoc())
 <!-- Include Select2 JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 
-<p>Please enter your sample information here:</p>
+<br>
+<br>
+<br>
 
 <form action="insert_sample_data.php" method="POST">
-    Date:<input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" required><br>
+<p class="center-text">Enter your sample information here</p> 
+    Date: 
+    <input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" required><br>
     Hospital:
     <select name="hospital" id="hospital" required>
         <option disabled selected value>---</option>
