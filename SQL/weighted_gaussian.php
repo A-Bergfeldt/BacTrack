@@ -1,6 +1,6 @@
 <?php
 function generateGaussianRandom($mean, $min, $max, $inputValue) {
-    $sigma = 7 - (2023 - $inputValue) * 0.5; 
+    $sigma = 30 - (2023 - $inputValue) * 0.5; 
     
     $x = 0;
     $y = 0;
