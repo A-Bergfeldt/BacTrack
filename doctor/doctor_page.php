@@ -24,6 +24,32 @@ how much you want
     <title>Mina testing home page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="doctor_style.css">
+    <style>
+        /* Your existing CSS styles here */
+
+        /* Style the button container */
+        .button-container {
+            text-align: center;
+            margin-top: 30px; /* Adjust the margin as needed */
+        }
+
+        /* Style the buttons */
+        .button-container .button {
+            display: inline-block;
+            padding: 15px 30px; /* Increase padding for a larger button */
+            background-color: #5072A7;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin: 0 10px; /* Add spacing between buttons */
+        }
+
+        .button-container .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 
 <body>
@@ -33,13 +59,11 @@ how much you want
             <h1 style="font-size: 100px; color: #fff;">Hello Doctor!</h1>
         </div>
     </div>
+    <!-- Button container for both buttons -->
+    <div class="button-container">
+        <a href="sample_form.php" class="button">Insert new sample</a>
+        <a href="data_view/search_all_samples_test.php" class="button">Search all samples</a>
+    </div>
 </body>
 </html>
 
-<form action="sample_form.php" method="POST">
-    <input type="submit" value="Insert new sample">
-</form>
-
-<form action="/data_view/search_all_samples_test.php" method="POST">
-    <input type="submit" value="Search all samples">
-</form>
