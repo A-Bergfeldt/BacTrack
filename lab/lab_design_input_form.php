@@ -13,7 +13,13 @@
 
 
 <?php
-require_once "../db_connection.php";
+session_start();
+require_once '../db_connection.php';
+
+if ($_SESSION['role_id'] != 2 && $_SESSION['role_id'] != 3) {
+    header("Location: ../home_page.php");
+    exit();
+}
 
 // Select all antibiotics, synergy results and strains then close database connection
 $sql_antibiotics = "SELECT * FROM Antibiotics";
@@ -27,6 +33,7 @@ $result_sample_strain = $db_connection->query($sql_sample_strain);
 $sql_sample_antibiotics = "SELECT sample_id FROM Sample WHERE status_id = 2";
 $result_sample_antibiotics = $db_connection->query($sql_sample_antibiotics);
 
+$db_connection->close();
 
 
 // Store the antibiotics, synergy results and strains in associative arrays
