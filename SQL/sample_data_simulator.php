@@ -3,8 +3,8 @@ require_once '../db_connection.php';
 require_once 'weighted_gaussian.php';
 
 // Generate and insert 20 sample instances for each month
-for ($x = 0; $x <= 19; $x++) {
-    for ($year = 2000; $year <= 2023; $year++) {
+for ($x = 0; $x <= 9; $x++) {
+    for ($year = 2010; $year <= 2023; $year++) {
         for ($month = 1; $month <=12; $month++){
             // Generate a random combination of antibiotic IDs where all three IDs are different
             $antibiotic_ids = [];
@@ -15,11 +15,10 @@ for ($x = 0; $x <= 19; $x++) {
                     $antibiotic_ids[] = $randomValue;
                 }
             }
-
             // Create a sample record
             $date_taken = $year . '-' . $month . '-01'; // Change the date format as needed
             $status_id = rand(1, 3); // Assuming status IDs are in the range 1-3
-            $hospital_id = rand(1, 5); // Assuming hospital IDs are in the range 1-10
+            $hospital_id = generateGaussianRandom(3, 1, 5, $year);
             $strain_id = rand(1, 3); // Assuming strain IDs are in the range 1-5
             $doctor_id = 'Simon_Oscarson'; // Assuming doctor IDs are in the format 'doctorX'
             $lab_technician_id = 'Andreas_Bergfeldt'; // Assuming lab technician IDs are in the format 'labtechX'
