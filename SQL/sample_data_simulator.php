@@ -10,17 +10,17 @@ for ($x = 0; $x <= 9; $x++) {
             $antibiotic_ids = [];
             $w = (2023-$year)/2023;
             $antibiotics = [
-                "No antibiotic" => 5 - 5*$w,
-                "Penicillin" => 2+ 2*$w,
-                "Amoxicillin" => 1 +4*$w*$w,
-                "Ciprofloxacin" => 3*$w + $w,
-                "Azithromycin" => 3 + 2*$w,
-                "Doxycycline" => 3 + log($w)*$w,
-                "Erythromycin" => 2,
-                "Vancomycin" => 5 - 2*$w,
-                "Gentamicin" => 2 + 2*$w,
-                "Metronidazole" => 1 + 7*$w,
-                "Clarithromycin" => 1 + $w
+                "1" => 5 - 5*$w,
+                "2" => 2+ 2*$w,
+                "3" => 1 +4*$w*$w,
+                "4" => 3*$w + $w,
+                "5" => 3 + 2*$w,
+                "6" => 3 + log($w)*$w,
+                "7" => 2,
+                "8" => 5 - 2*$w,
+                "9" => 2 + 2*$w,
+                "10" => 1 + 7*$w,
+                "11" => 1 + $w
             ];
 
                 // Randomly select three distinct antibiotics
@@ -30,6 +30,7 @@ for ($x = 0; $x <= 9; $x++) {
                     $antibiotic_ids[] = $randomAntibiotic;
                 }
             }
+            echo json_encode($antibiotic_ids);
             // Create a sample record
             $date_taken = $year . '-' . $month . '-01'; // Change the date format as needed
             $status_id = rand(1, 3); // Assuming status IDs are in the range 1-3
