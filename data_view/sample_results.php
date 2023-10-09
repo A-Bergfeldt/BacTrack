@@ -1,7 +1,12 @@
 <link rel="stylesheet" href="table_styles.css">
 <?php
+session_start();
 include '../db_connection.php';
 
+if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 3) {
+    header("Location: ../login.php");
+    exit();
+}
 
 $sample_id = $_GET["sample_id"];
 // SQL queries
@@ -35,7 +40,7 @@ if ($resultDoctor->num_rows > 0) {
     $doctor_id = $row['doctor_id'];
 }
 
-$show_button = ($status_id == 3 and $doctor_id == 'Simon_Oscarson' and 1 == 1); //TODO: doctor_id == 'Simon_Oscarson' should be doctor_id == current_user and 1==1 should be current_user_role == 1, get from sessions
+$show_button = ($status_id == 3 and $doctor_id == $_SESSION['user_id']); 
 
 // Start the table with some basic styling
 echo '
