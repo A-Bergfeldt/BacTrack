@@ -6,50 +6,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" type="text/css" href="lab_tech_style.css">
 </head>
-<body>
-<body>
-    <nav>
-        <a href="home_page.php">
-            <img src="logo_main.png" alt="Logo" width="95" height="65">
-        </a>
-        <ul>
-            <li><a href="home_page.php">Home</a></li>
-            <li class="dropdown">
-                <a href="about_page.php" class="dropbtn">About</a>
-                <div class="dropdown-content">
-                    <a href="service1.php">About BacTrack</a>
-                    <a href="service2.php">About CombiANT</a>
-                    <a href="service3.php">About us</a>
-                </div>
-            <li class="dropdown">
-            <a href ="contact_page.php" class="dropbtn">Contact</a>
-            <div class="dropdown-content">
-                    <a href="service1.php">Contact us</a>
-                    <a href="service2.php">FAQ</a>
-                </div>
-                </li>
-            <li><a href="statistics_page.php">Statistics</a></li>
-
-            <li class="dropdown">
-            <a href ="lab_design_input_form.php" class="dropbtn">My page</a>
-            <div class="dropdown-content">
-                    <a href="lab_design_input_form.php">Sample input</a>
-                    <a href="logout.php">Log Out</a>
-                </div>
-                </li>
-        </ul>
-    </nav>
-
-
-
-
-</body>
+  <body>
+    <?php require_once '../nav_bar.php'; ?>
+  </body>
 </html>
 
 
-
 <?php
-require_once '../db_connection.php';
+require_once "../db_connection.php";
 
 // Select all antibiotics, synergy results and strains then close database connection
 $sql_antibiotics = "SELECT * FROM Antibiotics";
@@ -63,7 +27,7 @@ $result_sample_strain = $db_connection->query($sql_sample_strain);
 $sql_sample_antibiotics = "SELECT sample_id FROM Sample WHERE status_id = 2";
 $result_sample_antibiotics = $db_connection->query($sql_sample_antibiotics);
 
-$db_connection->close();
+
 
 // Store the antibiotics, synergy results and strains in associative arrays
 $antibioticArray = array();
@@ -95,11 +59,10 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
 <br>
 
 <form action="insert_results_strain.php" method="POST">
-<p class="center-text">Enter your identification results here</p>
-  Lab technician ID: <input name="lab_technician_id", class="center-text"><br> <!-- This should be stored automatically -->
+<p class="center-text">Enter your identification results here</p> <!-- This should be stored automatically -->
   Sample ID:
   
-  <select name="sample_id" id="sample_id_strain" required>
+  <select name="sample_id" id="sample_id_strain" required class="center-text">
     <option disabled selected value> --- </option>
     <?php foreach ($sample_strain as $sample): ?>
       <option value=<?php echo $sample['sample_id']; ?>><?php echo $sample['sample_id']; ?></option>
@@ -157,9 +120,8 @@ $sample_antibiotics = $result_sample_antibiotics->fetch_all(MYSQLI_ASSOC);
 </form>
 
 
-
 <form action="finished_sample.php" method="POST">
-<p class="center-text">Are you done working with a sample?</p>
+<p class="center-text">Are you done working with a sample?:</p>
   Sample ID:
   <select name="sample_id" id="sample_id_finished" required>
     <option disabled selected value> --- </option>

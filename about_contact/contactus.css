@@ -1,10 +1,10 @@
+@import "/nav_bar_style_sheet.css";
 /* contactus.css */
 body {
-    font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 20px;
-    background-color: #d9d6f3;
-    width: 97%;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
     height: 100vh;
     background-size: cover;
     background-position: center;

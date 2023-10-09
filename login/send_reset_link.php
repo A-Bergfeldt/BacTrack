@@ -1,8 +1,8 @@
 <?php
-require_once('db_connection.php');
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+require_once('../db_connection.php');
+require '../PHPMailer/src/Exception.php';
+require '../PHPMailer/src/PHPMailer.php';
+require '../PHPMailer/src/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Send the reset password link to the user's email using PHPMailer
 
                     $domain = "localhost"; // Replace with your domain
-                    $reset_link = $domain . "/change_password.php?token=" . urlencode($encoded_token);
+                    $reset_link = $domain . "/login/change_password.php?token=" . urlencode($encoded_token);
                     $subject = "Password Reset";
                     $message = "To reset your password, click on the following link: ";
                     
@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </html>';
                     try {
                         $mail->send();
-                        header("Location: password_sent.html");
+                        header("Location: password_sent.php");
                         exit();
                     } catch (Exception $e) {
                         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="contactus.css">
@@ -10,8 +9,9 @@
 </head>
 
 <body>
+    <?php require_once "../nav_bar.php"; ?> 
     <h1>Connect With Us</h1>
-    <p class="centered-paragraph">"Contact us at BacTrack for expert guidance on antibiotic combination therapies and improved healthcare outcomes."</p>
+    <p class="centered-paragraph">Contact us at BacTrack for expert guidance on antibiotic combination therapies and improved healthcare outcomes</p>
 
 
     <form action="send_contact_email.php" method="POST" target="_blank">

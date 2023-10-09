@@ -1,36 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Mina Login Page</title>
+    <title>BacTrack Login Page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="login_style.css">
 </head>
 
 <body>
-    <nav>
-        <a href="home_page.php">
-            <img src="logo_main.png" alt="Logo" width="95" height="65">
-        </a>
-        <ul>
-            <li><a href="home_page.php">Home</a></li>
-            <li class="dropdown">
-                <a href="about_page.php" class="dropbtn">About</a>
-                <div class="dropdown-content">
-                    <a href="service1.php">About BacTrack</a>
-                    <a href="service2.php">About CombiANT</a>
-                    <a href="service3.php">About us</a>
-                </div>
-            <li class="dropdown">
-            <a href ="contact_page.php" class="dropbtn">Contact</a>
-            <div class="dropdown-content">
-                    <a href="service1.php">Contact us</a>
-                    <a href="service2.php">FAQ</a>
-                </div>
-                </li>
-            <li><a href="statistics_page.php">Statistics</a></li>
-            <li><a href="login.php">Login</a></li>
-        </ul>
-    </nav>
+    <?php require_once "../nav_bar.php"; ?> 
 
     <div class="loginbox">
         <h1>Login</h1>
@@ -50,30 +27,21 @@
             </div>
             <input type="submit" name="submit" value="Login">
             <div class="contact_link">
-                Do not have an account? <li><a href ="contact_page.php">Contact us</a></li>
+                Do not have an account? <li><a href ="/about_contact/contactus.php">Contact us</a></li>
             </div>
         </form>
 
         <?php
             session_start();
-            include "db_connection.php";
+            require_once "../nav_bar.php";
+            require_once "../db_connection.php";
 
-            $servername = "localhost";
-            $db_username = "root";
-            $db_password = "root";
-            $db_name = "bactrack";
-            $link = mysqli_connect($servername, $db_username, $db_password, $db_name); 
-
-            if (mysqli_connect_error()) {
-                die("Connection failed: " . mysqli_connect_error());
-            }
-        
             if(isset($_POST["submit"])) {
                 // Use prepared statements with parameterized queries
                 $input_username = $_POST["username"];
                 $input_password = $_POST["password"];
         
-                $stmt = $link->prepare("SELECT hashed_password FROM users WHERE user_id = ?");
+                $stmt = $db_connection->prepare("SELECT hashed_password FROM users WHERE user_id = ?");
                 $stmt->bind_param("s", $input_username);
                 $stmt->execute();
                 $result = $stmt->get_result();
@@ -81,21 +49,24 @@
         
                 if ($user_database_password_hashed !== null && password_verify($input_password, $user_database_password_hashed['hashed_password'])) {
                     // Redirect before sending any content
-                    $stmt = $link->prepare("SELECT role_id FROM users WHERE user_id = ?");
+                    $stmt = $db_connection->prepare("SELECT role_id FROM users WHERE user_id = ?");
                     $stmt->bind_param("s", $input_username);
                     $stmt->execute();
                     $result = $stmt->get_result();
                     $user_role = $result->fetch_assoc();
-                    $_SESSION["role_id"] = $user_role;
+                    $role_id = $user_role['role_id'];
+                    $_SESSION["role_id"] = $role_id;
                     $_SESSION["user_id"] = $input_username;
-                
-                    if ($user_role['role_id'] === 1) {
-                        header("Location: doctor_page.php");
+
+                    if ($_SESSION['role_id'] == 1) {
+                        header("Location: ../doctor/doctor_page.php");
                     }
-                    if ($user_role['role_id'] === 2) {
-                        header("Location: lab_design_input_form.php");
+                    if ($_SESSION['role_id'] == 2) {
+                        header("Location: ../lab/lab_design_input_form.php");
                     }
-                
+                    if ($_SESSION['role_id'] == 3) {
+                        header("Location: ../home/home_page.php");
+                    }
                     exit();
                 } 
                 else {
