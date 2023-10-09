@@ -23,15 +23,23 @@ how much you want
 <head>
     <title>Mina testing home page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
-    <link rel="stylesheet" href="/login/style_sheet.css">
+    <link rel="stylesheet" href="doctor_style.css">
 </head>
 
 <body>
     <?php require_once "../nav_bar.php"; ?> 
     <div class="container">
         <div class="slides slide1">
-            <h1 style="font-size: 100px; color: #fff">Doctor's home page</h1>
+            <h1 style="font-size: 100px; color: #fff;">Hello Doctor!</h1>
         </div>
     </div>
 </body>
 </html>
+
+<form action="sample_form.php" method="POST">
+    <input type="submit" value="Insert new sample">
+</form>
+
+<form action="/data_view/search_all_samples_test.php" method="POST">
+    <input type="submit" value="Search all samples">
+</form>

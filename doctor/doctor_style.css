@@ -59,3 +59,11 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #0056b3; /* Change background color on hover */
 }
+
+
+
+.slides.slide1 h1 {
+    font-size: 100px;
+    color: #fff;
+    text-align: center; /* Center text horizontally within the h1 element */
+}
