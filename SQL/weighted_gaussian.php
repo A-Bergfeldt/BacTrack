@@ -1,6 +1,6 @@
 <?php
 function generateGaussianRandom($mean, $min, $max, $inputValue) {
-    $sigma = 10 - (2023 - $inputValue) * 0.3; 
+    $sigma = 5 - (2023 - $inputValue) * 0.1; 
     
     $x = 0;
     $y = 0;
@@ -10,7 +10,6 @@ function generateGaussianRandom($mean, $min, $max, $inputValue) {
         $x = 2.0 * mt_rand() / mt_getrandmax() - 1;
         $y = 2.0 * mt_rand() / mt_getrandmax() - 1;
         $w = $x * $x + $y * $y;
-        $w = abs($w);
     } while ($w >= 1 || $w == 0);
     
     $w = sqrt((-2.0 * log($w)) / $w);
@@ -21,4 +20,14 @@ function generateGaussianRandom($mean, $min, $max, $inputValue) {
     
     return $gaussianRandom;
 }
+$randomNumbers = [];
+
+while (count($randomNumbers) < 3) {
+    $randomValue = generateGaussianRandom(2, 1, 5, 2023);
+    if (!in_array($randomValue, $randomNumbers)) {
+        $randomNumbers[] = $randomValue;
+    }
+}
+
+print_r($randomNumbers);
 ?>

@@ -4,15 +4,30 @@ require_once 'weighted_gaussian.php';
 
 // Generate and insert 20 sample instances for each month
 for ($x = 0; $x <= 9; $x++) {
-    for ($year = 2010; $year <= 2023; $year++) {
+    for ($year = 2000; $year <= 2023; $year++) {
         for ($month = 1; $month <=12; $month++){
             // Generate a random combination of antibiotic IDs where all three IDs are different
             $antibiotic_ids = [];
+            $w = (2023-$year)/2023;
+            $antibiotics = [
+                "No antibiotic" => 5 - 5*$w,
+                "Penicillin" => 2+ 2*$w,
+                "Amoxicillin" => 1 +4*$w*$w,
+                "Ciprofloxacin" => 3*$w + $w,
+                "Azithromycin" => 3 + 2*$w,
+                "Doxycycline" => 3 + log($w)*$w,
+                "Erythromycin" => 2,
+                "Vancomycin" => 5 - 2*$w,
+                "Gentamicin" => 2 + 2*$w,
+                "Metronidazole" => 1 + 7*$w,
+                "Clarithromycin" => 1 + $w
+            ];
 
+                // Randomly select three distinct antibiotics
             while (count($antibiotic_ids) < 3) {
-                $randomValue = generateGaussianRandom(4, 1, 11, $year);
-                if (!in_array($randomValue, $antibiotic_ids)) {
-                    $antibiotic_ids[] = $randomValue;
+                $randomAntibiotic = array_keys($antibiotics)[random_int(0, count($antibiotics) - 1)];
+                if (!in_array($randomAntibiotic, $antibiotic_ids)) {
+                    $antibiotic_ids[] = $randomAntibiotic;
                 }
             }
             // Create a sample record
