@@ -1,26 +1,20 @@
 <?php
-// Database connection parameters
-$servername = "localhost";
-$username = "root";
-$password = "root";
-$dbname = "BacTrack";
+require_once '../db_connection.php';
+require_once 'weighted_gaussian.php';
 
-// Create connection
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-// Check if connection is established
-if (mysqli_connect_error()) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-// Generate and insert 10 sample instances for each month
-for ($x = 0; $x <= 9; $x++) {
-    for ($year = 2021; $year <= 2023; $year++) {
+// Generate and insert 20 sample instances for each month
+for ($x = 0; $x <= 19; $x++) {
+    for ($year = 2000; $year <= 2023; $year++) {
         for ($month = 1; $month <=12; $month++){
             // Generate a random combination of antibiotic IDs where all three IDs are different
-            $antibiotic_ids = range(1, 4);
-            shuffle($antibiotic_ids);
-            $antibiotic_ids = array_slice($antibiotic_ids, 1);
+            $antibiotic_ids = [];
+
+            while (count($antibiotic_ids) < 3) {
+                $randomValue = generateGaussianRandom(4, 1, 11, $year);
+                if (!in_array($randomValue, $antibiotic_ids)) {
+                    $antibiotic_ids[] = $randomValue;
+                }
+            }
 
             // Create a sample record
             $date_taken = $year . '-' . $month . '-01'; // Change the date format as needed
@@ -34,23 +28,23 @@ for ($x = 0; $x <= 9; $x++) {
             $insert_sample_query = "INSERT INTO Sample (date_taken, status_id, hospital_id, strain_id, doctor_id, lab_technician_id)
                                     VALUES ('$date_taken', $status_id, $hospital_id, $strain_id, '$doctor_id', '$lab_technician_id')";
             
-            if ($conn->query($insert_sample_query) === FALSE) {
-                echo "Error inserting sample record: " . $conn->error;
+            if ($db_connection->query($insert_sample_query) === FALSE) {
+                echo "Error inserting sample record: " . $db_connection->error;
             }
 
             // Get the sample_id of the inserted sample
-            $sample_id = $conn->insert_id;
+            $sample_id = $db_connection->insert_id;
 
             // Insert the results record with the generated antibiotic IDs
             $insert_results_query = "INSERT INTO Results (sample_id, antibiotic_id1, antibiotic_id2, antibiotic_id3, synergy_result, prescribed)
                                     VALUES ($sample_id, $antibiotic_ids[0], $antibiotic_ids[1], $antibiotic_ids[2], 1, TRUE)";
             
-            if ($conn->query($insert_results_query) === FALSE) {
-                echo "Error inserting results record: " . $conn->error;
+            if ($db_connection->query($insert_results_query) === FALSE) {
+                echo "Error inserting results record: " . $db_connection->error;
             }
         }
     }
 }
 // Close the database connection
-$conn->close();
+$db_connection->close();
 ?>

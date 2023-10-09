@@ -97,13 +97,34 @@ VALUES
     "No antibiotic"
 ),
 (
-    "Ampicillin"
+    "Penicillin"
 ),
 (
-    "Tetracyclin"
+    "Amoxicillin"
+),
+(
+    "Ciprofloxacin"
+),
+(
+    "Azithromycin"
+),
+(
+    "Doxycycline"
 ),
 (
     "Erythromycin"
+),
+(
+    "Vancomycin"
+),
+(
+    "Gentamicin"
+),
+(
+    "Metronidazole"
+),
+(
+    "Clarithromycin"
 );
 
 -- Populate tracking table
