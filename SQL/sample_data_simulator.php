@@ -3,20 +3,21 @@ require_once '../db_connection.php';
 require_once 'weighted_gaussian.php';
 
 // Generate and insert 240 sample instances for each year
-for ($x = 0; $x <= 19; $x++) {
+for ($x = 0; $x <= 0; $x++) {
     for ($year = 2000; $year <= 2023; $year++) {
-        for ($month = 1; $month <=12; $month++){
+        for ($month = 1; $month <=1; $month++){
             // Generate a random combination of antibiotic IDs where all three IDs are different
             $antibiotic_ids = [];
-            $w = ((2023-$year)/2023)*100;
+            $w = ((2023-$year)/2023)*1000;
             $antibiotics = [
-                "1" => 5 + 15*$w,
-                "2" => 12 + 9*$w,
-                "3" => 20 - 1*$w,
-                "4" => 6 + 7*$w,
-                "5" => 5 + 2*$w,
-                "6" => 1 + 20*$w,
+                "1" => 50 + 15*$w,
+                "2" => 1 + 9*$w,
+                "3" => 30 + 1*$w,
+                "4" => 1 + 7*$w,
+                "5" => 1 + 2*$w,
+                "6" => 10 + 20*$w,
             ];
+            echo json_encode($antibiotics);
 
                 // Randomly select three distinct antibiotics
             while (count($antibiotic_ids) < 3) {
