@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="heatmap_stylesheet.css">
+  <link rel="stylesheet" type="text/css" href="heatmap_style_sheet.css">
   <!-- Include Plotly.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
@@ -111,12 +111,31 @@
     window.onload = createDensityMap;
   </script>
 
+  <
+<!--
+    <div class="content">
+      <div class="box">
+        <div class="icon"><i class="fa fa-search" aria-hidden="true">
+        </i></div>
+        <div class="info">
+          <h3> search </h3>
+          <p> blashhhh </p>
+        </div>
+      </div>
+    </div>-->
 
-
-  <div class="text-container">
-    <h2>Density Map Information</h2>
-    <p>This is where you can provide information about the density map.</p>
-  </div>
-
+    <div class="container">
+        <div class="slides slide2">
+            <section class="course">
+                <h3> Information about visualization provided </h3>
+                <div class="row">
+                  <div class="course-col">
+                    <h3>HEAT MAPS</h3>
+                    <p>bawhowhfihfiihhr</p>
+                  </div>
+                </div>
+            </section>
+      </div>
+    </div>
 </body>
 </html>

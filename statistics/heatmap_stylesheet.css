@@ -23,10 +23,6 @@ button {
     border: none;
     border-radius: 5px; /* Add border radius for rounded corners */
     transition: background-color 0.3s ease; /* Add a smooth transition effect for the hover state */
-    margin-left: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
   }
   
   /* Styling for a 3D primary button */
@@ -52,7 +48,6 @@ select {
     border-radius: 4px; /* Border radius for rounded corners */
     background-color: #fff; /* Background color */
     color: #333; /* Text color */
-    margin-left: 0;
   }
 
   
@@ -78,7 +73,8 @@ select {
     justify-content: flex-start;
     align-items: center;
     margin: 0; /* Remove default margin */
-    padding: 15px; 
+    padding: 15px;
+}
   
   /* Additional styling for the dropdown if needed */
   select {
@@ -92,7 +88,7 @@ select {
     height: 400px;
     margin: 20px 0px; /* pushes plot to the left*/
     border-radius: 20px;
-    margin: 10px 0px;
+    margin: 0px;
   }
 
 /* FOR THE TEXT CONTAINER */
