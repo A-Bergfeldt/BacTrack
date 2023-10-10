@@ -3,9 +3,9 @@ require_once '../db_connection.php';
 require_once 'weighted_gaussian.php';
 
 // Generate and insert 240 sample instances for each year
-for ($x = 0; $x <= 0; $x++) {
+for ($x = 0; $x <= 19; $x++) {
     for ($year = 2000; $year <= 2023; $year++) {
-        for ($month = 1; $month <=1; $month++){
+        for ($month = 1; $month <=12; $month++){
             // Generate a random combination of antibiotic IDs where all three IDs are different
             $antibiotic_ids = [];
             $w = ((2023-$year)/2023)*1000;
