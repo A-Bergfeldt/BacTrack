@@ -29,7 +29,7 @@
   </form>
   </div>
   <!-- Div element where the plot will be displayed -->
-  <div id="customMapContainer"></div>
+  <div id="myDiv"></div>
 
   <?php
 
@@ -95,8 +95,9 @@
       }];
 
       var layout = {
-        width: 850,
-        height: 850,
+        width: 750,
+        height: 750,
+        margin: { l: 50, r: 10, t: 20, b: 20 },
         mapbox: {
           style: 'open-street-map',
           center: { lon: 15.0226667, lat: 59.3426667 }, // Set the center coordinates
@@ -105,9 +106,17 @@
       };
 
       // Create the Plotly plot
-      Plotly.newPlot('customMapContainer', data, layout);
+      Plotly.newPlot('myDiv', data, layout);
     }
     window.onload = createDensityMap;
   </script>
+
+
+
+  <div class="text-container">
+    <h2>Density Map Information</h2>
+    <p>This is where you can provide information about the density map.</p>
+  </div>
+
 </body>
 </html>

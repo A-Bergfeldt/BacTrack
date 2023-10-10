@@ -24,6 +24,9 @@ button {
     border-radius: 5px; /* Add border radius for rounded corners */
     transition: background-color 0.3s ease; /* Add a smooth transition effect for the hover state */
     margin-left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
   
   /* Styling for a 3D primary button */
@@ -49,7 +52,9 @@ select {
     border-radius: 4px; /* Border radius for rounded corners */
     background-color: #fff; /* Background color */
     color: #333; /* Text color */
+    margin-left: 0;
   }
+
   
   /* Style for when the dropdown is focused */
   select:focus {
@@ -67,34 +72,35 @@ select {
 
 /*CREATING CONTAINER TO GROUP THE DROPDOWN AND SEARCH BUTTON TOGETHER*/
 
-/* Align the button and dropdown to the left */
+/* Align the button and dropdown */
 .container {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     margin: 0; /* Remove default margin */
-    padding: 15px; /* Add padding if needed */
-  }
+    padding: 15px; 
   
   /* Additional styling for the dropdown if needed */
   select {
-    margin-left: 50px; /* Add some space between the button and the dropdown */
+    margin-left: 50px; /*some space between the button and the dropdown */
   }
 
-/* THE PLOT SPACING*/
+/* THE PLOT SPACING AND STYLING*/
 
 #myDiv {
     width: 100%;
     height: 400px;
-    margin: 0%; /* pushes plot to the left*/
+    margin: 20px 0px; /* pushes plot to the left*/
+    border-radius: 20px;
+    margin: 10px 0px;
   }
 
-/*THE PLOT STYLING*/
+/* FOR THE TEXT CONTAINER */
 
-#customMapContainer {
-    width: 100%;
-    height: 600px;
-    margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
+.text-container {
+  width: 300px; /* Adjust the width as needed */
+  padding: 20px;
+  box-sizing: border-box;
+  float: left;
+  background-color: #fff;
+}
