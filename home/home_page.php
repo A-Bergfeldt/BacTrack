@@ -17,8 +17,10 @@ require_once "../nav_bar.php";
     </div>
 
     <div id="section1" class="section">
-        <h1 style ='color: white'>BacTrack</h1>
-        <h2 style ='color: white'>A LIMS used to track AMR</h2>
+        <p style="font-size: 50px; color: black; margin-left: 550px; margin-top: -100px;">Tracking antibiotic combination therapies for better healthcare</h1>
+        <div class="button-container" style="margin-left:300px; margin-top: -30px;">
+        <a href="/about_contact/contactus.php" class="button">Contact us</a>
+    </div>
     </div>
         
     <section id='section2'>
