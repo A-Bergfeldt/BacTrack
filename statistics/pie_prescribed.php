@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="piechart_style_sheet.css">
     <title>Pie Chart with Data from SQL Database</title>
     <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
 </head>
@@ -27,11 +28,13 @@
                 }
                 ?>
             </select>
-            <button id="update-button" type="submit">Update Chart</button>
+            <button id="update-button" type="submit" class="button-primary">Update Chart</button>
         </form>
     </div>
     <div id="tester" style="width:600px;height:250px;"></div>
-</div>
+<div class="sidebyside">
+<!--</div>-->
+
 
 
     <?php
@@ -151,5 +154,19 @@ var layout = {
 };
 Plotly.newPlot('tester', data, layout);
 </script>
+<div class="container">
+    <!--<div class="slides slide2">-->
+            <section class="course">
+              <!--<h3> Information about visualization provided </h3>-->
+            <div class="row">
+                <div class="course-col">
+                  <h3>PIE CHARTS </h3>
+                  <p>bawhowhfihfiihhr</p>
+                </div>
+            </div>
+            </section>
+    </div>
+</div>
+</div>
 </body>
 </html>
