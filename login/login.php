@@ -32,7 +32,14 @@
         </form>
 
         <?php
+            //Set the max lifetime of the session
+            ini_set( "session.gc_maxlifetime", 1440);
+
+            //Set the cookie lifetime of the session
+            ini_set( "session.cookie_lifetime", 1440);
+
             session_start();
+            
             require_once "../nav_bar.php";
             require_once "../db_connection.php";
 

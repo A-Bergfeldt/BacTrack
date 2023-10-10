@@ -3,6 +3,13 @@
 <link rel="stylesheet" href="table_styles.css">
 
 <?php
+session_start();
+
+if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 3) {
+  header("Location: ../login/login.php");
+  exit();
+}
+
 include '../db_connection.php';
 
 $sqlDoctors = "SELECT user_id FROM users WHERE users.role_id = 1;";
