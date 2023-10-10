@@ -13,11 +13,18 @@
     <br>
 
     <body>
+
     <div id="about_section" class="section">
-        <p style="font-size: 70px; margin-left: 50px;">About BacTrack</p>
+        <div style="margin-left: 50px;">
+            <p style="font-size: 50px; margin-bottom: -50px;">BacTrack - LIMS</p>
+            <p style="font-size: 50px;">for the future</p>
+        </div>
         <img src="bactrack_pic.jpg" alt="Desktop Image" width="600" height="500" style="float: right; margin-left: 20px; margin-top: -200px;">
         <p style="margin-left: 50px; font-size: 22px;">Combinations of antimicrobial agents are invariably prescribed for certain infectious diseases, such as tuberculosis, HIV, and malaria. Bacterial infections that are not readily treatable, such as those affecting cardiac valves and prostheses, and lung infections in cystic fibrosis, are also usually subjected to a combination of antibiotics.</p>
     </div>
+</body>
+</html>
+
 
     <section id='about_section2'>
     <div class="section-content">
