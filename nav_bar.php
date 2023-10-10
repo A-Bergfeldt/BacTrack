@@ -5,12 +5,12 @@
     <ul>
         <li><a href="/home/home_page.php">Home</a></li>
         <li class="dropdown">
-            <a href="/about_contact/about_page.php" class="dropbtn">About</a>
+            <a href="#" class="dropbtn">About</a>
             <div class="dropdown-content">
-                <a href="service1.php">BacTrack</a>
-                <a href="service2.php">CombiANT</a>
-                <a href="GDPR.php">Privacy policy</a>
-                <a href="service3.php">The team</a>
+                <a href="/about_contact/about_bactrack.php">BacTrack</a>
+                <a href="/about_contact/about_combiant.php">CombiANT</a>
+                <a href="/about_contact/GDPR.php">Privacy policy</a>
+                <a href="/about_contact/the_team.php">The team</a>
             </div>
         </li>
         <li class="dropdown">
