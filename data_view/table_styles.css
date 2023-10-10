@@ -8,25 +8,48 @@ body{
     height: 100vh;
     background: linear-gradient(180deg, rgba(21,98,105,1) 0%, rgba(255,255,255,1) 100%);
     background-attachment: fixed;
+    box-sizing: border-box;
 }
 
 .container {
-    margin-top: 240px; /* Adjust the margin as needed to control the spacing */
-    padding: 65px; /* Add padding around the container */
+    margin-top: 0px; /* Adjust the margin as needed to control the spacing */
+    padding: 0px; /* Add padding around the container */
 }
 
 
 .alter_box {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -70%);
+    margin: 20px auto; /* Center the form horizontally and add separation */
     width: 400px;
     background: rgb(255, 255, 255);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top:40px;
+    padding: 20px;
 }
 
+.alter_box form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+input[type="submit"]{
+    margin: 0 0 30px 0;
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background: rgba(160, 64, 173);
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+input[type="submit"]:hover{
+    border-color: rgba(160, 64, 173);
+    transition: 0.5s;
+}
 
 table {
     width: 100%;
@@ -35,17 +58,19 @@ table {
 table,th, td {
     border-collapse: collapse;
     padding: 1rem;
-    text-align: left;
+    text-align: center;
 }
 
 main.table{
     width: 82vw;
-    height: 90vh;
+    height: 80vh;
     background-color: #fff5;
     backdrop-filter: blur(7px);
     box-shadow: 0 .4rem .8rem #0005;
     border-radius: 0.8rem;
     overflow: hidden;
+    margin: 50px;
+    padding: 0;
 }
 
 thead th {
@@ -150,35 +175,6 @@ tbody tr.hide td p {
     transition: .2s ease-in-out .5s;
 }
 
-tbody tr.hide td img {
-    width: 0;
-    height: 0;
-    transition: .2s ease-in-out .5s;
-}
-
-.status {
-    padding: .4rem 0;
-    border-radius: 2rem;
-    text-align: center;
-}
-
-.status.delivered {
-    background-color: #86e49d;
-    color: #006b21;
-}
-
-.status.cancelled {
-    background-color: #d893a3;
-    color: #b30021;
-}
-
-.status.pending {
-    background-color: #ebc474;
-}
-
-.status.shipped {
-    background-color: #6fcaea;
-}
 
 @media (max-width: 1000px) {
     td:not(:first-of-type) {
@@ -221,79 +217,3 @@ thead th.active,tbody td.active {
     color: #6c00bd;
 }
 
-.export__file {
-    position: relative;
-}
-
-.export__file .export__file-btn {
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    background: #fff6 url(images/export.png) center / 80% no-repeat;
-    border-radius: 50%;
-    transition: .2s ease-in-out;
-}
-
-.export__file .export__file-btn:hover { 
-    background-color: #fff;
-    transform: scale(1.15);
-    cursor: pointer;
-}
-
-.export__file input {
-    display: none;
-}
-
-.export__file .export__file-options {
-    position: absolute;
-    right: 0;
-    
-    width: 12rem;
-    border-radius: .5rem;
-    overflow: hidden;
-    text-align: center;
-
-    opacity: 0;
-    transform: scale(.8);
-    transform-origin: top right;
-    
-    box-shadow: 0 .2rem .5rem #0004;
-    
-    transition: .2s;
-}
-
-.export__file input:checked + .export__file-options {
-    opacity: 1;
-    transform: scale(1);
-    z-index: 100;
-}
-
-.export__file .export__file-options label{
-    display: block;
-    width: 100%;
-    padding: .6rem 0;
-    background-color: #f2f2f2;
-    
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
-    transition: .2s ease-in-out;
-}
-
-.export__file .export__file-options label:first-of-type{
-    padding: 1rem 0;
-    background-color: #86e49d !important;
-}
-
-.export__file .export__file-options label:hover{
-    transform: scale(1.05);
-    background-color: #fff;
-    cursor: pointer;
-}
-
-.export__file .export__file-options img{
-    width: 2rem;
-    height: auto;
-
-}

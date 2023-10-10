@@ -41,7 +41,6 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
 </head>
 
 <body>
-  <?php require_once "../nav_bar.php"; ?> 
   <div class="container">
     <div class="alter_box">
       <p>Enter your search</p>
@@ -106,6 +105,11 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
         <input type="submit" value="Search">
     </form>
     </div>
+
+
+
+
+    
     <main class="table">
       <section class="table_header">
         <h1>Samples</h1>
@@ -187,6 +191,8 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
       </section>
     </main>
   </div>
+  <?php require_once "../nav_bar.php"; ?> 
+
 
 </body>
 </html>
