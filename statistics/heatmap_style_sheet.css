@@ -27,7 +27,7 @@ button {
   
   /* Styling for a 3D primary button */
   .button-primary {
-    background-color: #720000; /* Set your desired background color */
+    background-color: #600000; /* Set your desired background color */
     color: #ffffff; /* Set your desired text color */
     box-shadow: 0 5px 15px rgba(88, 96, 101, 0.5); /* Add a subtle box shadow */
   }
@@ -90,192 +90,8 @@ select {
     height: 100vh; /* Use 100% of the viewport height */ 
   }
 
-/*content*/
-/*
-.content{
-    position:relative;
-    width:1200px;
-    height:300px;
-    margin:240px auto;
-    background:#fff;
-}
+/*CONTENT*/
 
-.content .box {
-    position:relative;
-    width: calc(400px-30px);
-    height: calc(400px-30px);
-    background: #ff0;
-    float:right;
-    margin:15px;
-    box-sizing: border-box;
-    border-radius: 13px;
-    overflow: hidden;
-}
-
-.content .box .icon{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #005d05;
-    transition: 0.5s;
-    z-index: 1;
-}
-
-.content .box:hovers .icon{
-    top: 20px;
-    right: calc(50%-40px);
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-}
-
-.content .box .icon .fa {
-    position: absolute;
-    top: 50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-    font-size:80px;
-    transition: 0.5s;
-    color: #60ffef;
-}
-
-.content .box:hovers .icon .fa{
-    font-size: 40px;
-}
-
-.content .box .info{
-    position: absolute;
-    top: 100px;
-    height: calc(100%-100px);
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-    transition: 0.5s;
-}
-.content .box .info h3 {
-    margin: 0 0 10px;
-    padding: 0;
-    font-size: 24px;
-    color: #333;
-}
-
-.content .box .info p{
-    margin: 0;
-    padding: 0;
-    font-size: 10px;
-    color: #333;
-}
-*/
-/*SLIDERS*/
-/*
-#slider {
-    margin:0 auto;
-    width:800px;
-    max-width: 100%;
-    text-align: center;
-}
-
-#slider input[type=radio]{
-    display: none;
-}
-
-#slider label {
-    cursor: pointer;
-    text-decoration: none;
-}
-
-#slides {
-    padding: 10px;
-    border: 3px solid #ccc;
-    background: #fff;
-    position: relative;
-    z-index: 1;
-}
-
-#overflow {
-    width: 100%;
-    overflow: hidden;
-}
-
-#slide1:checked ~ #slides .inner {
-    margin-left: 0;
-}
-
-#slide2:checked ~ #slides .inner {
-    margin-left: -100%;
-}
-
-#slides .inner {
-    transition: margin-left 800ms cubic-bezier(0.77, 0, 0.175, 1);
-    width: 400%;
-    line-height: 0;
-    height: 200px;
-}
-
-#slides .slide {
-    width: 25%;
-    float: left;
-    display: block;
-    height: 100%;
-    color: #fff;
-}
-
-#slides .slide1 {
-    background: #000;
-}
-
-#slides .slide1 {
-    background:#005d05;
-}
-
-.slide-content{
-    padding: 10px;
-}
-
-#controls {
-    margin:-130px 0 0 0;
-    width: 100%;
-    height: 50px;
-    z-index: 3;
-    position: relative;
-}
-#controls label {
-    transition: opacity 0.2s ease-out;
-    display: none;
-    width: 50px;
-    height: 50px;
-    opacity: .4;
-}
-
-#controls label:hover {
-    opacity: 1;
-}
-
-#slide1:checked ~ #controls label:nth-child(2),
-#slide1:checked ~ #controls label:nth-child(3){
-    background:
-    url(https://image.flaticon.com/icons/svg/130/130882.svg) no-repeat;
-    float: right;
-    margin: 0 0 0 -50px;
-    display: block;
-}
-
-#bullets {
-    margin: 100px 0 0;
-    text-align: center;
-}
-
-#bullets label{
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    background: #ccc;
-    margin: 0 10px;
-}
-*/
 .slides{
     width: 100%;
     height: 100vh;
@@ -285,11 +101,6 @@ select {
     gap: 50px;
     color:#fff; /*text color outside the box*/
     scroll-snap-align: start;
-
-    /*background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    */
 }
 
 .slide2{
@@ -309,7 +120,7 @@ h3{
 }
 
 p{
-    color: #fff; /* text color inside the box*/
+    color: #000000; /* text color inside the box*/
     font-size: 14px;
     font-weight: 300;
     line-height: 22px;
@@ -324,7 +135,7 @@ p{
 
 .course-col{
     flex-basis: 75%;
-    background: #5f0404; /*box color*/
+    background: #c1e7ba; /*box color*/
     border-radius: 10px;
     margin-bottom: 15%;
     padding:100px 500px;
