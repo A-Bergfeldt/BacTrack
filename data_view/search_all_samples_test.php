@@ -45,7 +45,7 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
   <div class="container">
     <div class="alter_box">
       <p>Enter your search</p>
-      <form method="GET" action="search_all_samples.php">
+      <form method="GET" action="search_all_samples_test.php">
 
         <label for="search">Sample ID: </label>
         <select name="search_sample[]" multiple multiselect-search="true" multiselect-select-all="true"
