@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="heatmap_style_sheet.css">
+  <link rel="stylesheet" type="text/css" href="heat_map_style_sheet.css">
   <!-- Include Plotly.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
@@ -125,16 +125,16 @@
     </div>-->
 
     <div class="container">
-        <div class="slides slide2">
-            <section class="course">
-                <h3> Information about visualization provided </h3>
-                <div class="row">
-                  <div class="course-col">
-                    <h3>HEAT MAPS</h3>
-                    <p>bawhowhfihfiihhr</p>
-                  </div>
+      <div class="slides slide2">
+          <section class="course">
+              <h3> Information about visualization provided </h3>
+              <div class="row">
+                <div class="course-col">
+                  <h3>HEAT MAPS</h3>
+                  <p>bawhowhfihfiihhr</p>
                 </div>
-            </section>
+              </div>
+          </section>
       </div>
     </div>
 </body>
