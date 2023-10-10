@@ -7,9 +7,10 @@
         <li class="dropdown">
             <a href="/about_contact/about_page.php" class="dropbtn">About</a>
             <div class="dropdown-content">
-                <a href="service1.php">About BacTrack</a>
-                <a href="service2.php">About CombiANT</a>
-                <a href="service3.php">About us</a>
+                <a href="service1.php">BacTrack</a>
+                <a href="service2.php">CombiANT</a>
+                <a href="GDPR.php">Privacy policy</a>
+                <a href="service3.php">The team</a>
             </div>
         </li>
         <li class="dropdown">
@@ -20,22 +21,25 @@
             </div>
         </li>
         <li><a href="/statistics/statisitcspage_rough.php">Statistics</a></li>
-
         <?php
         session_start();
 
         if(isset($_SESSION['role_id'])){
+            echo '<li class="dropdown">';
+            echo '<a href="#" class="dropbtn">My Page</a>';
+            echo '<div class="dropdown-content">';
             if($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 3){
-            echo '<li><a href="/doctor/doctor_page.php">My samples</a></li>';}
+                echo '<a href="/doctor/doctor_page.php">My Samples</a>';
+            }
             if($_SESSION['role_id'] == 2 || $_SESSION['role_id'] == 3){
-            echo '<li><a href="/lab/lab_design_input_form.php">Sample input</a></li>';}
-            echo '<li><a href="/login/logout.php">Logout</a></li>';
+                echo '<a href="/lab/lab_design_input_form.php">Sample Input</a>';
+            }
+            echo '<a href="/login/logout.php">Logout</a>';
+            echo '</div>';
+            echo '</li>';
         } else {
             echo '<li><a href="/login/login.php">Login</a></li>';
         }
         ?>
-
     </ul>
 </nav>
-
-
