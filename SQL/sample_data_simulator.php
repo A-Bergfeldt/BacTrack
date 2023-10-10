@@ -21,13 +21,13 @@ for ($x = 0; $x <= 19; $x++) {
     for ($year = 2000; $year <= 2023; $year++) {
         for ($month = 1; $month <= 12; $month++) {
             // Generate a random combination of antibiotic IDs where all three IDs are different
-            $w = ((2023 - $year) / 2023) * 1000;
+            $w = ((2023 - $year) / 2023) * 100;
             $weights = [
-                "1" => 50 + 15 * $w,
-                "2" => 1 + 9 * $w,
-                "3" => 30 + 1 * $w,
-                "4" => 1 + 30 * $w,
-                "5" => 1 + 7 * $w,
+                "1" => 30 + 15 * $w,
+                "2" => 6 + 20 * $w,
+                "3" => 40 + 1 * $w,
+                "4" => 8 + 30 * $w,
+                "5" => 18 + 7 * $w,
                 "6" => 10 + 20 * $w,
             ];
             // Randomly select three distinct antibiotics based on weights
