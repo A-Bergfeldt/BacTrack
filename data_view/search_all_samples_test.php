@@ -106,98 +106,89 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
         <input type="submit" value="Search">
     </form>
     </div>
-    <div class="table">
-    
-    </div>
+    <main class="table">
+      <section class="table_header">
+        <h1>Samples</h1>
+      </section>
+      <section class="table_body">
+        <table>
+          <thead>
+            <tr>
+              <th>Sample ID<span class="icon-arrow">&DownArrow;</span></th>
+              <th>Date<span class="icon-arrow">&DownArrow;</span></th>
+              <th>Status<span class="icon-arrow">&DownArrow;</span></th>
+              <th>Hospital<span class="icon-arrow">&DownArrow;</span></th>
+              <th>Strain<span class="icon-arrow">&DownArrow;</span></th>
+              <th>Doctor<span class="icon-arrow">&DownArrow;</span></th>
+              <th>Lab Technician<span class="icon-arrow">&DownArrow;</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <?php
+            $dropdownNames = array(
+              "search_sample" => "sample_id",
+              "search_status" => "status_name",
+              "search_hospital" => "hospital_name",
+              "search_strain" => "strain_name",
+              "search_doctor" => "doctor_id",
+              "search_lab_technician" => "lab_technician_id"
+            );
+
+            $whereStatements = "WHERE ";
+            foreach ($dropdownNames as $searchName => $sqlName) {
+              if (isset($_GET[$searchName])) {
+                if ($whereStatements != "WHERE ") {
+                  $whereStatements .= " and ";
+                }
+                if ($searchName == "search_strain" or $searchName == "search_hospital") {
+                  $_GET[$searchName] = str_replace("_", " ", $_GET[$searchName]);
+                }
+                $whereStatements .= $sqlName . " IN ('" . implode("', '", $_GET[$searchName]) . "')";
+              }
+            }
+
+            if ($whereStatements == "WHERE ") {
+              $whereStatements = "";
+            }
+
+            $statusSearch = implode("', '", array('Hospital', 'Analyzed')); // Enclose each status name in single quotes
+
+            if (count($_GET) != 0) {
+              $sql = "SELECT sample_id, date_taken, status_name, hospital_name, strain_name, doctor_id, lab_technician_id FROM (((sample 
+              INNER JOIN tracking ON sample.status_id = tracking.status_id) 
+              INNER JOIN hospital ON sample.hospital_id = hospital.hospital_id)
+              LEFT JOIN strain ON sample.strain_id = strain.strain_id) "
+                . $whereStatements .
+                " ORDER BY sample_id ASC;";
+              $result = $db_connection->query($sql);
+
+              while ($row = $result->fetch_assoc()) {
+                echo "<tr>
+                  <td>
+                    <a href='sample_results.php?sample_id=" . $row["sample_id"] . "'>" . $row["sample_id"] . "</a>
+                  </td>
+                  <td>" . $row["date_taken"] . "</td>
+                  <td>" . $row["status_name"] . "</td>
+                  <td>" . $row["hospital_name"] . "</td>
+                  <td>" . $row["strain_name"] . "</td>
+                  <td>" . $row["doctor_id"] . "</td>
+                  <td>" . $row["lab_technician_id"] . "</td>
+                </tr>";
+              }
+
+              $result->free_result();
+              $db_connection->close();
+            } else {
+              echo "<tr><td colspan='7'>0 results</td></tr>";
+            }
+            ?>
+          </tbody>
+        </table>
+      </section>
+    </main>
   </div>
 
 </body>
 </html>
 
 
-
-<?php
-
-$dropdownNames = array(
-  "search_sample" => "sample_id",
-  "search_status" => "status_name",
-  "search_hospital" => "hospital_name",
-  "search_strain" => "strain_name",
-  "search_doctor" => "doctor_id",
-  "search_lab_technician" => "lab_technician_id"
-);
-
-$whereStatements = "WHERE ";
-foreach ($dropdownNames as $searchName => $sqlName) {
-  if (isset($_GET[$searchName])) {
-    if ($whereStatements != "WHERE ") {
-      $whereStatements .= " and ";
-    }
-    if ($searchName == "search_strain" or $searchName == "search_hospital") {
-      $_GET[$searchName] = str_replace("_", " ", $_GET[$searchName]);
-    }
-    $whereStatements .= $sqlName . " IN ('" . implode("', '", $_GET[$searchName]) . "')";
-  }
-}
-
-if ($whereStatements == "WHERE ") {
-  $whereStatements = "";
-}
-
-
-$statusSearch = implode("', '", array('Hospital', 'Analyzed')); // Enclose each status name in single quotes
-
-// SQL query
-if (count($_GET) != 0) {
-  $sql = "SELECT sample_id, date_taken, status_name, hospital_name, strain_name, doctor_id,lab_technician_id FROM (((sample 
-  INNER JOIN tracking ON sample.status_id = tracking.status_id) 
-  INNER JOIN hospital ON sample.hospital_id = hospital.hospital_id)
-  LEFT JOIN strain ON sample.strain_id = strain.strain_id) "
-    . $whereStatements .
-    " ORDER BY sample_id ASC;";
-  $result = $db_connection->query($sql);
-}
-
-// Start the table with some basic styling
-echo '<div class="scrollable">
-    <table>
-    <thead>
-    <tr>
-        <th>Sample ID</th>
-        <th>Date</th>
-        <th>Status</th>
-        <th>Hospital</th>
-        <th>Strain</th>
-        <th>Doctor</th>
-        <th>Lab Technician</th>
-    </tr>
-    </thead>
-    ';
-
-// Fill table
-if (count($_GET) != 0 && $result->num_rows > 0) {
-  echo "<tbody>";
-  while ($row = $result->fetch_assoc()) {
-    echo "<tr>
-        <td>
-            <a href='sample_results.php?sample_id=" . $row["sample_id"] . "'>" . $row["sample_id"] . "</a>
-        </td>
-        <td>" . $row["date_taken"] . "</td>
-        <td>" . $row["status_name"] . "</td>
-        <td>" . $row["hospital_name"] . "</td>
-        <td>" . $row["strain_name"] . "</td>
-        <td>" . $row["doctor_id"] . "</td>
-        <td>" . $row["lab_technician_id"] . "</td>
-        </tr>";
-  }
-  echo "</tbody>";
-} else {
-  echo "<p>
-    0 results
-</p>";
-}
-
-// Close the table
-echo '</table></div>';
-$db_connection->close();
-?>
