@@ -75,11 +75,11 @@
 
     <div id="policy-content-6" class="policy-content">
         <h2>6. Cookies</h2>
-        <p>Cookies are text files placed on your computer to collect standard Internet log information and visitor behavior information. When you visit our websites, we may collect information from you automatically through cookies or similar technology</p>
+        <p>Cookies are text files placed on your computer to collect standard Internet log information and visitor behavior information. When you visit our websites, we may collect information from you automatically through cookies or similar technology.</p>
         
         <h3><b>6.1. How do we use cookies</b></h3>
         <p>Our Company utilizes cookies for various purposes to enhance your website experience, such as:</p>
-        <li>Maintaining your signed-in status</li>
+        <li>Maintaining your signed-in status.</li>
 
         <h3><b>6.2. What type of cookies do we use</b></h3>
         <p>Session cookies: At BacTrack, we implement session cookies to elevate your browsing experience. These cookies are temporary and remain on your device solely for the duration of your current session. When you conclude your browsing session, please be aware that they will persist until manually deleted by you, rather than being automatically removed.</p>
@@ -91,7 +91,7 @@
     <div id="policy-content-7" class="policy-content">
         <h2>7. Changes to this policy</h2>
         <p>We may update this Privacy Policy periodically to reflect changes in our practices or for legal compliance. You will be notified of any significant changes.</p>
-        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at: <a href="contact.php">Contact Us</a></p>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at: <a href="contactus.php">Contact Us</a></p>
     </div>
 
 </body>

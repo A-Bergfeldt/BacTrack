@@ -29,7 +29,7 @@
 
         <div class="question-answer">
             <h3>3. Who can benefit from BacTrack?</h3>
-            <p>BacTrack can benefit healthcare professionals, researchers, and institutions involved in antibiotic
+            <p>BacTrack can benefit healthcare professionals, researchers, and patients involved in antibiotic
                 therapies and healthcare analysis.
             </p>
         </div>
@@ -64,13 +64,13 @@
 
         <div class="question-answer">
             <h3>8. How can I contact BacTrack support?</h3>
-            <p>For any support or inquiries, please reach out to our support team at <a href="mailto:bactrack2023@gmail.com">bactrack2023@gmail.com.</a></p>
+            <p>For any support or inquiries, please reach out to our support team at <a href="contactus.php">Contact Us</a></p>
         </div>
 
         <div class="question-answer">
             <h3>9. Is my data secure with BacTrack?</h3>
-            <p>Yes, BacTrack employs industry-standard security measures to ensure the safety and confidentiality of
-                your data.
+            <p>
+                Yes, BacTrack employs security measures to ensure the safety and confidentiality of your data.
             </p>
         </div>
 
