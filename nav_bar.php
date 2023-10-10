@@ -9,7 +9,7 @@
             <div class="dropdown-content">
                 <a href="/about_contact/about_bactrack.php">BacTrack</a>
                 <a href="/about_contact/about_combiant.php">CombiANT</a>
-                <a href="/about_contact/GDPR.php">Privacy policy</a>
+                <a href="/about_contact/privacy_policy.php">Privacy policy</a>
                 <a href="/about_contact/the_team.php">The team</a>
             </div>
         </li>
@@ -17,7 +17,7 @@
             <a href="/about_contact/contactus.php" class="dropbtn">Contact</a>
             <div class="dropdown-content">
                 <a href="/about_contact/contactus.php">Contact us</a>
-                <a href="/about_contact/contactus.php">FAQ</a>
+                <a href="/about_contact/FAQs.php">FAQ</a>
             </div>
         </li>
         <li><a href="/statistics/statisitcspage_rough.php">Statistics</a></li>

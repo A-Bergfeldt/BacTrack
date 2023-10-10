@@ -66,7 +66,7 @@ body{
 
 img:hover {
     background: rgba(161, 195, 235, 0.4); /* Background color on hover */
-    border-radius: 6px; /* Border-radius on hover */
+    border-radius: 10px; /* Border-radius on hover */
     /* Add any additional styles you want to apply when the image is hovered */
 }
 
@@ -77,6 +77,8 @@ img:hover {
     margin:auto;
     text-align:center;
     padding-top:100px;
+    justify-content: center;
+    align-items: center;
 }
 
 h3{
@@ -99,7 +101,7 @@ p{
 }
 
 .course-col{
-    flex-basis: 45%;
+    flex-basis: 55%;
     background: #fff3f3;
     border-radius: 10px;
     margin-bottom: 5%;
@@ -111,3 +113,11 @@ p{
 .course-col:hover{
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.5);
 }
+
+
+.campus-col img{
+    width:25%;
+    height:auto;
+    border-radius: 10px;
+}
+

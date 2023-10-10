@@ -1,0 +1,181 @@
+body {
+    background-color:rgb(255, 255, 255); /*BACKGROUND color for the plot*/
+    margin: 0;
+}
+
+h1 {
+    color: #3e0000; /* text color */
+    font-size: 2em; 
+    margin-bottom: 40px;
+    text-align: left;
+    margin-left: 350px;
+    text-decoration:solid;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 3px; /* Add letter-spacing for better readability */
+    text-shadow: 2px 2px 4px rgba(116, 98, 98, 0.5); /* Add a subtle text shadow */
+    line-height: 1.2; /* Adjust line height for better spacing */
+    text-decoration: wavy;
+  }
+
+label {
+    float: inline-start;
+    clear: both; /* Ensure the label doesn't wrap around floated elements */
+    width: 150px; /* Adjust the width as needed */
+    /*margin-right: 60px; *//* Add margin for separation from the form element */
+    padding-left: 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+/*BUTTON STYLING */
+
+/* styles.css */
+
+/* Basic styling for the button */
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px; /* Add border radius for rounded corners */
+    transition: background-color 0.3s ease; /* Add a smooth transition effect for the hover state */
+    margin-bottom: 30px;
+    margin-top: 50px;
+    margin-left: 8%;
+  }
+  
+  /* Styling for a 3D primary button */
+  .button-primary {
+    background-color: #600000; /* Set your desired background color */
+    color: #ffffff; /* Set your desired text color */
+    box-shadow: 0 5px 15px rgba(88, 96, 101, 0.5); /* Add a subtle box shadow */
+  }
+  
+  /* Hover effect for the 3D primary button */
+  .button-primary:hover {
+    background-color: #005d05; /* Set your desired background color on hover */
+    box-shadow: 0 8px 20px rgb(253, 253, 253); /* Increase the box shadow on hover for a lift effect */
+
+  }
+  
+/*STYLING THE DROPDOWN*/
+
+/* Basic styling for the dropdown */
+select {
+    padding: 8px; /* Adjust the padding as needed */
+    font-size: 14px; /* Adjust the font size as needed */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 4px; /* Border radius for rounded corners */
+    background-color: #fff; /* Background color */
+    color: #333; /* Text color */
+  }
+
+  
+  /* Style for when the dropdown is focused */
+  select:focus {
+    outline: none; /* Remove the default focus outline */
+    border-color: #600101; /*  border color on DROP DOWN */
+    /*box-shadow: 0 0 5px rgb(254, 255, 255);*/ /* Add a subtle box shadow on focus */
+  }
+  
+  /* Remove the default dropdown arrow */
+  select::-ms-expand,
+  select::-webkit-inner-spin-button,
+  select::-webkit-outer-spin-button {
+    display: none;
+  }
+
+/*CREATING CONTAINER TO GROUP THE DROPDOWN AND SEARCH BUTTON TOGETHER*/
+
+/* Align the button and dropdown */
+/*
+.container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /*margin: 0;*/ /* Remove default margin */
+    /*padding: 15px;*/
+  
+
+/* THE PLOT SPACING AND STYLING*/
+
+#myDiv {
+    width: 100%;
+    height: 900px;
+    margin: 0 auto; /* pushes plot to the left*/
+    display:block;
+    flex-direction: column;
+    border-radius: 20px;
+    justify-content: center; /* Center the contents horizontally within the container */
+    align-items: center; /* Center the contents vertically within the container */
+    height: 100vh; /* Use 100% of the viewport height */ 
+  }
+
+/*CONTENT*/
+
+.slides{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color:#000000; /*text color outside the box*/
+    scroll-snap-align: start;
+}
+
+.slide2{
+    background:rgb(255, 255, 255); /*has to be black, background for the box*/
+}
+
+.course{
+    width: 100%;
+    margin:auto;
+    text-align:center;
+    padding-top:120px;
+}
+
+h3{
+    font-size: 36px;
+    font-weight: 600;
+}
+
+p{
+    color: #fff4f4; /* text color inside the box*/
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.row{
+    margin-top: -10%;
+    margin-left: -10%;
+    display:flex;
+    justify-content: space-between;
+}
+
+.course-col{
+    flex-basis: 70%;
+    background:#D8BFD8; /*box color*/
+    border-radius: 10px;
+    margin-bottom: 5%;
+    margin-top: -50%;
+    margin-left: 90%;
+    padding:100px 230px;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+
+.course-col:hover{
+    box-shadow: 0 0 20px 0 rgba(126, 118, 118, 0.5);
+}
+
+/*container for a side by side layout*/
+
+.sidebyside {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-bottom: 20px; /* Adjust as needed */
+  }
