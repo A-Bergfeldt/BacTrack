@@ -103,6 +103,7 @@ p{
     background: #fff3f3;
     border-radius: 10px;
     margin-bottom: 5%;
+    margin-left: 2%;
     padding:20px 10px;
     box-sizing: border-box;
     transition: 0.5s;
@@ -111,3 +112,11 @@ p{
 .course-col:hover{
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.5);
 }
+
+
+.campus-col img{
+    width:25%;
+    height:auto;
+    border-radius: 10px;
+}
+
