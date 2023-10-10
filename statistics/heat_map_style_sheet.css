@@ -1,14 +1,20 @@
 body {
-    background-color: black;
+    background-color:rgb(255, 255, 255); /*BACKGROUND color for the plot*/
     margin: 0;
 }
 
 h1 {
-    color: #ffffff; /* text color */
+    color: #3e0000; /* text color */
     font-size: 2em; 
-    margin-bottom: 20px;
-    text-align: center;
+    margin-bottom: 40px;
+    text-align: left;
+    margin-left: 200px;
     text-decoration:solid;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 3px; /* Add letter-spacing for better readability */
+    text-shadow: 2px 2px 4px rgba(116, 98, 98, 0.5); /* Add a subtle text shadow */
+    line-height: 1.2; /* Adjust line height for better spacing */
+    text-decoration: wavy;
   }
 
 /*BUTTON STYLING */
@@ -23,6 +29,7 @@ button {
     border: none;
     border-radius: 5px; /* Add border radius for rounded corners */
     transition: background-color 0.3s ease; /* Add a smooth transition effect for the hover state */
+    margin-bottom: 30px;
   }
   
   /* Styling for a 3D primary button */
@@ -54,7 +61,7 @@ select {
   /* Style for when the dropdown is focused */
   select:focus {
     outline: none; /* Remove the default focus outline */
-    border-color: #60ffef; /* Change border color on focus */
+    border-color: #600101; /*  border color on DROP DOWN */
     /*box-shadow: 0 0 5px rgb(254, 255, 255);*/ /* Add a subtle box shadow on focus */
   }
   
@@ -98,17 +105,17 @@ select {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
-    color:#fff; /*text color outside the box*/
+    gap: 10px;
+    color:#000000; /*text color outside the box*/
     scroll-snap-align: start;
 }
 
 .slide2{
-    background:black; /*has to be black*/
+    background:rgb(255, 255, 255); /*has to be black, background for the box*/
 }
 
 .course{
-    width: 80%;
+    width: 100%;
     margin:auto;
     text-align:center;
     padding-top:120px;
@@ -120,7 +127,7 @@ h3{
 }
 
 p{
-    color: #000000; /* text color inside the box*/
+    color: #fff4f4; /* text color inside the box*/
     font-size: 14px;
     font-weight: 300;
     line-height: 22px;
@@ -128,21 +135,31 @@ p{
 }
 
 .row{
-    margin-top: 5%;
+    margin-top: -10%;
+    margin-left: -10%;
     display:flex;
     justify-content: space-between;
 }
 
 .course-col{
     flex-basis: 75%;
-    background: #c1e7ba; /*box color*/
+    background:#65000B; /*box color*/
     border-radius: 10px;
-    margin-bottom: 15%;
-    padding:10px 500px;
+    margin-bottom: -10%;
+    padding:200px 150px;
     box-sizing: border-box;
     transition: 0.5s;
 }
 
 .course-col:hover{
-    box-shadow: 0 0 20px 0 rgba(233, 224, 224, 0.5);
+    box-shadow: 0 0 20px 0 rgba(126, 118, 118, 0.5);
 }
+
+/*container for a side by side layout*/
+
+.sidebyside {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-bottom: 20px; /* Adjust as needed */
+  }

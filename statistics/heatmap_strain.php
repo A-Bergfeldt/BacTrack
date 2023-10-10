@@ -6,7 +6,7 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-  <h1>Plotly Density Map</h1>
+  <h1>DENSITY MAP plotly</h1> 
   <div class="container"> <!--grouping the dropdown and search together-->
   <!-- Dropdown menu to select heatmap option -->
   <form method="get" action="heatmap_strain.php">
@@ -28,8 +28,11 @@
     <button id="update-button" type="submit" class="button-primary">Show data for selected strain</button>
   </form>
   </div>
+  <div class="sidebyside">
   <!-- Div element where the plot will be displayed -->
   <div id="myDiv"></div>
+
+  
 
   <?php
 
@@ -123,11 +126,11 @@
         </div>
       </div>
     </div>-->
-
+  
     <div class="container">
       <div class="slides slide2">
           <section class="course">
-              <h3> Information about visualization provided </h3>
+              <!--<h3> Information about visualization provided </h3>-->
               <div class="row">
                 <div class="course-col">
                   <h3>HEAT MAPS</h3>
@@ -137,5 +140,6 @@
           </section>
       </div>
     </div>
+  </div>
 </body>
 </html>
