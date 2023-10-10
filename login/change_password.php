@@ -13,11 +13,16 @@
         <h1>Create a new password</h1>
         <form action="update_password.php" method="POST">
         <div class="txt_field">
-            <input type="hidden" name="token" value="<?php echo htmlspecialchars($_GET['token']); ?>">
-            <input type="password" name="new_password" placeholder="New Password"><br><br>
-            <span></span>
-            <input type="password" name="confirm_password" placeholder="Confirm New Password"><br><br>
-            <span></span>
+                <input type="password" name="password" required>
+                <span></span>
+                <label>New password</label>
+            </div>
+
+
+            <div class="txt_field">
+                <input type="password" name="password" required>
+                <span></span>
+                <label>Confirm new password</label>
             </div>
             <input type="submit" name="submit" value="Change Password">
             
