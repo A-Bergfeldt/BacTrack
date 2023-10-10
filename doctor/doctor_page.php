@@ -58,7 +58,7 @@ how much you want
     <!-- Button container for both buttons -->
     <div class="button-container">
         <a href="sample_form.php" class="button">Insert new sample</a>
-        <a href="data_view/search_all_samples_test.php" class="button">Search all samples</a>
+        <a href="/data_view/search_all_samples_test.php" class="button">Search all samples</a>
     </div>
 </body>
 </html>
