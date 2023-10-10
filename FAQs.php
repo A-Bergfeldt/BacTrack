@@ -50,8 +50,8 @@
 
         <div class="question-answer">
             <h3>6. Are there any fees associated with using BacTrack?</h3>
-            <p>Basic usage of BacTrack is available for free. However, premium features and advanced analytics may
-                require a subscription.
+            <p>
+                Yes, we do have fees associated with using BacTrack. We charge for the services provided.
             </p>
         </div>
 
@@ -84,11 +84,13 @@
     </div>
 
     <script>
-        document.querySelectorAll('.question-answer h3').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        document.querySelectorAll('.dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
             });
         });
     </script>
 
+
+</body>
