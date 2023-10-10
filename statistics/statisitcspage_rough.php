@@ -10,12 +10,6 @@
     <?php require_once "../nav_bar.php"; ?>
 
         <div class="container">
-            <div class="slides slide1">
-                <h1 style="font-size: 100px; color: #fff">Statistics page</h1>
-            </div>
-        </div>
-
-        <div class="container">
             <div class="slides slide2">
                 <!--<h2 style="font-size: 30px; color:black">Services we offer</h2>-->
                 <section class="course">
