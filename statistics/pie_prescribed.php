@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="container">
-    <h2 class="text-center mt-4">Pie Chart with Data from SQL Database</h2>
+    <h1 class="text-center mt-4">PIE CHART (Data from SQL Database)</h1>
     <div id="year-selector">
         <form method="get" action="pie_prescribed.php">
             <label for="year">Select a Year:</label>
