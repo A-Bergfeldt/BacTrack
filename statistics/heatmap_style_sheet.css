@@ -135,7 +135,7 @@ p{
 
 .course-col{
     flex-basis: 75%;
-    background: #c1e7ba; /*box color*/
+    background-color: #dffffe; /*box color*/
     border-radius: 10px;
     margin-bottom: 15%;
     padding:10px 500px;
