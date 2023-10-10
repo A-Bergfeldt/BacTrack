@@ -7,9 +7,9 @@
 </head>
 
 <body>
-    <?php require_once "../nav_bar.php"; ?> 
-
-    <div class="loginbox">
+        
+    <div class="form">
+        <div class="loginbox">
         <h1>Login</h1>
         <form method="post">
             <div class="txt_field">
@@ -30,6 +30,9 @@
                 Do not have an account? <li><a href ="/about_contact/contactus.php">Contact us</a></li>
             </div>
         </form>
+    </div>
+
+    <?php require_once "../nav_bar.php"; ?> 
 
         <?php
             //Set the max lifetime of the session
@@ -83,6 +86,7 @@
                 }
             }
         ?>
+
     </div>
 </body>
 </html>

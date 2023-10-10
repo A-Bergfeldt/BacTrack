@@ -69,7 +69,7 @@
         </form>
     </div>
 
-    <div class="form-container">
+    <div class="form">
         <form action="insert_results_antibiotics.php" method="POST">
             <p class="center-text">Enter your resistance results here</p>
             Sample ID:
@@ -111,7 +111,7 @@
         </form>
     </div>
 
-    <div class="form-container">
+    <div class="form">
         <form action="finished_sample.php" method="POST">
             <p class="center-text">Are you done working with a sample?</p>
             Sample ID:
