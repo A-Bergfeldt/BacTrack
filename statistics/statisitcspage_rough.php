@@ -26,7 +26,7 @@
                             <h3>pie-charts</h3>
                             <p>Pie charts are a good visualization tool</p>
                             <button id="open">
-                                read more
+                            <a href="pie_prescribed.php">Open Page</a>
                             </button>
                         </div>
 
@@ -34,7 +34,7 @@
                             <h3>line-graphs</h3>
                             <p>These are a good way to look for trends</p>
                             <button id="open">
-                                read more
+                                <a href="line_prescribed.php">Open Page</a>
                             </button>
                         </div>
 
@@ -42,7 +42,7 @@
                             <h3>heatmaps</h3>
                             <p>One among the best tools to identify trends over a large geographical location</p>
                             <button id="open">
-                                read more
+                                <a href="heatmap_strain.php">Open Page</a>
                             </button>
                         </div>
 

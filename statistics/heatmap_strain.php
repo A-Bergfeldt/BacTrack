@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" type="text/css" href="heat_map_style_sheet.css">
   <!-- Include Plotly.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-  <h1>Plotly Density Map</h1>
+  <h1>DENSITY MAP plotly</h1> 
+  <div class="container"> <!--grouping the dropdown and search together-->
   <!-- Dropdown menu to select heatmap option -->
   <form method="get" action="heatmap_strain.php">
-    <label for="heatmapOption">Select Heatmap Option:</label>
-    <select id="heatmapOption" name="strain">
+    <label for="heatmapOption">Select Heatmap Option:</label> <!--older existing-->
+    <select id="heatmapOption" name="strain"><!--older existing-->
       <?php
       require_once "../db_connection.php";
       $sql = "SELECT strain_name FROM strain";
@@ -23,11 +25,14 @@
           }
       ?>
     </select>
-    <button id="update-button" type="submit">Show data for selected strain</button>
+    <button id="update-button" type="submit" class="button-primary">Show data for selected strain</button>
   </form>
-  
+  </div>
+  <div class="sidebyside">
   <!-- Div element where the plot will be displayed -->
-  <div id="myDiv" style="width: 600px; height: 400px;"></div>
+  <div id="myDiv"></div>
+
+  
 
   <?php
 
@@ -93,12 +98,13 @@
       }];
 
       var layout = {
-        width: 850,
-        height: 850,
+        width: 750,
+        height: 750,
+        margin: { l: 50, r: 10, t: 20, b: 20 },
         mapbox: {
           style: 'open-street-map',
           center: { lon: 15.0226667, lat: 59.3426667 }, // Set the center coordinates
-          zoom: 5 // Set the initial zoom level
+          zoom: 8 // Set the initial zoom level
         }
       };
 
@@ -107,5 +113,33 @@
     }
     window.onload = createDensityMap;
   </script>
+
+  <
+<!--
+    <div class="content">
+      <div class="box">
+        <div class="icon"><i class="fa fa-search" aria-hidden="true">
+        </i></div>
+        <div class="info">
+          <h3> search </h3>
+          <p> blashhhh </p>
+        </div>
+      </div>
+    </div>-->
+  
+    <div class="container">
+      <div class="slides slide2">
+          <section class="course">
+              <!--<h3> Information about visualization provided </h3>-->
+              <div class="row">
+                <div class="course-col">
+                  <h3>HEAT MAPS</h3>
+                  <p>bawhowhfihfiihhr</p>
+                </div>
+              </div>
+          </section>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
