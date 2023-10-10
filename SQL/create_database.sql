@@ -106,25 +106,10 @@ VALUES
     "Ciprofloxacin"
 ),
 (
-    "Azithromycin"
-),
-(
-    "Doxycycline"
-),
-(
     "Erythromycin"
 ),
 (
     "Vancomycin"
-),
-(
-    "Gentamicin"
-),
-(
-    "Metronidazole"
-),
-(
-    "Clarithromycin"
 );
 
 -- Populate tracking table

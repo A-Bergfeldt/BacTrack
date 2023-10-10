@@ -2,25 +2,20 @@
 require_once '../db_connection.php';
 require_once 'weighted_gaussian.php';
 
-// Generate and insert 20 sample instances for each month
-for ($x = 0; $x <= 9; $x++) {
+// Generate and insert 240 sample instances for each year
+for ($x = 0; $x <= 19; $x++) {
     for ($year = 2000; $year <= 2023; $year++) {
         for ($month = 1; $month <=12; $month++){
             // Generate a random combination of antibiotic IDs where all three IDs are different
             $antibiotic_ids = [];
-            $w = (2023-$year)/2023;
+            $w = ((2023-$year)/2023)*100;
             $antibiotics = [
-                "1" => 5 - 5*$w,
-                "2" => 2+ 2*$w,
-                "3" => 1 +4*$w*$w,
-                "4" => 3*$w + $w,
-                "5" => 3 + 2*$w,
-                "6" => 3 + log($w)*$w,
-                "7" => 2,
-                "8" => 5 - 2*$w,
-                "9" => 2 + 2*$w,
-                "10" => 1 + 7*$w,
-                "11" => 1 + $w
+                "1" => 5 + 8*$w,
+                "2" => 7 + 4*$w,
+                "3" => 10 + 1*$w,
+                "4" => 4 + 4*$w,
+                "5" => 5 + 2*$w,
+                "6" => 1 + 12*$w,
             ];
 
                 // Randomly select three distinct antibiotics
@@ -30,9 +25,8 @@ for ($x = 0; $x <= 9; $x++) {
                     $antibiotic_ids[] = $randomAntibiotic;
                 }
             }
-            echo json_encode($antibiotic_ids);
             // Create a sample record
-            $date_taken = $year . '-' . $month . '-01'; // Change the date format as needed
+            $date_taken = $year . '-' . '01' . '-01'; // Change the date format as needed
             $status_id = rand(1, 3); // Assuming status IDs are in the range 1-3
             $hospital_id = generateGaussianRandom(3, 1, 5, $year);
             $strain_id = rand(1, 3); // Assuming strain IDs are in the range 1-5
