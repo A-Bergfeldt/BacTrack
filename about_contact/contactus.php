@@ -76,15 +76,10 @@
     <div id="policy-content-1" class="policy-content">
         <h2>1. Information We Collect</h2>
         <p>
-            <h3>1.1. Personal Information</h3>
+            <h3>Personal Information</h3>
         </p>
         <p> Name: To provide personalized services and user identification.</p>
         <p> Contact Information: Such as email address for communication purposes.</p>
-        <p> Health Information: Including details about antibiotic therapies, medical conditions, and related data for tracking and analysis</p>
-        <p>
-            <h3>1.2. Non-Personal Information</h3>
-        </p>
-        <p> Usage Data: Information about your interactions with our services, such as pages visited, features used, and duration of use in he form of cookies.</p>
     </div>
 
     <div id="policy-content-2" class="policy-content">
@@ -96,60 +91,49 @@
         <p> Compliance: To comply with legal obligations and industry regulations.</p>
     </div>
 
-    <div id="policy-content-2" class="policy-content">
+    <div id="policy-content-3" class="policy-content">
         <h2>3. How do we Use Your Information</h2>
         <p><b>We use the information we collect for the following purposes:</b></p>
         <p> Providing Services: To track and analyze antibiotic combination therapies for better healthcare outcomes.</p>
         <p> Communication: To send relevant updates, notifications, and respond to inquiries.</p>
-        <p> Research and Analysis: Aggregated and anonymized data may be used for research and analysis to improve our services.</p>
-        <p> Compliance: To comply with legal obligations and industry regulations.</p>
-    </div>
-
-    <div id="policy-content-3" class="policy-content">
-        <h2>4. How do we store your data</h2>
-        <p><b>We may share your information under the following circumstances:</b></p>
-        <p> With Your Consent: When you explicitly grant us permission to share your information.</p>
-        <p> Service Providers: Trusted third parties assisting us in delivering our services (e.g., cloud storage, analytics, and customer support).</p>
-        <p> Legal Obligations: When required by law or in response to valid legal requests.</p>
     </div>
 
     <div id="policy-content-4" class="policy-content">
+        <h2>4. How do we store your data</h2>
+        <p>Our company securely stores your data on a local computer, and the responsibility for managing this data rests with our designated administrator.</p>
+        <p>Our company will keep your data for[time period]. Once the time period has expired, we will delete your data by [how we delete]</p>
+        
+    </div>
+
+    <div id="policy-content-5" class="policy-content">
         <h2>5. Your Choices and Rights</h2>
         <p><b>You have the right to:</b></p>
         <p> Access, Correct, or Delete Your Information: You can request access, correction, or deletion of your personal information by contacting us.</p>
         <p> Opt-Out of Communications: You can opt-out of receiving promotional communications from us at any time.</p>
-        <p> Data Portability: You may request a copy of your data in a structured, machine-readable format.</p>
-    </div>
-
-    <div id="policy-content-5" class="policy-content">
-        <h2>6. How do we use cookies</h2>
-        <p>We employ industry-standard security measures to protect your personal information from unauthorized access, disclosure, alteration, and destruction.</p>
+        <p> The right to rectification: You have the right to request that Our Company amend any information you believe to be inaccurate. Additionally, you have the right to request Our Company to supplement any information you believe to be incomplete.</p>
+        <p> The right to restrict processing: You have the right, under specific conditions, to request that Our Company limit the processing of your personal data.</p>
     </div>
 
     <div id="policy-content-6" class="policy-content">
-        <h2>7. What type of cookies do we use</h2>
-        <p>We may update this Privacy Policy periodically to reflect changes in our practices or for legal compliance. You will be notified of any significant changes.</p>
-    </div>
+        <h2>6. Cookies</h2>
+        
+        <p><b>6.1. How do we use cookies</b></p>
+        <p>Our Company utilizes cookies for various purposes to enhance your website experience, such as:</p>
+        <li>Maintaining your signed-in status</li>
 
-    <div id="policy-content-6" class="policy-content">
-        <h2>8. How to manage cookies</h2>
-        <p>We may update this Privacy Policy periodically to reflect changes in our practices or for legal compliance. You will be notified of any significant changes.</p>
-    </div>
-
-    <div id="policy-content-6" class="policy-content">
-        <h2>9. Security measures</h2>
-        <p>We may update this Privacy Policy periodically to reflect changes in our practices or for legal compliance. You will be notified of any significant changes.</p>
-    </div>
-
-    <div id="policy-content-6" class="policy-content">
-        <h2>10. Changes to this policy</h2>
-        <p>We may update this Privacy Policy periodically to reflect changes in our practices or for legal compliance. You will be notified of any significant changes.</p>
+        <p><b>6.2. What type of cookies do we use</b></p>
+        <p>Session cookies: At BacTrack, we use session cookies to enhance your browsing experience. These cookies are temporary and are stored on your device only for the duration of your current session. Once you close your browser, they are automatically deleted.</p>
+    
+        <h2><b>6.3. How to manage cookies</b></h2>
+        <p>You have the option to configure your browser to decline cookies, and the aforementioned website provides instructions on how to delete them from your browser. It's important to note that in a few instances, disabling cookies may impact the functionality of certain features on our website.</p>
     </div>
 
     <div id="policy-content-7" class="policy-content">
-        <h2>11. Contact Us</h2>
-        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>
-        <p><a href="mailto:bactrack2023@gmail.com">bactrack2023@gmail.com</a></p>
+        <h2>7. Changes to this policy</h2>
+        <p>We may update this Privacy Policy periodically to reflect changes in our practices or for legal compliance. You will be notified of any significant changes.</p>
+    
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at: <a href="mailto:bactrack2023@gmail.com">bactrack2023@gmail.com</a></p>
+
     </div>
 
 
