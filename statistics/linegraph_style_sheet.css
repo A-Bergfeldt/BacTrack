@@ -49,13 +49,10 @@ h1 {
 }
 
 .course{
-    width: 80%;
+    width: 140%;
     margin:auto;
     text-align:center;
     padding-top:120px;
-    background-color: #74EBD5;
-    background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
-
 }
 
 h3{
@@ -89,15 +86,20 @@ p{
 }
 
 .course-col{
-    flex-basis: 100%;
-    /*background:#F88379;*/ /*box color*/
-    background: rgb(255,223,223);
+    flex-basis: 50%;
     border-radius: 10px;
     margin-bottom: 5%;
-    margin-left: -5%;
-    padding:70px 500px;
+    margin-right: 5%;
+    margin-top: 0%;
+    margin-left: 20%; /* Adjusted margin for better responsiveness */
+    padding: 0% 0%; /* Adjusted padding for better responsiveness */
     box-sizing: border-box;
     transition: 0.5s;
+
+    /*background:#F88379;*/ /*box color*/
+    /*background: rgb(255,223,223);*/
+    background-color: #74EBD5;
+    background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
 }
 
 .course-col:hover{
