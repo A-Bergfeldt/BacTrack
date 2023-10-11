@@ -5,7 +5,7 @@
     <ul>
         <li><a href="/home/home_page.php">Home</a></li>
         <li class="dropdown">
-            <a href="#" class="dropbtn">About</a>
+            <a href="/about_contact/about_bactrack.php" class="dropbtn">About</a>
             <div class="dropdown-content">
                 <a href="/about_contact/about_bactrack.php">BacTrack</a>
                 <a href="/about_contact/about_combiant.php">CombiANT</a>
@@ -20,7 +20,14 @@
                 <a href="/about_contact/FAQs.php">FAQ</a>
             </div>
         </li>
-        <li><a href="/statistics/statisitcspage_rough.php">Statistics</a></li>
+        <li class="dropdown"> 
+            <a href="/statistics/statisitcspage_rough.php">Statistics</a>
+            <div class="dropdown-content">
+                <a href="/statistics/pie_prescribed.php">Antibiotics used</a>
+                <a href="/statistics/line_prescribed.php">Antibiotics over time</a>
+                <a href="/statistics/heatmap_strain.php">Geographical distribution</a>
+            </div>
+        </li>
         <?php
         session_start();
 
