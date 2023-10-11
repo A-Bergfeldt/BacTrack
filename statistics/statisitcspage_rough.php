@@ -13,22 +13,25 @@
             <div class="slide1">
                 <!--<h2 style="font-size: 30px; color:black">Services we offer</h2>-->
                 <section class="course">
-                    <h3> Information about visualization provided </h3>
+                    <h3>Analytics from the BacTrack Database</h3>
+                    <p>BacTrack collects multiple daily entries containing data on prescribed antibiotics for various strains of bacteria. Below, you'll 
+                    <br>find a selection of visualization tools showcasing different types of data. 
+                    <br>Click on any box to explore further data.</p>
                     <div class="row">
 
                         <a class="course-col" href="pie_prescribed.php">
-                            <h3>pie-charts</h3>
-                            <p>Pie charts are a good visualization tool</p>
+                            <h3>USAGE</h3>
+                            <p>Pie chart of the antibiotics use on a yearly basis</p>
                         </a>
 
                         <a class="course-col" href="line_prescribed.php">
-                            <h3>line-graphs</h3>
-                            <p>These are a good way to look for trends</p>
+                            <h3>TRENDS</h3>
+                            <p>Line chart showing the probably use of antibiotics over multiple years</p>
                         </a>
 
                         <a class="course-col" href="heatmap_strain.php">
-                            <h3>heatmaps</h3>
-                            <p>One among the best tools to identify trends over a large geographical location</p>
+                            <h3>OUTBREAKS</h3>
+                            <p>Heatmap of the whole strains of bacteria were found to spot spread and outbreaks</p>
                         </a>
                     </div>      
                 </section>
