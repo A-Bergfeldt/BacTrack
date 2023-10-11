@@ -6,6 +6,7 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
+  <?php require_once "../nav_bar.php"; ?>
   <h1>DENSITY MAP plotly</h1> 
   <div class="container"> <!--grouping the dropdown and search together-->
   <!-- Dropdown menu to select heatmap option -->

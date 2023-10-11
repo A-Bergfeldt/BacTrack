@@ -7,6 +7,7 @@
     <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
 </head>
 <body>
+<?php require_once "../nav_bar.php"; ?>
 <div class="container">
     <h1 class="text-center mt-4">LINE PLOT (Data from SQL Database)</h1>
     <div id="tester" style="width:600px;height:250px;"></div>
