@@ -67,6 +67,7 @@ h1 {
     height: 100vh;
     scroll-snap-align: start;
 
+
 }
 .button-container {
     margin-top: 20px;
@@ -91,12 +92,16 @@ h1 {
 
 
 #section3 {
-    background: url('home_sec3.jpg') no-repeat center center;
-    background-size: cover;
-    flex-direction: column;
+
+    background-color: white;
+    color: black;
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
-    margin-top: 20px;
     scroll-snap-align: start;
+    margin-top: -50px;
+
 }
 
 #section4 {
@@ -106,6 +111,7 @@ h1 {
     margin-top: 0;
     height: 100vh;
     scroll-snap-align: start;
+    margin-top: -50px;
 
 }
 
@@ -128,6 +134,20 @@ h1 {
     justify-content: center;
     height: 100vh;
 
+}
+
+/* Add CSS styles for the footer */
+footer {
+    background-color: #e7e7dd; /* Background color for the footer */
+    color: black; /* Text color for the footer */
+    padding: 20px; /* Add padding to the footer */
+    text-align: center; /* Center-align the text */
+    margin-top: -150px;
+}
+
+.contact-bar {
+    border-top: 1px solid black; /* Add a border line above the contact info */
+     /* Adjust the margin to move the footer closer to the content */
 }
 
 

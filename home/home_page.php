@@ -17,8 +17,8 @@ require_once "../nav_bar.php";
     </div>
 
     <div id="section1" class="section">
-        <p style="font-size: 50px; color: black; margin-left: 550px; margin-top: -100px;">Tracking antibiotic combination therapies for better healthcare</h1>
-        <div class="button-container" style="margin-left:300px; margin-top: -30px;">
+        <p style="font-size: 50px; color: black; margin-left: 600px; margin-top: -100px;">Tracking antibiotic combination therapies for better healthcare</h1>
+        <div class="button-container" style="margin-left:150px; margin-top: -30px;">
         <a href="/about_contact/contactus.php" class="button">Contact us</a>
     </div>
     </div>
@@ -34,27 +34,42 @@ require_once "../nav_bar.php";
         <div>
 </section>
 
-    <section id='section3'>
+<section id='section3' class="section">
     <div class="section-content">
-        <p style="margin-left: 600px; font-size: 70px; color: white; ">About CombiANT</p>
-        <p style="margin-left: 600px; font-size: 22px;color:white; ">Combinations of antimicrobial agents are invariably prescribed for certain infectious diseases, such as tuberculosis, HIV and malaria. Bacterial infections that are not readily treatable, such as those affecting cardiac valves and prostheses, and lung infections in cystic fibrosis, are also usually subjected to a combination of antibiotics.</p>
+        <p style="font-size: 70px; color: black; margin-left: 600px;">About CombiANT</p>
+        <div style="float: left; margin-right: 20px; margin-top: -200px;">
+            <img src="doctor.jpg" alt="Desktop Image" width="600" height="600">
+        </div>
+        <div style="margin-left: 650px; font-size: 22px; color: black;">
+            Combinations of antimicrobial agents are invariably prescribed for certain infectious diseases, such as tuberculosis, HIV and malaria. Bacterial infections that are not readily treatable, such as those affecting cardiac valves and prostheses, and lung infections in cystic fibrosis, are also usually subjected to a combination of antibiotics.
+        </div>
     </div>
-            <div class="button-container" style="margin-left: 800px;">
-            <a href="/about_contact/about_page.php" class="button">Learn More</a>
-        <div>
-        </section>
+    <div class="button-container" style="margin-left: 825px;">
+        <a href="/about_contact/about_page.php" class="button">Learn More</a>
+    </div>
+</section>
+
 
         <section id='section4'>
     <div class="section-content">
         <p style="margin-left: 100px; font-size: 70px; color: black; ">Contact us</p>
-        <p style="margin-left: 100px; font-size: 22px;color:black; ">Do you want to contact us? Click on the button below</p>
+        <p style="margin-left: 100px; font-size: 22px;color:black; margin-bottom: -15px; ">Do you want to contact us? Click on the button below</p>
         <p style="margin-left: 100px; font-size: 22px;color:black; ">and we will try to answer as soon as possible</p>
-        <img src="../logo_main.png" alt="Logo" width="520" height="400" style="float: right; margin-top: -270px;">
+        <img src="angstrom.jpg" alt="Desktop Image" width="520" height="400" style="float: right; margin-top: -270px;">
     </div>
     <div class="button-container" style="text-align: center;">
         <a href="/about_contact/contactus.php" class="button">Contact us</a>
     </div>
 </section>
+
+<footer>
+        <div class="contact-bar">
+            <div class="contact-info">
+                <p>Email: contact@example.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+    </footer>
 
     
 
