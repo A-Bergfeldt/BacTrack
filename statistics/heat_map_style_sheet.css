@@ -127,11 +127,12 @@ h3{
 }
 
 p{
-    color: #fff4f4; /* text color inside the box*/
-    font-size: 14px;
+    color: #000000; /* text color inside the box*/
+    font-size: 1.5vw; /* Adjusted font size using viewport width units for responsiveness */
     font-weight: 300;
-    line-height: 22px;
-    padding: 10px;
+    line-height: 22px; /* Adjusted line height for better spacing */
+    padding: 5%;
+    text-align: center;
 }
 
 .row{
@@ -142,11 +143,16 @@ p{
 }
 
 .course-col{
-    flex-basis: 75%;
-    background:#bdf2f4; /*box color*/
-    border-radius: 10px;
     margin-bottom: -10%;
     padding:200px 150px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    background-color: #0782c5;
+    background-image: linear-gradient(160deg, #0782c5 0%, #69cdc5 64%); /*blue shades*/
+    margin-right: 0%;
+    flex-basis: 50%;
+    border-radius: 10px;
+    padding: 5% 5%; /* Adjusted padding for better responsiveness */
     box-sizing: border-box;
     transition: 0.5s;
 }
