@@ -23,9 +23,9 @@
         <li class="dropdown"> 
             <a href="/statistics/statisitcspage_rough.php">Statistics</a>
             <div class="dropdown-content">
-                <a href="/statistics/pie_prescribed.php">Antibiotics used</a>
-                <a href="/statistics/line_prescribed.php">Antibiotics over time</a>
-                <a href="/statistics/heatmap_strain.php">Geographical distribution</a>
+                <a href="/statistics/pie_prescribed.php">Usage</a>
+                <a href="/statistics/line_prescribed.php">Trends</a>
+                <a href="/statistics/heatmap_strain.php">Outbreaks</a>
             </div>
         </li>
         <?php
