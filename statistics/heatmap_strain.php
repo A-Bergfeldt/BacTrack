@@ -98,13 +98,13 @@
       }];
 
       var layout = {
-        width: 750,
-        height: 750,
+        width: 600,
+        height: 400,
         margin: { l: 50, r: 10, t: 20, b: 20 },
         mapbox: {
           style: 'open-street-map',
           center: { lon: 15.0226667, lat: 59.3426667 }, // Set the center coordinates
-          zoom: 8 // Set the initial zoom level
+          zoom: 4 // Set the initial zoom level
         }
       };
 
