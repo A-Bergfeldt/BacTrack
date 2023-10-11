@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <?php require_once "../nav_bar.php"; ?>
     <h1 class="centered-paragraph">Frequently Asked Questions</h1>
 
     <div class="faq">
@@ -29,7 +30,7 @@
 
         <div class="question-answer">
             <h3>3. Who can benefit from BacTrack?</h3>
-            <p>BacTrack can benefit healthcare professionals, researchers, and institutions involved in antibiotic
+            <p>BacTrack can benefit healthcare professionals, researchers, and patients involved in antibiotic
                 therapies and healthcare analysis.
             </p>
         </div>
@@ -50,8 +51,8 @@
 
         <div class="question-answer">
             <h3>6. Are there any fees associated with using BacTrack?</h3>
-            <p>Basic usage of BacTrack is available for free. However, premium features and advanced analytics may
-                require a subscription.
+            <p>
+                Yes, we do have fees associated with using BacTrack. We charge for the services provided.
             </p>
         </div>
 
@@ -64,13 +65,13 @@
 
         <div class="question-answer">
             <h3>8. How can I contact BacTrack support?</h3>
-            <p>For any support or inquiries, please reach out to our support team at <a href="mailto:bactrack2023@gmail.com">bactrack2023@gmail.com.</a></p>
+            <p>For any support or inquiries, please reach out to our support team at <a href="contactus.php">Contact Us</a></p>
         </div>
 
         <div class="question-answer">
             <h3>9. Is my data secure with BacTrack?</h3>
-            <p>Yes, BacTrack employs industry-standard security measures to ensure the safety and confidentiality of
-                your data.
+            <p>
+                Yes, BacTrack employs security measures to ensure the safety and confidentiality of your data.
             </p>
         </div>
 
@@ -84,11 +85,13 @@
     </div>
 
     <script>
-        document.querySelectorAll('.question-answer h3').forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+        document.querySelectorAll('.dropdown-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                content.style.display = content.style.display === 'block' ? 'none' : 'block';
             });
         });
     </script>
 
+
+</body>

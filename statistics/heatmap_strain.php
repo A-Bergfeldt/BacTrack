@@ -6,6 +6,7 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
+  <?php require_once "../nav_bar.php"; ?>
   <h1>DENSITY MAP plotly</h1> 
   <div class="container"> <!--grouping the dropdown and search together-->
   <!-- Dropdown menu to select heatmap option -->
@@ -98,13 +99,13 @@
       }];
 
       var layout = {
-        width: 750,
-        height: 750,
+        width: 600,
+        height: 400,
         margin: { l: 50, r: 10, t: 20, b: 20 },
         mapbox: {
           style: 'open-street-map',
           center: { lon: 15.0226667, lat: 59.3426667 }, // Set the center coordinates
-          zoom: 8 // Set the initial zoom level
+          zoom: 4 // Set the initial zoom level
         }
       };
 
