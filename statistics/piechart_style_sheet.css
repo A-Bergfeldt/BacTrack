@@ -1,4 +1,5 @@
 body {
+
     background-color:rgb(255, 255, 255); /*BACKGROUND color for the plot*/
     margin: 0;
 }
@@ -125,7 +126,7 @@ select {
 }
 
 .slide2{
-    background:rgb(255, 255, 255); /*has to be black, background for the box*/
+    background:rgb(248, 225, 225); /*has to be black, background for the box*/
 }
 
 .course{
@@ -138,14 +139,20 @@ select {
 h3{
     font-size: 36px;
     font-weight: 600;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin:0;
+    padding: 0;
+    text-align: center;
+
 }
 
 p{
-    color: #fff4f4; /* text color inside the box*/
-    font-size: 14px;
+    color: #000000; /* text color inside the box*/
+    font-size: 1.5vw; /* Adjusted font size using viewport width units for responsiveness */
     font-weight: 300;
-    line-height: 22px;
-    padding: 10px;
+    line-height: 1.5; /* Adjusted line height for better spacing */
+    padding: 5%;
+    text-align: center;
 }
 
 .row{
@@ -157,14 +164,24 @@ p{
 
 .course-col{
     flex-basis: 70%;
-    background:#D8BFD8; /*box color*/
+    background-color: #ff7d77;
+    background-image: linear-gradient(19deg, #ff7d77 4%, #beb6f5 82%);
+
+    /*background-color: #0782c5;
+    background-image: linear-gradient(160deg, #0782c5 0%, #69cdc5 64%);*/ /*blue shades*/
+    flex-basis: 50%;
+    background-color: #ff7d77;
+    background-image: linear-gradient(19deg, #ff7d77 4%, #beb6f5 82%);
     border-radius: 10px;
     margin-bottom: 5%;
-    margin-top: -50%;
-    margin-left: 90%;
-    padding:100px 230px;
+    margin-right: 5%;
+    margin-top: -20%;
+    margin-left: 50%; /* Adjusted margin for better responsiveness */
+    padding: 5% 5%; /* Adjusted padding for better responsiveness */
     box-sizing: border-box;
     transition: 0.5s;
+
+
 }
 
 .course-col:hover{
