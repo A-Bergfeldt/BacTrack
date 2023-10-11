@@ -142,7 +142,17 @@ $labels = json_encode(array_unique($labels));
             <div class="row">
                 <div class="course-col">
                 <h2>HEAT MAPS</h2>
-                <p>bawhowhfihfiihhr</p>
+                <p> The line-chart displays the use of different antibiotics over time. 
+        The data points in this graph are summed to compile the data for each month. 
+        This graph is updated with the newest data possible and will change as fast 
+        as new results are inputted in the BacTrack system. With this chart BacTrack 
+        can spot early trends in overuse of antibiotics or if antibiotics are being 
+        miss/underused. By hovering over different spots in the line-chart, the 
+        number of prescribed antibiotics will be displayed as well as the month 
+        and the name of the antibiotic represented by that line. You can also select 
+        and deselect what antibiotics to be shown in the graph by clicking on the 
+        names in the legend. A single click selects and deselects that antibiotic, 
+        whilst a double-click will only show the antibiotic you clicked.</p>
                 </div>
             </div>
         </section>
