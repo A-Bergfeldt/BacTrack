@@ -1,6 +1,14 @@
 <?php
 // Your database connection code here
 // Database connection parameters
+
+session_start();
+
+if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 3) {
+    header("Location: ../login/login.php");
+    exit();
+}
+
 $servername = "localhost";
 $username = "root";
 $password = "root";
