@@ -14,7 +14,7 @@
     require_once '../db_connection.php';
 
     if ($_SESSION['role_id'] != 2 && $_SESSION['role_id'] != 3) {
-        header("Location: ../home_page.php");
+        header("Location: ../login/login.php");
         exit();
     }
 

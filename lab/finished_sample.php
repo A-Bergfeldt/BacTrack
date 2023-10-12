@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if ($_SESSION['role_id'] != 2 && $_SESSION['role_id'] != 3) {
+    header("Location: ../login/login.php");
+    exit();
+}
+
 require '../PHPMailer/src/Exception.php';
 require '../PHPMailer/src/PHPMailer.php';
 require '../PHPMailer/src/SMTP.php';
