@@ -41,6 +41,9 @@
             //Set the cookie lifetime of the session
             ini_set( "session.cookie_lifetime", 1440);
 
+            //No access to cookie from javascript
+            ini_set("session.cookie_httponly", On);
+
             session_start();
             
             require_once "../nav_bar.php";
