@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 3) {
+    header("Location: ../login/login.php");
+    exit();
+}
+
 $sample_id = $_GET["sample_id"];
 $antibiotic1 = $_GET["antibiotic1"];
 $antibiotic2 = $_GET["antibiotic2"];

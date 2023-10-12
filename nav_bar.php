@@ -33,12 +33,16 @@
 
         if(isset($_SESSION['role_id'])){
             echo '<li class="dropdown">';
-            echo '<a href="#" class="dropbtn">My Page</a>';
-            echo '<div class="dropdown-content">';
             if($_SESSION['role_id'] == 1 || $_SESSION['role_id'] == 3){
+                echo '<a href="/doctor/doctor_page.php" class="dropbtn">My Page</a>';
+                echo '<div class="dropdown-content">';
                 echo '<a href="/doctor/doctor_page.php">My Samples</a>';
+                echo '<a href="/doctor/sample_form.php">Insert new sample</a>';
+                echo '<a href="/data_view/search_all_samples_test.php">Search samples</a>';
             }
             if($_SESSION['role_id'] == 2 || $_SESSION['role_id'] == 3){
+                echo '<a href="/lab/lab_design_input_form.php" class="dropbtn">My Page</a>';
+                echo '<div class="dropdown-content">';
                 echo '<a href="/lab/lab_design_input_form.php">Sample Input</a>';
             }
             echo '<a href="/login/logout.php">Logout</a>';
