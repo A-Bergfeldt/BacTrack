@@ -48,8 +48,8 @@
 
             if(isset($_POST["submit"])) {
                 // Use prepared statements with parameterized queries
-                $input_username = $_POST["username"];
-                $input_password = $_POST["password"];
+                $input_username = htmlspecialchars($_POST["username"]);
+                $input_password = htmlspecialchars($_POST["password"]);
         
                 $stmt = $db_connection->prepare("SELECT hashed_password FROM users WHERE user_id = ?");
                 $stmt->bind_param("s", $input_username);
