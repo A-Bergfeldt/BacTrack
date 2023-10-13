@@ -73,6 +73,7 @@
         <form action="insert_results_antibiotics.php" method="POST">
             <p class="center-text">Enter your resistance results here</p>
             Sample ID:
+
             <select name="sample_id" id="sample_id_antibiotic" required>
                 <option disabled selected value> --- </option>
                 <?php foreach ($sample_antibiotics as $sample): ?>

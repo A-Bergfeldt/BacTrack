@@ -33,6 +33,10 @@
         <p style="margin-left: 700px; font-size: 22px; ">Combinations of antimicrobial agents are invariably prescribed for certain infectious diseases, such as tuberculosis, HIV and malaria. Bacterial infections that are not readily treatable, such as those affecting cardiac valves and prostheses, and lung infections in cystic fibrosis, are also usually subjected to a combination of antibiotics.</p>
     </div>
         </section>
+
+        
+
+
 </body>
 </html>
 
