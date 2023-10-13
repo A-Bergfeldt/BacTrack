@@ -9,6 +9,7 @@ body{
     background: linear-gradient(180deg,#e7e7dd 0%, #ffffff 100%);
     background-attachment: fixed;
     box-sizing: border-box;
+    
 }
 
 .container {
@@ -53,6 +54,7 @@ input[type="submit"]:hover{
 
 table {
     width: 100%;
+    z-index: -1;
 }
 
 table,th, td {
@@ -71,7 +73,6 @@ main.table{
     overflow: hidden;
     margin: 50px;
     padding: 0;
-    text-align: center;
 }
 
 thead th {
@@ -81,7 +82,6 @@ thead th {
     background-color: #d5d1defe;
     cursor: pointer;
     text-transform: capitalize;
-    text-align: center;
 }
 
 .table_header{
@@ -219,8 +219,4 @@ thead th.active,tbody td.active {
     color: #6c00bd;
 }
 
-.headingss {
-    max-height: 400px; /* Set your desired maximum height */
-    overflow-y: auto; /* Enable vertical scroll if the content overflows */
-}
 
