@@ -62,7 +62,3 @@ input[type="submit"]:hover {
     background-color: #800080; /* Change background color on hover */
 }
 
-.input_text {
-    font-weight: bold;
-    color: white;
-}
