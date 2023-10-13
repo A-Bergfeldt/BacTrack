@@ -1,5 +1,5 @@
 <!-- This PHP file is used to fill the table for a doctor viewing samples they are responsible for -->
-<link rel="stylesheet" href="table_styles.css">
+<link rel="stylesheet" href="harry_styles.css">
 
 <?php
 session_start();
