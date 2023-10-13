@@ -7,11 +7,11 @@
 </head>
 <body>
   <?php require_once "../nav_bar.php"; ?>
-  <h1>DENSITY MAP plotly</h1> 
+  <h1>DENSITY MAP</h1> 
   <div class="container"> <!--grouping the dropdown and search together-->
   <!-- Dropdown menu to select heatmap option -->
   <form method="get" action="heatmap_strain.php">
-    <label for="heatmapOption">Select Heatmap Option:</label> <!--older existing-->
+    <label for="heatmapOption">Strain selection:</label> <!--older existing-->
     <select id="heatmapOption" name="strain"><!--older existing-->
       <?php
       require_once "../db_connection.php";
@@ -26,7 +26,7 @@
           }
       ?>
     </select>
-    <button id="update-button" type="submit" class="button-primary">Show data for selected strain</button>
+    <button id="update-button" type="submit" class="button-primary">Show data</button>
   </form>
   </div>
   <div class="sidebyside">
