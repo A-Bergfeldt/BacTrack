@@ -62,17 +62,9 @@ require_once "../nav_bar.php";
     </div>
 </section>
 
-<footer>
-        <div class="contact-bar">
-            <div class="contact-info">
-                <p>Email: contact@example.com</p>
-                <p>Phone: (123) 456-7890</p>
-            </div>
-        </div>
-    </footer>
-
-    
-
+<?php 
+require_once "../footer/footer.php";
+?>
 
         <script>
     // Function to check if user has accepted cookies

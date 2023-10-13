@@ -1,8 +1,13 @@
 <?php
 session_start();
 
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1440)) {
+    header("Location: ../login/logout.php");
+}
+$_SESSION['LAST_ACTIVITY'] = time();
+
 if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 3) {
-    header("Location: ../home_page.php");
+    header("Location: ../login/login.php");
     exit();
 }
 
