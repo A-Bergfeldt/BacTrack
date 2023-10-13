@@ -14,7 +14,7 @@
     require_once '../db_connection.php';
 
     if ($_SESSION['role_id'] != 2 && $_SESSION['role_id'] != 3) {
-        header("Location: ../home_page.php");
+        header("Location: ../login/login.php");
         exit();
     }
 
@@ -73,6 +73,7 @@
         <form action="insert_results_antibiotics.php" method="POST">
             <p class="center-text">Enter your resistance results here</p>
             Sample ID:
+
             <select name="sample_id" id="sample_id_antibiotic" required>
                 <option disabled selected value> --- </option>
                 <?php foreach ($sample_antibiotics as $sample): ?>

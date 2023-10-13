@@ -1,8 +1,13 @@
 <?php
 session_start();
 
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1440)) {
+    header("Location: ../login/logout.php");
+}
+$_SESSION['LAST_ACTIVITY'] = time();
+
 if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 3) {
-    header("Location: ../home_page.php");
+    header("Location: ../login/login.php");
     exit();
 }
 
@@ -33,17 +38,17 @@ how much you want
         .button-container .button {
             display: inline-block;
             padding: 15px 30px; /* Increase padding for a larger button */
-            background-color: #5072A7;
-            color: #fff;
+            background-color: #662d91; 
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            color: white;
             transition: background-color 0.3s ease;
             margin: 0 10px; /* Add spacing between buttons */
         }
 
         .button-container .button:hover {
-            background-color: #0056b3;
+            background-color: #800080; 
         }
     </style>
 </head>
@@ -52,7 +57,7 @@ how much you want
     <?php require_once "../nav_bar.php"; ?> 
     <div class="container">
         <div class="slides slide1">
-            <h1 style="font-size: 100px; color: #fff;">Hello <?php echo $user_name; ?>!</h1>
+            <p style="font-size: 100px; color: black; text-align: center; margin-bottom:0;">Hello <?php echo $user_name; ?>!</p>
         </div>
     </div>
     <!-- Button container for both buttons -->

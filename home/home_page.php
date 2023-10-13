@@ -30,7 +30,7 @@ require_once "../nav_bar.php";
             <p style="margin-left: 100px; font-size: 22px;; ">The growing problem of antibiotic resistance (AMR) poses difficulties when it comes to treating bacterial infections. Identifying the root cause of an illness at an early stage can be crucial when it comes to treating these diseases, and can result in a more effective treatment using a tailored antibiotic therapy to the specific infection.</p>
         <div>
             <div class="button-container" style="text-align: center;">
-            <a href="/about_contact/about_page.php" class="button">Learn More</a>
+            <a href="/about_contact/about_bactrack.php" class="button">Learn More</a>
         <div>
 </section>
 
@@ -45,7 +45,7 @@ require_once "../nav_bar.php";
         </div>
     </div>
     <div class="button-container" style="margin-left: 825px;">
-        <a href="/about_contact/about_page.php" class="button">Learn More</a>
+        <a href="/about_contact/about_combiant.php" class="button">Learn More</a>
     </div>
 </section>
 
@@ -62,17 +62,9 @@ require_once "../nav_bar.php";
     </div>
 </section>
 
-<footer>
-        <div class="contact-bar">
-            <div class="contact-info">
-                <p>Email: contact@example.com</p>
-                <p>Phone: (123) 456-7890</p>
-            </div>
-        </div>
-    </footer>
-
-    
-
+<?php 
+require_once "../footer/footer.php";
+?>
 
         <script>
     // Function to check if user has accepted cookies

@@ -6,7 +6,7 @@ body{
     height: 100vh;
     background-size: cover;
     background-position: center;
-    background: linear-gradient(180deg, rgba(21,98,105,1) 0%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(180deg,#e7e7dd 0%, #ffffff 100%);
 }
 
 nav{

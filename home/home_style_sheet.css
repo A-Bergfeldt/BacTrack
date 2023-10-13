@@ -1,5 +1,6 @@
 
 @import "/nav_bar_style_sheet.css";
+@import "/footer/footer_style_sheet.css";
 
 body{
     margin: 0;
@@ -136,19 +137,8 @@ h1 {
 
 }
 
-/* Add CSS styles for the footer */
-footer {
-    background-color: #e7e7dd; /* Background color for the footer */
-    color: black; /* Text color for the footer */
-    padding: 20px; /* Add padding to the footer */
-    text-align: center; /* Center-align the text */
-    margin-top: -150px;
-}
 
-.contact-bar {
-    border-top: 1px solid black; /* Add a border line above the contact info */
-     /* Adjust the margin to move the footer closer to the content */
-}
+
 
 
 
