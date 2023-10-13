@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="linegraph_style_sheet.css">
+    <link rel="stylesheet" type="text/css" href="linegraph_stylesheet_main.css">
     <title>Line-plot with Data from SQL Database</title>
     <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
 </head>
