@@ -9,7 +9,7 @@
 <body>
     <?php require_once "../nav_bar.php"; ?>
     <div class="container">
-        <h1 class="text-center mt-4">PIE CHART</h1>
+        <h1 class="text-center mt-4">USAGE OF ANTIBIOTICS</h1>
         <div id="year-selector">
             <form method="get" action="pie_prescribed.php">
                 <label for="year">Select a Year:</label>
@@ -32,11 +32,9 @@
                 <button id="update-button" type="submit" class="button-primary">Update Chart</button>
             </form>
         </div>
-        <div id="tester" style="width:600px;height:250px;"></div>
+        <div id="tester" style="width:400px;height:250px;margin-left:10%"></div>
     <div class="sidebyside">
     <!--</div>-->
-
-
 
     <?php
 
@@ -123,6 +121,7 @@
     ?>
 
     <script>
+
 	TESTER = document.getElementById('tester');
     var data = [{
         values: <?php echo json_encode($data); ?>,
@@ -131,20 +130,22 @@
         textposition: "outside",
         automargin: true,
         hole: .35,
+        textfont:40,
         type: 'pie',
         sort: false
     }];
 
 var layout = {
-    height: 400,
+    height: 600,
     width: 500,
     showlegend: false,
     font: {
-        family: 'Poppins, sans seriff'},
+        family: 'Poppins, sans seriff',
+        size:18},
+
     annotations: [
     {
       font: {
-        size: 22,
         family: 'Poppins, sans seriff',
       },
       showarrow: false,
@@ -155,18 +156,19 @@ var layout = {
 };
 Plotly.newPlot('tester', data, layout);
 </script>
+
 <div class="container">
     <!--<div class="slides slide2">-->
             <section class="course">
               <!--<h3> Information about visualization provided </h3>-->
             <div class="row">
                 <div class="course-col">
-                  <h3>PIE CHARTS</h3>
-                  <p>This pie-chart displays the share for all prescribed antibiotics for 
-                    your selected year. The default year is the current year but feel 
-                    free to explore previous years as well. By hovering over the different 
-                    slices of the pie-chart, the number of times the antibiotic has been 
-                    prescribed globally will be displayed as well as the percentage and the 
+                  <h3>About the Pie Chart</h3>
+                  <p>The pie-chart displays the share for all prescribed antibiotics for 
+                    your selected year. The default year is the current year, but user can
+                    explore previous years as well. By hovering over the different 
+                    slices of the pie-chart, the number of times a particular antibiotic has been 
+                    prescribed globally will be displayed, as well as the percentage and the 
                     name of the antibiotic represented by that slice.</p>
                 </div>
             </div>
