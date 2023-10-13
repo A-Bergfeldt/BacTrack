@@ -1,16 +1,18 @@
+<?php 
+require_once "../nav_bar.php"; 
+?>
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="contactus.css">
     <title>Privacy Policy - BacTrack</title>
-</head>
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="/home/home_style_sheet.css">
+    </head>
+    <br>
+    <br>
+    <br>
 <body>
-    <?php require_once "../nav_bar.php"; ?>
-    <h1>Privacy Policy</h1>
+    <p style="font-size: 70px; text-align: center; margin-bottom: 0; ">Privacy policy</p>
 
     <script>
         function showPolicy() {
@@ -94,4 +96,3 @@
         <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at: <a href="contactus.php">here</a></p>
     </div>
 
-</body>
