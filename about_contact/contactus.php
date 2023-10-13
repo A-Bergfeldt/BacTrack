@@ -16,17 +16,17 @@
 
 <body>
     <?php require_once "../nav_bar.php"; ?> 
-    <h1>Connect With Us</h1>
+    </br></br></br></br>
     <p class="centered-paragraph" style="font-weight: bold; font-size: 120%;">Contact us at BacTrack</p>
 
     <form action="send_contact_email.php" method="POST" target="_blank">
-        <label for="name" style="font-weight: bold; font-size: 80%;">Full Name or Company Name</label>
+        <label for="name" style="font-weight: bold; font-size: 70%;">Full Name or Company Name</label>
         <input type="text" id="name" name="name" placeholder="Enter name" required autocomplete="name"><br>
 
-        <label for="email" style="font-weight: bold; font-size: 80%;">Email</label>
+        <label for="email" style="font-weight: bold; font-size: 70%;">Email</label>
         <input type="email" id="email" name="email" placeholder="example@mail.com" required autocomplete="email"><br>
 
-        <label for="description" style="font-weight: bold; font-size: 80%;">How may we help you?</label>
+        <label for="description" style="font-weight: bold; font-size: 70%;">How may we help you?</label>
         <textarea id="description" name="description" rows="4" cols="50" placeholder="Reason for contacting us" required autocomplete="description"></textarea><br>
 
         <input type="submit" class="submit-button" value="Submit">
