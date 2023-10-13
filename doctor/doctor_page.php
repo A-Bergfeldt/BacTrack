@@ -68,7 +68,7 @@ how much you want
 
         <main class="table">
             <section class="table_header">
-                <h1></h1>
+                <h1 style="text-align: center;">Finished samples</h1>
             </section>
             <section class="table_body">
                 <table>

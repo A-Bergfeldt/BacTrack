@@ -115,7 +115,6 @@
     window.onload = createDensityMap;
   </script>
 
-  <
 <!--
     <div class="content">
       <div class="box">
