@@ -34,6 +34,9 @@
     </div>
         </section>
 
+<?php 
+require_once "../footer/footer.php";
+?>
         
 
 

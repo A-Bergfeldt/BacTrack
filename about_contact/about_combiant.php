@@ -19,5 +19,11 @@
     <img src="combiant_pic.jpg" alt="Desktop Image" width="500" height="400" style="float: right; margin-left: 20px; margin-top: -200px;">
     <p style="margin-left: 0px; font-size: 22px; ">Combinations of antimicrobial agents are invariably prescribed for certain infectious diseases, such as tuberculosis, HIV and malaria. Bacterial infections that are not readily treatable, such as those affecting cardiac valves and prostheses, and lung infections in cystic fibrosis, are also usually subjected to a combination of antibiotics.</p>
     </div>
+
+    <?php 
+require_once "../footer/footer.php";
+?>
+
 </body>
 </html>
+
