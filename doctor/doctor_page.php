@@ -38,7 +38,8 @@ how much you want
         .button-container .button {
             display: inline-block;
             padding: 15px 30px; /* Increase padding for a larger button */
-            background-color: #662d91; 
+            background-color: #5072A7;
+            color: #fff;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
@@ -48,7 +49,7 @@ how much you want
         }
 
         .button-container .button:hover {
-            background-color: #800080; 
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -57,11 +58,7 @@ how much you want
     <?php require_once "../nav_bar.php"; ?> 
     <div class="container">
         <div class="slides slide1">
-<<<<<<< Updated upstream
-            <p style="font-size: 100px; color: black; text-align: center; margin-bottom:0;">Hello <?php echo $user_name; ?>!</p>
-=======
             <h1 style="font-size: 100px; color: #fff; text-align: center;">Hello <?php echo $user_name; ?>!</h1>
->>>>>>> Stashed changes
         </div>
 
         <div class="button-container">
@@ -71,7 +68,7 @@ how much you want
 
         <main class="table">
             <section class="table_header">
-                <h1>Samples</h1>
+                <h1></h1>
             </section>
             <section class="table_body">
                 <table>
