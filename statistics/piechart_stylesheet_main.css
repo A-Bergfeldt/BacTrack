@@ -174,8 +174,8 @@ p{
     background: linear-gradient(90deg, rgba(161,170,238,1) 4%, rgba(224,209,245,1) 45%, rgba(255,201,214,1) 100%);
     */
 
-    background: rgb(207,210,240);
-    background: linear-gradient(90deg, rgba(207, 210, 240, 0.386) 0%, rgba(250, 210, 218, 0.386) 100%);
+    background: rgb(185, 120, 255);
+    background: linear-gradient(90deg, rgba(207, 210, 240, 0.6) 0%, rgba(140, 119, 158, 0.2) 100%);
 
     /*more purple-pink shades*/
     /*

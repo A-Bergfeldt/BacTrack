@@ -103,8 +103,8 @@ p{
 
     /*background:#F88379;*/ /*box color*/
     /*background: rgb(255,223,223);*/
-    background-color: #74EBD5;
-    background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+    background: rgb(185, 120, 255);
+    background: linear-gradient(90deg, rgba(207, 210, 240, 0.6) 0%, rgba(140, 119, 158, 0.2) 100%);
 }
 
 .course-col:hover{
