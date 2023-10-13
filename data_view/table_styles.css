@@ -64,15 +64,13 @@ table,th, td {
 
 main.table{
     width: 82vw;
-    height: 80vh;
+    height: 60vh;
     background-color: #fff5;
     backdrop-filter: blur(7px);
     box-shadow: 0 .4rem .8rem #0005;
     border-radius: 0.8rem;
     overflow: hidden;
-    margin: 50px;
-    padding: 0;
-}
+    margin: 50px;}
 
 thead th {
     position: sticky;
