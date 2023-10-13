@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My BacTrack Web App</title>
-    <!-- Add your CSS styles here -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
-    <link rel="stylesheet" type="text/css" href="lab_tech_style.css">
-</head>
-  <body>
-    <?php require_once '../nav_bar.php'; ?>
 
 <?php
 session_start();
@@ -29,10 +19,6 @@ require '../PHPMailer/src/SMTP.php';
 // Database connection parameters
 require_once '../db_connection.php';
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
 $sample_id = (int) $_POST['sample_id'];
 try {
     // Prepare and bind parameters to SQL query, then execute
@@ -43,11 +29,9 @@ try {
     $result = $stmt->execute();
 
     if ($result) {
-        echo "Status for sample with sample ID $sample_id has been updated to 'finished'";
-        echo "<br><a href='lab_design_input_form.php'>Enter more results</a>";
+        $message1 = "Status for sample with sample ID $sample_id has been updated to 'finished'";
     } else {
-        echo "Error: " . $stmt->error;
-        echo "<br><a href='lab_design_input_form.php'>Back to result input form</a>";
+        $message1 = "Error: ";
     }
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
@@ -111,3 +95,24 @@ echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 $db_connection->close();
 
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My BacTrack Web App</title>
+    <!-- Add your CSS styles here -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" type="text/css" href="lab_tech_style.css">
+</head>
+  <body>
+  </br></br></br></br></br></br></br></br>
+    <?php require_once '../nav_bar.php'; ?>
+    <div class="box">
+        <p style="text-align: center;"> 
+            <?php if (isset($message1)) {echo $message1 . $stmt->error;} ?>
+        </p>
+        <div>
+            <div class="button-container" style="text-align: center;">
+                <a href='lab_design_input_form.php' class="button">Enter more results</a>
+    </div>
+</body>
