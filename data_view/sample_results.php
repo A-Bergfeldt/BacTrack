@@ -10,7 +10,6 @@
 
 <body>
 
-<?php require_once "../nav_bar.php"; ?> 
 
 <?php
     session_start();
@@ -127,6 +126,7 @@
         <?php endif; ?>
 
     </table>
+    <?php require_once "../nav_bar.php"; ?> 
 
 </body>
 </html>
