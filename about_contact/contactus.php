@@ -16,8 +16,8 @@
 
 <body>
     <?php require_once "../nav_bar.php"; ?> 
-    </br></br></br></br>
-    <p class="centered-paragraph" style="font-weight: bold; font-size: 120%;">Contact us at BacTrack</p>
+    </br></br></br>
+    <h1 class="centered-paragraph">Contact us at BacTrack</h1>
 
     <form action="send_contact_email.php" method="POST" target="_blank">
         <label for="name" style="font-weight: bold; font-size: 70%;">Full Name or Company Name</label>
@@ -32,7 +32,7 @@
         <input type="submit" class="submit-button" value="Submit">
     </form>
 
-    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
 
     <?php require_once "../footer/footer.php"; ?>
 </body>
