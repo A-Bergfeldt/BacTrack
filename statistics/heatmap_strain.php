@@ -99,8 +99,8 @@
       }];
 
       var layout = {
-        width: 600,
-        height: 400,
+        width: 700,
+        height: 500,
         margin: { l: 50, r: 10, t: 20, b: 20 },
         mapbox: {
           style: 'open-street-map',
