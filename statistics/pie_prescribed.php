@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="piechart_style_sheet.css">
+    <link rel="stylesheet" type="text/css" href="piechart_stylesheet_main.css">
     <title>Pie Chart with Data from SQL Database</title>
     <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
 </head>
