@@ -217,3 +217,8 @@ thead th.active,tbody td.active {
     color: #6c00bd;
 }
 
+.headingss {
+    max-height: 400px; /* Set your desired maximum height */
+    overflow-y: auto; /* Enable vertical scroll if the content overflows */
+}
+
