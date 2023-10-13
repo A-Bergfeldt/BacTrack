@@ -1,11 +1,11 @@
 <nav>
     <a href="/home/home_page.php">
-        <img src="/logo_main.png" alt="Logo" width="95" height="65">
+        <img src="/logo_main1.png" alt="Logo" width="250" height="55">
     </a>
     <ul>
         <li><a href="/home/home_page.php">Home</a></li>
         <li class="dropdown">
-            <a href="/about_contact/about_bactrack.php" class="dropbtn">About</a>
+            <a href="#" class="dropbtn">About</a>
             <div class="dropdown-content">
                 <a href="/about_contact/about_bactrack.php">BacTrack</a>
                 <a href="/about_contact/about_combiant.php">CombiANT</a>
@@ -38,7 +38,7 @@
                 echo '<div class="dropdown-content">';
                 echo '<a href="/doctor/doctor_page.php">My Samples</a>';
                 echo '<a href="/doctor/sample_form.php">Insert new sample</a>';
-                echo '<a href="/data_view/search_all_samples_test.php">Search samples</a>';
+                echo '<a href="/data_view/search_all_samples.php">Search samples</a>';
             }
             if($_SESSION['role_id'] == 2){
                 echo '<a href="/lab/lab_design_input_form.php" class="dropbtn">My Page</a>';
@@ -50,7 +50,7 @@
                 echo '<div class="dropdown-content">';
                 echo '<a href="/doctor/doctor_page.php">My Samples</a>';
                 echo '<a href="/doctor/sample_form.php">Insert new sample</a>';
-                echo '<a href="/data_view/search_all_samples_test.php">Search samples</a>';
+                echo '<a href="/data_view/search_all_samples.php">Search samples</a>';
                 echo '<a href="/lab/lab_design_input_form.php">Sample Input</a>';
             }
             echo '<a href="/login/logout.php">Logout</a>';
