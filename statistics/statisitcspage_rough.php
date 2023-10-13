@@ -10,39 +10,29 @@
     <?php require_once "../nav_bar.php"; ?>
 
         <div class="container">
-            <div class="slides slide2">
+            <div class="slide1">
                 <!--<h2 style="font-size: 30px; color:black">Services we offer</h2>-->
                 <section class="course">
-                    <h3> Analytics from the BacTrack Database </h3>
-                    <p style="font-size: 20px;">BacTrack collects multiple daily entries containing data on prescribed antibiotics for various strains of bacteria. 
-                        Below, you'll find a selection of visualization tools showcasing different types of data. Click on any box to explore further details.</p>
-
+                    <h3>Analytics from the BacTrack Database</h3>
+                    <p>BacTrack collects multiple daily entries containing data on prescribed antibiotics for various strains of bacteria. Below, you'll 
+                    <br>find a selection of visualization tools showcasing different types of data. 
+                    <br>Click on any box to explore further data.</p>
                     <div class="row">
 
-                        <div class="course-col">
-                            <h3>Usage</h3>
-                            <p>Pie chart of the antibiotic use on a yearly basis</p>
-                            <button id="open">
-                            <a href="pie_prescribed.php">Open Page</a>
-                            </button>
-                        </div>
+                        <a class="course-col" href="pie_prescribed.php">
+                            <h3>USAGE</h3>
+                            <p>Pie chart of the antibiotics use on a yearly basis</p>
+                        </a>
 
-                        <div class="course-col">
-                            <h3>Trends</h3>
-                            <p>Line chart showing the monthly use of antibiotics over multiple years</p>
-                            <button id="open">
-                                <a href="line_prescribed.php">Open Page</a>
-                            </button>
-                        </div>
+                        <a class="course-col" href="line_prescribed.php">
+                            <h3>TRENDS</h3>
+                            <p>Line chart showing the probably use of antibiotics over multiple years</p>
+                        </a>
 
-                        <div class="course-col">
-                            <h3>Outbreaks</h3>
-                            <p>Heatmap of where strains of bacteria were found to spot spread and outbreaks</p>
-                            <button id="open">
-                                <a href="heatmap_strain.php">Open Page</a>
-                            </button>
-                        </div>
-
+                        <a class="course-col" href="heatmap_strain.php">
+                            <h3>OUTBREAKS</h3>
+                            <p>Heatmap of the whole strains of bacteria were found to spot spread and outbreaks</p>
+                        </a>
                     </div>      
                 </section>
             </div>

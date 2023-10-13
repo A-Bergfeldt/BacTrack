@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="heat_map_style_sheet.css">
+  <link rel="stylesheet" type="text/css" href="heatmap_stylesheet_main.css">
   <!-- Include Plotly.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
@@ -99,8 +99,8 @@
       }];
 
       var layout = {
-        width: 600,
-        height: 400,
+        width: 700,
+        height: 500,
         margin: { l: 50, r: 10, t: 20, b: 20 },
         mapbox: {
           style: 'open-street-map',
@@ -135,7 +135,12 @@
               <div class="row">
                 <div class="course-col">
                   <h3>HEAT MAPS</h3>
-                  <p>bawhowhfihfiihhr</p>
+                  <p>The heatmap shows what hospital in which your selected strain 
+                    was reported in. The data used are the reported strains for the last 
+                    365 days. This makes the graph a real-time updated tracking tool for the 
+                    latest information about bacterial outbreaks. Only one strain is displayed 
+                    at a time so feel free to explore where different strains are found 
+                    on a global scale right at this moment with BacTracks heatmap graph. </p>
                 </div>
               </div>
           </section>
