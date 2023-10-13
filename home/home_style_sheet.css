@@ -24,13 +24,13 @@ body{
     left: 0;
     right: 0;
     padding: 10px;
-    background-color: #333;
-    color: #fff;
+    background-color: white;
+    color: black;
     text-align: center;
 }
 
 .accept-cookies {
-    background-color: #007bff;
+    background-color: #662d91;
     color: #fff;
     border: none;
     padding: 5px 15px;
@@ -146,10 +146,6 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.policy-content {
     text-align: center;
 }
 
