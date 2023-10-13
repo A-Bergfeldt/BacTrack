@@ -10,6 +10,7 @@
 
 <body>
     <?php require_once "../nav_bar.php"; ?>
+    </br></br></br></br>
     <h1 class="centered-paragraph">Frequently Asked Questions</h1>
 
     <div class="faq">
