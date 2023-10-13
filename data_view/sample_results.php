@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="table_styles.css">
+<?php require_once "../nav_bar.php"; ?>
 <?php
 session_start();
 include '../db_connection.php';
