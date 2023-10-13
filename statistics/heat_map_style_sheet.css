@@ -2,6 +2,7 @@
 
 body {
     background-color:rgb(255, 255, 255); /*BACKGROUND color for the plot*/
+    font-family: 'Poppins', sans-serif;
     margin: 0;
 }
 
