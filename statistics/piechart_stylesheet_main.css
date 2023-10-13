@@ -170,9 +170,10 @@ p{
     flex-basis: 70%;
     /*background-color: #ff7d77;
     background-image: linear-gradient(19deg, #ff7d77 4%, #beb6f5 82%);*/ /*pink shades*/
-
-    background-color: #0782c5;
-    background-image: linear-gradient(160deg, #0782c5 0%, #69cdc5 64%); /*blue shades*/
+    background: rgb(161,170,238);
+    background: linear-gradient(90deg, rgba(161,170,238,1) 4%, rgba(224,209,245,1) 45%, rgba(255,201,214,1) 100%);
+    /*background-color: #0782c5;
+    background-image: linear-gradient(160deg, #0782c5 0%, #69cdc5 64%);*/ /*blue shades*/
     flex-basis: 50%;
     border-radius: 10px;
     margin-bottom: 5%;
