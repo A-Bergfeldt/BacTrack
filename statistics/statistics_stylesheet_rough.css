@@ -54,7 +54,7 @@ a {
 
 .slide1{
     /*background: rgb(255,223,223);*/
-    background: linear-gradient(90deg, rgba(253, 241, 255, 0.2) 0%, rgba(231, 253, 255, 0.2) 100%);
+    background: linear-gradient(90deg, rgba(241, 232, 255, 0.3) 0%, rgba(231, 253, 255, 0.1) 100%);
 }
 
 /*
