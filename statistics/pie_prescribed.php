@@ -9,7 +9,7 @@
 <body>
     <?php require_once "../nav_bar.php"; ?>
     <div class="container">
-        <h1 class="text-center mt-4">PIE CHART (Data from SQL Database)</h1>
+        <h1 class="text-center mt-4">PIE CHART</h1>
         <div id="year-selector">
             <form method="get" action="pie_prescribed.php">
                 <label for="year">Select a Year:</label>
@@ -160,7 +160,7 @@ Plotly.newPlot('tester', data, layout);
             <section class="course">
               <!--<h3> Information about visualization provided </h3>-->
             <div class="row">
-                <div class="course-col">s
+                <div class="course-col">
                   <h3>PIE CHARTS</h3>
                   <p>This pie-chart displays the share for all prescribed antibiotics for 
                     your selected year. The default year is the current year but feel 

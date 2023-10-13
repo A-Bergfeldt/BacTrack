@@ -9,7 +9,7 @@
 <body>
 <?php require_once "../nav_bar.php"; ?>
 <div class="container">
-    <h1 class="text-center mt-4">LINE PLOT (Data from SQL Database)</h1>
+    <h1 class="text-center mt-4">LINE GRAPHS</h1>
     <div id="tester" style="width:600px;height:250px;"></div>
 </div>
 <div class="sidebyside">

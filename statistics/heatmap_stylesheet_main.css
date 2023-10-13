@@ -132,7 +132,7 @@ h3{
 
 p{
     color: #000000; /* text color inside the box*/
-    font-size: 1.5vw; /* Adjusted font size using viewport width units for responsiveness */
+    font-size: 1vw; /* Adjusted font size using viewport width units for responsiveness */
     font-weight: 300;
     line-height: 20px; /* Adjusted line height for better spacing */
     padding:10px;
