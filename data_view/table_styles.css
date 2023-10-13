@@ -71,6 +71,7 @@ main.table{
     overflow: hidden;
     margin: 50px;
     padding: 0;
+    text-align: center;
 }
 
 thead th {
@@ -80,6 +81,7 @@ thead th {
     background-color: #d5d1defe;
     cursor: pointer;
     text-transform: capitalize;
+    text-align: center;
 }
 
 .table_header{
