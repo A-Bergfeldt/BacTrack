@@ -62,3 +62,15 @@ input[type="submit"]:hover {
     background-color: #800080; /* Change background color on hover */
 }
 
+.box {
+    margin: 20px auto; /* Center the form horizontally and add separation */
+    width: 400px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top:40px;
+    padding: 20px;
+}
+
+
+

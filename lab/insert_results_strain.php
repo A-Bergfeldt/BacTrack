@@ -1,14 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My BacTrack Web App</title>
-    <!-- Add your CSS styles here -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
-    <link rel="stylesheet" type="text/css" href="lab_tech_style.css">
-</head>
-  <body>
-    <?php require_once '../nav_bar.php'; ?>
-
 <?php
 session_start();
 
@@ -49,11 +38,9 @@ try {
     $result = $stmt->execute();
 
     if ($result) {
-        echo "Values inserted successfully for sample_id: $sample_id";
-        echo "<br><a href='lab_design_input_form.php'>Enter more results</a>";
+        $message = "Values inserted successfully for sample_id: $sample_id";
     } else {
-        echo "Error: " . $stmt->error;
-        echo "<br><a href='lab_design_input_form.php'>Back to result input form</a>";
+        $message = "Error: ";
     }
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
@@ -62,3 +49,24 @@ try {
 $link->close();
 
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My BacTrack Web App</title>
+    <!-- Add your CSS styles here -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" type="text/css" href="lab_tech_style.css">
+</head>
+<body>
+</br></br></br></br></br></br></br></br>
+    <?php require_once '../nav_bar.php'; ?>
+    <div class="box">
+        <p style="text-align: center;"> 
+            <?php if (isset($message)) {echo $message . $stmt->error;} ?>
+        </p>
+        <div>
+            <div class="button-container" style="text-align: center;">
+                <a href='lab_design_input_form.php' class="button">Enter more results</a>
+    </div>
+</body>
