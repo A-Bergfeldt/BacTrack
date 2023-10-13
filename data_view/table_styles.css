@@ -1,7 +1,6 @@
 @import "/nav_bar_style_sheet.css";
 /* Reset some default browser styles */
 body{
-    margin: 50px;
     padding: 0px;
     font-family: 'Poppins', sans-serif;
     width: 100%;
