@@ -1,4 +1,5 @@
 @import "/nav_bar_style_sheet.css";
+@import "/footer/footer_style_sheet.css";
 /* contactus.css */
 
 body {
@@ -59,59 +60,6 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #0056b3;
-}
-
-/* Contact Information Sections */
-
-.contact-info,
-.email-IDS,
-.social-media-links,
-.Location,
-.open-hours,
-.Privacy-policy {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info h2,
-.email-IDS h2,
-.social-media-links h2,
-.Location h2,
-.open-hours h2,
-.Privacy-policy h2 {
-    margin-top: 0;
-}
-
-.contact-info p,
-.email-IDS ul,
-.social-media-links p,
-.Location p,
-.open-hours p,
-.Privacy-policy select {
-    margin-bottom: 10px;
-}
-
-.email-IDS ul {
-    list-style: none;
-    padding: 0;
-}
-
-.email-IDS li {
-    margin-bottom: 5px;
-}
-
-.Privacy-policy select {
-    height: 40px;
-    width: 50%;
-}
-
-.spacer {
-    height: 20px;
 }
 
 /* FAQ Styling */
