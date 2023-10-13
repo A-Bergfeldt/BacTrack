@@ -160,7 +160,7 @@ Plotly.newPlot('tester', data, layout);
             <section class="course">
               <!--<h3> Information about visualization provided </h3>-->
             <div class="row">
-                <div class="course-col">s
+                <div class="course-col">
                   <h3>PIE CHARTS</h3>
                   <p>This pie-chart displays the share for all prescribed antibiotics for 
                     your selected year. The default year is the current year but feel 
