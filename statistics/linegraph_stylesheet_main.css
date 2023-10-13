@@ -7,9 +7,10 @@ body {
 }
 
 h1 {
+    margin-top: 8%;
     color: #3e0000; /* text color */
     font-size: 2em; 
-    margin-bottom: 40px;
+    margin-bottom: 10px;
     text-align: left;
     margin-left: 290px;
     text-decoration:solid;
@@ -65,7 +66,7 @@ h3{
     font-size: 2em; 
     margin-bottom: 40px;
     text-align: left;
-    margin-left: 200px;
+    margin-left: 25%;
     text-decoration:solid;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing: 1px; /* Add letter-spacing for better readability */
@@ -76,10 +77,11 @@ h3{
 
 p{
     color: #000000; /* text color inside the box*/
-    font-size: 1vw;
-    font-weight: 300;
+    font-size: 15px;
+    /*font-weight: 300;*/
     line-height: 22px;
-    padding: 10px;
+    padding: 5px;
+    text-align: justify;
 }
 
 .row{
@@ -94,8 +96,8 @@ p{
     margin-bottom: 5%;
     margin-right: 5%;
     margin-top: 0%;
-    margin-left: 20%; /* Adjusted margin for better responsiveness */
-    padding: 0% 0%; /* Adjusted padding for better responsiveness */
+    margin-left: 26%; /* Adjusted margin for better responsiveness */
+    padding: 5% 10%; /* Adjusted padding for better responsiveness */
     box-sizing: border-box;
     transition: 0.5s;
 

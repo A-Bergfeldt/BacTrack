@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="linegraph_style_sheet.css">
+    <link rel="stylesheet" type="text/css" href="linegraph_stylesheet_main.css">
     <title>Line-plot with Data from SQL Database</title>
     <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
 </head>
 <body>
 <?php require_once "../nav_bar.php"; ?>
 <div class="container">
-    <h1 class="text-center mt-4">LINE PLOT (Data from SQL Database)</h1>
+    <h1 class="text-center mt-4">LINE GRAPHS</h1>
     <div id="tester" style="width:600px;height:250px;"></div>
 </div>
 <div class="sidebyside">
@@ -142,8 +142,18 @@ $labels = json_encode(array_unique($labels));
             <h3> Information about visualization provided </h3>
             <div class="row">
                 <div class="course-col">
-                <h2>HEAT MAPS</h2>
-                <p>bawhowhfihfiihhr</p>
+                <h2>LINE GRAPHS</h2>
+                <p> The line-chart displays the use of different antibiotics over time. 
+                    The data points in this graph are summed to compile the data for each month. 
+                    This graph is updated with the newest data possible and will change as fast 
+                    as new results are inputted in the BacTrack system. With this chart BacTrack 
+                    can spot early trends in overuse of antibiotics or if antibiotics are being 
+                    miss/underused. By hovering over different spots in the line-chart, the 
+                    number of prescribed antibiotics will be displayed as well as the month 
+                    and the name of the antibiotic represented by that line. You can also select 
+                    and deselect what antibiotics to be shown in the graph by clicking on the 
+                    names in the legend. A single click selects and deselects that antibiotic, 
+                    whilst a double-click will only show the antibiotic you clicked.</p>
                 </div>
             </div>
         </section>

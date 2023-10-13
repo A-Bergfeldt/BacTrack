@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="piechart_style_sheet.css">
+    <link rel="stylesheet" type="text/css" href="piechart_stylesheet_main.css">
     <title>Pie Chart with Data from SQL Database</title>
     <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
 </head>
 <body>
     <?php require_once "../nav_bar.php"; ?>
     <div class="container">
-        <h1 class="text-center mt-4">PIE CHART (Data from SQL Database)</h1>
+        <h1 class="text-center mt-4">PIE CHART</h1>
         <div id="year-selector">
             <form method="get" action="pie_prescribed.php">
                 <label for="year">Select a Year:</label>
@@ -161,8 +161,13 @@ Plotly.newPlot('tester', data, layout);
               <!--<h3> Information about visualization provided </h3>-->
             <div class="row">
                 <div class="course-col">
-                  <h3>PIE CHARTS </h3>
-                  <p>bawhowhfihfiihhr</p>
+                  <h3>PIE CHARTS</h3>
+                  <p>This pie-chart displays the share for all prescribed antibiotics for 
+                    your selected year. The default year is the current year but feel 
+                    free to explore previous years as well. By hovering over the different 
+                    slices of the pie-chart, the number of times the antibiotic has been 
+                    prescribed globally will be displayed as well as the percentage and the 
+                    name of the antibiotic represented by that slice.</p>
                 </div>
             </div>
             </section>

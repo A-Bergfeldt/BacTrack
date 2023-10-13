@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="heat_map_style_sheet.css">
+  <link rel="stylesheet" type="text/css" href="heatmap_stylesheet_main.css">
   <!-- Include Plotly.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
   <?php require_once "../nav_bar.php"; ?>
-  <h1>DENSITY MAP plotly</h1> 
+  <h1>DENSITY MAP</h1> 
   <div class="container"> <!--grouping the dropdown and search together-->
   <!-- Dropdown menu to select heatmap option -->
   <form method="get" action="heatmap_strain.php">
-    <label for="heatmapOption">Select Heatmap Option:</label> <!--older existing-->
+    <label for="heatmapOption">Strain selection:</label> <!--older existing-->
     <select id="heatmapOption" name="strain"><!--older existing-->
       <?php
       require_once "../db_connection.php";
@@ -26,7 +26,7 @@
           }
       ?>
     </select>
-    <button id="update-button" type="submit" class="button-primary">Show data for selected strain</button>
+    <button id="update-button" type="submit" class="button-primary">Show data</button>
   </form>
   </div>
   <div class="sidebyside">
@@ -99,8 +99,8 @@
       }];
 
       var layout = {
-        width: 600,
-        height: 400,
+        width: 700,
+        height: 500,
         margin: { l: 50, r: 10, t: 20, b: 20 },
         mapbox: {
           style: 'open-street-map',
@@ -115,7 +115,6 @@
     window.onload = createDensityMap;
   </script>
 
-  <
 <!--
     <div class="content">
       <div class="box">
@@ -135,7 +134,12 @@
               <div class="row">
                 <div class="course-col">
                   <h3>HEAT MAPS</h3>
-                  <p>bawhowhfihfiihhr</p>
+                  <p>The heatmap shows what hospital in which your selected strain 
+                    was reported in. The data used are the reported strains for the last 
+                    365 days. This makes the graph a real-time updated tracking tool for the 
+                    latest information about bacterial outbreaks. Only one strain is displayed 
+                    at a time so feel free to explore where different strains are found 
+                    on a global scale right at this moment with BacTracks heatmap graph. </p>
                 </div>
               </div>
           </section>

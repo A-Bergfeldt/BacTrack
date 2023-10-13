@@ -96,3 +96,9 @@ require_once "../nav_bar.php";
         <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at: <a href="contactus.php">here</a></p>
     </div>
 
+    </body>
+</html>
+</br></br></br></br></br></br></br></br></br>
+<?php 
+require_once "../footer/footer.php"; 
+?>

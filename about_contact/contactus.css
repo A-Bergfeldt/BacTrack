@@ -24,7 +24,7 @@ h1, h2, h3 {
 /* Form Styling */
 
 form {
-    max-width: 500px;
+    max-width: 450px;
     margin: 0 auto;
     background-color: #fffcfc;
     padding: 20px;
@@ -35,88 +35,32 @@ form {
 label, input, textarea {
     display: block;
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 input, textarea {
     padding: 10px;
     border: 1px solid #f0f0f0;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 12px;
     box-sizing: border-box;
 }
 
-input[type="submit"] {
-    background-color: #007bff;
+input[type="submit"].submit-button {
+    background-color: #662d91;
     color: #fff;
+    font-family: 'Poppins', sans-serif;
     border-radius: 4px;
     cursor: pointer;
     padding: 12px 20px;
-    font-size: 16px;
+    font-size: 12px;
     border: none;
 }
 
 input[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #800080;
 }
 
-<<<<<<< HEAD
-/* Contact Information Sections */
-
-.contact-info,
-.email-IDS,
-.social-media-links,
-.Location,
-.open-hours,
-.Privacy-policy {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align:center;
-}
-
-.contact-info h2,
-.email-IDS h2,
-.social-media-links h2,
-.Location h2,
-.open-hours h2,
-.Privacy-policy h2 {
-    margin-top: 0;
-}
-
-.contact-info p,
-.email-IDS ul,
-.social-media-links p,
-.Location p,
-.open-hours p,
-.Privacy-policy select {
-    margin-bottom: 10px;
-}
-
-.email-IDS ul {
-    list-style: none;
-    padding: 0;
-}
-
-.email-IDS li {
-    margin-bottom: 5px;
-}
-
-.Privacy-policy select {
-    height: 40px;
-    width: 50%;
-}
-
-.spacer {
-    height: 20px;
-}
-
-=======
->>>>>>> fed05b0bc721890b5d1e0db3e03313861ca85b00
 /* FAQ Styling */
 
 .faq {
@@ -136,7 +80,7 @@ button.dropdown-toggle {
     border: none;
     cursor: pointer;
     font-size: 16px;
-    font-weight: bold;
+    font-weight: normal !important;
     color: #0400ff;
 }
 
