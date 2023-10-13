@@ -18,10 +18,17 @@ require_once "../nav_bar.php";
         function showPolicy() {
             var selectedSection = document.getElementById("policy-dropdown").value;
             var allSections = document.getElementsByClassName("policy-content");
-            for (var i = 0; i < allSections.length; i++) {
-                allSections[i].style.display = "none";
+
+            if (selectedSection === "0") {
+                for (var i = 0; i < allSections.length; i++) {
+                    allSections[i].style.display = "block";
+                }
+            } else {
+                for (var i = 0; i < allSections.length; i++) {
+                    allSections[i].style.display = "none";
+                }
+                document.getElementById("policy-content-" + selectedSection).style.display = "block";
             }
-            document.getElementById("policy-content-" + selectedSection).style.display = "block";
         }
     </script>
 
