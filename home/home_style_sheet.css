@@ -1,8 +1,7 @@
-
 @import "/nav_bar_style_sheet.css";
 @import "/footer/footer_style_sheet.css";
 
-body{
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -70,6 +69,7 @@ h1 {
 
 
 }
+
 .button-container {
     margin-top: 20px;
 
@@ -78,7 +78,8 @@ h1 {
 
 .button {
     display: inline-block;
-    padding: 15px 30px; /* Increase padding for a larger button */
+    padding: 15px 30px;
+    /* Increase padding for a larger button */
     background-color: #662d91;
     color: #fff;
     text-decoration: none;
@@ -137,8 +138,20 @@ h1 {
 
 }
 
+.policy-dropdown-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px; 
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 10px; 
+}
 
-.Privacy-policy {
+
+.policy-content-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -148,14 +161,3 @@ h1 {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
-
-.policy-content {
-    text-align: center;
-}
-
-
-
-
-
-
-
