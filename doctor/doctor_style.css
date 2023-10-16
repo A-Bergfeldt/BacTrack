@@ -32,7 +32,7 @@ form {
 /* Style form input fields and select elements */
 form input[type="text"],
 form select {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     margin-bottom: 15px; /* Increase the bottom margin to add space between form elements */
     border: 1px solid #ccc;

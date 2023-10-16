@@ -60,7 +60,7 @@ how much you want
         <a href="sample_form.php" class="button">Insert new sample</a>
         <a href="/data_view/search_all_samples.php" class="button">Search all samples</a>
         </div>
-
+        
         <main class="table">
             <section class="table_header">
                 <h1 style="text-align: center;">Finished samples</h1>
@@ -77,6 +77,7 @@ how much you want
                     </thead>
                     <tbody>
                         <?php
+                        $db_connection->open();
                         if (count($_GET) != 0) {
                             $sql = "SELECT sample_id, date_taken, status_name, hospital_name, strain_name, doctor_id, lab_technician_id FROM (((sample 
                             INNER JOIN tracking ON sample.status_id = tracking.status_id) 

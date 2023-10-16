@@ -55,8 +55,8 @@ while ($row = $result_hospital->fetch_assoc())
 
 <form action="insert_sample_data.php" method="POST">
 <p class="center-text">Enter your sample information here</p> 
-    Date:
-    <input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" required><br>
+    Date: 
+    <input name="date" type="date" value="<?php echo date('Y-m-d'); ?>" required><br></br>
     Hospital:
     <select name="hospital" id="hospital" required>
         <option disabled selected value>---</option>

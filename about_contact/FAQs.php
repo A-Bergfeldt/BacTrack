@@ -84,7 +84,8 @@
         </div>
 
     </div>
-
+        </br></br></br></br></br></br>
+        <?php require_once "../footer/footer.php"; ?>
     <script>
         document.querySelectorAll('.dropdown-toggle').forEach(button => {
             button.addEventListener('click', () => {
