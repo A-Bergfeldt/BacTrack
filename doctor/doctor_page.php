@@ -34,8 +34,8 @@ how much you want
         .button-container .button {
             display: inline-block;
             padding: 15px 30px; 
-            background-color: #5072A7;
-            color: #fff;
+            background-color: #662d91;
+            color: white;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
@@ -45,7 +45,7 @@ how much you want
         }
 
         .button-container .button:hover {
-            background-color: #0056b3;
+            background-color: #800080;
         }
     </style>
 </head>

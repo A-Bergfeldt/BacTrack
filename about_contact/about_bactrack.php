@@ -1,6 +1,9 @@
+
+
 <?php require_once "../nav_bar.php"; ?>
 <!DOCTYPE html>
 <html>
+    
 <head>
     <title>About page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
