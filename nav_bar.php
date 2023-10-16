@@ -5,7 +5,7 @@
     <ul>
         <li><a href="/home/home_page.php">Home</a></li>
         <li class="dropdown">
-            <a href="#" class="dropbtn">About</a>
+            <a href="/about_contact/about_bactrack.php" class="dropbtn">About</a>
             <div class="dropdown-content">
                 <a href="/about_contact/about_bactrack.php">BacTrack</a>
                 <a href="/about_contact/about_combiant.php">CombiANT</a>
