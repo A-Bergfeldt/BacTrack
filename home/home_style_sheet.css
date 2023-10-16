@@ -141,7 +141,7 @@ h1 {
 .policy-dropdown-container {
     max-width: 800px;
     margin: 0 auto;
-    padding: 20px; 
+    padding: 20px;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -150,9 +150,24 @@ h1 {
     margin-bottom: 10px; 
 }
 
-.policy-content {
-    text-align: center;
+.policy-dropdown-container select {
+    height: 50px;
+    width: 400px; 
+    font-size: 16px;
 }
+
+.policy-content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    text-align: justify;
+}
+
 
 
 
