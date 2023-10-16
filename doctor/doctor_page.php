@@ -63,7 +63,7 @@ how much you want
         
         <main class="table">
             <section class="table_header">
-                <h1 style="text-align: center;">Finished samples</h1>
+                <h1 style="text-align: center;">Ready for perscription</h1>
             </section>
             <section class="table_body">
                 <table>
@@ -77,7 +77,8 @@ how much you want
                     </thead>
                     <tbody>
                         <?php
-                        $db_connection->open();
+                        include '../db_connection.php';
+
                         if (count($_GET) != 0) {
                             $sql = "SELECT sample_id, date_taken, status_name, hospital_name, strain_name, doctor_id, lab_technician_id FROM (((sample 
                             INNER JOIN tracking ON sample.status_id = tracking.status_id) 
