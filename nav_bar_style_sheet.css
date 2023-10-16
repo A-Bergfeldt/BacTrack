@@ -8,7 +8,7 @@ nav{
     box-sizing: border-box;
     background: #fff;
     border-bottom: 1px solid black;
-    
+    z-index: 9999; 
 }
 
 nav .logo {
