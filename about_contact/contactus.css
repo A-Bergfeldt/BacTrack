@@ -44,12 +44,12 @@ input, textarea {
     border-radius: 4px;
     font-size: 12px;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 input[type="submit"].submit-button {
     background-color: #662d91;
     color: #fff;
-    font-family: 'Poppins', sans-serif;
     border-radius: 4px;
     cursor: pointer;
     padding: 12px 20px;
