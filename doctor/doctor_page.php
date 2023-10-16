@@ -50,6 +50,7 @@ how much you want
 </head>
 
 <body>
+    <?php require_once "../nav_bar.php"; ?> 
     <div class="container">
         <div class="slides slide1">
             <h1 style="font-size: 100px; color: #000000; text-align: center;">Hello <?php echo $user_name; ?>!</h1>
