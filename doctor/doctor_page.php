@@ -53,7 +53,7 @@ how much you want
 <body>
     <div class="container">
         <div class="slides slide1">
-            <h1 style="font-size: 100px; color: #fff; text-align: center;">Hello <?php echo $user_name; ?>!</h1>
+            <h1 style="font-size: 100px; color: #000000; text-align: center;">Hello <?php echo $user_name; ?>!</h1>
         </div>
 
         <div class="button-container">
