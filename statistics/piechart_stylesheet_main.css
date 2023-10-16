@@ -21,6 +21,7 @@ h1 {
     text-shadow: 2px 2px 4px rgba(116, 98, 98, 0.5); /* Add a subtle text shadow */
     line-height: 1.2; /* Adjust line height for better spacing */
     text-decoration: wavy;
+    z-index: -1;
   }
 
 label {
@@ -77,6 +78,7 @@ select {
     border-radius: 4px; /* Border radius for rounded corners */
     background-color: #fff; /* Background color */
     color: #333; /* Text color */
+    z-index: 99999;
   }
 
   
