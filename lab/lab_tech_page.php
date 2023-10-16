@@ -88,81 +88,20 @@ how much you want
                     </thead>
                     <tbody>
                         <?php
-                        require_once '../db_connection.php';
+                        include '../db_connection.php';
 
-                        $sample_id = (int) $_POST['sample_id'];
-                        try {
-                            // Prepare and bind parameters to SQL query, then execute
-                            $status_id = 3;
-                            $sql = "UPDATE sample SET status_id = ? WHERE sample_id = ?";
-                            $stmt = $db_connection->prepare($sql);
-                            $stmt->bind_param("ii", $status_id, $sample_id);
-                            $result = $stmt->execute();
-                        
-                            if ($result) {
-                                $message1 = "Status for sample with sample ID $sample_id has been updated to 'finished'";
-                            } else {
-                                $message1 = "Error: ";
-                            }
-                        } catch (Exception $e) {
-                            echo "Error: " . $e->getMessage();
-                            echo "<br><a href='lab_design_input_form.php'>Back to result input form</a>";
-                        }
-                        
-                        // Prepare the SQL statement to check if the email exists and retrieve user information
-                        $check_query = "SELECT u.email as email, s.doctor_id
-                                        FROM users u
-                                        INNER JOIN sample s ON u.user_id = s.doctor_id
-                                        WHERE s.sample_id = '$sample_id';";
-                        
-                        $result = $db_connection->query($check_query); 
-                        $row = $result->fetch_assoc();
-                        $e_mail = $row['email'];
-                        
-                        
-                        // Send a notification to the doctors email using PHPMailer
-                        
-                        $sample = "localhost"; // Replace with your domain
-                        $subject = "Sample " . $sample_id . " finished processing ";
-                        $message = "The analysis of your sample with sample id '" . $sample_id . "' is finished and is ready for review.";
-                        
-                        use PHPMailer\PHPMailer\PHPMailer;
-                        use PHPMailer\PHPMailer\SMTP;
-                        
-                        // Create an instance of PHPMailer
-                        $mail = new PHPMailer(true);
-                        
-                        // Server settings
-                        $mail->SMTPDebug = SMTP::DEBUG_OFF;
-                        $mail->isSMTP();
-                        $mail->Host = 'smtp.gmail.com';
-                        $mail->SMTPAuth = true;
-                        $mail->Username = 'bactrack2023@gmail.com';
-                        $mail->Password = 'amky jgok axgt hqun';
-                        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
-                        $mail->Port = 465;
-                        
-                        $mail->setFrom('bactrack2023@gmail.com', 'BacTrack');
-                        $mail->addAddress($e_mail);
-                        
-                        // Set email subject and message
-                        $mail->isHTML(true);  
-                        $mail->Subject = $subject;
-                        $mail->Body = '
-                        <html>
-                        <head>
-                        <title>Sample finished</title>
-                        </head>
-                        <body>
-                        <p>' . $message . '</p>
-                        </body>
-                        </html>';
-                        try {
-                        $mail->send();
-                        } catch (Exception $e) {
-                        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-                        }
-                        
+// SQL queries
+                        $sql = "SELECT sample_id, date_taken, status_name, hospital_name, strain_name, lab_technician_id FROM (((sample 
+                        INNER JOIN tracking ON sample.status_id = tracking.status_id) 
+                        INNER JOIN hospital ON sample.hospital_id = hospital.hospital_id)
+                        LEFT JOIN strain ON sample.strain_id = strain.strain_id)
+                        WHERE doctor_id = '" . $_SESSION['user_id'] . "' AND sample.status_id != 4
+                        ORDER BY sample_id ASC;;"; 
+                        $result = $db_connection->query($sql);
+
+                        include 'fill_personal_table.php';
+
+// Close the database connection
                         $db_connection->close();
                         ?>
                     </tbody>
