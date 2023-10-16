@@ -33,15 +33,14 @@ how much you want
 
         .button-container .button {
             display: inline-block;
-            padding: 15px 30px; 
+            padding: 15px 30px;
+            /* Increase padding for a larger button */
             background-color: #662d91;
-            color: white;
+            color: #fff;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            color: white;
-            transition: background-color 0.3s ease;
-            margin: 0 10px; 
+            transition: background-color 0.3s ease; 
         }
 
         .button-container .button:hover {
