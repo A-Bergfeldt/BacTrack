@@ -14,23 +14,23 @@ h1 {
     margin-bottom: 0px;
     text-align: center;
     margin-left: 10px;
-    text-decoration:solid;
+    text-decoration:none;
     font-family: 'Poppins', sans-serif;
     /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
-    letter-spacing: 3px; /* Add letter-spacing for better readability */
-    text-shadow: 2px 2px 4px rgba(116, 98, 98, 0.5); /* Add a subtle text shadow */
+    letter-spacing: 2px; /* Add letter-spacing for better readability */
+    /*text-shadow: 2px 2px 4px rgba(116, 98, 98, 0.5); *//* Add a subtle text shadow */
     line-height: 1.2; /* Adjust line height for better spacing */
-    text-decoration: wavy;
-    z-index: -1;
   }
 
 label {
     float: inline-start;
+    font-size: 20px;
     clear: both; /* Ensure the label doesn't wrap around floated elements */
     width: 150px; /* Adjust the width as needed */
-    /*margin-right: 60px; *//* Add margin for separation from the form element */
+    margin-right: 60px;/* Add margin for separation from the form element */
     padding-left: 50px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 58px;
+    font-family:'Poppins', sans-serif;
 }
 
 
@@ -85,7 +85,7 @@ select {
   /* Style for when the dropdown is focused */
   select:focus {
     outline: none; /* Remove the default focus outline */
-    border-color: #600101; /*  border color on DROP DOWN */
+    border-color: #000000; /*  border color on DROP DOWN */
     /*box-shadow: 0 0 5px rgb(254, 255, 255);*/ /* Add a subtle box shadow on focus */
   }
   
@@ -134,7 +134,7 @@ select {
 
 .course{
     width: 100%;
-    margin:auto;
+    
     text-align:center;
     padding-top:120px;
 }
@@ -143,9 +143,10 @@ h3{
     font-size: 24px;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
-    margin:0;
+    margin-top: 20px;
     padding: 0;
     text-align: center;
+    letter-spacing: 2px;
 
 }
 
@@ -156,6 +157,7 @@ p{
     line-height: 2.0; /* Adjusted line height for better spacing */
     padding: 5%;
     text-align: justify;
+    letter-spacing: 1.4px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -167,35 +169,16 @@ p{
 }
 
 .course-col{
-    flex-basis: 60%;
-    /*background-color: #ff7d77;
-    background-image: linear-gradient(19deg, #ff7d77 4%, #beb6f5 82%);*/ /*pink shades*/
-    /*purple shades */
-    /*
-    background: rgb(161,170,238);
-    background: linear-gradient(90deg, rgba(161,170,238,1) 4%, rgba(224,209,245,1) 45%, rgba(255,201,214,1) 100%);
-    */
-    
+    flex-basis: 40%;
     background: rgb(207,210,240);
     background: linear-gradient(90deg, rgba(208, 212, 249, 0.219) 0%, rgba(70, 62, 73, 0.1) 100%);
-/*
-    background: rgb(207,210,240);
-    background: linear-gradient(90deg, rgba(207, 210, 240, 0.386) 0%, rgba(250, 210, 218, 0.386) 100%);*/
-
-    /*more purple-pink shades*/
-    /*
-    background: rgb(189,193,230);
-    background: linear-gradient(90deg, rgba(189,193,230,1) 0%, rgba(229,191,200,1) 100%);*/
-    /*opacity:0.5;*/
-    /*background-color: #0782c5;
-    background-image: linear-gradient(160deg, #0782c5 0%, #69cdc5 64%);*/ /*blue shades*/
-    flex-basis: 30%;
     border-radius: 10px;
-    margin-bottom: 5%;
-    margin-right: 5%;
+
+    margin-bottom: -25px;
     margin-top: -6%;
-    margin-left: 60%; /* Adjusted margin for better responsiveness */
-    padding: 50px 10px; /* Adjusted padding for better responsiveness */
+    margin-right: -50px;
+    margin-left: 990px; /* Adjusted margin for better responsiveness */
+    /*padding: 15px 5px; /* Adjusted padding for better responsiveness */
     box-sizing: border-box;
     transition: 0.5s;
 

@@ -114,10 +114,7 @@
             cmax: 50,
             size: norm_sizes,
             color: norm_sizes, // Use bubble size as the color scale
-            colorscale: colorScale, // Set the color scale
-            colorbar: {
-              title: 'Count', // Label for the color scale
-            },
+            colorscale: colorScale // Set the color scale
           }
         }];
 

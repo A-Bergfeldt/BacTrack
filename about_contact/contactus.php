@@ -19,7 +19,7 @@
     </br></br></br>
     <h1 class="centered-paragraph">Contact us at BacTrack</h1>
 
-    <form action="send_contact_email.php" method="POST" target="_blank">
+    <form action="send_contact_email.php" method="POST" target="_self">
         <label for="name" style="font-weight: bold; font-size: 70%;">Full Name or Company Name</label>
         <input type="text" id="name" name="name" placeholder="Enter name" required autocomplete="name"><br>
 

@@ -49,14 +49,20 @@ input, textarea {
     font-family: 'Poppins', sans-serif;
 }
 
+input[type="submit"].submit-button-container {
+    margin-top: 20px;
+}
+
 input[type="submit"].submit-button {
+    display: inline-block;
+    padding: 15px 30px;
+    /* Increase padding for a larger button */
     background-color: #662d91;
     color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    padding: 12px 20px;
-    font-size: 12px;
-    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 input[type="submit"]:hover {
