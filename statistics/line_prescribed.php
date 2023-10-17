@@ -144,7 +144,7 @@ $labels = json_encode(array_unique($labels));
             <!--<h3> Information about visualization provided </h3>-->
             <div class="row">
                 <div class="course-col">
-                <h2>Line Graph</h2>
+                <h2>Usage-chart description</h2>
                 <p> The line-chart displays the use of different antibiotics over time. 
                     The data points in this graph are summed to compile the data for each month. 
                     This graph is updated with the newest data possible and will change as fast 
