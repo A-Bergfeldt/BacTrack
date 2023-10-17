@@ -27,7 +27,7 @@ require_once "../nav_bar.php";
         <div class="section-content height: auto;" >
             <p style="margin-left: 100px; font-size: 70px; ">About BacTrack</p>
             <img src="home_sec2.jpg" alt="Desktop Image" width="550" height="500" style="float: right; margin-left: 20px; margin-top: -200px;">
-            <p style="margin-left: 100px; font-size: 22px;; ">The growing problem of antibiotic resistance (AMR) poses difficulties when it comes to treating bacterial infections. Identifying the root cause of an illness at an early stage can be crucial when it comes to treating these diseases, and can result in a more effective treatment using a tailored antibiotic therapy to the specific infection.</p>
+            <p style="margin-left: 100px; font-size: 22px;; ">BacTrack is a laboratory information management system (LIMS) created to facilitate the communication between doctors and labs in order to fully utilize what the speed of fast diagnostic techniques could look like. We provide real time tracking of sample diagnosis with the aim to improve healthcare.</p>
         <div>
             <div class="button-container" style="text-align: center;">
             <a href="/about_contact/about_bactrack.php" class="button">Learn More</a>
