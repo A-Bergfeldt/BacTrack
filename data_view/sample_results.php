@@ -4,7 +4,7 @@
     <title>Sample Results</title>
     <script src="multiselect-dropdown.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
-    <link rel="stylesheet" href="harry_styles.css">
+    <link rel="stylesheet" href="table_styles.css">
 </head>
 
 

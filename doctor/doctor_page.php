@@ -66,7 +66,7 @@ how much you want
 
         <main class="table">
             <section class="table_header">
-                <h1 style="text-align: center;">Finished samples</h1>
+                <h1 style="text-align: center;">Your current samples</h1>
             </section>
             <section class="table_body">
                 <table>
@@ -75,6 +75,7 @@ how much you want
                             <th>Sample ID<span class="icon-arrow">&DownArrow;</span></th>
                             <th>Date<span class="icon-arrow">&DownArrow;</span></th>
                             <th>Strain<span class="icon-arrow">&DownArrow;</span></th>
+                            <th>Status<span class="icon-arrow">&DownArrow;</span></th>
                             <th>Lab Technician<span class="icon-arrow">&DownArrow;</span></th>
                         </tr>
                     </thead>
@@ -98,6 +99,7 @@ how much you want
                                     </td>
                                     <td>" . $row["date_taken"] . "</td>
                                     <td>" . $row["strain_name"] . "</td>
+                                    <td>" . $row["status_name"] . "</td>
                                     <td>" . $row["lab_technician_id"] . "</td>
                                 </tr>";
                             }

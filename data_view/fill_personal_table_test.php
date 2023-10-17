@@ -80,6 +80,7 @@ if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 3) {
             </table>
         </section>
     </main>
+    <?php> require_once "../nav_bar.php"; ?>
 </body>
 </html>
 
