@@ -22,5 +22,5 @@ $sqlUpdateStatus = "UPDATE sample SET status_id=4 WHERE sample_id = $sample_id;"
 
 $db_connection->query($sqlUpdatePrescribed);
 $db_connection->query($sqlUpdateStatus);
-echo "Hurra hurra your sample has gotten the prescription";
+echo "Sample ID: " . $sample_id . ", has been prescribed: " . $antibiotic1 . ", " . $antibiotic2 . ", " . $antibiotic3;
 ?>

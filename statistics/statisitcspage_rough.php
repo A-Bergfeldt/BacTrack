@@ -10,7 +10,7 @@
     <?php require_once "../nav_bar.php"; ?>
 
         <div class="container">
-            <div class="slide1">
+            <!--<div class="slide1">-->
                 <!--<h2 style="font-size: 30px; color:black">Services we offer</h2>-->
                 <section class="course">
                     <h3>Analytics from the BacTrack Database</h3>
@@ -21,22 +21,21 @@
 
                         <a class="course-col" href="pie_prescribed.php">
                             <h3>USAGE</h3>
-                            <p>Pie chart of the antibiotics use on a yearly basis</p>
+                            <p>Pie chart of the antibiotics used on a yearly basis</p>
                         </a>
 
                         <a class="course-col" href="line_prescribed.php">
                             <h3>TRENDS</h3>
-                            <p>Line chart showing the probably use of antibiotics over multiple years</p>
+                            <p>Line chart showing the probable use of antibiotics over several years</p>
                         </a>
 
                         <a class="course-col" href="heatmap_strain.php">
                             <h3>OUTBREAKS</h3>
-                            <p>Heatmap of the whole strains of bacteria were found to spot spread and outbreaks</p>
+                            <p>Bubble plot of the strains of bacteria present in different areas globally</p>
                         </a>
                     </div>      
                 </section>
             </div>
-        </div>
 
 </body>
 </html>

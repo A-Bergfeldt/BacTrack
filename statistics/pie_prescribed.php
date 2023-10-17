@@ -9,10 +9,10 @@
 <body>
     <?php require_once "../nav_bar.php"; ?>
     <div class="container">
-        <h1 class="text-center mt-4">Usage of Antibiotics</h1>
+        <h1>General use of Antibiotics in a year</h1>
         <div id="year-selector">
             <form method="get" action="pie_prescribed.php">
-                <label for="year">Select a Year:</label>
+                <label for="year" style="margin-left:30px, margin-top:10px">Select a Year:</label>
                 <select id="year" name="year">
                     <?php
                     // Define the range of years (2000-2023)
@@ -163,7 +163,7 @@ Plotly.newPlot('tester', data, layout);
               <!--<h3> Information about visualization provided </h3>-->
             <div class="row">
                 <div class="course-col">
-                  <h3> Chart description</h3>
+                  <h3> Prescription-chart description</h3>
                   <p>The pie-chart displays the share for all prescribed antibiotics for 
                     your selected year. The default year is the current year, but user can
                     explore previous years as well. By hovering over the different 
