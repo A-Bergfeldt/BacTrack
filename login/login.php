@@ -72,7 +72,7 @@
                         header("Location: ../doctor/doctor_page.php");
                     }
                     if ($_SESSION['role_id'] == 2) {
-                        header("Location: ../lab/lab_design_input_form.php");
+                        header("Location: ../lab/lab_tech_page.php");
                     }
                     if ($_SESSION['role_id'] == 3) {
                         header("Location: ../home/home_page.php");
