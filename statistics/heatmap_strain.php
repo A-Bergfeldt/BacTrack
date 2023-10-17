@@ -88,15 +88,17 @@
         var labels = <?php echo json_encode($labels); ?>;
 
         // Define a color scale for the bubble plot (Viridis in this example)
-        var colorScale = 'Jet';
+        var colorScale = 'reds';
         var hoverText = [];
-        var scale = 1;
-
+        var norm_sizes = []
+        var min_bubble = Math.min(...bubbleSizes)
+        var max_bubble = Math.max(...bubbleSizes)
+        console.log(min_bubble)
 
         for ( var i = 0 ; i < labels.length; i++) {
-          var currentSize = bubbleSizes[i] / scale;
+          var currentSize = 20 + (bubbleSizes[i] - min_bubble) * (25 / (max_bubble - min_bubble))
           var currentText = labels[i] + " : " + bubbleSizes[i];
-          bubbleSizes.push(currentSize);
+          norm_sizes.push(currentSize);
           hoverText.push(currentText);
     }
 
@@ -108,8 +110,10 @@
           text: hoverText, // Display text labels when hovering
           textposition: 'top center', // Adjust the position of the labels
           marker: {
-            size: bubbleSizes,
-            color: bubbleSizes, // Use bubble size as the color scale
+            cmin: 10,
+            cmax: 50,
+            size: norm_sizes,
+            color: norm_sizes, // Use bubble size as the color scale
             colorscale: colorScale, // Set the color scale
             colorbar: {
               title: 'Count', // Label for the color scale

@@ -34,7 +34,7 @@ if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo "<tr>
         <td>
-            <a href='sample_results.php?sample_id=" . $row["sample_id"] . "'>" . $row["sample_id"] . "</a>
+            <a href='/data_view/sample_results.php?sample_id=" . $row["sample_id"] . "'>" . $row["sample_id"] . "</a>
         </td>
         <td>" . $row["date_taken"] . "</td>
         <td>" . $row["status_name"] . "</td>
