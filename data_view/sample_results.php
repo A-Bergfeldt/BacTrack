@@ -63,13 +63,14 @@
     <br>
     <br>
     <br>
+    <br>
+    <br>
 
     <!-- Start the table with some basic styling -->
-    <div class="table">
 
-        <p>Results for Sample ID:
-            <?= $sample_id ?>
-        </p>
+    
+    <div class="table">
+        <h1 style="text-align: center;">Results for Sample ID: <?= $sample_id ?></h1>
         <form action="sample_results.php" method="POST">
             <table>
                 <thead>
