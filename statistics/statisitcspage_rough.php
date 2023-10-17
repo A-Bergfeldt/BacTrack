@@ -10,7 +10,7 @@
     <?php require_once "../nav_bar.php"; ?>
 
         <div class="container">
-            <div class="slide1">
+            <!--<div class="slide1">-->
                 <!--<h2 style="font-size: 30px; color:black">Services we offer</h2>-->
                 <section class="course">
                     <h3>Analytics from the BacTrack Database</h3>
@@ -36,7 +36,6 @@
                     </div>      
                 </section>
             </div>
-        </div>
 
 </body>
 </html>
