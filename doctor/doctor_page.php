@@ -21,6 +21,7 @@ how much you want
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Mina testing doctor page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
@@ -28,20 +29,19 @@ how much you want
     <style>
         .button-container {
             text-align: center;
-            margin-top: 30px; 
+            margin-top: 30px;
         }
 
         .button-container .button {
             display: inline-block;
-            padding: 15px 30px; 
+            padding: 15px 30px;
+            /* Increase padding for a larger button */
             background-color: #662d91;
-            color: white;
+            color: #fff;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            color: white;
             transition: background-color 0.3s ease;
-            margin: 0 10px; 
         }
 
         .button-container .button:hover {
@@ -51,16 +51,19 @@ how much you want
 </head>
 
 <body>
+    <?php require_once "../nav_bar.php"; ?>
     <div class="container">
         <div class="slides slide1">
-            <h1 style="font-size: 100px; color: #000000; text-align: center;">Hello <?php echo $user_name; ?>!</h1>
+            <h1 style="font-size: 100px; color: #000000; text-align: center;">Hello
+                <?php echo $user_name; ?>!
+            </h1>
         </div>
 
         <div class="button-container">
-        <a href="sample_form.php" class="button">Insert new sample</a>
-        <a href="/data_view/search_all_samples.php" class="button">Search all samples</a>
+            <a href="sample_form.php" class="button">Insert new sample</a>
+            <a href="/data_view/search_all_samples.php" class="button">Search all samples</a>
         </div>
-        
+
         <main class="table">
             <section class="table_header">
                 <h1 style="text-align: center;">Your current samples</h1>
@@ -79,7 +82,7 @@ how much you want
                     <tbody>
                         <?php
                         include '../db_connection.php';
-
+                        $db_connection->open();
                         if (count($_GET) != 0) {
                             $sql = "SELECT sample_id, date_taken, status_name, hospital_name, strain_name, doctor_id, lab_technician_id FROM (((sample 
                             INNER JOIN tracking ON sample.status_id = tracking.status_id) 
@@ -103,9 +106,7 @@ how much you want
 
                             $result->free_result();
                             $db_connection->close();
-                        } 
-                        
-                        else {
+                        } else {
                             echo "<tr><td colspan='7'>0 results</td></tr>";
                         }
                         ?>
@@ -114,7 +115,7 @@ how much you want
             </section>
         </main>
     </div>
-    <?php require_once "../nav_bar.php"; ?> 
+    <?php require_once "../nav_bar.php"; ?>
 </body>
-</html>
 
+</html>

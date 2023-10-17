@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My BacTrack Web App</title>
-    <!-- Add your CSS styles here -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
-    <link rel="stylesheet" type="text/css" href="doctor_style.css">
-</head>
-  <body>
-    <?php require_once '../nav_bar.php'; ?>
-  </body>
-</html>
+
 
 <?php
 session_start();
@@ -54,16 +43,35 @@ try {
     if ($result) {
         // Retrieve the last inserted ID
         $lastInsertedID = mysqli_insert_id($link);
-        echo "Data inserted successfully! </br>Your sample id is: " . $lastInsertedID;
-        echo "<br><a href='sample_form.php'>Enter another sample</a>";
+        $message = "Data inserted successfully! </br>Your sample id is: " . $lastInsertedID;
     } else {
-        echo "Error: " . $stmt->error;
-        echo "<br><a href='sample_form.php'>Back to sample input form</a>";
+        $message = "Error: " . $stmt->error;
     }
 } catch (Exception $e) {
-    echo "Error: " . $e->getMessage();
-    echo "<br><a href='sample_form.php'>Back to sample input form</a>";
+    $message = "Error: " . $e->getMessage();
 }
 $link->close();
 
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My BacTrack Web App</title>
+    <!-- Add your CSS styles here -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" type="text/css" href="doctor_style.css">
+</head>
+  <body>
+  </br></br></br></br></br></br></br></br>
+    <?php require_once '../nav_bar.php'; ?>
+    <div class="box">
+        <p style="text-align: center;"> 
+            <?php if (isset($message)) {echo $message . $stmt->error;} ?>
+        </p>
+        <div>
+            <div class="button-container" style="text-align: center;">
+                <a href='sample_form.php' class="button">Input sample</a>
+    </div>
+  </body>
+</html>

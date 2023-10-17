@@ -63,3 +63,34 @@ input[type="submit"]:hover {
     color: #fff;
     text-align: center; /* Center text horizontally within the h1 element */
 }
+
+.box {
+    margin: 20px auto; /* Center the form horizontally and add separation */
+    width: 400px;
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top:40px;
+    padding: 20px;
+}
+
+.button-container {
+    margin-top: 20px;
+
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 30px;
+    /* Increase padding for a larger button */
+    background-color: #662d91;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #800080;
+}
