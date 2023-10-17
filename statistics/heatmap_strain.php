@@ -93,7 +93,7 @@
         var scale = 1;
 
 
-        for ( var i = 0 ; i < bubbleSizes.length; i++) {
+        for ( var i = 0 ; i < labels.length; i++) {
           var currentSize = bubbleSizes[i] / scale;
           var currentText = labels[i] + " : " + bubbleSizes[i];
           bubbleSizes.push(currentSize);
@@ -105,7 +105,7 @@
           lon: lon,
           lat: lat,
           mode: 'markers',
-          text: labels, // Display text labels when hovering
+          text: hoverText, // Display text labels when hovering
           textposition: 'top center', // Adjust the position of the labels
           marker: {
             size: bubbleSizes,
