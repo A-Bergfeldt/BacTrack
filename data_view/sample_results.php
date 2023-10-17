@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Sample Results</title>
     <script src="multiselect-dropdown.js"></script>
@@ -9,9 +10,7 @@
 
 
 <body>
-
-
-<?php
+    <?php
     session_start();
     include '../db_connection.php';
 
@@ -58,7 +57,7 @@
     }
     $db_connection->close();
 
-    $show_button = ($status_id == 3 and $doctor_id == $_SESSION['user_id']); 
+    $show_button = ($status_id == 3 and $doctor_id == $_SESSION['user_id']);
     ?>
 
     <br>
@@ -67,66 +66,69 @@
 
     <!-- Start the table with some basic styling -->
     <div class="table">
-        <p>Results for Sample ID: <?= $sample_id ?></p>
-        <form action="sample_results.php" method="POST">
-        <table>
-            <thead>
-                <tr>
-                    <div>
-                    <th>Antibiotic 1</th>
-                    <th>Antibiotic 2</th>
-                    <th>Antibiotic 3</th>
-                    <th>Result</th>
-                    <?php if ($show_button): ?>
-                        <th>Prescribe</th>
-                    <?php endif; ?>
-                    </div>
-                </tr>
-            </thead>
-        </form>
-        </div>
-    
 
-        <!-- Fill table -->
-        <?php if ($result->num_rows > 0): ?>
-            <tbody>
-                <?php while ($row = $result->fetch_assoc()): ?>
-                    <?php if ($row["prescribed"]): ?>
-                        <tr class="prescribed">
+        <p>Results for Sample ID:
+            <?= $sample_id ?>
+        </p>
+        <form action="sample_results.php" method="POST">
+            <table>
+                <thead>
+                    <tr>
+                        <div>
+                            <th>Antibiotic 1</th>
+                            <th>Antibiotic 2</th>
+                            <th>Antibiotic 3</th>
+                            <th>Result</th>
+                            <?php if ($show_button): ?>
+                                <th>Prescribe</th>
+                            <?php endif; ?>
+                        </div>
+                    </tr>
+                </thead>
+        </form>
+    </div>
+
+
+    <!-- Fill table -->
+    <?php if ($result->num_rows > 0): ?>
+        <tbody>
+            <?php while ($row = $result->fetch_assoc()): ?>
+                <?php if ($row["prescribed"]): ?>
+                    <tr class="prescribed">
                     <?php else: ?>
-                        <tr>
+                    <tr>
                     <?php endif; ?>
-                    <td><?= $row["Antibiotic 1"] ?></td>
-                    <td><?= $row["Antibiotic 2"] ?></td>
-                    <td><?= $row["Antibiotic 3"] ?></td>
-                    <td><?= $row["synergy_name"] ?></td>
+                    <td>
+                        <?= $row["Antibiotic 1"] ?>
+                    </td>
+                    <td>
+                        <?= $row["Antibiotic 2"] ?>
+                    </td>
+                    <td>
+                        <?= $row["Antibiotic 3"] ?>
+                    </td>
+                    <td>
+                        <?= $row["synergy_name"] ?>
+                    </td>
                     <?php if ($show_button): ?>
                         <td>
-                            <button onclick="showConfirmation(<?= $row["sample_id"] ?>, '<?= $row["Antibiotic 1"] ?>', '<?= $row["Antibiotic 2"] ?>', '<?= $row["Antibiotic 3"] ?>')">Prescribe this combination</button>
+                            <a
+                                href="update_prescription.php?sample_id=<?= $row['sample_id'] ?> <?= '&antibiotic1=' . $row['Antibiotic 1'] ?> <?= '&antibiotic2=' . $row['Antibiotic 2'] ?> <?= '&antibiotic3=' . $row['Antibiotic 3'] ?>">Prescribe</a>
+                            <!-- <button
+                            onclick="showConfirmation(<?= $row['sample_id'] ?>, '<?= $row['Antibiotic 1'] ?>', '<?= $row['Antibiotic 2'] ?>', '<?= $row['Antibiotic 3'] ?>')">Prescribe
+                            this combination</button> -->
                         </td>
                     <?php endif; ?>
-                    </tr>
-                <?php endwhile; ?>
-            </tbody>
-        
-
-            <!-- Add a JavaScript function to show the confirmation popup -->
-            <script>
-            function showConfirmation(sampleId, antibiotic1, antibiotic2, antibiotic3) {
-                if (window.confirm('Are you sure you want to prescribe this combination?')) {
-                    // If the user confirms, navigate to update_prescription.php with all values
-                    window.location.href = 'update_prescription.php?sample_id=' + sampleId + '&antibiotic1=' + encodeURIComponent(antibiotic1) + '&antibiotic2=' + encodeURIComponent(antibiotic2) + '&antibiotic3=' + encodeURIComponent(antibiotic3);
-                } else {
-                    // If the user cancels, do nothing or provide feedback as needed
-                }
-            }
-            </script>
-        <?php else: ?>
-            <p>>0 results</p>
-        <?php endif; ?>
+                </tr>
+            <?php endwhile; ?>
+        </tbody>
+    <?php else: ?>
+        <p>>0 results</p>
+    <?php endif; ?>
 
     </table>
-    <?php require_once "../nav_bar.php"; ?> 
+    <?php require_once "../nav_bar.php"; ?>
 
 </body>
+
 </html>
