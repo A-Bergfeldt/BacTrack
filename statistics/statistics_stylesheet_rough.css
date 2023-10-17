@@ -5,7 +5,7 @@ body{
     padding: 0;
     font-family: 'Poppins', sans-serif;
     width: 100%;
-    height: 150vh;
+    height: 100vh;
     background-size: cover;
     background-position: center;
 }
@@ -13,8 +13,7 @@ body{
 .container{
     width: 100%;
     height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
+    padding-bottom:50px;
 }
 /*
 .slides{
