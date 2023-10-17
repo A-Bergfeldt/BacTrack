@@ -139,7 +139,7 @@ $labels = json_encode(array_unique($labels));
 <div class="container">
     <div class="slides slide2">
         <section class="course">
-            <h3> Information about visualization provided </h3>
+            <!--<h3> Information about visualization provided </h3>-->
             <div class="row">
                 <div class="course-col">
                 <h2>LINE GRAPHS</h2>
