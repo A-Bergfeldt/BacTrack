@@ -9,11 +9,11 @@
 <body>
 <?php require_once "../nav_bar.php"; ?>
 <div class="container">
-    <h1 class="text-center mt-4">LINE GRAPHS</h1>
+    <h1 class="text-center mt-4">Trends of the usage of antibiotics over several years</h1>
     <div id="tester" style="width:600px;height:250px;"></div>
 </div>
-<div class="sidebyside">
 
+<div id="tester"></div>
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -124,7 +124,7 @@ $labels = json_encode(array_unique($labels));
 
     var layout = {
         height: 400,
-        width: 1200,
+        width: 1500,
         showlegend: true,
         xaxis: {
             title: 'Date'
@@ -135,6 +135,8 @@ $labels = json_encode(array_unique($labels));
     };
 
     Plotly.newPlot('tester', data, layout);
+
+
 </script>
 <div class="container">
     <div class="slides slide2">
@@ -142,7 +144,7 @@ $labels = json_encode(array_unique($labels));
             <!--<h3> Information about visualization provided </h3>-->
             <div class="row">
                 <div class="course-col">
-                <h2>LINE GRAPHS</h2>
+                <h2>Line Graph</h2>
                 <p> The line-chart displays the use of different antibiotics over time. 
                     The data points in this graph are summed to compile the data for each month. 
                     This graph is updated with the newest data possible and will change as fast 
