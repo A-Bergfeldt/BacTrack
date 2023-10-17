@@ -95,20 +95,6 @@ select {
 
 /*CONTENT*/
 
-.slides{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color:#000000; /*text color outside the box*/
-    scroll-snap-align: start;
-}
-
-.slide2{
-    background:rgb(255, 255, 255); /*has to be black, background for the box*/
-}
 
 .course{
     width: 100%;
@@ -121,7 +107,7 @@ h3{
     font-size: 33px;
     /*font-weight: 600;*/
     font-family: 'Poppins',sans-serif;
-    letter-spacing: 1.4px;
+    letter-spacing: 1px;
 }
 
 p{
@@ -138,7 +124,7 @@ p{
 .row{
     margin-top: 5%;
     margin-top: -10%;
-    margin-left: -10%;
+    margin-left: -13%;
     display:flex;
     justify-content: space-between;
 }
@@ -169,3 +155,8 @@ p{
     align-items:center;
     margin-bottom: 20px; /* Adjust as needed */
   }
+
+  .container{
+    width: 100%;
+    padding-left: 150px;
+}

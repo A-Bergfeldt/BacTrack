@@ -11,7 +11,6 @@
   <div class="container">
     <!-- Dropdown menu to select heatmap option -->
     <form method="get" action="heatmap_strain.php">
-      <label for="heatmapOption">Strain selection:</label>
       <select id="heatmapOption" name="strain">
         <?php
         require_once "../db_connection.php";
