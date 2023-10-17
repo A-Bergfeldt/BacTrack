@@ -89,6 +89,16 @@
 
         // Define a color scale for the bubble plot (Viridis in this example)
         var colorScale = 'Jet';
+        var hoverText = [];
+        var scale = 1;
+
+
+        for ( var i = 0 ; i < bubbleSizes.length; i++) {
+          var currentSize = bubbleSizes[i] / scale;
+          var currentText = labels[i] + " : " + bubbleSizes[i];
+          bubbleSizes.push(currentSize);
+          hoverText.push(currentText);
+    }
 
         var data = [{
           type: 'scattermapbox',
