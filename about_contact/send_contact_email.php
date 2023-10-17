@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         $mail->send();
-        header("Location: Thanksyouforcontacting.html");
+        header("Location: thanksforcontact.php");
         exit();
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
