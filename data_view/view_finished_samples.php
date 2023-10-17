@@ -18,11 +18,11 @@ $sql = "SELECT sample_id, date_taken, status_name, hospital_name, strain_name, l
 INNER JOIN tracking ON sample.status_id = tracking.status_id) 
 INNER JOIN hospital ON sample.hospital_id = hospital.hospital_id)
 LEFT JOIN strain ON sample.strain_id = strain.strain_id)
-WHERE doctor_id = '" . $_SESSION['user_id'] . "' AND sample.status_id = 4
+WHERE doctor_id = '" . $_SESSION['user_id'] . "' AND sample.status_id = 3
 ORDER BY sample_id ASC;";
 $result = $db_connection->query($sql);
 
-include 'fill_personal_table.php';
+include '../data_view/fill_personal_table.php';
 
 // Close the database connection
 $db_connection->close();

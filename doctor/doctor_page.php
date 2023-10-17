@@ -1,4 +1,7 @@
 <?php
+/*ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);*/
 session_start();
 
 if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1440)) {
@@ -51,12 +54,10 @@ how much you want
 </head>
 
 <body>
-    <?php require_once "../nav_bar.php"; ?>
     <div class="container">
-        <div class="slides slide1">
-            <h1 style="font-size: 100px; color: #000000; text-align: center;">Hello
-                <?php echo $user_name; ?>!
-            </h1>
+        <h1 style="font-size: 100px; color: #000000; text-align: center;">Hello
+            <?php echo $user_name; ?>!
+        </h1>
         </div>
 
         <div class="button-container">
@@ -66,39 +67,13 @@ how much you want
 
         <main class="table">
             <section class="table_header">
-                <h1 style="text-align: center;">Finished</h1>
+                <h1 style="text-align: center;">Ready for prescription</h1>
             </section>
             <section class="table_body">
                 <table>
                     <tbody>
-                    <?php
-                        session_start();
-
-                        if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1440)) {
-                            header("Location: ../login/logout.php");
-                        }
-                        $_SESSION['LAST_ACTIVITY'] = time();
-
-                        if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 3) {
-                            header("Location: ../login/login.php");
-                            exit();
-                        }
-
-                        include '../db_connection.php';
-
-                        // SQL queries
-                        $sql = "SELECT sample_id, date_taken, status_name, hospital_name, strain_name, lab_technician_id FROM (((sample 
-                        INNER JOIN tracking ON sample.status_id = tracking.status_id) 
-                        INNER JOIN hospital ON sample.hospital_id = hospital.hospital_id)
-                        LEFT JOIN strain ON sample.strain_id = strain.strain_id)
-                        WHERE doctor_id = '" . $_SESSION['user_id'] . "' AND sample.status_id = 4
-                        ORDER BY sample_id ASC;";
-                        $result = $db_connection->query($sql);
-
-                        include '../data_view/fill_personal_table.php';
-
-                        // Close the database connection
-                        $db_connection->close();
+                        <?php
+                        require_once '../data_view/view_finished_samples.php'
                         ?>
                     </tbody>
                 </table>
@@ -107,40 +82,14 @@ how much you want
 
         <main class="table">
             <section class="table_header">
-                <h1 style="text-align: center;">Unfinished</h1>
+                <h1 style="text-align: center;">Running samples</h1>
             </section>
             <section class="table_body">
                 <table>
                     <tbody>
-                    <?php
-                    session_start();
-
-                    if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1440)) {
-                        header("Location: ../login/logout.php");
-                    }
-                    $_SESSION['LAST_ACTIVITY'] = time();
-
-                    if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 3) {
-                        header("Location: ../login/login.php");
-                        exit();
-                    }
-
-                    include '../db_connection.php';
-
-                    // SQL queries
-                    $sql = "SELECT sample_id, date_taken, status_name, hospital_name, strain_name, lab_technician_id FROM (((sample 
-                    INNER JOIN tracking ON sample.status_id = tracking.status_id) 
-                    INNER JOIN hospital ON sample.hospital_id = hospital.hospital_id)
-                    LEFT JOIN strain ON sample.strain_id = strain.strain_id)
-                    WHERE doctor_id = '" . $_SESSION['user_id'] . "' AND sample.status_id != 4
-                    ORDER BY sample_id ASC;;"; 
-                    $result = $db_connection->query($sql);
-
-                    include '/data_view/fill_personal_table.php';
-
-                    // Close the database connection
-                    $db_connection->close();
-                    ?>
+                        <?php
+                        require_once '../data_view/view_unfinished_samples.php'
+                        ?>
                     </tbody>
                 </table>
             </section>
