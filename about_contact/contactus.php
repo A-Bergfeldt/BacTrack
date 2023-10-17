@@ -23,7 +23,7 @@
         <label for="name" style="font-weight: bold; font-size: 70%;">Full Name or Company Name</label>
         <input type="text" id="name" name="name" placeholder="Enter name" required autocomplete="name"><br>
 
-        <label for="email" style="font-weight: bold; font-size: 70%;">Email</label>
+        <label for="email" style="font-weight: bold; font-size: 70%;">Enter your e-mail</label>
         <input type="email" id="email" name="email" placeholder="example@mail.com" required autocomplete="email"><br>
 
         <label for="description" style="font-weight: bold; font-size: 70%;">How may we help you?</label>
