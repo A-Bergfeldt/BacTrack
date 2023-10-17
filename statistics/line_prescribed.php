@@ -124,7 +124,7 @@ $labels = json_encode(array_unique($labels));
 
     var layout = {
         height: 400,
-        width: 1500,
+        width: 1400,
         showlegend: true,
         xaxis: {
             title: 'Date'
