@@ -163,8 +163,8 @@ Plotly.newPlot('tester', data, layout);
               <!--<h3> Information about visualization provided </h3>-->
             <div class="row">
                 <div class="course-col">
-                  <h3> Chart description</h3>
-                  <p>The pie-chart displays the share for all prescribed antibiotics for 
+                  <h3> Perscription-chart description</h3>
+                  <p>The chart displays the share for all prescribed antibiotics for 
                     your selected year. The default year is the current year, but user can
                     explore previous years as well. By hovering over the different 
                     slices of the pie-chart, the number of times a particular antibiotic has been 

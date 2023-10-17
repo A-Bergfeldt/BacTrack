@@ -144,8 +144,13 @@
         <section class="course">
           <div class="row">
             <div class="course-col">
-              <h3>Bubble Plot</h3>
-              <p>The bubble plot shows what hospital your selected strain was reported in. The size and color of the bubbles indicate the number of reports in each hospital, with darker colors representing higher values. When hovering over the bubbles, you can see the actual number of reports for each hospital. The data used are the reported strains for the last 365 days. Explore where different strains are found on a global scale right at this moment with BacTracks bubble plot.</p>
+              <h3>Outbreak-chart description</h3>
+              <p>The chart shows what hospital your selected strain was reported in. 
+                The size and color of the bubbles indicate the number of reports in each hospital, 
+                with darker colors representing higher values. When hovering over the bubbles, 
+                you can see the actual number of reports for each hospital. The data used are the 
+                reported strains for the last 365 days. Explore where different strains are found on 
+                a global scale right at this moment with BacTracks bubble plot.</p>
             </div>
           </div>
         </section>
