@@ -7,9 +7,9 @@
 </head>
 
 <body>
-    <?php require_once "../nav_bar.php"; ?> 
-
-    <div class="loginbox">
+        
+    <div class="form">
+        <div class="loginbox">
         <h1>Login</h1>
         <form method="post">
             <div class="txt_field">
@@ -30,16 +30,26 @@
                 Do not have an account? <li><a href ="/about_contact/contactus.php">Contact us</a></li>
             </div>
         </form>
+    </div>
+
+    <?php require_once "../nav_bar.php"; ?> 
 
         <?php
+            //Set the max lifetime of the session
+            ini_set( "session.gc_maxlifetime", 1440);
+
+            //Set the cookie lifetime of the session
+            ini_set( "session.cookie_lifetime", 1440);
+
             session_start();
+            
             require_once "../nav_bar.php";
             require_once "../db_connection.php";
 
             if(isset($_POST["submit"])) {
                 // Use prepared statements with parameterized queries
-                $input_username = $_POST["username"];
-                $input_password = $_POST["password"];
+                $input_username = htmlspecialchars($_POST["username"]);
+                $input_password = htmlspecialchars($_POST["password"]);
         
                 $stmt = $db_connection->prepare("SELECT hashed_password FROM users WHERE user_id = ?");
                 $stmt->bind_param("s", $input_username);
@@ -62,7 +72,7 @@
                         header("Location: ../doctor/doctor_page.php");
                     }
                     if ($_SESSION['role_id'] == 2) {
-                        header("Location: ../lab/lab_design_input_form.php");
+                        header("Location: ../lab/lab_tech_page.php");
                     }
                     if ($_SESSION['role_id'] == 3) {
                         header("Location: ../home/home_page.php");
@@ -76,6 +86,7 @@
                 }
             }
         ?>
+
     </div>
 </body>
 </html>

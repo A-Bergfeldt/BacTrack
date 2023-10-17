@@ -2,37 +2,39 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="piechart_stylesheet_main.css">
     <title>Pie Chart with Data from SQL Database</title>
     <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
 </head>
 <body>
-<div class="container">
-    <h2 class="text-center mt-4">Pie Chart with Data from SQL Database</h2>
-    <div id="year-selector">
-        <form method="get" action="pie_prescribed.php">
-            <label for="year">Select a Year:</label>
-            <select id="year" name="year">
-                <?php
-                // Define the range of years (2000-2023)
-                $startYear = 2000;
-                $endYear = 2023;
+    <?php require_once "../nav_bar.php"; ?>
+    <div class="container">
+        <h1>General use of Antibiotics in a year</h1>
+        <div id="year-selector">
+            <form method="get" action="pie_prescribed.php">
+                <label for="year" style="margin-left:30px, margin-top:10px">Select a Year:</label>
+                <select id="year" name="year">
+                    <?php
+                    // Define the range of years (2000-2023)
+                    $startYear = 2000;
+                    $endYear = 2023;
 
-                // Get the currently selected year (or default to 2023)
-                $selectedYear = isset($_GET['year']) ? $_GET['year'] : 2023;
+                    // Get the currently selected year (or default to 2023)
+                    $selectedYear = isset($_GET['year']) ? $_GET['year'] : 2023;
 
-                // Generate the options for the dropdown
-                for ($year = $startYear; $year <= $endYear; $year++) {
-                    $selected = ($year == $selectedYear) ? 'selected' : '';
-                    echo "<option value='$year' $selected>$year</option>";
-                }
-                ?>
-            </select>
-            <button id="update-button" type="submit">Update Chart</button>
-        </form>
-    </div>
-    <div id="tester" style="width:600px;height:250px;"></div>
-</div>
-
+                    // Generate the options for the dropdown
+                    for ($year = $startYear; $year <= $endYear; $year++) {
+                        $selected = ($year == $selectedYear) ? 'selected' : '';
+                        echo "<option value='$year' $selected>$year</option>";
+                    }
+                    ?>
+                </select>
+                <button id="update-button" type="submit" class="button-primary">Update Chart</button>
+            </form>
+        </div>
+        <div id="tester" style="width:400px;height:250px;margin-left:10%"></div>
+    <div class="sidebyside">
+    <!--</div>-->
 
     <?php
 
@@ -119,6 +121,7 @@
     ?>
 
     <script>
+
 	TESTER = document.getElementById('tester');
     var data = [{
         values: <?php echo json_encode($data); ?>,
@@ -127,20 +130,22 @@
         textposition: "outside",
         automargin: true,
         hole: .35,
+        textfont:40,
         type: 'pie',
         sort: false
     }];
 
 var layout = {
-    height: 400,
+    height: 600,
     width: 500,
     showlegend: false,
     font: {
-        family: 'Poppins, sans seriff'},
+        family: 'Poppins, sans seriff',
+        size:18},
+
     annotations: [
     {
       font: {
-        size: 22,
         family: 'Poppins, sans seriff',
       },
       showarrow: false,
@@ -151,5 +156,25 @@ var layout = {
 };
 Plotly.newPlot('tester', data, layout);
 </script>
+
+<div class="container">
+    <!--<div class="slides slide2">-->
+            <section class="course">
+              <!--<h3> Information about visualization provided </h3>-->
+            <div class="row">
+                <div class="course-col">
+                  <h3> Prescription-chart description</h3>
+                  <p>The pie-chart displays the share for all prescribed antibiotics for 
+                    your selected year. The default year is the current year, but user can
+                    explore previous years as well. By hovering over the different 
+                    slices of the pie-chart, the number of times a particular antibiotic has been 
+                    prescribed globally will be displayed, as well as the percentage and the 
+                    name of the antibiotic represented by that slice.</p>
+                </div>
+            </div>
+            </section>
+    </div>
+</div>
+</div>
 </body>
 </html>

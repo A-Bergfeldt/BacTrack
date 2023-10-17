@@ -5,7 +5,7 @@ body{
     padding: 0;
     font-family: 'Poppins', sans-serif;
     width: 100%;
-    height: 100vh;
+    height: 150vh;
     background-size: cover;
     background-position: center;
 }
@@ -26,14 +26,19 @@ body{
     gap: 50px;
     color: #000000;
     scroll-snap-align: start;
-
+    background: rgb(2,0,36);
     /*background-size: cover;
     background-position: center;
     background-attachment: fixed;
     */
 }
 
-
+a {
+    text-decoration: none; /* Remove underline */
+    color: #0077cc; /* Set text color to blue */
+    font-weight: bold; /* Make the text bold */
+}
+ 
 /*background: linear-gradient(180deg, rgba(52,21,54,1) 0%, rgba(74,21,90,1) 35%, rgba(21,98,105,1) 100%);
 */
 
@@ -46,27 +51,16 @@ body{
     align-items: center;
     height: 100vh;
 }
-    
 
 .slide1{
-    background: linear-gradient(180deg, rgba(21,98,105,1) 0%, rgba(255,255,255,1) 100%);
+    /*background: rgb(255,223,223);*/
+    background: linear-gradient(90deg, rgba(241, 232, 255, 0.3) 0%, rgba(231, 253, 255, 0.1) 100%);
 }
 
-.slide2{
-    background:#fff;
-}
- 
-.slide3{
-    background:#fff;
-}
-
-.slide4{
-    background: #fff;
-}
 
 img:hover {
-    background: rgba(161, 195, 235, 0.4); /* Background color on hover */
-    border-radius: 6px; /* Border-radius on hover */
+    background: rgba(44, 46, 49, 0.4); /* Background color on hover */
+    border-radius: 10px; /* Border-radius on hover */
     /* Add any additional styles you want to apply when the image is hovered */
 }
 
@@ -77,11 +71,15 @@ img:hover {
     margin:auto;
     text-align:center;
     padding-top:100px;
+    justify-content: center;
+    align-items: center;
 }
 
 h3{
-    font-size: 36px;
+    font-size: 42px;
     font-weight: 600;
+    text-align: center;
+    color: #000000;
 }
 
 p{
@@ -90,6 +88,7 @@ p{
     font-weight: 300;
     line-height: 22px;
     padding: 10px;
+    font-style: italic;
 }
 
 .row{
@@ -99,11 +98,14 @@ p{
 }
 
 .course-col{
-    flex-basis: 45%;
-    background: #fff3f3;
+    flex-basis: 55%;
+    /*background:#f8e3e3;*/
+    background: rgb(207,210,240);
+    background: linear-gradient(90deg, rgba(207, 210, 240, 0.491) 0%, rgba(70, 62, 73, 0.1) 100%);
     border-radius: 10px;
-    margin-bottom: 5%;
-    padding:20px 10px;
+    margin-left: 3%;
+    margin-bottom: 15%;
+    padding:50px 10px;
     box-sizing: border-box;
     transition: 0.5s;
 }
@@ -111,3 +113,11 @@ p{
 .course-col:hover{
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.5);
 }
+
+
+.campus-col img{
+    width:25%;
+    height:auto;
+    border-radius: 10px;
+}
+

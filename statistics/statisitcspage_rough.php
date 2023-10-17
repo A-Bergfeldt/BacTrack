@@ -10,42 +10,29 @@
     <?php require_once "../nav_bar.php"; ?>
 
         <div class="container">
-            <div class="slides slide1">
-                <h1 style="font-size: 100px; color: #fff">Statistics page</h1>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="slides slide2">
+            <div class="slide1">
                 <!--<h2 style="font-size: 30px; color:black">Services we offer</h2>-->
                 <section class="course">
-                    <h3> Information about visualization provided </h3>
+                    <h3>Analytics from the BacTrack Database</h3>
+                    <p>BacTrack collects multiple daily entries containing data on prescribed antibiotics for various strains of bacteria. Below, you'll 
+                    <br>find a selection of visualization tools showcasing different types of data. 
+                    <br>Click on any box to explore further data.</p>
                     <div class="row">
 
-                        <div class="course-col">
-                            <h3>pie-charts</h3>
-                            <p>Pie charts are a good visualization tool</p>
-                            <button id="open">
-                                read more
-                            </button>
-                        </div>
+                        <a class="course-col" href="pie_prescribed.php">
+                            <h3>USAGE</h3>
+                            <p>Pie chart of the antibiotics used on a yearly basis</p>
+                        </a>
 
-                        <div class="course-col">
-                            <h3>line-graphs</h3>
-                            <p>These are a good way to look for trends</p>
-                            <button id="open">
-                                read more
-                            </button>
-                        </div>
+                        <a class="course-col" href="line_prescribed.php">
+                            <h3>TRENDS</h3>
+                            <p>Line chart showing the probable use of antibiotics over several years</p>
+                        </a>
 
-                        <div class="course-col">
-                            <h3>heatmaps</h3>
-                            <p>One among the best tools to identify trends over a large geographical location</p>
-                            <button id="open">
-                                read more
-                            </button>
-                        </div>
-
+                        <a class="course-col" href="heatmap_strain.php">
+                            <h3>OUTBREAKS</h3>
+                            <p>Bubble plot of the strains of bacteria present in different areas globally</p>
+                        </a>
                     </div>      
                 </section>
             </div>

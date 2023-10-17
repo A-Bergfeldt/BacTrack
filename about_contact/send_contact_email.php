@@ -1,14 +1,16 @@
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
+<?php
+
+require '../phpmailer/src/Exception.php';
+require '../phpmailer/src/PHPMailer.php';
+require '../phpmailer/src/SMTP.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $description = $_POST["description"];
+    $name = htmlspecialchars($_POST["name"]);
+    $email = htmlspecialchars($_POST["email"]);
+    $description = htmlspecialchars($_POST["description"]);
     
     $mail = new PHPMailer(true);
 
@@ -30,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         $mail->send();
-        header("Location: Thanksyouforcontacting.html");
+        header("Location: thanksforcontact.php");
         exit();
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

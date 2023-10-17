@@ -1,5 +1,5 @@
 @import "/nav_bar_style_sheet.css";
-/* Reset some default browser styles */
+
 body{
     margin: 0;
     padding: 0;
@@ -16,7 +16,6 @@ body{
     text-align: center;
     font-size: 25px;
     font-weight: bold;
-    margin-bottom: 15px;
 }
 
 /* Style form elements */
@@ -30,26 +29,23 @@ form {
     padding: 20px;
 }
 
-
-
 /* Style form input fields and select elements */
 form input[type="text"],
 form select {
-    width: 100%;
+    width: 80%;
     padding: 10px;
     margin-bottom: 15px; /* Increase the bottom margin to add space between form elements */
     border: 1px solid #ccc;
     border-radius: 3px;
 }
 
-/* Style the "Add" button */
 input[type="submit"] {
     display: block; /* Makes the button a block-level element */
     margin: 0 auto; /* Center horizontally */
     padding: 10px 20px; /* Adjust padding to make it bigger */
     font-size: 16px; /* Adjust font size */
     background-color: #662d91; /* Background color */
-    color: #fff; /* Text color */
+    color: white; /* Text color */
     border: none; /* Remove the border */
     border-radius: 5px; /* Rounded corners */
     cursor: pointer; /* Add a pointer cursor on hover */
@@ -60,6 +56,12 @@ input[type="submit"] {
 /* Hover effect */
 input[type="submit"]:hover {
     background-color: #800080; /* Change background color on hover */
+}
+
+.slides.slide1 h1 {
+    font-size: 100px;
+    color: #fff;
+    text-align: center; /* Center text horizontally within the h1 element */
 }
 
 .box {

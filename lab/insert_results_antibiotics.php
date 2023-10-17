@@ -1,4 +1,17 @@
+
 <?php
+session_start();
+
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1440)) {
+    header("Location: ../login/logout.php");
+}
+$_SESSION['LAST_ACTIVITY'] = time();
+
+if ($_SESSION['role_id'] != 2 && $_SESSION['role_id'] != 3) {
+    header("Location: ../login/login.php");
+    exit();
+}
+
 // Database connection parameters
 $servername = "localhost";
 $username = "root";
@@ -54,13 +67,10 @@ if ($result->num_rows > 0) {
         $stmt = $link->prepare($sql);
         $stmt->bind_param("iiiii", $sample_id, $antibiotic1, $antibiotic2, $antibiotic3, $synergy_results);
         $result = $stmt->execute();
-
         if ($result) {
-            echo "Values inserted successfully for sample_id: $sample_id";
-            echo "<br><a href='lab_design_input_form.php'>Enter more results</a>";
+            $message = "Values inserted successfully for sample_id: $sample_id";
         } else {
-            echo "Error: " . $stmt->error;
-            echo "<br><a href='lab_design_input_form.php'>Back to result input form</a>";
+            $message = "Error: ";
         }
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
@@ -71,3 +81,24 @@ if ($result->num_rows > 0) {
 $link->close();
 
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My BacTrack Web App</title>
+    <!-- Add your CSS styles here -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" type="text/css" href="lab_tech_style.css">
+</head>
+  <body>
+  </br></br></br></br></br></br></br></br> 
+    <?php require_once '../nav_bar.php'; ?>
+    <div class="box">
+        <p style="text-align: center;"> 
+            <?php if (isset($message)) {echo $message . $stmt->error;} ?>
+        </p>
+        <div>
+            <div class="button-container" style="text-align: center;">
+                <a href='lab_design_input_form.php' class="button">Enter more results</a>
+    </div>
+</body>

@@ -1,0 +1,46 @@
+/* Add CSS styles for the footer */
+footer {
+    background-color: rgba(231, 231, 221, 0.4);/* Background color for the footer */
+    color: black; /* Text color for the footer */
+    padding: 20px; /* Add padding to the footer */
+    text-align: center; /* Center-align the text */
+    margin-top: -90px;
+}
+
+
+.footer-container {
+    border-top: 1px solid black; /* Add a border line above the contact info */
+    /* Adjust the margin to move the footer closer to the content */
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.contact-info {
+    text-align: left;
+    flex: 1; /* This will make the contact-info section expand to fill the space */
+}
+
+.business-hours {
+    text-align: center;
+    flex: 1; /* This will make the business-hours section expand to fill the space */
+}
+
+.social-media {
+    text-align: right;
+    flex: 1; /* This will make the social-media section expand to fill the space */
+}
+
+.social-icons {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 20px !important;
+}
+
+.social-icon {
+    display: block; /* Display each icon on a new line */
+    text-align: right;
+    width: 20px; /* Adjust the size as needed */
+    height: 20px; /* Adjust the size as needed */
+    margin: 5px 0; /* Add some margin for spacing */
+}

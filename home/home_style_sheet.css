@@ -1,14 +1,16 @@
-
 @import "/nav_bar_style_sheet.css";
+@import "/footer/footer_style_sheet.css";
 
-body{
+body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
     width: 100%;
     height: 100vh;
+    font-family: 'Poppins', sans-serif;
     background-size: cover;
     background-position: center;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
 }
 
 
@@ -21,13 +23,13 @@ body{
     left: 0;
     right: 0;
     padding: 10px;
-    background-color: #333;
-    color: #fff;
+    background-color: white;
+    color: black;
     text-align: center;
 }
 
 .accept-cookies {
-    background-color: #007bff;
+    background-color: #662d91;
     color: #fff;
     border: none;
     padding: 5px 15px;
@@ -36,30 +38,23 @@ body{
 
 
 h1 {
-    font-size: 125px;
-    color: white;
-    text-shadow: -2px -2px 2px black;
-    text-align: center;
-    margin-bottom: 100px;
+    font-size: 50px;
+    color: black;
+    margin-left: 500px;
+    margin-top: -200px;
 }
 
-h2 {
-    font-size: 50px;
-    color: white;
-    text-shadow: -2px -2px 2px black;
-    text-align: center;
-    margin-top: 0;
-}
 
 
 #section1 {
-    background: url('home_sec1.jpg') right bottom no-repeat;
+    background: url('background1.jpg') right bottom no-repeat;
     background-size: cover, auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    scroll-snap-align: start;
 }
 
 #section2 {
@@ -70,8 +65,11 @@ h2 {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    scroll-snap-align: start;
+
 
 }
+
 .button-container {
     margin-top: 20px;
 
@@ -80,8 +78,9 @@ h2 {
 
 .button {
     display: inline-block;
-    padding: 15px 30px; /* Increase padding for a larger button */
-    background-color: #5072A7;
+    padding: 15px 30px;
+    /* Increase padding for a larger button */
+    background-color: #662d91;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -90,16 +89,21 @@ h2 {
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: #800080;
 }
 
 
 #section3 {
-    background: url('home_sec3.jpg') no-repeat center center;
-    background-size: cover;
-    flex-direction: column;
+
+    background-color: white;
+    color: black;
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
-    margin-top: 20px;
+    scroll-snap-align: start;
+    margin-top: -50px;
+
 }
 
 #section4 {
@@ -108,7 +112,60 @@ h2 {
     color: black;
     margin-top: 0;
     height: 100vh;
+    scroll-snap-align: start;
+    margin-top: -50px;
 
+}
+
+#about_section {
+
+    background-color: white;
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+
+#about_section2 {
+
+    background-color: white;
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+.policy-dropdown-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 10px; 
+}
+
+.policy-dropdown-container select {
+    height: 50px;
+    width: 400px; 
+    font-size: 16px;
+}
+
+.policy-content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    text-align: justify;
 }
 
 

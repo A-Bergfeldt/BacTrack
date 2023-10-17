@@ -1,110 +1,134 @@
-<link rel="stylesheet" href="table_styles.css">
-<?php
-include '../db_connection.php';
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sample Results</title>
+    <script src="multiselect-dropdown.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="table_styles.css">
+</head>
 
 
-$sample_id = $_GET["sample_id"];
-// SQL queries
-$sql = "SELECT sample_id, a1.antibiotic_name AS 'Antibiotic 1', a2.antibiotic_name AS 'Antibiotic 2', a3.antibiotic_name AS 'Antibiotic 3',synergy_name, prescribed FROM 
-((((results 
-INNER JOIN antibiotics AS a1 ON results.antibiotic_id1 = a1.antibiotic_id)
-INNER JOIN antibiotics AS a2 ON results.antibiotic_id2 = a2.antibiotic_id)
-INNER JOIN antibiotics AS a3 ON results.antibiotic_id3 = a3.antibiotic_id)
-INNER JOIN synergy ON results.synergy_result = synergy.synergy_id)
-WHERE sample_id = $sample_id;";
+<body>
+    <?php
+    session_start();
+    include '../db_connection.php';
 
-$result = $db_connection->query($sql);
-
-$sqlStatus = "SELECT status_id FROM sample WHERE sample.sample_id = $sample_id;";
-$resultStatus = $db_connection->query($sqlStatus);
-if ($resultStatus->num_rows > 0) {
-    // Fetch the row from the result set
-    $row = $resultStatus->fetch_assoc();
-
-    // Access the 'status_id' value from the row
-    $status_id = $row['status_id'];
-}
-
-$sqlDoctor = "SELECT doctor_id FROM sample WHERE sample.sample_id = $sample_id;";
-$resultDoctor = $db_connection->query($sqlDoctor);
-if ($resultDoctor->num_rows > 0) {
-    // Fetch the row from the result set
-    $row = $resultDoctor->fetch_assoc();
-
-    // Access the 'status_id' value from the row
-    $doctor_id = $row['doctor_id'];
-}
-
-$show_button = ($status_id == 3 and $doctor_id == 'Simon_Oscarson' and 1 == 1); //TODO: doctor_id == 'Simon_Oscarson' should be doctor_id == current_user and 1==1 should be current_user_role == 1, get from sessions
-
-// Start the table with some basic styling
-echo '
-    <p>Results for Sample ID: ' . $sample_id . ' </p>
-    <table>
-    <thead>
-    <tr>
-        <th>Antibiotic 1</th>
-        <th>Antibiotic 2</th>
-        <th>Antibiotic 3</th>
-        <th>Result</th>
-        ';
-if ($show_button) {
-    echo '<th>Prescribe</th>';
-
-}
-echo '
-    </tr>
-    </thead>
-    ';
-
-
-// Fill table
-if ($result->num_rows > 0) {
-    echo "<tbody>";
-    while ($row = $result->fetch_assoc()) {
-        // TODO: Add specific styling for the prescribed row
-        if ($row["prescribed"]) {
-            echo "<tr class='prescribed'>";
-        } else {
-            echo "<tr>";
-        }
-        echo "
-        <td>" . $row["Antibiotic 1"] . "</td>
-        <td>" . $row["Antibiotic 2"] . "</td>
-        <td>" . $row["Antibiotic 3"] . "</td>
-        <td>" . $row["synergy_name"] . "</td>
-        ";
-        if ($show_button) {
-            // Pass antibiotic values to the showConfirmation function
-            echo "<td>
-                    <button onclick='showConfirmation(" . $row["sample_id"] . ", \"" . $row["Antibiotic 1"] . "\", \"" . $row["Antibiotic 2"] . "\", \"" . $row["Antibiotic 3"] . "\")'>Prescribe this combination</button>
-                </td>";
-        }
-        echo "
-        </tr>";
+    if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1440)) {
+        header("Location: ../login/logout.php");
     }
-    echo "</tbody>";
+    $_SESSION['LAST_ACTIVITY'] = time();
 
-    // Add a JavaScript function to show the confirmation popup
-    echo "
-    <script>
-    function showConfirmation(sampleId, antibiotic1, antibiotic2, antibiotic3) {
-        if (window.confirm('Are you sure you want to prescribe this combination?')) {
-            // If the user confirms, navigate to update_prescription.php with all values
-            window.location.href = 'update_prescription.php?sample_id=' + sampleId + '&antibiotic1=' + encodeURIComponent(antibiotic1) + '&antibiotic2=' + encodeURIComponent(antibiotic2) + '&antibiotic3=' + encodeURIComponent(antibiotic3);
-        } else {
-            // If the user cancels, do nothing or provide feedback as needed
-        }
+    if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 3) {
+        header("Location: ../login/login.php");
+        exit();
     }
-    </script>";
 
-} else {
-    echo "<p>>0 results</p>";
-}
+    $sample_id = $_GET["sample_id"];
+    // SQL queries
+    $sql = "SELECT sample_id, a1.antibiotic_name AS 'Antibiotic 1', a2.antibiotic_name AS 'Antibiotic 2', a3.antibiotic_name AS 'Antibiotic 3',synergy_name, prescribed FROM 
+    ((((results 
+    INNER JOIN antibiotics AS a1 ON results.antibiotic_id1 = a1.antibiotic_id)
+    INNER JOIN antibiotics AS a2 ON results.antibiotic_id2 = a2.antibiotic_id)
+    INNER JOIN antibiotics AS a3 ON results.antibiotic_id3 = a3.antibiotic_id)
+    INNER JOIN synergy ON results.synergy_result = synergy.synergy_id)
+    WHERE sample_id = $sample_id;";
 
-// Close the table
-echo '</table>';
+    $result = $db_connection->query($sql);
 
-// Close the database connection
-$db_connection->close();
-?>
+    $sqlStatus = "SELECT status_id FROM sample WHERE sample.sample_id = $sample_id;";
+    $resultStatus = $db_connection->query($sqlStatus);
+    if ($resultStatus->num_rows > 0) {
+        // Fetch the row from the result set
+        $row = $resultStatus->fetch_assoc();
+
+        // Access the 'status_id' value from the row
+        $status_id = $row['status_id'];
+    }
+
+    $sqlDoctor = "SELECT doctor_id FROM sample WHERE sample.sample_id = $sample_id;";
+    $resultDoctor = $db_connection->query($sqlDoctor);
+    if ($resultDoctor->num_rows > 0) {
+        // Fetch the row from the result set
+        $row = $resultDoctor->fetch_assoc();
+
+        // Access the 'status_id' value from the row
+        $doctor_id = $row['doctor_id'];
+    }
+    $db_connection->close();
+
+    $show_button = ($status_id == 3 and $doctor_id == $_SESSION['user_id']);
+    ?>
+
+    <br>
+    <br>
+    <br>
+
+    <!-- Start the table with some basic styling -->
+    <div class="table">
+
+        <p>Results for Sample ID:
+            <?= $sample_id ?>
+        </p>
+        <form action="sample_results.php" method="POST">
+            <table>
+                <thead>
+                    <tr>
+                        <div>
+                            <th>Antibiotic 1</th>
+                            <th>Antibiotic 2</th>
+                            <th>Antibiotic 3</th>
+                            <th>Result</th>
+                            <?php if ($show_button): ?>
+                                <th>Prescribe</th>
+                            <?php endif; ?>
+                        </div>
+                    </tr>
+                </thead>
+        </form>
+    </div>
+
+
+    <!-- Fill table -->
+    <?php if ($result->num_rows > 0): ?>
+        <tbody>
+            <?php while ($row = $result->fetch_assoc()): ?>
+                <?php if ($row["prescribed"]): ?>
+                    <tr class="prescribed">
+                    <?php else: ?>
+                    <tr>
+                    <?php endif; ?>
+                    <td>
+                        <?= $row["Antibiotic 1"] ?>
+                    </td>
+                    <td>
+                        <?= $row["Antibiotic 2"] ?>
+                    </td>
+                    <td>
+                        <?= $row["Antibiotic 3"] ?>
+                    </td>
+                    <td>
+                        <?= $row["synergy_name"] ?>
+                    </td>
+                    <?php if ($show_button): ?>
+                        <td>
+                            <a
+                                href="update_prescription.php?sample_id=<?= $row['sample_id'] ?> <?= '&antibiotic1=' . $row['Antibiotic 1'] ?> <?= '&antibiotic2=' . $row['Antibiotic 2'] ?> <?= '&antibiotic3=' . $row['Antibiotic 3'] ?>">Prescribe</a>
+                            <!-- <button
+                            onclick="showConfirmation(<?= $row['sample_id'] ?>, '<?= $row['Antibiotic 1'] ?>', '<?= $row['Antibiotic 2'] ?>', '<?= $row['Antibiotic 3'] ?>')">Prescribe
+                            this combination</button> -->
+                        </td>
+                    <?php endif; ?>
+                </tr>
+            <?php endwhile; ?>
+        </tbody>
+    <?php else: ?>
+        <p>>0 results</p>
+    <?php endif; ?>
+
+    </table>
+    <?php require_once "../nav_bar.php"; ?>
+
+</body>
+
+</html>
