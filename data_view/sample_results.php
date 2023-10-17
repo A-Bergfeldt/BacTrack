@@ -58,23 +58,27 @@
     $db_connection->close();
 
     $show_button = ($status_id == 3 and $doctor_id == $_SESSION['user_id']);
+    $show_chosen = ($status_id == 4 and $doctor_id == $_SESSION['user_id']);
     ?>
 
     <br>
     <br>
     <br>
+    <br>
+    <br>
+
 
     <!-- Start the table with some basic styling -->
-    <div class="table">
+    <div class="container">
+        <main class="table">
+            <section class="table_header">
+                <h1>Results for Sample ID: <?= $sample_id ?></h1>
+            </section>
 
-        <p>Results for Sample ID:
-            <?= $sample_id ?>
-        </p>
-        <form action="sample_results.php" method="POST">
-            <table>
-                <thead>
-                    <tr>
-                        <div>
+            <section class="table_body">
+                <table>
+                    <thead>
+                        <tr>
                             <th>Antibiotic 1</th>
                             <th>Antibiotic 2</th>
                             <th>Antibiotic 3</th>
@@ -82,53 +86,62 @@
                             <?php if ($show_button): ?>
                                 <th>Prescribe</th>
                             <?php endif; ?>
-                        </div>
-                    </tr>
-                </thead>
-        </form>
-    </div>
+                            <<?php if ($show_chosen): ?>
+                                <th>Prescribed</th>
+                            <?php endif; ?>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </section>
+            
+            <table>
 
 
-    <!-- Fill table -->
-    <?php if ($result->num_rows > 0): ?>
-        <tbody>
-            <?php while ($row = $result->fetch_assoc()): ?>
-                <?php if ($row["prescribed"]): ?>
-                    <tr class="prescribed">
+        <!-- Fill table -->
+            <section class="table_body">
+                <?php if ($result->num_rows > 0): ?>
+                <table>
+                    <tbody>
+                        <?php while ($row = $result->fetch_assoc()): ?>
+                            <?php if ($row["prescribed"]): ?>
+                                <tr class="prescribed">
+                                <?php else: ?>
+                                <tr>
+                                <?php endif; ?>
+                                <td>
+                                    <?= $row["Antibiotic 1"] ?>
+                                </td>
+                                <td>
+                                    <?= $row["Antibiotic 2"] ?>
+                                </td>
+                                <td>
+                                    <?= $row["Antibiotic 3"] ?>
+                                </td>
+                                <td>
+                                    <?= $row["synergy_name"] ?>
+                                </td>
+                                <?php if ($show_button): ?>
+                                    <td>
+                                        <a
+                                            href="update_prescription.php?sample_id=<?= $row['sample_id'] ?> <?= '&antibiotic1=' . $row['Antibiotic 1'] ?> <?= '&antibiotic2=' . $row['Antibiotic 2'] ?> <?= '&antibiotic3=' . $row['Antibiotic 3'] ?>">Prescribe</a>
+                                        <!-- <button
+                                        onclick="showConfirmation(<?= $row['sample_id'] ?>, '<?= $row['Antibiotic 1'] ?>', '<?= $row['Antibiotic 2'] ?>', '<?= $row['Antibiotic 3'] ?>')">Prescribe
+                                        this combination</button> -->
+                                    </td>
+                                <?php endif; ?>
+                            </tr>
+                        <?php endwhile; ?>
+                    </tbody>
                     <?php else: ?>
-                    <tr>
+                        <p>>0 results</p>
                     <?php endif; ?>
-                    <td>
-                        <?= $row["Antibiotic 1"] ?>
-                    </td>
-                    <td>
-                        <?= $row["Antibiotic 2"] ?>
-                    </td>
-                    <td>
-                        <?= $row["Antibiotic 3"] ?>
-                    </td>
-                    <td>
-                        <?= $row["synergy_name"] ?>
-                    </td>
-                    <?php if ($show_button): ?>
-                        <td>
-                            <a
-                                href="update_prescription.php?sample_id=<?= $row['sample_id'] ?> <?= '&antibiotic1=' . $row['Antibiotic 1'] ?> <?= '&antibiotic2=' . $row['Antibiotic 2'] ?> <?= '&antibiotic3=' . $row['Antibiotic 3'] ?>">Prescribe</a>
-                            <!-- <button
-                            onclick="showConfirmation(<?= $row['sample_id'] ?>, '<?= $row['Antibiotic 1'] ?>', '<?= $row['Antibiotic 2'] ?>', '<?= $row['Antibiotic 3'] ?>')">Prescribe
-                            this combination</button> -->
-                        </td>
-                    <?php endif; ?>
-                </tr>
-            <?php endwhile; ?>
-        </tbody>
-    <?php else: ?>
-        <p>>0 results</p>
-    <?php endif; ?>
-
-    </table>
+                </table>
+            </section>
+        </main>
+    </div>
     <?php require_once "../nav_bar.php"; ?>
-
 </body>
-
 </html>

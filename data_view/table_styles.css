@@ -13,12 +13,18 @@ body{
 
 .container {
     margin-top: 0px; /* Adjust the margin as needed to control the spacing */
+<<<<<<< HEAD
     padding: 0px; /* Add padding around the container */
+    align-items: center;
+=======
+    padding: 0px;
+    margin-right: 200px; /* Add padding around the container */
+>>>>>>> 36b29761ecd1886ef7cfaf6d4668e4af45c5e355
 }
 
 
 .alter_box {
-    margin: 20px auto; /* Center the form horizontally and add separation */
+    margin: center; /* Center the form horizontally and add separation */
     width: 400px;
     background: rgb(255, 255, 255);
     border-radius: 10px;
@@ -70,7 +76,10 @@ main.table{
     box-shadow: 0 .4rem .8rem #0005;
     border-radius: 0.8rem;
     overflow: hidden;
-    margin: 50px;}
+    margin: 50px;
+
+}
+    
 
 thead th {
     position: sticky;
