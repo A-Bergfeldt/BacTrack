@@ -46,12 +46,13 @@
                 echo '<a href="/lab/lab_design_input_form.php">Sample Input</a>';
             }
             if($_SESSION['role_id'] == 3){
-                echo '<a href="/doctor/doctor_page.php" class="dropbtn">My Page</a>';
+                echo '<a href="/doctor/doctor_page.php" class="dropbtn">My page</a>';
                 echo '<div class="dropdown-content">';
-                echo '<a href="/doctor/doctor_page.php">My Samples</a>';
+                echo '<a href="/doctor/doctor_page.php">Doctor page</a>';
                 echo '<a href="/doctor/sample_form.php">Insert new sample</a>';
                 echo '<a href="/data_view/search_all_samples.php">Search samples</a>';
-                echo '<a href="/lab/lab_tech_page.php">Sample Input</a>';
+                echo '<a href="/lab/lab_tech_page.php">Lab tech page</a>';
+                echo '<a href="/lab/results_form.php">Sample input</a>';
             }
             echo '<a href="/login/logout.php">Logout</a>';
             echo '</div>';
