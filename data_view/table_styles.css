@@ -13,13 +13,8 @@ body{
 
 .container {
     margin-top: 0px; /* Adjust the margin as needed to control the spacing */
-<<<<<<< HEAD
     padding: 0px; /* Add padding around the container */
     align-items: center;
-=======
-    padding: 0px;
-    margin-right: 200px; /* Add padding around the container */
->>>>>>> 36b29761ecd1886ef7cfaf6d4668e4af45c5e355
 }
 
 

@@ -33,27 +33,27 @@ how much you want
 
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Lab tech page</title>
+    <title>Mina testing doctor page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="/data_view/table_styles.css">
     <style>
         .button-container {
             text-align: center;
-            margin-top: 30px; 
+            margin-top: 30px;
         }
 
         .button-container .button {
             display: inline-block;
-            padding: 15px 30px; 
+            padding: 15px 30px;
+            /* Increase padding for a larger button */
             background-color: #662d91;
-            color: white;
+            color: #fff;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            color: white;
             transition: background-color 0.3s ease;
-            margin: 0 10px; 
         }
 
         .button-container .button:hover {
@@ -64,51 +64,30 @@ how much you want
 
 <body>
     <div class="container">
-        <div class="slides slide1">
-            <h1 style="font-size: 100px; color: #000000; text-align: center;">Hello <?php echo $user_name; ?>!</h1>
+        <h1 style="font-size: 100px; color: #000000; text-align: center;">Hello
+            <?php echo $user_name; ?>!
+        </h1>
         </div>
 
         <div class="button-container">
-        <a href="lab_design_input_form.php" class="button">Insert new sample</a>
-        </div>
+            <a href="lab_design_input_form.php" class="button">Insert new data</a>
 
         <main class="table">
             <section class="table_header">
-                <h1 style="text-align: center;">Your samples</h1>
+                <h1 style="text-align: center;">Running samples</h1>
             </section>
             <section class="table_body">
                 <table>
-                    <thead>
-                        <tr>
-                            <th>Sample ID<span class="icon-arrow">&DownArrow;</span></th>
-                            <th>Date<span class="icon-arrow">&DownArrow;</span></th>
-                            <th>Strain<span class="icon-arrow">&DownArrow;</span></th>
-                            <th>Lab Technician<span class="icon-arrow">&DownArrow;</span></th>
-                        </tr>
-                    </thead>
                     <tbody>
                         <?php
-                        include '../db_connection.php';
-
-// SQL queries
-                        $sql = "SELECT sample_id, date_taken, status_name, hospital_name, strain_name, lab_technician_id FROM (((sample 
-                        INNER JOIN tracking ON sample.status_id = tracking.status_id) 
-                        INNER JOIN hospital ON sample.hospital_id = hospital.hospital_id)
-                        LEFT JOIN strain ON sample.strain_id = strain.strain_id)
-                        WHERE doctor_id = '" . $_SESSION['user_id'] . "' AND sample.status_id != 4
-                        ORDER BY sample_id ASC;;"; 
-                        $result = $db_connection->query($sql);
-
-                        include 'fill_personal_table.php';
-
-// Close the database connection
-                        $db_connection->close();
+                        require_once '../data_view/view_unfinished_samples.php'
                         ?>
                     </tbody>
                 </table>
             </section>
         </main>
     </div>
-    <?php require_once "../nav_bar.php"; ?> 
+    <?php require_once "../nav_bar.php"; ?>
 </body>
+
 </html>
