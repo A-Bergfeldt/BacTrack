@@ -1,6 +1,6 @@
 /* Add CSS styles for the footer */
 footer {
-    background-color: rgba(231, 231, 221, 0.4);/* Background color for the footer */
+    background-color: rgba(231, 231, 221, 0);/* Background color for the footer */
     color: black; /* Text color for the footer */
     padding: 20px; /* Add padding to the footer */
     text-align: center; /* Center-align the text */
