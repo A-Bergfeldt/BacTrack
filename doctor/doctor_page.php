@@ -58,7 +58,7 @@ how much you want
     <div class="container">
         <br>
         <br>
-        <h1 style="font-size: 100px; color: #000000; text-align: center;">Hello
+        <h1 style="font-size: 60px; color: #000000; text-align: center;">Welcome
             <?php echo $user_name; ?>!
         </h1>
         </div>
