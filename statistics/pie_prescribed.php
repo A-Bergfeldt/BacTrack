@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="piechart_stylesheet_main.css">
-    <title>Pie Chart with Data from SQL Database</title>
+    <title>Antibiotics through a year</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
 </head>
 <body>
@@ -12,7 +13,7 @@
         <h1>General use of Antibiotics in a year</h1>
         <div id="year-selector">
             <form method="get" action="pie_prescribed.php">
-                <label for="year" style="margin-left:30px, margin-top:10px">Select a Year:</label>
+                <label for="year" style="margin-left:130x"></label>
                 <select id="year" name="year">
                     <?php
                     // Define the range of years (2000-2023)
@@ -29,7 +30,7 @@
                     }
                     ?>
                 </select>
-                <button id="update-button" type="submit" class="button-primary">Update Chart</button>
+                <button id="update-button" type="submit" class="button-primary">Select year</button>
             </form>
         </div>
         <div id="tester" style="width:400px;height:250px;margin-left:10%"></div>

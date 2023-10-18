@@ -76,40 +76,29 @@
             </section>
 
             <section class="table_body">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Antibiotic 1</th>
-                            <th>Antibiotic 2</th>
-                            <th>Antibiotic 3</th>
-                            <th>Result</th>
-                            <?php if ($show_button): ?>
-                                <th>Prescribe</th>
-                            <?php endif; ?>
-                            <<?php if ($show_chosen): ?>
-                                <th>Prescribed</th>
-                            <?php endif; ?>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
-                </table>
-            </section>
-            
-            <table>
-
-
-        <!-- Fill table -->
-            <section class="table_body">
                 <?php if ($result->num_rows > 0): ?>
-                <table>
-                    <tbody>
-                        <?php while ($row = $result->fetch_assoc()): ?>
-                            <?php if ($row["prescribed"]): ?>
-                                <tr class="prescribed">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Antibiotic 1</th>
+                                <th>Antibiotic 2</th>
+                                <th>Antibiotic 3</th>
+                                <th>Result</th>
+                                <?php if ($show_button): ?>
+                                    <th>Prescribe</th>
+                                <?php endif; ?>
+                                <?php if ($show_chosen): ?>
+                                    <th>Prescribed</th>
+                                <?php endif; ?>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php while ($row = $result->fetch_assoc()): ?>
+                                <?php if ($row["prescribed"]): ?>
+                                    <tr class="prescribed">
                                 <?php else: ?>
-                                <tr>
+                                    <tr>
                                 <?php endif; ?>
                                 <td>
                                     <?= $row["Antibiotic 1"] ?>
@@ -130,15 +119,23 @@
                                         <!-- <button
                                         onclick="showConfirmation(<?= $row['sample_id'] ?>, '<?= $row['Antibiotic 1'] ?>', '<?= $row['Antibiotic 2'] ?>', '<?= $row['Antibiotic 3'] ?>')">Prescribe
                                         this combination</button> -->
-                                    </td>
+                                    </td> 
                                 <?php endif; ?>
-                            </tr>
-                        <?php endwhile; ?>
-                    </tbody>
-                    <?php else: ?>
-                        <p>>0 results</p>
-                    <?php endif; ?>
-                </table>
+                                <?php if ($show_chosen): ?>
+                                    <?php if ($row["synergy_name"] == "Synergy"): ?>
+                                        <td>
+                                            <p class="status prescribed">Yes</p>
+                                        </td>
+                                    <?php endif; ?>
+                                <?php else: ?>
+                                    <tr>
+                                <?php endif; ?>
+                            <?php endwhile; ?>
+                        </tbody>
+                    </table>
+                <?php else: ?>
+                    <p>0 results</p>
+                <?php endif; ?>
             </section>
         </main>
     </div>

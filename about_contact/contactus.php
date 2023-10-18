@@ -4,26 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="contactus.css">
-    <style>
-        #description {
-            font-family: 'Poppins', sans-serif;
-        }
-    </style>
-    <title>Contact Information - BacTrack</title>
+    <title>Contact Bactrack</title>
 </head>
 
 <body>
     <?php require_once "../nav_bar.php"; ?> 
-    </br></br></br>
+    <br>
+    <br>
+    <br>
     <h1 class="centered-paragraph">Contact us at BacTrack</h1>
 
     <form action="send_contact_email.php" method="POST" target="_self">
         <label for="name" style="font-weight: bold; font-size: 70%;">Full Name or Company Name</label>
         <input type="text" id="name" name="name" placeholder="Enter name" required autocomplete="name"><br>
 
-        <label for="email" style="font-weight: bold; font-size: 70%;">Email</label>
+        <label for="email" style="font-weight: bold; font-size: 70%;">Enter your e-mail</label>
         <input type="email" id="email" name="email" placeholder="example@mail.com" required autocomplete="email"><br>
 
         <label for="description" style="font-weight: bold; font-size: 70%;">How may we help you?</label>

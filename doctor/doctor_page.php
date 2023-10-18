@@ -26,13 +26,13 @@ how much you want
 <html>
 
 <head>
-    <title>Mina testing doctor page</title>
+    <title>My page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="/data_view/table_styles.css">
     <style>
         .button-container {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .button-container .button {
@@ -42,9 +42,10 @@ how much you want
             background-color: #662d91;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 25px;
             font-weight: bold;
             transition: background-color 0.3s ease;
+            box-shadow: 0 0 1px rgba(0, 0, 0, 0.3); 
         }
 
         .button-container .button:hover {
@@ -55,6 +56,8 @@ how much you want
 
 <body>
     <div class="container">
+        <br>
+        <br>
         <h1 style="font-size: 100px; color: #000000; text-align: center;">Hello
             <?php echo $user_name; ?>!
         </h1>

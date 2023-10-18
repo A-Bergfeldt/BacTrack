@@ -51,7 +51,7 @@ input[type="submit"] {
     background-color: #662d91; /* Background color */
     color: #fff; /* Text color */
     border: none; /* Remove the border */
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 25px; /* Rounded corners */
     cursor: pointer; /* Add a pointer cursor on hover */
     margin-top: 20px;
     margin-bottom:20px;
@@ -84,7 +84,7 @@ input[type="submit"]:hover {
     background-color: #662d91;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
     font-weight: bold;
     transition: background-color 0.3s ease;
 }

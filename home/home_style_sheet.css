@@ -44,7 +44,9 @@ h1 {
     margin-top: -200px;
 }
 
-
+.container {
+    background: white;
+}
 
 #section1 {
     background: url('background1.jpg') right bottom no-repeat;
@@ -83,9 +85,10 @@ h1 {
     background-color: #662d91;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
     font-weight: bold;
     transition: background-color 0.3s ease;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3); 
 }
 
 .button:hover {

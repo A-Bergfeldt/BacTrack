@@ -14,10 +14,6 @@ h1 {
     text-align: left;
     margin-left: 290px;
     text-decoration:none;
-    font-weight: bold;
-    font-family:'Poppins', sans-serif;
-    letter-spacing: 3px; /* Add letter-spacing for better readability */
-    /*text-shadow: 2px 2px 4px rgba(116, 98, 98, 0.5);*//* Add a subtle text shadow */
     line-height: 1.2; /* Adjust line height for better spacing */
 }
 
@@ -60,15 +56,12 @@ h1 {
 }
 
 h2{
-    font-size: 42px;
     font-weight: 200;
     color: #000000;
-    font-size: 33px; 
     margin-bottom: 40px;
     text-align:center;
     text-decoration:none;
     font-family: 'Poppins', sans-serif;
-    letter-spacing: 1.4px; /* Add letter-spacing for better readability */
     /*text-shadow: 2px 2px 4px rgba(116, 98, 98, 0.5);*/ /* Add a subtle text shadow */
     line-height: 1.2; /* Adjust line height for better spacing */
     font-weight: bold;
@@ -76,13 +69,11 @@ h2{
 
 p{
     color: #000000; /* text color inside the box*/
-    font-size: 1vw;
     font-weight: 300;
     line-height: 30px;
     padding: 16px;
     text-align: justify;
     font-family: 'Poppins', sans-serif;
-    letter-spacing: 1.5px;
     margin: 20px;
     
 }

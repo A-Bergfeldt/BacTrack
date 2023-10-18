@@ -3,7 +3,6 @@
 body {
     background-color:rgb(255, 255, 255); /*BACKGROUND color for the plot*/
     font-family: 'Poppins',sans-serif;
-    margin: 0;
 }
 
 h1 {
@@ -11,12 +10,7 @@ h1 {
     color: #000000; /* text color */
     font-size: 33px; 
     margin-bottom: 50px;
-    text-align: left;
-    margin-left: 345px;
-    text-decoration:none;
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 3px; /* Add letter-spacing for better readability */
-    /*text-shadow: 2px 2px 4px rgba(116, 98, 98, 0.5); *//* Add a subtle text shadow */
+    text-align: center;
     line-height: 1.2; /* Adjust line height for better spacing */
     text-decoration: none;
   }
@@ -27,22 +21,21 @@ h1 {
 
 /* Basic styling for the button */
 button {
-    padding: 13px 30px;
+    padding: 12px 30px;
     font-size: 16px;
     font-weight: bold;
     display: inline-block;
     cursor: pointer;
     border: none;
-    border-radius: 5px; /* Add border radius for rounded corners */
+    border-radius: 25px; /* Add border radius for rounded corners */
     transition: background-color 0.3s ease; /* Add a smooth transition effect for the hover state */
-    margin-bottom: 30px;
   }
   
   /* Styling for a 3D primary button */
   .button-primary {
     background-color:#662D91; /* Set your desired background color */
     color: #ffffff; /* Set your desired text color */
-    box-shadow: 0 5px 15px rgba(88, 96, 101, 0.5); /* Add a subtle box shadow */
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3); 
   }
   
   /* Hover effect for the 3D primary button */
@@ -88,31 +81,14 @@ select {
     margin: 0 auto; /* pushes plot to the left*/
     display:block;
     border-radius: 20px;
-    justify-content: center; /* Center the contents horizontally within the container */
-    align-items: center; /* Center the contents vertically within the container */
     height: 100vh; /* Use 100% of the viewport height */ 
   }
 
 /*CONTENT*/
 
-.slides{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    color:#000000; /*text color outside the box*/
-    scroll-snap-align: start;
-}
-
-.slide2{
-    background:rgb(255, 255, 255); /*has to be black, background for the box*/
-}
 
 .course{
     width: 100%;
-    margin:auto;
     text-align:center;
     padding-top:120px;
 }
@@ -121,40 +97,33 @@ h3{
     font-size: 33px;
     /*font-weight: 600;*/
     font-family: 'Poppins',sans-serif;
-    letter-spacing: 1.4px;
+    letter-spacing: 1px;
 }
 
 p{
-    color: #000000; /* text color inside the box*/
     font-size: 1vw; /* Adjusted font size using viewport width units for responsiveness */
     font-weight: 300;
     line-height: 30px; /* Adjusted line height for better spacing */
     padding:16px;
-    text-align: justify;
     margin: 20px;
-    letter-spacing: 1.5px;
 }
 
 .row{
     margin-top: 5%;
     margin-top: -10%;
-    margin-left: -10%;
+    margin-left: -30%;
     display:flex;
-    justify-content: space-between;
 }
 
 .course-col{
-    padding: 0% 0%; /* Adjusted padding for better responsiveness */
-    margin-bottom: 2%;
     margin-top: -30%;
-    margin-right: -90%;
     margin-left:15%;
     background: rgb(185, 120, 255);
     background: linear-gradient(90deg, rgba(207, 210, 240, 0.6) 0%, rgba(140, 119, 158, 0.2) 100%);
     flex-basis:75%;
     border-radius: 10px;
-    box-sizing: border-box;
     transition: 0.5s;
+    font-family: 'Poppins', sans-serif;
 }
 
 .course-col:hover{
@@ -167,5 +136,8 @@ p{
     display: flex;
     justify-content: space-between;
     align-items:center;
-    margin-bottom: 20px; /* Adjust as needed */
   }
+
+  .container{
+    padding-left: 150px;
+}

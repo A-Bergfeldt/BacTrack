@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Geographical spread</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" type="text/css" href="heatmap_stylesheet_main.css">
   <!-- Include Plotly.js -->
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
@@ -11,7 +13,6 @@
   <div class="container">
     <!-- Dropdown menu to select heatmap option -->
     <form method="get" action="heatmap_strain.php">
-      <label for="heatmapOption">Strain selection:</label>
       <select id="heatmapOption" name="strain">
         <?php
         require_once "../db_connection.php";
