@@ -8,23 +8,21 @@ body{
     background: linear-gradient(180deg,#e7e7dd 0%, #ffffff 100%);
     background-attachment: fixed;
     box-sizing: border-box;
-    
 }
 
 .container {
     margin-top: 0px; /* Adjust the margin as needed to control the spacing */
     padding: 0px; /* Add padding around the container */
-    align-items: center;
 }
 
 
 .alter_box {
+    margin: 20px auto; /* Center the form horizontally and add separation */
     margin: center; /* Center the form horizontally and add separation */
     width: 400px;
     background: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    margin-top:40px;
     padding: 20px;
 }
 
@@ -72,7 +70,7 @@ main.table{
     border-radius: 0.8rem;
     overflow: hidden;
     margin: 50px;
-
+    margin-left: 100px;
 }
     
 
@@ -174,7 +172,6 @@ tbody tr td p{
 tbody tr.hide td,
 tbody tr.hide td p {
     padding: 0;
-    font: 0 / 0 sans-serif;
     transition: .2s ease-in-out .5s;
 }
 

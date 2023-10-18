@@ -10,48 +10,6 @@ body{
 
 }
 
-.container{
-    width: 100%;
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-}
-
-.slides{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    gap: 50px;
-    color: #000000;
-    scroll-snap-align: start;
-
-    /*background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    */
-}
-
-
-.slide_home{
-    background: url(home_background.jpg) right bottom no-repeat;
-    background-size: cover, auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-    
-
-.slide1{
-    background: linear-gradient(180deg, rgba(21,98,105,1) 0%, rgba(255,255,255,1) 100%);
-}
-
-.slide2{
-    background: #fff;
-}
-
-/* LOGIN STUFF */
 .loginbox {
     position: absolute;
     top: 50%;
