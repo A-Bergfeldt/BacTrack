@@ -11,8 +11,6 @@ h1 {
     font-size: 33px; 
     margin-bottom: 50px;
     text-align: center;
-    font-family: 'Poppins', sans-serif; 
-    text-shadow: 2px 2px 4px rgba(116, 98, 98, 0.5); 
     line-height: 1.2; /* Adjust line height for better spacing */
     text-decoration: none;
   }
@@ -29,7 +27,7 @@ button {
     display: inline-block;
     cursor: pointer;
     border: none;
-    border-radius: 5px; /* Add border radius for rounded corners */
+    border-radius: 25px; /* Add border radius for rounded corners */
     transition: background-color 0.3s ease; /* Add a smooth transition effect for the hover state */
   }
   
@@ -37,7 +35,7 @@ button {
   .button-primary {
     background-color:#662D91; /* Set your desired background color */
     color: #ffffff; /* Set your desired text color */
-    box-shadow: 0 5px 15px rgba(88, 96, 101, 0.5); /* Add a subtle box shadow */
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3); 
   }
   
   /* Hover effect for the 3D primary button */

@@ -14,9 +14,6 @@ h1 {
     text-align: left;
     margin-left: 290px;
     text-decoration:none;
-    font-weight: bold;
-    font-family:'Poppins', sans-serif;
-    text-shadow: 2px 2px 4px rgba(116, 98, 98, 0.5); 
     line-height: 1.2; /* Adjust line height for better spacing */
 }
 
