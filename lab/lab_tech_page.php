@@ -49,11 +49,13 @@ how much you want
             background-color: #662d91;
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 25px;
             font-weight: bold;
             color: white;
             transition: background-color 0.3s ease;
             margin: 0 10px; 
+            box-shadow: 0 0 3px rgba(0, 0, 0, 0.3); 
+
         }
 
         .button-container .button:hover {
@@ -64,6 +66,8 @@ how much you want
 
 <body>
     <div class="container">
+        <br>
+        <br>
         <div class="slides slide1">
             <h1 style="font-size: 100px; color: #000000; text-align: center;">Hello <?php echo $user_name; ?>!</h1>
         </div>

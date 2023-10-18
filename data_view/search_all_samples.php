@@ -130,13 +130,13 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
         <table>
           <thead>
             <tr>
-              <th>Sample ID<span class="icon-arrow">&DownArrow;</span></th>
-              <th>Date<span class="icon-arrow">&DownArrow;</span></th>
-              <th>Status<span class="icon-arrow">&DownArrow;</span></th>
-              <th>Hospital<span class="icon-arrow">&DownArrow;</span></th>
-              <th>Strain<span class="icon-arrow">&DownArrow;</span></th>
-              <th>Doctor<span class="icon-arrow">&DownArrow;</span></th>
-              <th>Lab Technician<span class="icon-arrow">&DownArrow;</span></th>
+              <th>Sample ID</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Hospital</th>
+              <th>Strain</th>
+              <th>Doctor</th>
+              <th>Lab Technician</th>
             </tr>
           </thead>
           <tbody>

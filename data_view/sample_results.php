@@ -122,9 +122,11 @@
                                     </td> 
                                 <?php endif; ?>
                                 <?php if ($show_chosen): ?>
-                                    <td>
-                                        <p class="status prescribed">Yes</p>
-                                    </td>
+                                    <?php if ($row["synergy_name"] == "Synergy"): ?>
+                                        <td>
+                                            <p class="status prescribed">Yes</p>
+                                        </td>
+                                    <?php endif; ?>
                                 <?php else: ?>
                                     <tr>
                                 <?php endif; ?>
@@ -132,7 +134,7 @@
                         </tbody>
                     </table>
                 <?php else: ?>
-                    <p>>0 results</p>
+                    <p>0 results</p>
                 <?php endif; ?>
             </section>
         </main>

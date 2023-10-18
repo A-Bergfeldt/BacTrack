@@ -221,13 +221,8 @@ thead th.active,tbody td.active {
 }
 
 
-.status {
-    padding: .4rem 0;
+.status.prescribed {
+    padding: 0;
     border-radius: 2rem;
     text-align: center;
-}
-
-.status.prescribed {
-    background-color: #86e49d;
-    color: #006b21;
 }

@@ -60,7 +60,7 @@ input[type="submit"].submit-button {
     background-color: #662d91;
     color: #fff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 25px;
     font-weight: bold;
     transition: background-color 0.3s ease;
 }
