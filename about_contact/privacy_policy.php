@@ -5,7 +5,7 @@ require_once "../nav_bar.php";
 <html>
 
 <head>
-    <title>Privacy Policy - BacTrack</title>
+    <title>Privacy Policy</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="/home/home_style_sheet.css">
 </head>

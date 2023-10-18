@@ -34,7 +34,7 @@ how much you want
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Lab tech page</title>
+    <title>My page</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" href="/data_view/table_styles.css">
     <style>

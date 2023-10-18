@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title>Geographical spread</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" type="text/css" href="heatmap_stylesheet_main.css">
   <!-- Include Plotly.js -->

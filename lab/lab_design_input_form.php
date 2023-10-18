@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My BacTrack Web App</title>
+    <title>Insert data</title>
     <!-- Add your CSS styles here -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" type="text/css" href="lab_tech_style.css">

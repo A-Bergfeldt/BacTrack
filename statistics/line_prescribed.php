@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
     <link rel="stylesheet" type="text/css" href="linegraph_stylesheet_main.css">
-    <title>Line-plot with Data from SQL Database</title>
+    <title>Trends of usage</title>
     <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
 </head>
 <body>
