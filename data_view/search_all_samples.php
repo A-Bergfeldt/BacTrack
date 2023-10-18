@@ -55,7 +55,7 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
 <body>
   <div class="container">
     <div class="alter_box">
-      <p>Enter your search</p>
+      <h1>Enter your search</h1>
       <form method="GET" action="search_all_samples.php">
 
         <label for="search">Sample ID: </label>
