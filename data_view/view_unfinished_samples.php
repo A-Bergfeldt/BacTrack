@@ -6,7 +6,7 @@ if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 
 }
 $_SESSION['LAST_ACTIVITY'] = time();
 
-if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 3) {
+if ($_SESSION['role_id'] != 1 && $_SESSION['role_id'] != 2 && $_SESSION['role_id'] != 3) {
     header("Location: ../login/login.php");
     exit();
 }

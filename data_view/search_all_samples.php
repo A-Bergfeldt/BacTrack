@@ -205,7 +205,7 @@ $strain = $resultStrain->fetch_all(MYSQLI_ASSOC);
   </div>
   <?php require_once "../nav_bar.php"; ?> 
 
-
+          </br>
 </body>
 </html>
 

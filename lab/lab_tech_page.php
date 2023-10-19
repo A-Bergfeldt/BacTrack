@@ -92,6 +92,7 @@ how much you want
         </main>
     </div>
     <?php require_once "../nav_bar.php"; ?>
+    </br>
 </body>
 
 </html>
