@@ -36,10 +36,14 @@ echo "Sample ID: " . $sample_id . ", has been prescribed: " . $antibiotic1 . ", 
 
 <body>
     <div class="loginbox">
-        <h1>Thank you</h1>
-        <h2>Your new password has been saved</h2>
-        <form action="/login/login.php" method="action">
-            <input type="submit" value="Go to login">
+        <h1>Sample <?php echo $_GET['sample_id'] ?> prescribed </h1>
+        <h2 style="font-size: 16px;">The precribed antibiotics were:</br>
+        <?php echo $_GET['antibiotic1'] ?></br>
+        <?php echo $_GET['antibiotic2'] ?></br>
+        <?php echo $_GET['antibiotic3'] ?></br>
+        </h2>
+        <form action="/doctor/doctor_page.php" method="action">
+            <input type="submit" value="My page">
         </form>
     </div>
 </body>
