@@ -84,7 +84,7 @@ how much you want
                 <table>
                     <tbody>
                         <?php
-                        require_once '../data_view/view_unfinished_samples.php'
+                        require_once '../data_view/view_unfinished_samples_lab.php'
                         ?>
                     </tbody>
                 </table>
