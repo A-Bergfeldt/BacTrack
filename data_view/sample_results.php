@@ -126,6 +126,8 @@
                                         <td>
                                             <p class="status prescribed">Yes</p>
                                         </td>
+                                    <?php else: ?>
+                                        <td></td>
                                     <?php endif; ?>
                                 <?php else: ?>
                                     <tr>
